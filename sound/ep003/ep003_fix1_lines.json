@@ -1,0 +1,122 @@
+[
+ {
+  "id": "c13_s2",
+  "text": "That's Coinkite's assumption. It hasn't been proven.",
+  "seed": 2
+ },
+ {
+  "id": "c13_s3",
+  "text": "That's Coinkite's assumption. It hasn't been proven.",
+  "seed": 3
+ },
+ {
+  "id": "c13_s4",
+  "text": "That's Coinkite's assumption. It hasn't been proven.",
+  "seed": 4
+ },
+ {
+  "id": "h1_s2",
+  "text": "So, at the time of this video, no one has been publicly named. T R M Labs doesn't attribute the theft to anyone. Coinkite says its lawyers are working with law enforcement to identify those responsible.",
+  "seed": 2
+ },
+ {
+  "id": "h1_s3",
+  "text": "So, at the time of this video, no one has been publicly named. T R M Labs doesn't attribute the theft to anyone. Coinkite says its lawyers are working with law enforcement to identify those responsible.",
+  "seed": 3
+ },
+ {
+  "id": "h1_s4",
+  "text": "So, at the time of this video, no one has been publicly named. T R M Labs doesn't attribute the theft to anyone. Coinkite says its lawyers are working with law enforcement to identify those responsible.",
+  "seed": 4
+ },
+ {
+  "id": "k6_s2",
+  "text": "If you made a seed on an affected Coldcard, read Coinkite's advisory.",
+  "seed": 2
+ },
+ {
+  "id": "k6_s3",
+  "text": "If you made a seed on an affected Coldcard, read Coinkite's advisory.",
+  "seed": 3
+ },
+ {
+  "id": "k6_s4",
+  "text": "If you made a seed on an affected Coldcard, read Coinkite's advisory.",
+  "seed": 4
+ },
+ {
+  "id": "f6_s2",
+  "text": "Some of the stolen coins head for mixers, services built to blur the trail. By the latest public tallies, much of the rest is still sitting.",
+  "seed": 2
+ },
+ {
+  "id": "f6_s3",
+  "text": "Some of the stolen coins head for mixers, services built to blur the trail. By the latest public tallies, much of the rest is still sitting.",
+  "seed": 3
+ },
+ {
+  "id": "f6_s4",
+  "text": "Some of the stolen coins head for mixers, services built to blur the trail. By the latest public tallies, much of the rest is still sitting.",
+  "seed": 4
+ },
+ {
+  "id": "g6_s2",
+  "text": "Block's investigators say the first wave operator appears to have done that through a paid account at a well-known blockchain data provider.",
+  "seed": 2
+ },
+ {
+  "id": "g6_s3",
+  "text": "Block's investigators say the first wave operator appears to have done that through a paid account at a well-known blockchain data provider.",
+  "seed": 3
+ },
+ {
+  "id": "g6_s4",
+  "text": "Block's investigators say the first wave operator appears to have done that through a paid account at a well-known blockchain data provider.",
+  "seed": 4
+ },
+ {
+  "id": "g7_s2",
+  "text": "They contacted the provider. Its internal logs, they say, matched the attack with extraordinary specificity: the number, the timing and the order of the requests.",
+  "seed": 2
+ },
+ {
+  "id": "g7_s3",
+  "text": "They contacted the provider. Its internal logs, they say, matched the attack with extraordinary specificity: the number, the timing and the order of the requests.",
+  "seed": 3
+ },
+ {
+  "id": "g7_s4",
+  "text": "They contacted the provider. Its internal logs, they say, matched the attack with extraordinary specificity: the number, the timing and the order of the requests.",
+  "seed": 4
+ },
+ {
+  "id": "c13_ck_s2",
+  "text": "That's Coin-kite's assumption. It hasn't been proven.",
+  "seed": 2
+ },
+ {
+  "id": "c13_ck_s3",
+  "text": "That's Coin-kite's assumption. It hasn't been proven.",
+  "seed": 3
+ },
+ {
+  "id": "k6_ck_s2",
+  "text": "If you made a seed on an affected Coldcard, read Coin-kite's advisory.",
+  "seed": 2
+ },
+ {
+  "id": "k6_ck_s3",
+  "text": "If you made a seed on an affected Coldcard, read Coin-kite's advisory.",
+  "seed": 3
+ },
+ {
+  "id": "h1_ck_s2",
+  "text": "So, at the time of this video, no one has been publicly named. T R M Labs doesn't attribute the theft to anyone. Coin-kite says its lawyers are working with law enforcement to identify those responsible.",
+  "seed": 2
+ },
+ {
+  "id": "h1_ck_s3",
+  "text": "So, at the time of this video, no one has been publicly named. T R M Labs doesn't attribute the theft to anyone. Coin-kite says its lawyers are working with law enforcement to identify those responsible.",
+  "seed": 3
+ }
+]
