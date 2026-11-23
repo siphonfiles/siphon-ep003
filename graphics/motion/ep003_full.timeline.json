@@ -1,0 +1,873 @@
+{
+ "total": 637.566,
+ "events": [
+  {
+   "kind": "level",
+   "t": 0.0,
+   "value": "teaser"
+  },
+  {
+   "kind": "music",
+   "t": 0.0,
+   "value": "full"
+  },
+  {
+   "kind": "voice",
+   "t": 1.2,
+   "id": "t1",
+   "dur": 6.645
+  },
+  {
+   "kind": "hit",
+   "t": 7.845
+  },
+  {
+   "kind": "card",
+   "t": 8.745
+  },
+  {
+   "kind": "voice",
+   "t": 10.945,
+   "id": "t2",
+   "dur": 5.658
+  },
+  {
+   "kind": "hit",
+   "t": 16.603
+  },
+  {
+   "kind": "voice",
+   "t": 17.503,
+   "id": "t3",
+   "dur": 2.967
+  },
+  {
+   "kind": "hit",
+   "t": 20.47
+  },
+  {
+   "kind": "card",
+   "t": 21.37
+  },
+  {
+   "kind": "voice",
+   "t": 23.37,
+   "id": "t4",
+   "dur": 4.663
+  },
+  {
+   "kind": "hit",
+   "t": 28.033
+  },
+  {
+   "kind": "voice",
+   "t": 28.933,
+   "id": "t5",
+   "dur": 3.748
+  },
+  {
+   "kind": "hit",
+   "t": 32.681
+  },
+  {
+   "kind": "voice",
+   "t": 33.581,
+   "id": "t6",
+   "dur": 2.769
+  },
+  {
+   "kind": "hit",
+   "t": 36.601
+  },
+  {
+   "kind": "music",
+   "t": 36.601,
+   "value": "fade"
+  },
+  {
+   "kind": "drop",
+   "t": 38.001
+  },
+  {
+   "kind": "card",
+   "t": 38.001
+  },
+  {
+   "kind": "voice",
+   "t": 42.001,
+   "id": "i1",
+   "dur": 3.37
+  },
+  {
+   "kind": "voice",
+   "t": 45.871,
+   "id": "i2",
+   "dur": 3.321
+  },
+  {
+   "kind": "voice",
+   "t": 49.792,
+   "id": "i3",
+   "dur": 2.647
+  },
+  {
+   "kind": "voice",
+   "t": 52.938,
+   "id": "i4",
+   "dur": 2.228
+  },
+  {
+   "kind": "hit",
+   "t": 55.166
+  },
+  {
+   "kind": "card",
+   "t": 56.766
+  },
+  {
+   "kind": "level",
+   "t": 58.266,
+   "value": "narration"
+  },
+  {
+   "kind": "music",
+   "t": 58.266,
+   "value": "pulse@3"
+  },
+  {
+   "kind": "voice",
+   "t": 58.266,
+   "id": "a1",
+   "dur": 6.684
+  },
+  {
+   "kind": "voice",
+   "t": 65.65,
+   "id": "a2",
+   "dur": 7.17
+  },
+  {
+   "kind": "voice",
+   "t": 73.421,
+   "id": "a3",
+   "dur": 8.321
+  },
+  {
+   "kind": "voice",
+   "t": 82.542,
+   "id": "a4",
+   "dur": 10.112
+  },
+  {
+   "kind": "music",
+   "t": 89.855,
+   "value": "fade:4.0"
+  },
+  {
+   "kind": "voice",
+   "t": 93.555,
+   "id": "a5",
+   "dur": 4.1
+  },
+  {
+   "kind": "hit",
+   "t": 97.654
+  },
+  {
+   "kind": "card",
+   "t": 98.854
+  },
+  {
+   "kind": "music",
+   "t": 100.354,
+   "value": "pulse@3"
+  },
+  {
+   "kind": "voice",
+   "t": 100.354,
+   "id": "b1",
+   "dur": 8.053
+  },
+  {
+   "kind": "voice",
+   "t": 109.007,
+   "id": "b2",
+   "dur": 4.748
+  },
+  {
+   "kind": "hit",
+   "t": 114.355
+  },
+  {
+   "kind": "card",
+   "t": 114.355
+  },
+  {
+   "kind": "voice",
+   "t": 116.355,
+   "id": "b3",
+   "dur": 8.676
+  },
+  {
+   "kind": "card",
+   "t": 125.531
+  },
+  {
+   "kind": "voice",
+   "t": 128.531,
+   "id": "b4",
+   "dur": 10.483
+  },
+  {
+   "kind": "voice",
+   "t": 139.714,
+   "id": "b5",
+   "dur": 6.292
+  },
+  {
+   "kind": "voice",
+   "t": 146.705,
+   "id": "b6",
+   "dur": 6.396
+  },
+  {
+   "kind": "music",
+   "t": 150.301,
+   "value": "fade:4.0"
+  },
+  {
+   "kind": "card",
+   "t": 153.401
+  },
+  {
+   "kind": "voice",
+   "t": 155.801,
+   "id": "b7",
+   "dur": 5.77
+  },
+  {
+   "kind": "hit",
+   "t": 161.572
+  },
+  {
+   "kind": "voice",
+   "t": 162.572,
+   "id": "b8",
+   "dur": 1.519
+  },
+  {
+   "kind": "voice",
+   "t": 164.59,
+   "id": "b9",
+   "dur": 2.062
+  },
+  {
+   "kind": "voice",
+   "t": 167.152,
+   "id": "b10",
+   "dur": 1.64
+  },
+  {
+   "kind": "card",
+   "t": 169.992
+  },
+  {
+   "kind": "music",
+   "t": 171.492,
+   "value": "pulse@3"
+  },
+  {
+   "kind": "voice",
+   "t": 171.492,
+   "id": "c1",
+   "dur": 9.823
+  },
+  {
+   "kind": "voice",
+   "t": 181.915,
+   "id": "c2",
+   "dur": 6.192
+  },
+  {
+   "kind": "music",
+   "t": 185.307,
+   "value": "fade:4.0"
+  },
+  {
+   "kind": "voice",
+   "t": 188.907,
+   "id": "c3",
+   "dur": 4.153
+  },
+  {
+   "kind": "voice",
+   "t": 193.56,
+   "id": "c4",
+   "dur": 3.203
+  },
+  {
+   "kind": "music",
+   "t": 197.563,
+   "value": "pulse@3"
+  },
+  {
+   "kind": "voice",
+   "t": 197.563,
+   "id": "c5",
+   "dur": 8.9
+  },
+  {
+   "kind": "voice",
+   "t": 207.063,
+   "id": "c6",
+   "dur": 7.322
+  },
+  {
+   "kind": "card",
+   "t": 214.686
+  },
+  {
+   "kind": "voice",
+   "t": 217.286,
+   "id": "c7",
+   "dur": 6.907
+  },
+  {
+   "kind": "voice",
+   "t": 224.793,
+   "id": "c8",
+   "dur": 5.061
+  },
+  {
+   "kind": "music",
+   "t": 227.054,
+   "value": "fade:4.0"
+  },
+  {
+   "kind": "voice",
+   "t": 230.554,
+   "id": "c9",
+   "dur": 10.662
+  },
+  {
+   "kind": "hit",
+   "t": 241.816
+  },
+  {
+   "kind": "card",
+   "t": 241.816
+  },
+  {
+   "kind": "voice",
+   "t": 243.816,
+   "id": "c10",
+   "dur": 4.94
+  },
+  {
+   "kind": "card",
+   "t": 249.156
+  },
+  {
+   "kind": "voice",
+   "t": 251.556,
+   "id": "c11",
+   "dur": 1.506
+  },
+  {
+   "kind": "hit",
+   "t": 253.062
+  },
+  {
+   "kind": "voice",
+   "t": 253.862,
+   "id": "c12",
+   "dur": 3.793
+  },
+  {
+   "kind": "voice",
+   "t": 258.155,
+   "id": "c13",
+   "dur": 2.624
+  },
+  {
+   "kind": "voice",
+   "t": 261.379,
+   "id": "c14",
+   "dur": 2.723
+  },
+  {
+   "kind": "voice",
+   "t": 264.602,
+   "id": "c15",
+   "dur": 3.139
+  },
+  {
+   "kind": "voice",
+   "t": 268.341,
+   "id": "c16",
+   "dur": 2.258
+  },
+  {
+   "kind": "hit",
+   "t": 271.799
+  },
+  {
+   "kind": "card",
+   "t": 271.799
+  },
+  {
+   "kind": "track",
+   "t": 273.999,
+   "value": "vault_run"
+  },
+  {
+   "kind": "level",
+   "t": 273.999,
+   "value": "key"
+  },
+  {
+   "kind": "music",
+   "t": 273.999,
+   "value": "full"
+  },
+  {
+   "kind": "voice",
+   "t": 273.999,
+   "id": "d1",
+   "dur": 5.02
+  },
+  {
+   "kind": "voice",
+   "t": 279.619,
+   "id": "d2",
+   "dur": 4.664
+  },
+  {
+   "kind": "voice",
+   "t": 284.883,
+   "id": "d3",
+   "dur": 6.367
+  },
+  {
+   "kind": "voice",
+   "t": 291.85,
+   "id": "d4",
+   "dur": 8.206
+  },
+  {
+   "kind": "voice",
+   "t": 300.656,
+   "id": "d5",
+   "dur": 1.225
+  },
+  {
+   "kind": "music",
+   "t": 300.181,
+   "value": "fade:2.9"
+  },
+  {
+   "kind": "voice",
+   "t": 302.881,
+   "id": "d6",
+   "dur": 1.224
+  },
+  {
+   "kind": "voice",
+   "t": 304.705,
+   "id": "d7",
+   "dur": 10.139
+  },
+  {
+   "kind": "hit",
+   "t": 314.844
+  },
+  {
+   "kind": "voice",
+   "t": 315.744,
+   "id": "d8",
+   "dur": 6.131
+  },
+  {
+   "kind": "voice",
+   "t": 322.675,
+   "id": "d9",
+   "dur": 1.43
+  },
+  {
+   "kind": "hit",
+   "t": 324.105
+  },
+  {
+   "kind": "card",
+   "t": 325.705
+  },
+  {
+   "kind": "track",
+   "t": 327.205,
+   "value": "memory_piano"
+  },
+  {
+   "kind": "level",
+   "t": 327.205,
+   "value": "narration"
+  },
+  {
+   "kind": "music",
+   "t": 327.205,
+   "value": "full@3"
+  },
+  {
+   "kind": "voice",
+   "t": 327.205,
+   "id": "e1",
+   "dur": 11.953
+  },
+  {
+   "kind": "voice",
+   "t": 339.759,
+   "id": "e2",
+   "dur": 8.179
+  },
+  {
+   "kind": "voice",
+   "t": 348.637,
+   "id": "e3",
+   "dur": 9.063
+  },
+  {
+   "kind": "card",
+   "t": 358.0
+  },
+  {
+   "kind": "voice",
+   "t": 360.6,
+   "id": "e4",
+   "dur": 3.068
+  },
+  {
+   "kind": "card",
+   "t": 363.968
+  },
+  {
+   "kind": "voice",
+   "t": 366.368,
+   "id": "e5",
+   "dur": 5.532
+  },
+  {
+   "kind": "voice",
+   "t": 372.5,
+   "id": "e6",
+   "dur": 3.101
+  },
+  {
+   "kind": "voice",
+   "t": 376.301,
+   "id": "e7",
+   "dur": 10.002
+  },
+  {
+   "kind": "music",
+   "t": 383.503,
+   "value": "fade:4.0"
+  },
+  {
+   "kind": "card",
+   "t": 386.603
+  },
+  {
+   "kind": "voice",
+   "t": 389.203,
+   "id": "e8",
+   "dur": 1.984
+  },
+  {
+   "kind": "voice",
+   "t": 391.688,
+   "id": "e9",
+   "dur": 2.839
+  },
+  {
+   "kind": "hit",
+   "t": 394.526
+  },
+  {
+   "kind": "card",
+   "t": 395.726
+  },
+  {
+   "kind": "track",
+   "t": 397.226,
+   "value": "heist"
+  },
+  {
+   "kind": "level",
+   "t": 397.226,
+   "value": "narration"
+  },
+  {
+   "kind": "music",
+   "t": 397.226,
+   "value": "drums@3"
+  },
+  {
+   "kind": "voice",
+   "t": 397.226,
+   "id": "f1",
+   "dur": 5.19
+  },
+  {
+   "kind": "voice",
+   "t": 403.016,
+   "id": "f2",
+   "dur": 7.163
+  },
+  {
+   "kind": "voice",
+   "t": 410.779,
+   "id": "f3",
+   "dur": 7.802
+  },
+  {
+   "kind": "voice",
+   "t": 419.181,
+   "id": "f4",
+   "dur": 8.535
+  },
+  {
+   "kind": "voice",
+   "t": 428.416,
+   "id": "f5",
+   "dur": 11.788
+  },
+  {
+   "kind": "voice",
+   "t": 440.804,
+   "id": "f6",
+   "dur": 7.253
+  },
+  {
+   "kind": "voice",
+   "t": 448.658,
+   "id": "f7",
+   "dur": 6.943
+  },
+  {
+   "kind": "music",
+   "t": 452.801,
+   "value": "fade:4.0"
+  },
+  {
+   "kind": "voice",
+   "t": 456.401,
+   "id": "f8",
+   "dur": 5.273
+  },
+  {
+   "kind": "hit",
+   "t": 461.674
+  },
+  {
+   "kind": "voice",
+   "t": 462.874,
+   "id": "g1",
+   "dur": 3.643
+  },
+  {
+   "kind": "voice",
+   "t": 467.017,
+   "id": "g2",
+   "dur": 3.326
+  },
+  {
+   "kind": "voice",
+   "t": 470.844,
+   "id": "g3",
+   "dur": 2.88
+  },
+  {
+   "kind": "voice",
+   "t": 474.223,
+   "id": "g4",
+   "dur": 2.706
+  },
+  {
+   "kind": "music",
+   "t": 477.629,
+   "value": "pulse@3"
+  },
+  {
+   "kind": "voice",
+   "t": 477.629,
+   "id": "g5",
+   "dur": 6.02
+  },
+  {
+   "kind": "voice",
+   "t": 484.249,
+   "id": "g6",
+   "dur": 6.704
+  },
+  {
+   "kind": "voice",
+   "t": 491.552,
+   "id": "g7",
+   "dur": 8.956
+  },
+  {
+   "kind": "music",
+   "t": 497.708,
+   "value": "fade:4.0"
+  },
+  {
+   "kind": "voice",
+   "t": 501.108,
+   "id": "g8",
+   "dur": 2.787
+  },
+  {
+   "kind": "voice",
+   "t": 504.395,
+   "id": "g9",
+   "dur": 2.115
+  },
+  {
+   "kind": "voice",
+   "t": 507.31,
+   "id": "g10",
+   "dur": 7.2
+  },
+  {
+   "kind": "voice",
+   "t": 515.11,
+   "id": "g11",
+   "dur": 5.612
+  },
+  {
+   "kind": "hit",
+   "t": 520.722
+  },
+  {
+   "kind": "card",
+   "t": 521.922
+  },
+  {
+   "kind": "voice",
+   "t": 524.322,
+   "id": "h1",
+   "dur": 11.531
+  },
+  {
+   "kind": "voice",
+   "t": 536.553,
+   "id": "h2",
+   "dur": 6.621
+  },
+  {
+   "kind": "voice",
+   "t": 543.874,
+   "id": "h3",
+   "dur": 18.594
+  },
+  {
+   "kind": "voice",
+   "t": 563.168,
+   "id": "h4",
+   "dur": 7.644
+  },
+  {
+   "kind": "card",
+   "t": 571.112
+  },
+  {
+   "kind": "voice",
+   "t": 573.512,
+   "id": "h5",
+   "dur": 10.065
+  },
+  {
+   "kind": "card",
+   "t": 584.776
+  },
+  {
+   "kind": "voice",
+   "t": 586.276,
+   "id": "k1",
+   "dur": 7.221
+  },
+  {
+   "kind": "voice",
+   "t": 593.998,
+   "id": "k2",
+   "dur": 1.971
+  },
+  {
+   "kind": "voice",
+   "t": 596.868,
+   "id": "k3",
+   "dur": 2.622
+  },
+  {
+   "kind": "voice",
+   "t": 599.99,
+   "id": "k4",
+   "dur": 2.308
+  },
+  {
+   "kind": "voice",
+   "t": 602.799,
+   "id": "k5",
+   "dur": 2.98
+  },
+  {
+   "kind": "voice",
+   "t": 606.379,
+   "id": "k6",
+   "dur": 4.002
+  },
+  {
+   "kind": "voice",
+   "t": 610.881,
+   "id": "k7",
+   "dur": 3.781
+  },
+  {
+   "kind": "track",
+   "t": 615.463,
+   "value": "heist"
+  },
+  {
+   "kind": "level",
+   "t": 615.463,
+   "value": "key"
+  },
+  {
+   "kind": "music",
+   "t": 615.463,
+   "value": "full@2"
+  },
+  {
+   "kind": "voice",
+   "t": 615.763,
+   "id": "k8",
+   "dur": 7.089
+  },
+  {
+   "kind": "voice",
+   "t": 623.651,
+   "id": "k9",
+   "dur": 4.0
+  },
+  {
+   "kind": "voice",
+   "t": 628.851,
+   "id": "k10",
+   "dur": 1.515
+  },
+  {
+   "kind": "music",
+   "t": 631.566,
+   "value": "fade"
+  }
+ ]
+}
