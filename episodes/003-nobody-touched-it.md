@@ -5,9 +5,9 @@
 
 **Subject:** the Coldcard hardware-wallet thefts (30 July – early August 2026). A build error in Coinkite's March 2021 firmware made some Coldcard devices create wallet seeds from a predictable software generator instead of the hardware random-number chip. Attackers rebuilt the seeds offline and swept about 1,816 BTC (about $116M) from more than 5,200 addresses in four waves, without touching a single device.
 **Angle:** the device built to be the safest place for bitcoin was, for more than five years, predictable. The safety check that should have stopped the build was there, and it passed. The first thief may have left a trail, not on the blockchain, but in a paid account.
-**Status:** DRAFT v3.2, written 2026-11-23 (v1 and v2 the same day; v3 = story rewrite on the same verified facts, see "Changes from v2"; v3.1 = full grammar/logic/question-and-answer review, see "Changes in v3.1"; v3.2 = Goodman facts verified on the web, see "Changes in v3.2"). Facts checked against the sources below (see "Notes for proprietarul's check"). Proprietarul must check it before any generation (rule 10).
+**Status:** DRAFT v3.3, written 2026-11-23 (v1 and v2 the same day; v3 = story rewrite on the same verified facts, see "Changes from v2"; v3.1 = full grammar/logic/question-and-answer review, see "Changes in v3.1"; v3.2 = Goodman facts verified on the web, see "Changes in v3.2"; v3.3 = every claim that can still change is dated, see "Changes in v3.3"). Facts checked against the sources below (see "Notes for proprietarul's check"). Proprietarul must check it before any generation (rule 10).
 **Target length:** about 10:45–11:15 with cards, pauses, music beats and end card (rule 13).
-**Length:** 1,581 spoken words (automatic count, cards and cues excluded), Thomas 256 words in 28 lines (~1:30), each ≤ 12 words so every line fits one 5 s LongCat clip (≤ 4.7 s of speech). Ep. 002 ran 11:11 with 1,577 words, so this lands at about 10:50–11:10.
+**Length:** 1,625 spoken words (automatic count, cards and cues excluded), Thomas 256 words in 28 lines (~1:30), each ≤ 12 words so every line fits one 5 s LongCat clip (≤ 4.7 s of speech). Ep. 002 ran 11:11 with 1,577 words, so this lands at about 11:00–11:20.
 
 Notation (same as ep. 001/002):
 - `[THOMAS]` = Thomas on camera, one line = one clip. `[VO]` = voice over b-roll. `[VIS]` = on screen. `[CARD]` = quote shown as text, never voiced as the real person. `[S#]` = source.
@@ -149,7 +149,7 @@ Coinkite later puts it at about 40 bits of real randomness. A proper seed has at
 `[THOMAS]` For a computer guessing offline, it's a search that ends.
 
 `[VO]`
-Newer models fare better, at about 72 bits. Still far short of a proper seed, though there's no public evidence that any of them were drained in these attacks. [S1][S2]
+Newer models fare better, at about 72 bits. Still far short of a proper seed, though so far there's no public evidence that any of them were drained in these attacks. [S1][S2]
 
 `[VO]`
 The hardware generator is still there, inside every device. Coinkite's own technical write-up later admits it was being used… [S2]
@@ -274,13 +274,13 @@ So one owner, Will Owens, fights back. He leaves a small amount behind as bait, 
 Later, volunteer white hats move about 52 bitcoin out of exposed wallets, into a trust set up to return it to victims. In September, the trust hands more than 20 bitcoin back to one verified owner. [S18][S32]
 
 `[VO]`
-Some of the stolen coins head for mixers, services built to blur the trail. Much of the rest just sits. [S7]
+Some of the stolen coins head for mixers, services built to blur the trail. By the latest public tallies, much of the rest is still sitting. [S7][S34]
 
 `[VO]`
 By the time the waves slow down, about 1,816 bitcoin have been taken, from more than 5,200 addresses. [S7]
 
 `[VO]`
-But the biggest piece, the first wave, hasn't moved at all.
+But the biggest piece, the first wave, still hasn't moved, according to the latest public tracking. [S34]
 
 ---
 
@@ -307,23 +307,25 @@ They contacted the provider. Its internal logs, they say, matched the attack "wi
 The information went to law enforcement. Galaxy's Alex Thorn says the first-wave attacker's identity "may be known to law enforcement". [S19]
 
 `[VO]`
-But the FBI has not confirmed a suspect, an arrest, or any recovery. [S20]
+But as we make this video, the FBI has not confirmed a suspect, an arrest, or any recovery. [S20]
 
 ---
 
 ## 9:20 — WHO?
 
-`[VO]`
-So, publicly, no one knows who did it. TRM Labs doesn't attribute the theft to anyone. Coinkite says its lawyers are working with law enforcement to identify those responsible. [S7][S27]
+`[CARD]` **STATUS AS OF LATE NOVEMBER 2026**
 
 `[VO]`
-Online, some call it an inside job. There's no public evidence for that, and no one has been accused. [S7][S20]
+So, at the time of this video, no one has been publicly named. TRM Labs doesn't attribute the theft to anyone. Coinkite says its lawyers are working with law enforcement to identify those responsible. [S7][S27]
 
 `[VO]`
-In September, a Coldcard owner filed a proposed class action in Ontario against Coinkite and its co-founders. It alleges the company knew its seed generation was weak by May 2025. Those claims have not been tested in court. [S23]
+Online, some call it an inside job. So far, there's no public evidence for that, and no one has been accused. [S7][S20]
 
 `[VO]`
-As of the latest reports, Coinkite hasn't announced any compensation fund. And Goodman isn't counting on the lawsuit. [S33][S30]
+In September, a Coldcard owner filed a proposed class action in Ontario against Coinkite and its co-founders. It alleges the company knew its seed generation was weak by May 2025. As of the latest reports, a judge hasn't even certified it as a class action yet, and none of its claims have been tested in court. [S23][S35]
+
+`[VO]`
+And, as far as public reports show, Coinkite hasn't announced any compensation fund. Goodman isn't counting on the lawsuit. [S33][S30]
 
 `[CARD]` **"The math on a class action is brutal."** — Jonathan Goodman, to The News Block [S30]
 
@@ -349,7 +351,7 @@ The ones who didn't leave it all to the device.
 `[MUSIC: full]` Heist theme returns, fades over 5 s.
 
 `[VO]`
-And the 1,082 bitcoin from the first wave? As of the latest public reports, they're still sitting where the thief left them. [S19]
+And the 1,082 bitcoin from the first wave? As of the latest public tracking, they're still sitting where the thief left them. [S19][S34]
 
 `[VO]`
 And somewhere, in a data company's records, there may be a name.
@@ -396,6 +398,9 @@ And somewhere, in a data company's records, there may be a name.
 - [S31] VT / LADbible, 13 Aug 2026 (all three of his wallets drained in seven minutes): https://vt.co/news/world/man-loses-1-6-million-bitcoin-coldcard-hack-100-percent-secure-warning · AlphaWire (18.25 BTC from three wallets): https://alphawire.xyz/news/bitcoin/coldcard-seed-flaw-three-bitcoin-wallets/
 - [S32] Steptoe, *Crypto Recovery Trust… returns bitcoin to its owner after Coldcard exploit*, 24 Sep 2026 (more than 20 BTC returned on 23 Sep to one verified, unnamed owner; ~50 BTC deposited by white hats): https://www.steptoe.com/en/news-publications/crypto-recovery-trust-advised-by-steptoe-attorneys-returns-dollar17m-in-bitcoin-to-its-owner-after-coldcard-exploit.html
 - [S33] Crypto Briefing (Coinkite "has not announced any compensation fund or insurance mechanism"): https://cryptobriefing.com/coinkite-coldcard-bitcoin-hack-130m/ · BIT Knowledge Hub (no official compensation plan as of early August): https://www.bit.com/insights/knowledge-hub/coldcard-the-security-first-wallet-that-got-hacked
+
+- [S34] Bitcoin News / AMBCrypto, ~24 Sep 2026 (Galaxy's Alex Thorn: wave 1 still untouched at ~1,082.57 BTC; part of wave 3 moved through CoinJoin, THORChain and Tornado Cash): https://bitcoinnews.com/p/white-hat-hackers-move-52-btc-coldcard-hack · https://ambcrypto.com/the-coldcard-recovery-continues-white-hats-rescue-52-37-bitcoin-but-questions-remain/
+- [S35] OpenClassActions, 28 Oct 2026 (Ontario proposed class action: not certified, no settlement, nothing to claim): https://openclassactions.com/lawsuits/coinkite-coldcard-bitcoin-wallet-class-action-lawsuit.php
 
 ---
 
@@ -508,3 +513,19 @@ The question "did Goodman get anything back?" has been checked, and the answer i
 2. **The race**: the white-hat trust handed more than 20 BTC back to one verified owner in September [S32] (a real moment of hope, before the close).
 3. **Precise facts from Goodman himself:** three Coldcards (teaser and close now say "three devices"), words stamped into metal, three wallets emptied one after another, report to the Ontario Securities Commission as well as the police [S12][S30][S31].
 1,527 → 1,581 words (~10:50–11:10). Thomas's lines are unchanged except two words in the close ("devices", "They… their"), still ≤12 words.
+
+---
+
+## Changes in v3.3 (23 Nov 2026, rule from proprietarul: anything that can still change is said "as of this video")
+
+**New rule for this and every future script:** any status that can still change (an arrest, an identity, coins that haven't moved, a lawsuit, compensation, a final loss figure) is said with a time marker: "as we make this video", "at the time of this video", "so far", "as of the latest public tracking". Past events (what happened on 29–30 July) need none.
+
+Checked again on 23 Nov (web search):
+- **Arrests / charges / identity:** nothing found. The FBI has confirmed nothing [S20].
+- **Wave 1 coins:** the latest public tracking (Galaxy via Bitcoin News / AMBCrypto, ~24 Sep) still shows ~1,082.57 BTC untouched [S34]. No later movement found.
+- **Class action:** as of 28 Oct, proposed only and not certified [S35].
+- **Compensation:** none announced [S33].
+
+Lines that got a time marker: newer models "so far" not drained; "much of the rest is still sitting"; wave 1 "still hasn't moved, according to the latest public tracking"; FBI "as we make this video"; Who? opens with the card **STATUS AS OF LATE NOVEMBER 2026** and "at the time of this video, no one has been publicly named"; inside job "so far"; class action not yet certified "as of the latest reports"; compensation "as far as public reports show"; close "as of the latest public tracking".
+
+**Before publishing:** re-check the same four items on the day of upload. If anything changed, update the line and the card date.

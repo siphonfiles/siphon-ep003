@@ -1,10 +1,10 @@
 # Episodul 003: Nimeni nu l-a atins (traducere pentru verificare)
 
-> Traducerea în română a draftului v3.2 (`003-nobody-touched-it.md`), doar ca să-l verifici. Textul care se înregistrează rămâne cel în engleză. Sursele [S#] sunt aceleași ca în fișierul englezesc.
+> Traducerea în română a draftului v3.3 (`003-nobody-touched-it.md`), doar ca să-l verifici. Textul care se înregistrează rămâne cel în engleză. Sursele [S#] sunt aceleași ca în fișierul englezesc.
 
 **Titlu propus:** „Inside the $116M Coldcard Hack” · text pe thumbnail: **„NOBODY TOUCHED IT.”** („Nimeni nu l-a atins.”)
 **Test & Compare propus:** (A) titlul de mai sus + „NOBODY TOUCHED IT.”; (B) „The Safest Bitcoin Wallet Was Guessable for 5 Years” + „41 MINUTES.”; (C) „Inside the Coldcard Hack: $116M Gone Without a Touch” + „5 YEARS. 41 MINUTES.”
-**Lungime:** 1.581 de cuvinte rostite, dintre care Thomas 256 în 28 de replici (~1:30), fiecare de cel mult 12 cuvinte, adică un clip LongCat de 5 s. Estimare: ~10:50–11:10.
+**Lungime:** 1.625 de cuvinte rostite, dintre care Thomas 256 în 28 de replici (~1:30), fiecare de cel mult 12 cuvinte, adică un clip LongCat de 5 s. Estimare: ~11:00–11:20.
 
 **Linia editorială, pe scurt:**
 - Nimeni nu e identificat, acuzat sau arestat. FBI n-a confirmat nimic. Citez exact ce a spus Alex Thorn (Galaxy): identitatea primului atacator „s-ar putea să fie cunoscută autorităților”.
@@ -75,7 +75,7 @@
 `[VO]` Coinkite estimează mai târziu cam 40 de biți de hazard real. O listă corectă are cel puțin 128.
 `[THOMAS]` Patruzeci de biți înseamnă cam o mie de miliarde de posibilități. Sună mult.
 `[THOMAS]` Pentru un calculator care ghicește offline, e o căutare care se termină.
-`[VO]` Modelele mai noi stau mai bine, la cam 72 de biți. Tot mult sub o listă corectă, deși nu există dovezi publice că vreunul dintre ele a fost golit în aceste atacuri.
+`[VO]` Modelele mai noi stau mai bine, la cam 72 de biți. Tot mult sub o listă corectă, deși deocamdată nu există dovezi publice că vreunul dintre ele a fost golit în aceste atacuri.
 `[VO]` Circuitul de numere aleatorii e tot acolo, în fiecare dispozitiv. Analiza tehnică a Coinkite recunoaște mai târziu că era folosit…
 `[CARTON]` „…doar din întâmplare, și doar pentru lucruri mai puțin importante.” — Coinkite
 `[VO]` Așa că acum știi ceva ce Goodman nu știe. Cuvintele lui n-au fost niciodată cu adevărat aleatorii. Iar codul e public. Oricine îl poate citi.
@@ -132,9 +132,9 @@
 `[VO]` Dar în al patrulea val, tranzacțiile hoților așteaptă să fie confirmate. Până atunci, oricine plătește o taxă mai mare le poate înlocui.
 `[VO]` Așa că un proprietar, Will Owens, ripostează. Lasă o sumă mică drept momeală, așteaptă ca botul s-o ia și îl întrece la taxă. Își recuperează momeala.
 `[VO]` Mai târziu, voluntari white hat mută cam 52 de bitcoini din portofelele expuse, într-un trust făcut să-i returneze victimelor. În septembrie, trustul îi dă înapoi unui proprietar verificat peste 20 de bitcoini.
-`[VO]` O parte din monedele furate merg spre mixere, servicii făcute să încurce urma. Mare parte din rest doar stă.
+`[VO]` O parte din monedele furate merg spre mixere, servicii făcute să încurce urma. Conform ultimelor bilanțuri publice, mare parte din rest încă stă.
 `[VO]` Când valurile se domolesc, fuseseră luați cam 1.816 bitcoini, de pe peste 5.200 de adrese.
-`[VO]` Dar bucata cea mai mare, primul val, nu s-a mișcat deloc.
+`[VO]` Dar bucata cea mai mare, primul val, încă nu s-a mișcat, conform celor mai recente urmăriri publice.
 
 ---
 
@@ -150,16 +150,17 @@
 `[THOMAS]` Pe blockchain, hoțul era doar un șir de adrese.
 `[THOMAS]` Dar un cont plătit lasă de obicei urme.
 `[VO]` Informațiile au ajuns la autorități. Alex Thorn, de la Galaxy, spune că identitatea atacatorului din primul val „s-ar putea să fie cunoscută autorităților”.
-`[VO]` Dar FBI n-a confirmat niciun suspect, nicio arestare și nicio recuperare.
+`[VO]` Dar, în momentul realizării acestui video, FBI n-a confirmat niciun suspect, nicio arestare și nicio recuperare.
 
 ---
 
 ## 9:20 — CINE?
 
-`[VO]` Așa că, public, nu se știe cine a făcut-o. TRM Labs nu atribuie furtul nimănui. Coinkite spune că avocații ei lucrează cu autoritățile ca să-i identifice pe vinovați.
-`[VO]` Online, unii spun că a fost din interior. Nu există dovezi publice pentru asta, și nimeni n-a fost acuzat.
-`[VO]` În septembrie, un proprietar de Coldcard a depus în Ontario o propunere de proces colectiv contra Coinkite și a cofondatorilor. Acuzația: firma știa din mai 2025 că generarea cuvintelor e slabă. Afirmațiile n-au fost testate în instanță.
-`[VO]` Conform celor mai recente rapoarte, Coinkite n-a anunțat niciun fond de despăgubire. Iar Goodman nu se bazează pe proces.
+`[CARTON]` **SITUAȚIA LA SFÂRȘITUL LUI NOIEMBRIE 2026**
+`[VO]` Așa că, în momentul acestui video, nimeni n-a fost numit public. TRM Labs nu atribuie furtul nimănui. Coinkite spune că avocații ei lucrează cu autoritățile ca să-i identifice pe vinovați.
+`[VO]` Online, unii spun că a fost din interior. Deocamdată nu există dovezi publice pentru asta, și nimeni n-a fost acuzat.
+`[VO]` În septembrie, un proprietar de Coldcard a depus în Ontario o propunere de proces colectiv contra Coinkite și a cofondatorilor. Acuzația: firma știa din mai 2025 că generarea cuvintelor e slabă. Conform ultimelor rapoarte, un judecător nici nu l-a certificat încă drept proces colectiv, iar niciuna dintre afirmații n-a fost testată în instanță.
+`[VO]` Și, din câte arată rapoartele publice, Coinkite n-a anunțat niciun fond de despăgubire. Goodman nu se bazează pe proces.
 `[CARTON]` „Calculul la un proces colectiv e brutal.” — Jonathan Goodman, pentru The News Block
 `[VO]` CEO-ul Coinkite spune că problema a afectat cam 0,17% dintre utilizatori. Cel mai nou firmware cere acum fiecărui proprietar să adauge hazard propriu când își face lista.
 
@@ -174,7 +175,7 @@
 `[THOMAS]` Doar că n-au cerut niciodată lista circuitului lor de numere aleatorii.
 `[THOMAS]` Dacă ți-ai făcut lista pe un Coldcard afectat, citește avertismentul Coinkite.
 `[THOMAS]` Coinkite spune: consider-o compromisă și mută-te pe o listă nouă.
-`[VO]` Și cei 1.082 de bitcoini din primul val? Conform celor mai recente rapoarte publice, stau tot unde i-a lăsat hoțul.
+`[VO]` Și cei 1.082 de bitcoini din primul val? Conform celor mai recente urmăriri publice, stau tot unde i-a lăsat hoțul.
 `[VO]` Iar undeva, în evidențele unei firme de date, s-ar putea să existe un nume.
 `[THOMAS]` Acesta a fost Siphon Files.
 
@@ -210,3 +211,10 @@
 - **O rază de speranță reală:** în septembrie, trustul white hat i-a dat înapoi unui proprietar verificat (nenumit) peste 20 de bitcoini. Apare la „Cursa”.
 - **Detalii exacte, chiar de la el:** avea trei Coldcard-uri și trei portofele golite unul după altul, cuvintele ștanțate în metal, plus sesizare și la Comisia de Valori Mobiliare din Ontario.
 - Postarea lui spune că a aflat „la cabană”, iar interviurile spun că a verificat la o bibliotecă, cu familia jos. Se potrivesc, deci rămâne biblioteca.
+
+## Ce s-a schimbat în v3.3 (regula ta: „până la momentul acestui video”)
+
+- **Regulă nouă, pentru acest episod și pentru toate de acum încolo:** orice situație care se mai poate schimba (arestări, identitatea hoțului, monedele care n-au mișcat, procesul, despăgubirile, cifra finală) se spune cu un marcaj de timp: „în momentul acestui video”, „deocamdată”, „conform celor mai recente urmăriri publice”. Ce s-a întâmplat pe 29–30 iulie nu are nevoie de marcaj.
+- **Verificat azi, 23 nov.:** nicio arestare sau acuzare găsită, iar FBI n-a confirmat nimic. Monedele din primul val (~1.082,57 BTC) apar tot neatinse în ultima urmărire publică (Galaxy, ~24 sept.). Procesul colectiv e doar propus, necertificat (28 oct.). Nicio despăgubire anunțată.
+- Secțiunea „Cine?” începe acum cu cartonul **„STATUS AS OF LATE NOVEMBER 2026”**.
+- **În ziua publicării** reverific aceleași patru lucruri. Dacă s-a schimbat ceva, modific fraza și data de pe carton.
