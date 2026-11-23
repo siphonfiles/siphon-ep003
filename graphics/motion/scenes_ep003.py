@@ -21,20 +21,26 @@ def chapter(ctx, t, d, title, kicker="CHAPTER", number=None):
     """Chapter break: a steel plate slides in, the kicker in mono, the title, a dial tick that turns."""
     a = fade_io(t, d, 0.25, 0.3)
     p = ease_out(prog(t, 0.05, 0.7))
-    _panel(ctx, W / 2 - 520, 380 + (1 - p) * 30, 1040, 320, a * p, 10)
+    size = 84
+    while size > 52 and text_width(ctx, title, HEAD, size) > 1180:
+        size -= 2
+    pw = max(1040, text_width(ctx, title, HEAD, size) + 160)
+    _panel(ctx, W / 2 - pw / 2, 380 + (1 - p) * 30, pw, 330, a * p, 10)
     _label(ctx, kicker, W / 2, 470, a, AMBER, 28, "center")
-    text(ctx, title, W / 2, 590 + (1 - p) * 10, INK, a * p, align="center", size=84)
-    cx, cy, r = W / 2, 650, 22
+    text(ctx, title, W / 2, 590 + (1 - p) * 10, INK, a * p, align="center", size=size)
+    cx, cy, r = W / 2, 660, 16
     ang = -math.pi / 2 + ease_out(prog(t, 0.3, 1.2)) * math.pi * 1.5
     rgba(ctx, AMBER, a)
     ctx.set_line_width(3)
+    ctx.new_path()
     ctx.arc(cx, cy, r, 0, 2 * math.pi)
     ctx.stroke()
+    ctx.new_path()
     ctx.move_to(cx, cy)
     ctx.line_to(cx + r * 0.8 * math.cos(ang), cy + r * 0.8 * math.sin(ang))
     ctx.stroke()
     if number:
-        _label(ctx, number, W / 2 + 480, 420, a, GREY, 24, "right")
+        _label(ctx, number, W / 2 + pw / 2 - 40, 420, a, GREY, 24, "right")
 
 
 def seed_card(ctx, t, d, n=24, source=None):
@@ -94,6 +100,7 @@ def rng_switch(ctx, t, d, flip_at=1.5, zero_at=None, source=None):
     # wires
     ctx.set_line_width(5)
     rgba(ctx, INK, 0.5 * a)
+    ctx.new_path()
     ctx.move_to(580, 545)
     ctx.line_to(cx - 110, cy)
     ctx.stroke()
@@ -187,11 +194,13 @@ def sweep(ctx, t, d, n_total=1196, blocks=(960183, 960191), clock=("01:10", "01:
         px, py = x + (cx[0] - x) * (1 - f), y + (ty - y) * (1 - f)
         rgba(ctx, RED, 0.5 * a * f)
         ctx.set_line_width(2)
+        ctx.new_path()
         ctx.move_to(x, y)
         ctx.line_to(px, py)
         ctx.stroke()
     for y in cys:
         rgba(ctx, RED, 0.85 * a)
+        ctx.new_path()
         ctx.arc(cx[0], y, 22 + 6 * math.sin(t * 4), 0, 2 * math.pi)
         ctx.fill()
     blk = int(blocks[0] + (blocks[1] - blocks[0]) * u)
@@ -322,6 +331,7 @@ def lookup_log(ctx, t, d, match_at=2.5, source=None):
         if q > 0:
             rgba(ctx, AMBER, 0.45 * a * q)
             ctx.set_line_width(2)
+            ctx.new_path()
             ctx.move_to(760, y - 10)
             ctx.line_to(1040, y - 10)
             ctx.stroke()
@@ -370,6 +380,7 @@ def dice_finale(ctx, t, d, line="At least 50 dice rolls of their own.", source=N
                5: [(-15, -15), (15, -15), (0, 0), (-15, 15), (15, 15)],
                6: [(-15, -16), (15, -16), (-15, 0), (15, 0), (-15, 16), (15, 16)]}[n]
         for px, py in pos:
+            ctx.new_path()
             ctx.arc(px, py, 6, 0, 2 * math.pi)
             ctx.fill()
         ctx.restore()
