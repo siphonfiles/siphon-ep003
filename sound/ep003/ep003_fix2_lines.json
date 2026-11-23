@@ -1,0 +1,47 @@
+[
+ {
+  "id": "c12_s2",
+  "text": "Coinkite says it must assume that someone used AI to find it.",
+  "seed": 2
+ },
+ {
+  "id": "c12_s3",
+  "text": "Coinkite says it must assume that someone used AI to find it.",
+  "seed": 3
+ },
+ {
+  "id": "c12_s4",
+  "text": "Coinkite says it must assume that someone used AI to find it.",
+  "seed": 4
+ },
+ {
+  "id": "k1_s2",
+  "text": "There's one group Coinkite doesn't consider at risk from this bug: owners who added at least fifty dice rolls of their own when they made their seed.",
+  "seed": 2
+ },
+ {
+  "id": "k1_s3",
+  "text": "There's one group Coinkite doesn't consider at risk from this bug: owners who added at least fifty dice rolls of their own when they made their seed.",
+  "seed": 3
+ },
+ {
+  "id": "k1_s4",
+  "text": "There's one group Coinkite doesn't consider at risk from this bug: owners who added at least fifty dice rolls of their own when they made their seed.",
+  "seed": 4
+ },
+ {
+  "id": "c15_s2",
+  "text": "Guess a seed. Work out its addresses. Check the blockchain.",
+  "seed": 2
+ },
+ {
+  "id": "c15_s3",
+  "text": "Guess a seed. Work out its addresses. Check the blockchain.",
+  "seed": 3
+ },
+ {
+  "id": "c15_s4",
+  "text": "Guess a seed. Work out its addresses. Check the blockchain.",
+  "seed": 4
+ }
+]
