@@ -1,0 +1,162 @@
+{
+  "name": "ep001_extra_thomas",
+  "image": "thomas_ref_v1_centered_1920x1080.png",
+  "prompt": "A British man in his early forties with short dark brown hair and light stubble, wearing a charcoal grey crew-neck sweater, sits at a wooden desk in a dim investigation office and speaks calmly and clearly to the camera, like a documentary presenter explaining the story. His hands stay resting flat and completely still on the folder on the desk the whole time; he does not gesture, wave or lift his hands or arms. Only his head, face and shoulders move slightly, with subtle natural head movements, steady eye contact with the lens, natural blinking, composed and serious expression. Warm amber desk lamp on the right, out-of-focus evidence board and monitor behind him. Static locked-off camera, soft frontal light, realistic skin texture.",
+  "resolution": "480p",
+  "seed": 42,
+  "split": 22,
+  "ffn_chunk": 4096,
+  "mix_steps": 4,
+  "mix_alpha": 1.0,
+  "max_first_step_s": 1500,
+  "jobs": [
+    {
+      "name": "thomas_k_a78_1",
+      "audio": "thomas_k_a78_1.wav",
+      "segment": "a78"
+    },
+    {
+      "name": "thomas_k_a78_2",
+      "audio": "thomas_k_a78_2.wav",
+      "segment": "a78",
+      "continue_from": {
+        "job": "thomas_k_a78_1",
+        "at": 3.62
+      }
+    },
+    {
+      "name": "thomas_k_b34_1",
+      "audio": "thomas_k_b34_1.wav",
+      "segment": "b34"
+    },
+    {
+      "name": "thomas_k_b34_2",
+      "audio": "thomas_k_b34_2.wav",
+      "segment": "b34",
+      "continue_from": {
+        "job": "thomas_k_b34_1",
+        "at": 3.18
+      }
+    },
+    {
+      "name": "thomas_k_b34_3",
+      "audio": "thomas_k_b34_3.wav",
+      "segment": "b34",
+      "continue_from": {
+        "job": "thomas_k_b34_2",
+        "at": 3.18
+      }
+    },
+    {
+      "name": "thomas_k_b78_1",
+      "audio": "thomas_k_b78_1.wav",
+      "segment": "b78"
+    },
+    {
+      "name": "thomas_k_b78_2",
+      "audio": "thomas_k_b78_2.wav",
+      "segment": "b78",
+      "continue_from": {
+        "job": "thomas_k_b78_1",
+        "at": 3.4
+      }
+    },
+    {
+      "name": "thomas_k_b78_3",
+      "audio": "thomas_k_b78_3.wav",
+      "segment": "b78",
+      "continue_from": {
+        "job": "thomas_k_b78_2",
+        "at": 2.34
+      }
+    },
+    {
+      "name": "thomas_k_b78_4",
+      "audio": "thomas_k_b78_4.wav",
+      "segment": "b78",
+      "continue_from": {
+        "job": "thomas_k_b78_3",
+        "at": 3.18
+      }
+    },
+    {
+      "name": "thomas_k_c5_1",
+      "audio": "thomas_k_c5_1.wav",
+      "segment": "c5"
+    },
+    {
+      "name": "thomas_k_c12_1",
+      "audio": "thomas_k_c12_1.wav",
+      "segment": "c12"
+    },
+    {
+      "name": "thomas_k_e5_1",
+      "audio": "thomas_k_e5_1.wav",
+      "segment": "e5"
+    },
+    {
+      "name": "thomas_k_e5_2",
+      "audio": "thomas_k_e5_2.wav",
+      "segment": "e5",
+      "continue_from": {
+        "job": "thomas_k_e5_1",
+        "at": 3.48
+      }
+    },
+    {
+      "name": "thomas_k_e5_3",
+      "audio": "thomas_k_e5_3.wav",
+      "segment": "e5",
+      "continue_from": {
+        "job": "thomas_k_e5_2",
+        "at": 2.76
+      }
+    },
+    {
+      "name": "thomas_k_e5_4",
+      "audio": "thomas_k_e5_4.wav",
+      "segment": "e5",
+      "continue_from": {
+        "job": "thomas_k_e5_3",
+        "at": 3.1
+      }
+    },
+    {
+      "name": "thomas_k_g78_1",
+      "audio": "thomas_k_g78_1.wav",
+      "segment": "g78"
+    },
+    {
+      "name": "thomas_k_g78_2",
+      "audio": "thomas_k_g78_2.wav",
+      "segment": "g78",
+      "continue_from": {
+        "job": "thomas_k_g78_1",
+        "at": 3.62
+      }
+    },
+    {
+      "name": "thomas_k_g78_3",
+      "audio": "thomas_k_g78_3.wav",
+      "segment": "g78",
+      "continue_from": {
+        "job": "thomas_k_g78_2",
+        "at": 3.64
+      }
+    },
+    {
+      "name": "thomas_k_h7_1",
+      "audio": "thomas_k_h7_1.wav",
+      "segment": "h7"
+    },
+    {
+      "name": "thomas_k_h7_2",
+      "audio": "thomas_k_h7_2.wav",
+      "segment": "h7",
+      "continue_from": {
+        "job": "thomas_k_h7_1",
+        "at": 3.5
+      }
+    }
+  ]
+}

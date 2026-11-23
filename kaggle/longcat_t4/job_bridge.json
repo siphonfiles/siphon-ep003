@@ -1,0 +1,12 @@
+{
+  "name": "thomas_bridge_480p",
+  "image": "thomas_ref_v1_centered_1920x1080.png",
+  "audio": "thomas_bridge.wav",
+  "prompt": "A British man in his early forties with short dark brown hair and light stubble, wearing a charcoal grey crew-neck sweater, sits at a wooden desk in a dim investigation office and speaks calmly and clearly to the camera, like a documentary presenter pausing the story to explain the key point. His hands rest still and relaxed on the folder on the desk. Subtle natural head movements, steady eye contact with the lens, natural blinking, composed and serious expression. Warm amber desk lamp on the right, out-of-focus evidence board and monitor behind him. Static locked-off camera, soft frontal light, realistic skin texture.",
+  "resolution": "480p",
+  "seed": 42,
+  "split": 20,
+  "mix_steps": 4,
+  "mix_alpha": 1.0,
+  "max_first_step_s": 1500
+}

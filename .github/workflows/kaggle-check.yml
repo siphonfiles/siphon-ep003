@@ -1,0 +1,38 @@
+name: kaggle check
+# Verifică doar autentificarea la Kaggle (listări prin API). Nu pornește niciun notebook,
+# deci nu consumă cotă GPU și nu costă nimic.
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install kaggle CLI
+        run: pip install --quiet --upgrade "kaggle>=1.8" six
+      - name: Check credentials
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+        run: |
+          set -e
+          [ -z "$KAGGLE_API_TOKEN" ] && unset KAGGLE_API_TOKEN
+          [ -z "$KAGGLE_USERNAME" ] && unset KAGGLE_USERNAME
+          [ -z "$KAGGLE_KEY" ] && unset KAGGLE_KEY
+          echo "mod: token_nou=$([ -n "${KAGGLE_API_TOKEN:-}" ] && echo da || echo nu) username_key=$([ -n "${KAGGLE_KEY:-}" ] && echo da || echo nu)"
+          kaggle --version || true
+          echo "--- API direct (Bearer) ---"
+          if [ -n "${KAGGLE_API_TOKEN:-}" ]; then
+            code=$(curl -s -o /tmp/r.json -w '%{http_code}' -H "Authorization: Bearer $KAGGLE_API_TOKEN" "https://www.kaggle.com/api/v1/kernels/list?mine=true&pageSize=5")
+            echo "HTTP $code"; head -c 300 /tmp/r.json; echo
+          fi
+          echo "--- notebook-urile mele ---"
+          kaggle kernels list --mine --page-size 5
+          echo "--- test API public ---"
+          kaggle datasets list -s depth --page-size 1
+          echo "AUTENTIFICARE OK"
