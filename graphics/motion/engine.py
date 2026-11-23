@@ -49,6 +49,20 @@ if THEME == "ep002":
     HEAD = "IBM Plex Sans Condensed"
     MONO = "JetBrains Mono"
     SERIF = "IBM Plex Serif"
+# SIPHON_THEME=ep003 (Coldcard, "inside the vault"): graphite-steel background with faint brushed-metal
+# streaks, the slowly turning rings of a combination dial in a corner and a sparse field of flickering
+# points (randomness), entropy-green accent, Inter / Fira Code / Noto Serif (OFL, apt: fonts-inter,
+# fonts-firacode, fonts-noto-core).
+elif THEME == "ep003":
+    BG = (0x10 / 255, 0x13 / 255, 0x16 / 255)
+    AMBER = (0x3F / 255, 0xE6 / 255, 0xA0 / 255)
+    INK = (0xEC / 255, 0xEF / 255, 0xF1 / 255)
+    GREY = (0x8A / 255, 0x94 / 255, 0x9C / 255)
+    DIM = (0x1E / 255, 0x24 / 255, 0x28 / 255)
+    RED = (0xFF / 255, 0x5A / 255, 0x4E / 255)
+    HEAD = "Inter"
+    MONO = "Fira Code"
+    SERIF = "Noto Serif"
 
 
 # --- easing ------------------------------------------------------------------
@@ -246,6 +260,55 @@ def backdrop(ctx, t):
     ctx.restore()
 
 
+_VAULT = {}
+
+
+def backdrop_vault(ctx, t):
+    """ep003 backdrop: brushed-steel streaks (static), the rings and ticks of a combination dial turning
+    very slowly in the lower right, and a sparse field of points that flicker at random (entropy)."""
+    import random as _r
+    if "streaks" not in _VAULT:
+        s = cairo.ImageSurface(cairo.FORMAT_ARGB32, W, H)
+        c = cairo.Context(s)
+        rnd = _r.Random(3)
+        for _ in range(420):
+            y = rnd.uniform(0, H)
+            x = rnd.uniform(-200, W)
+            ln = rnd.uniform(120, 900)
+            c.set_source_rgba(1, 1, 1, rnd.uniform(0.006, 0.02))
+            c.set_line_width(rnd.uniform(0.6, 1.6))
+            c.move_to(x, y)
+            c.line_to(x + ln, y)
+            c.stroke()
+        _VAULT["streaks"] = s
+        rp = _r.Random(11)
+        _VAULT["pts"] = [(rp.uniform(0, W), rp.uniform(0, H), rp.uniform(0.3, 2.0), rp.uniform(0, 6.28)) for _ in range(90)]
+    ctx.save()
+    ctx.set_source_surface(_VAULT["streaks"], 0, 0)
+    ctx.paint()
+    cx, cy = W - 170, H + 40
+    ctx.set_line_width(1.2)
+    for k, r in enumerate((300, 360, 430, 520)):
+        ctx.set_source_rgba(AMBER[0], AMBER[1], AMBER[2], 0.05 if k != 1 else 0.08)
+        ctx.arc(cx, cy, r, 0, 2 * math.pi)
+        ctx.stroke()
+    ang = t * 0.035
+    for i in range(100):
+        a0 = ang + i * 2 * math.pi / 100
+        r0, r1 = (360, 380) if i % 10 else (350, 392)
+        ctx.set_source_rgba(AMBER[0], AMBER[1], AMBER[2], 0.10 if i % 10 == 0 else 0.05)
+        ctx.move_to(cx + r0 * math.cos(a0), cy + r0 * math.sin(a0))
+        ctx.line_to(cx + r1 * math.cos(a0), cy + r1 * math.sin(a0))
+        ctx.stroke()
+    for x, y, hz, ph in _VAULT["pts"]:
+        k = math.sin(t * hz + ph)
+        if k > 0.55:
+            ctx.set_source_rgba(AMBER[0], AMBER[1], AMBER[2], 0.25 * (k - 0.55) / 0.45)
+            ctx.rectangle(x, y, 2, 2)
+            ctx.fill()
+    ctx.restore()
+
+
 # --- rendering ---------------------------------------------------------------
 _TIMELINE = None
 
@@ -260,6 +323,8 @@ def _render_frame(i):
     ctx.paint()
     if THEME == "ep002":
         backdrop(ctx, t)
+    elif THEME == "ep003":
+        backdrop_vault(ctx, t)
     for start, end, fn, params in _TIMELINE:
         if start <= t < end:
             ctx.save()
