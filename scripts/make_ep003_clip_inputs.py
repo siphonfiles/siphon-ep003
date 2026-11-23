@@ -20,8 +20,14 @@ LEAD, LEN = 0.3, 5.0
 # (clip id, [line ids], pause between lines as in sound/ep003/ep003_mix.py)
 CLIPS = [("i1", ["i1"], 0), ("i2", ["i2"], 0), ("i3", ["i3"], 0), ("i4", ["i4"], 0),
          ("b8", ["b8", "b9"], 0.5), ("b10", ["b10"], 0), ("c12", ["c12"], 0), ("e8", ["e8"], 0),
-         ("g8", ["g8"], 0), ("g9", ["g9"], 0), ("k3", ["k3"], 0), ("k6", ["k6"], 0)]
-CAMERA = {"i2": "C", "b10": "C", "e8": "C", "g9": "C", "k6": "C"}   # second camera, alternating
+         ("g8", ["g8"], 0), ("g9", ["g9"], 0), ("k3", ["k3"], 0), ("k6", ["k6"], 0),
+         # second set (owner, 23 Nov: every Thomas line gets its own HF 720p clip, no Kaggle resync)
+         ("c3", ["c3"], 0), ("c4", ["c4"], 0), ("c13", ["c13"], 0), ("c14", ["c14"], 0), ("c15", ["c15"], 0),
+         ("c16", ["c16"], 0), ("e9", ["e9"], 0), ("g1", ["g1"], 0), ("g2", ["g2"], 0), ("g3", ["g3"], 0),
+         ("g4", ["g4"], 0), ("k4", ["k4"], 0), ("k5", ["k5"], 0), ("k7", ["k7"], 0), ("k10", ["k10"], 0)]
+# second camera, alternating inside each run of Thomas lines
+CAMERA = {"i2": "C", "i4": "C", "b10": "C", "c4": "C", "c13": "C", "c15": "C", "e8": "C",
+          "g2": "C", "g4": "C", "g9": "C", "k4": "C", "k6": "C"}
 
 PROMPT = ("A British man in his early forties with short dark brown hair and light stubble, wearing a plain "
           "dark olive green cotton shirt with a soft open collar, sits at a wooden desk in a dim investigation "

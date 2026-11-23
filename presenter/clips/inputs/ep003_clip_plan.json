@@ -29,7 +29,7 @@
    "first": "i4",
    "last": "i4",
    "lead": 0.3,
-   "camera": "M",
+   "camera": "C",
    "tail": 0.35
   },
   {
@@ -94,6 +94,126 @@
    "last": "k6",
    "lead": 0.3,
    "camera": "C",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_c3_720p",
+   "first": "c3",
+   "last": "c3",
+   "lead": 0.3,
+   "camera": "M",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_c4_720p",
+   "first": "c4",
+   "last": "c4",
+   "lead": 0.3,
+   "camera": "C",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_c13_720p",
+   "first": "c13",
+   "last": "c13",
+   "lead": 0.3,
+   "camera": "C",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_c14_720p",
+   "first": "c14",
+   "last": "c14",
+   "lead": 0.3,
+   "camera": "M",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_c15_720p",
+   "first": "c15",
+   "last": "c15",
+   "lead": 0.3,
+   "camera": "C",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_c16_720p",
+   "first": "c16",
+   "last": "c16",
+   "lead": 0.3,
+   "camera": "M",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_e9_720p",
+   "first": "e9",
+   "last": "e9",
+   "lead": 0.3,
+   "camera": "M",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_g1_720p",
+   "first": "g1",
+   "last": "g1",
+   "lead": 0.3,
+   "camera": "M",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_g2_720p",
+   "first": "g2",
+   "last": "g2",
+   "lead": 0.3,
+   "camera": "C",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_g3_720p",
+   "first": "g3",
+   "last": "g3",
+   "lead": 0.3,
+   "camera": "M",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_g4_720p",
+   "first": "g4",
+   "last": "g4",
+   "lead": 0.3,
+   "camera": "C",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_k4_720p",
+   "first": "k4",
+   "last": "k4",
+   "lead": 0.3,
+   "camera": "C",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_k5_720p",
+   "first": "k5",
+   "last": "k5",
+   "lead": 0.3,
+   "camera": "M",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_k7_720p",
+   "first": "k7",
+   "last": "k7",
+   "lead": 0.3,
+   "camera": "M",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_k10_720p",
+   "first": "k10",
+   "last": "k10",
+   "lead": 0.3,
+   "camera": "M",
    "tail": 0.35
   }
  ]
