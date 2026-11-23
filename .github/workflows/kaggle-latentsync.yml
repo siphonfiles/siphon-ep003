@@ -1,0 +1,61 @@
+name: kaggle latentsync
+# Resincronizare de buze (LatentSync 1.5) pe Kaggle T4, pe filmarea lui Thomas deja generată.
+# Nu folosește cota Hugging Face și nu costă bani. Rezultatul se ia cu workflow-ul "kaggle fetch".
+on:
+  workflow_dispatch:
+    inputs:
+      skip_dataset:
+        description: "true = folosește versiunea existentă a datasetului"
+        default: "false"
+
+env:
+  KUSER: ${{ secrets.KAGGLE_USERNAME }}
+  DATASET: siphon-latentsync-inputs
+  KERNEL: siphon-latentsync-t4
+
+jobs:
+  push:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install --quiet --upgrade "kaggle>=1.8" six
+      - name: Dataset with inputs
+        if: ${{ inputs.skip_dataset != 'true' }}
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        run: |
+          set -e
+          mkdir -p ds
+          cp kaggle/latentsync_t4/inputs/job.json kaggle/latentsync_t4/inputs/footage_*.mp4 kaggle/latentsync_t4/inputs/resync_*.wav ds/
+          cat > ds/dataset-metadata.json <<J
+          {"title": "siphon latentsync inputs", "id": "$KUSER/$DATASET", "licenses": [{"name": "other"}]}
+          J
+          if kaggle datasets status "$KUSER/$DATASET" >/dev/null 2>&1; then
+            kaggle datasets version -p ds -m "run ${{ github.run_number }}" -r zip
+          else
+            kaggle datasets create -p ds -r zip
+          fi
+          for i in $(seq 1 40); do
+            s=$(kaggle datasets status "$KUSER/$DATASET" 2>&1 || true); echo "dataset: $s"
+            echo "$s" | grep -qi ready && break; sleep 15
+          done
+      - name: Push kernel (starts the run)
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        run: |
+          set -e
+          mkdir -p kn
+          cp kaggle/latentsync_t4/run.py kn/run.py
+          cat > kn/kernel-metadata.json <<J
+          {"id": "$KUSER/$KERNEL", "title": "$KERNEL", "code_file": "run.py", "language": "python",
+           "kernel_type": "script", "is_private": true, "enable_gpu": true, "enable_internet": true,
+           "dataset_sources": ["$KUSER/$DATASET"], "competition_sources": [], "kernel_sources": [],
+           "machine_shape": "NvidiaTeslaT4"}
+          J
+          kaggle kernels push -p kn
+          sleep 20
+          kaggle kernels status "$KUSER/$KERNEL" || true
