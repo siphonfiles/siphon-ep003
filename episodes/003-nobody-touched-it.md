@@ -243,7 +243,7 @@ When he reports it, the first question he gets is whether someone broke into his
 `[VO]`
 Nobody did. And a firmware update can't help him. It fixes new seeds. A weak seed that's already written down stays weak forever. [S1][S7]
 
-`[CARD]` **"I'm sorry and I'm devastated."** — Rodolfo Novak, Coinkite founder, 31 July [S14]
+`[CARD]` **"I'm sorry and I'm devastated."** — Rodolfo Novak, Coinkite CEO, on X, 31 July [S28]
 
 `[VO]`
 So now there's a race.
@@ -382,6 +382,7 @@ Someone may know whose they are.
 - [S24] Crypto Briefing, *Coinkite CEO says Coldcard flaw hit 0.17% of users…*, 18 Nov 2026: https://cryptobriefing.com/coldcard-firmware-flaw-116m-bitcoin-stolen/
 - [S25] Decrypt, *Coldcard adds new security measures after $130 million bitcoin exploit* (firmware 5.6.1 / 1.5.1Q require user-supplied entropy): https://decrypt.co/376270?amp=1
 - [S26] Forklog (Coinkite's warning ~30 hours after the first outflows; Block's analysis): https://forklog.com/en/?p=101360
+- [S28] Rodolfo Novak (@nvk), *To all Coinkite users and the entire Bitcoin community*, X, 31 Jul 2026: https://x.com/nvk/status/2083216713693151552 · quoted by Forbes, 4 Aug 2026: https://www.forbes.com/sites/boazsobrado/2026/08/04/i-did-everything-right-ai-warning-after-116-million-bitcoin-hack/
 - [S27] Forklog, *Kraken CSO says Coldcard flaw exposes gap in hardware wallet testing* (Coinkite advisory: its lawyers will work with law enforcement in various jurisdictions): https://forklog.com/en/kraken-cso-says-coldcard-flaw-exposes-gap-in-hardware-wallet-testing/
 
 ---
@@ -397,6 +398,6 @@ Someone may know whose they are.
 - **"No one else used that pattern in 30 days"**: Galaxy's finding on the 30 sat/vB, no-change signature [S9]. Later waves used other fees (10/50 sat/vB), so the fee is a wave-1 fingerprint only.
 - **The paid-account lead** is Block's (Clay Garrett) account via Bitcoin Magazine [S19]; the provider is unnamed. The script attributes it ("they say") and adds the FBI non-confirmation.
 - **"Wave 1 coins unmoved"**: true as of the August–September reports [S19]. **To re-check before rendering** (on-chain, Galaxy's latest), together with: any arrest or charge, the class action's status, Coinkite's final post-mortem, the latest loss total.
-- **Novak's apology** is quoted as "I'm sorry and I'm devastated" by Silicon Canals [S14] and as "I'm sorry, and I'm crushed" by Forklog; to check against his original X post before the card is made.
+- **Novak's apology — verified 23 Nov:** the original is an X article by @nvk, 31 Jul 2026, 3:42 PM, beginning "To all Coinkite users and the entire Bitcoin community, I'm sorry and I'm devastated. Our team is heartbroken about yesterday's news." (https://x.com/nvk/status/2083216713693151552; the account is now restricted, so the text was confirmed from X's indexed copy and from Forbes, Bitcoin.com News and Protos, which notes the post stayed pinned while others were deleted). Forklog's "crushed" is a translation. The card keeps "I'm sorry and I'm devastated." and is sourced to [S28].
 - **0.17% of users** is Coinkite's CEO's figure [S24]; worded as Coinkite's.
 - **Not used (true but off-angle or weak sourcing):** the developer's alias and name (never named), Ledger's/Trezor's commentary (competitors), the 210,000 BTC moved by long-term holders, Kraken's CSO, Coinkite halting shipments, the 64.9 BTC Wasabi and 200 ETH Tornado Cash deposits (could go back into "THE RACE" if the episode runs short).

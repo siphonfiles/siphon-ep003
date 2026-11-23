@@ -116,7 +116,7 @@
 `[VO]` Goodman află pe 31 iulie, dintr-o postare a unui prieten pe Facebook. Verifică. Banii erau plecați de două zile.
 `[VO]` Când raportează furtul, prima întrebare pe care o primește e dacă i-a spart cineva caseta de valori.
 `[VO]` Nu i-a spart-o nimeni. Și o actualizare de firmware nu-l poate ajuta. Repară seed-urile noi. Un seed slab, deja scris, rămâne slab pentru totdeauna.
-`[CARTON]` **„I'm sorry and I'm devastated.”** („Îmi pare rău și sunt devastat.”) — Rodolfo Novak, fondatorul Coinkite, 31 iulie
+`[CARTON]` **„I'm sorry and I'm devastated.”** („Îmi pare rău și sunt devastat.”) — Rodolfo Novak, CEO Coinkite, pe X, 31 iulie
 `[VO]` Așa că acum începe o cursă.
 
 `[THOMAS]` Asta e partea crudă a unui avertisment public.
@@ -179,5 +179,5 @@
 - **Orele lui Goodman:** 21:36–21:43 pe 29 iulie, ora Ontario = 01:36–01:43 UTC pe 30 iulie, adică în fereastra primului val. Scriptul păstrează intenționat ambele date.
 - **Cifrele pierderii diferă între surse:** 1.816 BTC „potențial” (Galaxy/TRM), minim sigur 1.730 BTC (Galaxy), 1.432 BTC confirmați (CryptoQuant), ulterior ~1.830 BTC (Galaxy). Vocea spune „about 116 million”, ca în titlu. Intervalele merg în descriere.
 - **Sursele primare citite direct în Chrome (23 nov):** cele 3 postări Coinkite (comunicatul, analiza tehnică, postarea despre AI) și raportul Block. Tot ce e în script se potrivește cu ele.
-- **Citatul lui Novak** apare în două variante („devastated” / „crushed”). Îl verific în postarea originală înainte să fac cartonul.
+- **Citatul lui Novak, verificat:** originalul e articolul lui pe X din 31 iulie 2026, 15:42: „I'm sorry and I'm devastated. Our team is heartbroken about yesterday's news.” Contul e acum restricționat, așa că textul l-am confirmat din copia indexată de X și din Forbes, Bitcoin.com News și Protos. „Crushed” (Forklog) e doar o traducere.
 - **De reverificat înainte de randare:** dacă banii din primul val s-au mișcat, orice arestare sau acuzare, stadiul procesului, post-mortemul final Coinkite.
