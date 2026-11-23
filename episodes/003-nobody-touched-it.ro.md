@@ -166,7 +166,7 @@
 
 `[THOMAS]` Caseta de valori din Ontario n-a fost deschisă niciodată.
 `[THOMAS]` Aparatul dinăuntru n-a fost spart niciodată.
-`[THOMAS]` Doar că n-a cerut niciodată hardware-ului lui de numere aleatorii seed-ul.
+`[THOMAS]` Doar că n-a cerut niciodată seed-ul propriului generator de numere aleatorii.
 `[THOMAS]` Dacă ți-ai făcut un seed pe un Coldcard afectat, citește comunicatul Coinkite.
 `[THOMAS]` Coinkite spune: consideră-l compromis și treci pe un seed nou.
 
