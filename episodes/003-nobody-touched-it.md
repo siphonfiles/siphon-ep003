@@ -262,7 +262,7 @@ Nobody did. And for anyone else still holding a seed made the same way, a firmwa
 Wave two follows. Wave three runs from Friday into Saturday. A fourth starts on Monday. [S11][S16]
 
 `[VO]`
-Galaxy Research later counts at least 15 separate attackers. Not one thief anymore. A crowd, working the same weakness. [S6]
+Galaxy Research later counts at least 15 separate attackers. Not one thief any more. A crowd, working the same weakness. [S6]
 
 `[VO]`
 But in the fourth wave, the thieves' transactions sit waiting to be confirmed. Until they are, anyone willing to pay a higher fee can replace them. [S16]
