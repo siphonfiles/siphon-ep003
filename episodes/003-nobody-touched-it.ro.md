@@ -1,10 +1,10 @@
 # Episodul 003: Nimeni nu l-a atins (traducere pentru verificare)
 
-> Traducerea în română a draftului v3.1 (`003-nobody-touched-it.md`), doar ca să-l verifici. Textul care se înregistrează rămâne cel în engleză. Sursele [S#] sunt aceleași ca în fișierul englezesc.
+> Traducerea în română a draftului v3.2 (`003-nobody-touched-it.md`), doar ca să-l verifici. Textul care se înregistrează rămâne cel în engleză. Sursele [S#] sunt aceleași ca în fișierul englezesc.
 
 **Titlu propus:** „Inside the $116M Coldcard Hack” · text pe thumbnail: **„NOBODY TOUCHED IT.”** („Nimeni nu l-a atins.”)
 **Test & Compare propus:** (A) titlul de mai sus + „NOBODY TOUCHED IT.”; (B) „The Safest Bitcoin Wallet Was Guessable for 5 Years” + „41 MINUTES.”; (C) „Inside the Coldcard Hack: $116M Gone Without a Touch” + „5 YEARS. 41 MINUTES.”
-**Lungime:** 1.527 de cuvinte rostite, dintre care Thomas 256 în 28 de replici (~1:30), fiecare de cel mult 12 cuvinte, adică un clip LongCat de 5 s. Estimare: ~10:35–10:55.
+**Lungime:** 1.581 de cuvinte rostite, dintre care Thomas 256 în 28 de replici (~1:30), fiecare de cel mult 12 cuvinte, adică un clip LongCat de 5 s. Estimare: ~10:50–11:10.
 
 **Linia editorială, pe scurt:**
 - Nimeni nu e identificat, acuzat sau arestat. FBI n-a confirmat nimic. Citez exact ce a spus Alex Thorn (Galaxy): identitatea primului atacator „s-ar putea să fie cunoscută autorităților”.
@@ -21,9 +21,9 @@
 
 `[VIZUAL]` Un seif de bancă noaptea. Un singur sertar închis. Praf într-o rază de lumină.
 
-`[VO]` Un seif de bancă. O casetă de valori. Înăuntru, un mic dispozitiv care n-a fost conectat niciodată la internet.
-`[VO]` În noaptea de 29 iulie, nimeni n-a deschis caseta. Nimeni n-a atins dispozitivul.
-`[VO]` În șapte minute, bitcoinii pe care îi proteja dispăruseră.
+`[VO]` Un seif de bancă. O casetă de valori. Înăuntru, trei dispozitive mici care n-au fost conectate niciodată la internet.
+`[VO]` În noaptea de 29 iulie, nimeni n-a deschis caseta. Nimeni n-a atins dispozitivele.
+`[VO]` În șapte minute, bitcoinii pe care îi protejau dispăruseră.
 `[VO]` În cinci zile, aproximativ 116 milioane de dolari fuseseră luați la fel.
 `[VO]` Greșeala din spatele furtului stătea în cod public de mai bine de cinci ani.
 `[VO]` Iar primul hoț s-ar putea să fi făcut și el o greșeală.
@@ -46,7 +46,7 @@
 `[VO]` Jonathan Goodman e antreprenor în Toronto. După spusele lui, a pus peste un milion de dolari în bitcoin.
 `[VO]` Așa că face ce spun ghidurile de securitate: își cumpără un hardware wallet, un Coldcard, făcut de o firmă canadiană, Coinkite.
 `[VO]` La configurare, dispozitivul îți dă o listă de 12 sau 24 de cuvinte. Cuvintele astea sunt banii. Oricine le are îți poate cheltui bitcoinii, de oriunde.
-`[VO]` Goodman nu-și arată cuvintele nimănui. Coldcard-ul lui nu atinge niciodată internetul. Îl pune într-o casetă de valori la bancă.
+`[VO]` Cumpără trei. Nu-și arată cuvintele nimănui și le ștanțează în metal, ca rezervă. Dispozitivele nu ating niciodată internetul. Le pune într-o casetă de valori la bancă.
 `[VO]` Dar e un singur lucru pe care nu-l poate verifica singur: cum au fost alese cuvintele.
 
 ---
@@ -102,7 +102,7 @@
 `[VO]` Și tranzacțiile astea au ceva ciudat. Sunt construite toate la fel: aceeași rată a taxei, și fiecare monedă e luată, fără să rămână nimic.
 `[VO]` Ține minte detaliul ăsta.
 `[VO]` Apoi ajunge la Goodman.
-`[VO]` 9:36 seara. Primul lui portofel se golește. Apoi următorul. Până la 9:43, toate au dispărut. Cam 1,6 milioane de dolari canadieni.
+`[VO]` 9:36 seara. Primul dintre cele trei portofele ale lui se golește. Apoi al doilea. Până la 9:43 dispare și al treilea. Cam 1,6 milioane de dolari canadieni.
 `[VO]` La 9:51, primul val se oprește. În 41 de minute s-au golit aproape o mie două sute de adrese.
 `[VO]` Iar Goodman habar n-are.
 
@@ -116,7 +116,7 @@
 `[CARTON]` „Nu are cum să mă afecteze, dar o să verific totuși.” — Jonathan Goodman, pentru Wealthsimple Magazine
 `[VO]` Verifică. Bitcoinii lui dispăruseră încă de miercuri seara.
 `[CARTON]` „Am făcut totul corect.” — Jonathan Goodman, pe X
-`[VO]` Se întoarce la Toronto să facă plângere la poliție.
+`[VO]` Se întoarce la Toronto să facă plângere la poliție și o sesizare la Comisia de Valori Mobiliare din Ontario.
 `[VO]` Oamenii îl întreabă dacă a intrat cineva în caseta lui de valori.
 `[VO]` N-a intrat nimeni. Iar pentru oricine altcineva încă are o listă făcută la fel, un update de firmware nu ajută. Repară listele noi. O listă slabă, deja scrisă, rămâne slabă.
 `[CARTON]` „Îmi pare rău și sunt devastat.” — Rodolfo Novak, CEO Coinkite, pe X, 31 iulie
@@ -131,7 +131,7 @@
 `[VO]` Galaxy Research numără mai târziu cel puțin 15 atacatori diferiți. Nu mai e un singur hoț. E o mulțime, pe aceeași slăbiciune.
 `[VO]` Dar în al patrulea val, tranzacțiile hoților așteaptă să fie confirmate. Până atunci, oricine plătește o taxă mai mare le poate înlocui.
 `[VO]` Așa că un proprietar, Will Owens, ripostează. Lasă o sumă mică drept momeală, așteaptă ca botul s-o ia și îl întrece la taxă. Își recuperează momeala.
-`[VO]` Mai târziu, voluntari white hat mută cam 52 de bitcoini din portofelele expuse, într-un trust făcut să-i returneze victimelor.
+`[VO]` Mai târziu, voluntari white hat mută cam 52 de bitcoini din portofelele expuse, într-un trust făcut să-i returneze victimelor. În septembrie, trustul îi dă înapoi unui proprietar verificat peste 20 de bitcoini.
 `[VO]` O parte din monedele furate merg spre mixere, servicii făcute să încurce urma. Mare parte din rest doar stă.
 `[VO]` Când valurile se domolesc, fuseseră luați cam 1.816 bitcoini, de pe peste 5.200 de adrese.
 `[VO]` Dar bucata cea mai mare, primul val, nu s-a mișcat deloc.
@@ -159,6 +159,8 @@
 `[VO]` Așa că, public, nu se știe cine a făcut-o. TRM Labs nu atribuie furtul nimănui. Coinkite spune că avocații ei lucrează cu autoritățile ca să-i identifice pe vinovați.
 `[VO]` Online, unii spun că a fost din interior. Nu există dovezi publice pentru asta, și nimeni n-a fost acuzat.
 `[VO]` În septembrie, un proprietar de Coldcard a depus în Ontario o propunere de proces colectiv contra Coinkite și a cofondatorilor. Acuzația: firma știa din mai 2025 că generarea cuvintelor e slabă. Afirmațiile n-au fost testate în instanță.
+`[VO]` Conform celor mai recente rapoarte, Coinkite n-a anunțat niciun fond de despăgubire. Iar Goodman nu se bazează pe proces.
+`[CARTON]` „Calculul la un proces colectiv e brutal.” — Jonathan Goodman, pentru The News Block
 `[VO]` CEO-ul Coinkite spune că problema a afectat cam 0,17% dintre utilizatori. Cel mai nou firmware cere acum fiecărui proprietar să adauge hazard propriu când își face lista.
 
 ---
@@ -168,8 +170,8 @@
 `[VO]` Există un grup pe care Coinkite nu-l consideră în pericol din cauza acestei greșeli: cei care au adăugat cel puțin 50 de aruncări de zar proprii când și-au făcut lista.
 `[VO]` Cei care n-au lăsat totul pe seama dispozitivului.
 `[THOMAS]` Caseta aceea de valori n-a fost deschisă niciodată.
-`[THOMAS]` Dispozitivul dinăuntru n-a fost niciodată spart.
-`[THOMAS]` Doar că n-a cerut niciodată lista circuitului de numere aleatorii.
+`[THOMAS]` Dispozitivele dinăuntru n-au fost niciodată sparte.
+`[THOMAS]` Doar că n-au cerut niciodată lista circuitului lor de numere aleatorii.
 `[THOMAS]` Dacă ți-ai făcut lista pe un Coldcard afectat, citește avertismentul Coinkite.
 `[THOMAS]` Coinkite spune: consider-o compromisă și mută-te pe o listă nouă.
 `[VO]` Și cei 1.082 de bitcoini din primul val? Conform celor mai recente rapoarte publice, stau tot unde i-a lăsat hoțul.
@@ -200,4 +202,11 @@
 - „Trei portofele” pe ecran era un număr pe care Goodman nu l-a dat → „câteva solduri (ILUSTRATIV)”.
 - Două marcaje de timp la rând („mai târziu în aceeași zi… în câteva ore”) → „În orele următoare… Până la sfârșitul zilei”.
 - Mici corecturi gramaticale în engleză (articole, „any of them”, „the latest”), plus o frază de legătură: „Every guess has to be checked.”
-- **Întrebări și răspunsuri:** am verificat fiecare întrebare pusă în video (cum au fost alese cuvintele, dacă sunt afectate toate modelele, cine a găsit greșeala, ce era ciudat la tranzacții, greșeala hoțului, cine e vinovatul, unde sunt banii, cine a fost în siguranță). Toate primesc răspuns. Singura nelămurire lăsată intenționat: dacă Goodman a recuperat ceva. Nicio sursă nu spune, deci nu ghicim. De verificat înainte de voce.
+- **Întrebări și răspunsuri:** am verificat fiecare întrebare pusă în video (cum au fost alese cuvintele, dacă sunt afectate toate modelele, cine a găsit greșeala, ce era ciudat la tranzacții, greșeala hoțului, cine e vinovatul, unde sunt banii, cine a fost în siguranță). Toate primesc răspuns. 
+
+## Ce s-a schimbat în v3.2 (verificat acum pe web)
+
+- **Goodman n-a recuperat nimic,** conform ultimelor informații publice (interviul din The News Block, 28 aug.; postarea lui de pe X: „nu mă aștept să recuperez nimic”). Coinkite n-a anunțat niciun fond de despăgubire. Răspunsul e acum în script, la „Cine?”, cu citatul lui despre procesul colectiv.
+- **O rază de speranță reală:** în septembrie, trustul white hat i-a dat înapoi unui proprietar verificat (nenumit) peste 20 de bitcoini. Apare la „Cursa”.
+- **Detalii exacte, chiar de la el:** avea trei Coldcard-uri și trei portofele golite unul după altul, cuvintele ștanțate în metal, plus sesizare și la Comisia de Valori Mobiliare din Ontario.
+- Postarea lui spune că a aflat „la cabană”, iar interviurile spun că a verificat la o bibliotecă, cu familia jos. Se potrivesc, deci rămâne biblioteca.

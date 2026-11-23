@@ -5,9 +5,9 @@
 
 **Subject:** the Coldcard hardware-wallet thefts (30 July – early August 2026). A build error in Coinkite's March 2021 firmware made some Coldcard devices create wallet seeds from a predictable software generator instead of the hardware random-number chip. Attackers rebuilt the seeds offline and swept about 1,816 BTC (about $116M) from more than 5,200 addresses in four waves, without touching a single device.
 **Angle:** the device built to be the safest place for bitcoin was, for more than five years, predictable. The safety check that should have stopped the build was there, and it passed. The first thief may have left a trail, not on the blockchain, but in a paid account.
-**Status:** DRAFT v3.1, written 2026-11-23 (v1 and v2 the same day; v3 = story rewrite on the same verified facts, see "Changes from v2"; v3.1 = full grammar/logic/question-and-answer review, see "Changes in v3.1"). Facts checked against the sources below (see "Notes for proprietarul's check"). Proprietarul must check it before any generation (rule 10).
+**Status:** DRAFT v3.2, written 2026-11-23 (v1 and v2 the same day; v3 = story rewrite on the same verified facts, see "Changes from v2"; v3.1 = full grammar/logic/question-and-answer review, see "Changes in v3.1"; v3.2 = Goodman facts verified on the web, see "Changes in v3.2"). Facts checked against the sources below (see "Notes for proprietarul's check"). Proprietarul must check it before any generation (rule 10).
 **Target length:** about 10:45–11:15 with cards, pauses, music beats and end card (rule 13).
-**Length:** 1,527 spoken words (automatic count, cards and cues excluded), Thomas 256 words in 28 lines (~1:30), each ≤ 12 words so every line fits one 5 s LongCat clip (≤ 4.7 s of speech). Ep. 002 ran 11:11 with 1,577 words, so this lands at about 10:35–10:55.
+**Length:** 1,581 spoken words (automatic count, cards and cues excluded), Thomas 256 words in 28 lines (~1:30), each ≤ 12 words so every line fits one 5 s LongCat clip (≤ 4.7 s of speech). Ep. 002 ran 11:11 with 1,577 words, so this lands at about 10:50–11:10.
 
 Notation (same as ep. 001/002):
 - `[THOMAS]` = Thomas on camera, one line = one clip. `[VO]` = voice over b-roll. `[VIS]` = on screen. `[CARD]` = quote shown as text, never voiced as the real person. `[S#]` = source.
@@ -45,13 +45,13 @@ Notation (same as ep. 001/002):
 `[VIS]` A bank vault at night. One small drawer, closed. Dust in a single beam of light.
 
 `[VO]`
-A bank vault. A safe-deposit box. Inside it, a small device that has never been connected to the internet. [S12]
+A bank vault. A safe-deposit box. Inside it, three small devices that have never been connected to the internet. [S12][S30]
 
 `[VO]`
-On the night of July 29th, nobody opened that box. Nobody touched that device. [S12]
+On the night of July 29th, nobody opened that box. Nobody touched those devices. [S12]
 
 `[VO]`
-In seven minutes, the bitcoin it protected was gone. [S12]
+In seven minutes, the bitcoin they protected was gone. [S12]
 
 `[VO]`
 Within five days, about 116 million dollars had been taken the same way. [S7]
@@ -93,7 +93,7 @@ When you set one up, it gives you a list of 12 or 24 words. Those words are the 
 `[VIS]` A blank card with 24 numbered lines, the words blurred.
 
 `[VO]`
-Goodman never shares his words with anyone. His Coldcard never touches the internet. It goes into a safe-deposit box at his bank. [S12]
+He buys three of them. He never shares his words with anyone, and he stamps them into metal as a backup. The devices never touch the internet. They go into a safe-deposit box at his bank. [S12][S30]
 
 `[VO]`
 But there's one thing he can't check for himself: how those words were chosen.
@@ -209,10 +209,10 @@ Hold on to that detail.
 `[VO]`
 Then it reaches Goodman.
 
-`[VIS]` A few balance lines on a dark screen (ILLUSTRATIVE), each turning red in sequence: **9:36 PM → 9:43 PM**.
+`[VIS]` Three balance lines on a dark screen (ILLUSTRATIVE), each turning red in sequence: **9:36 PM → 9:43 PM**.
 
 `[VO]`
-9:36 pm. The first of his wallets empties. Then the next. By 9:43, every one of them is gone. About 1.6 million Canadian dollars. [S12]
+9:36 pm. The first of his three wallets empties. Then the second. By 9:43, the third is gone too. About 1.6 million Canadian dollars. [S12][S31]
 
 `[VO]`
 At 9:51, the first wave stops. In 41 minutes, nearly twelve hundred addresses have been emptied. [S5]
@@ -241,7 +241,7 @@ He checks. His bitcoin has been gone since Wednesday night. [S12][S13]
 `[CARD]` **"I did everything right."** — Jonathan Goodman, on X [S12]
 
 `[VO]`
-He heads back to Toronto to file a police report. [S13]
+He heads back to Toronto to file a police report, and a report with the Ontario Securities Commission. [S12][S13]
 
 `[VO]`
 People ask him whether someone got into his safe-deposit box. [S13]
@@ -271,7 +271,7 @@ But in the fourth wave, the thieves' transactions sit waiting to be confirmed. U
 So one owner, Will Owens, fights back. He leaves a small amount behind as bait, waits for the bot to take it, and outbids it. He wins his bait back. [S17]
 
 `[VO]`
-Later, volunteer white hats move about 52 bitcoin out of exposed wallets, into a trust set up to return it to victims. [S18]
+Later, volunteer white hats move about 52 bitcoin out of exposed wallets, into a trust set up to return it to victims. In September, the trust hands more than 20 bitcoin back to one verified owner. [S18][S32]
 
 `[VO]`
 Some of the stolen coins head for mixers, services built to blur the trail. Much of the rest just sits. [S7]
@@ -323,6 +323,11 @@ Online, some call it an inside job. There's no public evidence for that, and no 
 In September, a Coldcard owner filed a proposed class action in Ontario against Coinkite and its co-founders. It alleges the company knew its seed generation was weak by May 2025. Those claims have not been tested in court. [S23]
 
 `[VO]`
+As of the latest reports, Coinkite hasn't announced any compensation fund. And Goodman isn't counting on the lawsuit. [S33][S30]
+
+`[CARD]` **"The math on a class action is brutal."** — Jonathan Goodman, to The News Block [S30]
+
+`[VO]`
 Coinkite's CEO says the flaw affected about 0.17 percent of its users. The newest firmware now makes every owner add randomness of their own when they create a seed. [S24][S25]
 
 ---
@@ -336,8 +341,8 @@ There's one group Coinkite doesn't consider at risk from this bug: owners who ad
 The ones who didn't leave it all to the device.
 
 `[THOMAS]` That safe-deposit box was never opened.
-`[THOMAS]` The device inside was never hacked.
-`[THOMAS]` It just never asked its random-number hardware for the seed.
+`[THOMAS]` The devices inside were never hacked.
+`[THOMAS]` They just never asked their random-number hardware for the seed.
 `[THOMAS]` If you made a seed on an affected Coldcard, read Coinkite's advisory.
 `[THOMAS]` Coinkite says: treat it as compromised, and move to a new seed.
 
@@ -368,7 +373,7 @@ And somewhere, in a data company's records, there may be a name.
 - [S9] The Hacker News, *Coldcard hardware wallet flaw linked to…* (Galaxy: no other transactions in the previous 30 days with the same 30 sat/vB, no-change signature): https://www.thehackernews.com/2026/08/coldcard-hardware-wallet-flaw-linked-to.html
 - [S10] BleepingComputer, *Coldcard wallet RNG flaw likely linked to $88 million bitcoin theft* (Chainalysis: ~$30M in the first ten minutes, high-value wallets first; Block disclosed to Coinkite on 30 Jul; ~30 hours): https://www.bleepingcomputer.com/news/security/coldcard-wallet-rng-flaw-likely-linked-to-88-million-bitcoin-theft/
 - [S11] Fortune, *Bitcoin owners lose $116 million in Coldcard hack*, 3 Aug 2026 (waves 3 and 4; device description): https://fortune.com/2026/08/03/bitcoin-owners-116-million-hack-coldcard-coinkite-exploit/
-- [S12] IBTimes UK, *$1.6M Bitcoin gone in seven minutes…* (Goodman's X post: 9:36–9:43 pm, 29 July, 18.25245043 BTC, bank safety deposit box, never online): https://www.ibtimes.co.uk/canadian-entrepreneur-bitcoin-loss-hardware-wallet-flaw-1811995
+- [S12] Jonathan Goodman (@itscoachgoodman) on X, ~31 Jul 2026 (9:36–9:43 pm; safe-deposit box; police report and Ontario Securities Commission report; "I don't expect to recoup anything"): https://x.com/itscoachgoodman/status/2083527082223563157 · IBTimes UK, *$1.6M Bitcoin gone in seven minutes…* (Goodman's X post: 9:36–9:43 pm, 29 July, 18.25245043 BTC, bank safety deposit box, never online): https://www.ibtimes.co.uk/canadian-entrepreneur-bitcoin-loss-hardware-wallet-flaw-1811995
 - [S13] Wealthsimple Magazine, *How I lost $1 million in bitcoin in 8 minutes* (Goodman interview: discovered 31 July in a public library with his family, from a friend's Facebook post; went back to Toronto to file a police report; the safe-deposit-box question. The headline says 8 minutes; his own X post gives 9:36–9:43 pm, so the script says seven): https://www.wealthsimple.com/en-ca/magazine/how-i-lost-1-million-in-bitcoin-in-8-minutes
 - [S14] Silicon Canals (Goodman at his cottage; Novak's apology, 31 July): https://siliconcanals.com/?p=107725
 - [S15] Decrypt, *Coldcard bitcoin exploit balloons to $88 million* (Thorn: sweeps deliberate, programmatic): https://decrypt.co/374817/coldcard-bitcoin-exploit-88-million-attackers-draining-wallets
@@ -386,6 +391,11 @@ And somewhere, in a data company's records, there may be a name.
 - [S29] BTC-ECHO, *Alles richtig gemacht und trotzdem Bitcoin im Millionenwert verloren* (Goodman learned of the attack from a friend's Facebook post): https://www.btc-echo.de/news/alles-richtig-gemacht-und-trotzdem-bitcoin-im-millionenwert-verloren-236786/
 - [S28] Rodolfo Novak (@nvk), *To all Coinkite users and the entire Bitcoin community*, X, 31 Jul 2026: https://x.com/nvk/status/2083216713693151552 · quoted by Forbes, 4 Aug 2026: https://www.forbes.com/sites/boazsobrado/2026/08/04/i-did-everything-right-ai-warning-after-116-million-bitcoin-hack/
 - [S27] Forklog, *Kraken CSO says Coldcard flaw exposes gap in hardware wallet testing* (Coinkite advisory: its lawyers will work with law enforcement in various jurisdictions): https://forklog.com/en/kraken-cso-says-coldcard-flaw-exposes-gap-in-hardware-wallet-testing/
+
+- [S30] The News Block, *He did everything right. Then he lost everything.*, 28 Aug 2026 (Goodman interview: three Coldcard devices in a bank safe-deposit box, seed phrases stamped into metal; not sure there is a legal path to recover; "The math on a class action is brutal"; not counting on recovery; cooperating with police and Galaxy's Alex Thorn): https://thenewsblock.substack.com/p/he-did-everything-right-then-he-lost
+- [S31] VT / LADbible, 13 Aug 2026 (all three of his wallets drained in seven minutes): https://vt.co/news/world/man-loses-1-6-million-bitcoin-coldcard-hack-100-percent-secure-warning · AlphaWire (18.25 BTC from three wallets): https://alphawire.xyz/news/bitcoin/coldcard-seed-flaw-three-bitcoin-wallets/
+- [S32] Steptoe, *Crypto Recovery Trust… returns bitcoin to its owner after Coldcard exploit*, 24 Sep 2026 (more than 20 BTC returned on 23 Sep to one verified, unnamed owner; ~50 BTC deposited by white hats): https://www.steptoe.com/en/news-publications/crypto-recovery-trust-advised-by-steptoe-attorneys-returns-dollar17m-in-bitcoin-to-its-owner-after-coldcard-exploit.html
+- [S33] Crypto Briefing (Coinkite "has not announced any compensation fund or insurance mechanism"): https://cryptobriefing.com/coinkite-coldcard-bitcoin-hack-130m/ · BIT Knowledge Hub (no official compensation plan as of early August): https://www.bit.com/insights/knowledge-hub/coldcard-the-security-first-wallet-that-got-hacked
 
 ---
 
@@ -485,6 +495,16 @@ No new facts were added; every line still maps to the sources above. What change
 - "Who did it?" → Who? (publicly unknown; FBI unconfirmed; inside-job theory without evidence).
 - "Where is the money?" → The race (mixers, white hats) and the close (wave 1 unmoved).
 - "Could anyone have been safe?" → the close (50 dice rolls).
-- **Not answered on purpose:** whether Goodman got anything back. No source says so, and we don't guess. See the note below.
+- **Did Goodman get anything back?** Checked on 23 Nov and now answered in Who?: no compensation fund announced, and Goodman says he isn't counting on recovery [S30][S33]; plus the trust's one return in The race [S32].
 
-**To check before voice:** any public update from Goodman about a recovery or compensation, along with the other re-checks already listed (wave 1 coins, arrests, the class action, final loss figures).
+**Checked 23 Nov (web search):** no public report of Goodman recovering anything (latest: The News Block, 28 Aug; his own X post: "I don't expect to recoup anything"). Nor of a Coinkite compensation fund. New facts added from these sources: three devices/three wallets, seeds stamped in metal, the Ontario Securities Commission report, the trust's >20 BTC return (23 Sep), the class-action quote. Goodman's X post says he heard about the hack "at our cottage"; Wealthsimple and The News Block place the moment he checked at a library while his family was downstairs. Both fit, so the script keeps the library. Still to re-check right before voice: wave 1 coins, arrests, the class action, final loss figures.
+
+---
+
+## Changes in v3.2 (23 Nov 2026, the open question checked now)
+
+The question "did Goodman get anything back?" has been checked, and the answer is in the script:
+1. **Who?**: "As of the latest reports, Coinkite hasn't announced any compensation fund. And Goodman isn't counting on the lawsuit." + his card "The math on a class action is brutal." [S30][S33].
+2. **The race**: the white-hat trust handed more than 20 BTC back to one verified owner in September [S32] (a real moment of hope, before the close).
+3. **Precise facts from Goodman himself:** three Coldcards (teaser and close now say "three devices"), words stamped into metal, three wallets emptied one after another, report to the Ontario Securities Commission as well as the police [S12][S30][S31].
+1,527 → 1,581 words (~10:50–11:10). Thomas's lines are unchanged except two words in the close ("devices", "They… their"), still ≤12 words.
