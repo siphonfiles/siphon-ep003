@@ -229,10 +229,10 @@ But he doesn't know yet. Nobody does.
 Over the next hours, reports trickle in of coins moving out of cold wallets. Engineers at Block, the company behind the Bitkey wallet, start pulling the firmware apart. [S10][S4]
 
 `[VO]`
-They find the bug, and tell Coinkite the same day. [S10]
+Within hours they trace the root cause and share it with Coinkite, which is finding the same bug on its own. [S4][S2]
 
 `[VO]`
-About 30 hours after the first sweep, Coinkite publishes its warning: seeds made on affected firmware are at risk. Move your funds. [S10][S26]
+Coinkite publishes its first warning: seeds made on affected firmware are at risk. Move your funds. By then, the first wave is long over. [S1][S5]
 
 `[VO]`
 Goodman learns about it on July 31st, from a friend's post on Facebook. He checks. The money has been gone for two days. [S13]
@@ -388,8 +388,9 @@ Someone may know whose they are.
 
 ## Notes for proprietarul's check
 
-- **Primary sources read directly:** TRM Labs [S7], Galaxy Research [S6]. **Not yet opened directly** (the fetch needed your approval and you were away): Coinkite's three blog posts [S1–S3] and Block's write-up [S4]; their content here comes from verbatim excerpts in search results and several outlets quoting them. I'll open them in Chrome before the voice is generated.
-- **Corrections to the handoff:** (1) the affected range is **4.0.1–4.1.9** per Coinkite (Block includes Mk2/Mk3 from 4.0.0), not "firmware 4.0.0"; (2) the emergency fix is **4.2.0** (31 Jul) for Mk3, later 5.6.1 / 1.5.1Q with mandatory user entropy; (3) Coinkite's warning came **~30 hours after** the first sweep, i.e. on 31 Jul, though some outlets date it 30 Jul; the script says "about 30 hours after"; (4) the Forbes victim quote "I did everything right" is Jonathan Goodman's own X post (C$1.6M, 18.25 BTC).
+- **Primary sources read directly:** TRM Labs [S7], Galaxy Research [S6], and on 23 Nov in Chrome: Coinkite's advisory [S1], technical deep dive [S2] ("We were unaware of the bug until today"; the hardware RNG code "was being used, but just by chance, and only for less important things"), the AI post [S3] ("including in the weeks before the exploit"; later tests with frontier models also missed it), and Block's report [S4] (timeline: v4.0.0 released 17 Mar 2021; on 30 Jul Block and others independently found the root cause, Coinkite published its advisory, Block disclosed its findings to Coinkite). Everything in the script matches.
+- **Date of the warning:** Coinkite and Block date the first advisory **30 July**; Galaxy and several outlets say it came "about 30 hours" after the first sweep (which would put it on 31 July UTC). The script avoids the gap and says only "by then, the first wave is long over".
+- **Corrections to the handoff:** (1) the affected range is **4.0.1–4.1.9** per Coinkite (Block includes Mk2/Mk3 from 4.0.0), not "firmware 4.0.0"; (2) the emergency fix is **4.2.0** (31 Jul) for Mk3, later 5.6.1 / 1.5.1Q with mandatory user entropy; (3) the timing of Coinkite's warning is disputed (see below); (4) the Forbes victim quote "I did everything right" is Jonathan Goodman's own X post (C$1.6M, 18.25 BTC).
 - **Goodman's times:** 9:36–9:43 pm on 29 July, Ontario time (EDT) = 01:36–01:43 UTC on 30 July, inside Galaxy's first-wave window. The script keeps both dates on purpose ("still the evening of July 29th").
 - **Loss figures:** wave 1 = 1,082.65 BTC / 1,196 addresses (Galaxy); waves 1–3 = 1,367.05 BTC / 4,585 addresses; four waves ≈ 1,816 BTC / 5,200+ addresses (Galaxy/TRM "potential"); Galaxy's high-confidence minimum 1,730 BTC; CryptoQuant confirms 1,432 BTC; Galaxy later ~1,830 BTC from ~9,200 addresses [S24]. USD values differ with the BTC price used ($114M–$130M). The voice uses "about 116 million" (TRM, title).
 - **"About a trillion"**: 2^40 ≈ 1.1 trillion. Block says that with a known device ID and boot timing the practical search can be far smaller [S4]; we don't claim a time ("a search with an end").

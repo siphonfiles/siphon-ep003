@@ -111,8 +111,8 @@
 ## 6:50 — N-A ȘTIUT
 
 `[VO]` În orele care urmează apar relatări despre monede care pleacă din portofele reci. Inginerii de la Block, firma care face portofelul Bitkey, încep să desfacă firmware-ul.
-`[VO]` Găsesc problema și anunță Coinkite chiar în aceeași zi.
-`[VO]` La circa 30 de ore după prima golire, Coinkite își publică avertismentul: seed-urile făcute pe firmware-ul afectat sunt în pericol. Mutați-vă fondurile.
+`[VO]` În câteva ore găsesc cauza și o trimit firmei Coinkite, care găsește singură același defect.
+`[VO]` Coinkite își publică primul avertisment: seed-urile făcute pe firmware-ul afectat sunt în pericol. Mutați-vă fondurile. Până atunci, primul val se terminase de mult.
 `[VO]` Goodman află pe 31 iulie, dintr-o postare a unui prieten pe Facebook. Verifică. Banii erau plecați de două zile.
 `[VO]` Când raportează furtul, prima întrebare pe care o primește e dacă i-a spart cineva caseta de valori.
 `[VO]` Nu i-a spart-o nimeni. Și o actualizare de firmware nu-l poate ajuta. Repară seed-urile noi. Un seed slab, deja scris, rămâne slab pentru totdeauna.
@@ -175,9 +175,9 @@
 
 ## Ce trebuie să știi la verificare
 
-- **Corecturi față de predare:** versiunile afectate sunt **4.0.1–4.1.9** (după Coinkite; Block include și 4.0.0), nu „4.0.0”. Reparația de urgență e **4.2.0** (31 iulie). Avertismentul Coinkite a venit **la ~30 de ore** după prima golire. Citatul „I did everything right” e al lui Jonathan Goodman, de pe X (C$1,6M, 18,25 BTC).
+- **Corecturi față de predare:** versiunile afectate sunt **4.0.1–4.1.9** (după Coinkite; Block include și 4.0.0), nu „4.0.0”. Reparația de urgență e **4.2.0** (31 iulie). Data avertismentului Coinkite e disputată: Coinkite și Block îl datează pe 30 iulie, Galaxy spune „la ~30 de ore” după prima golire. Scriptul ocolește diferența („primul val se terminase de mult”). Citatul „I did everything right” e al lui Jonathan Goodman, de pe X (C$1,6M, 18,25 BTC).
 - **Orele lui Goodman:** 21:36–21:43 pe 29 iulie, ora Ontario = 01:36–01:43 UTC pe 30 iulie, adică în fereastra primului val. Scriptul păstrează intenționat ambele date.
 - **Cifrele pierderii diferă între surse:** 1.816 BTC „potențial” (Galaxy/TRM), minim sigur 1.730 BTC (Galaxy), 1.432 BTC confirmați (CryptoQuant), ulterior ~1.830 BTC (Galaxy). Vocea spune „about 116 million”, ca în titlu. Intervalele merg în descriere.
-- **Nu am deschis direct** cele 3 postări Coinkite și raportul Block: pentru citirea paginii era nevoie de acordul tău, iar tu nu erai la calculator. Conținutul lor vine din fragmente exacte citate în rezultatele de căutare și din articolele care le citează. Le citesc în Chrome înainte de generarea vocii.
+- **Sursele primare citite direct în Chrome (23 nov):** cele 3 postări Coinkite (comunicatul, analiza tehnică, postarea despre AI) și raportul Block. Tot ce e în script se potrivește cu ele.
 - **Citatul lui Novak** apare în două variante („devastated” / „crushed”). Îl verific în postarea originală înainte să fac cartonul.
 - **De reverificat înainte de randare:** dacă banii din primul val s-au mișcat, orice arestare sau acuzare, stadiul procesului, post-mortemul final Coinkite.
