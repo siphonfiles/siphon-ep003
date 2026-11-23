@@ -267,7 +267,8 @@ def build(tl):
         lines=[(0.5, "Someone used AI to find it"), (s("c13") - s("c12") + 0.2, "Not proven")], source="[S3]")
     IL(s("c14"), s("c15"), "c13_guessing_room", "out", statement="No device needed.", warm=False)
     add(s("c15"), nxt_after(hits, e("c16")), S.checklist, title="THE METHOD",
-        items=["Guess a seed", "Work out its addresses", "Check the blockchain", "A match = the key"])
+        items=[(0.2, "Guess a seed"), (frac("c15", 0.35) - s("c15"), "Work out its addresses"),
+               (frac("c15", 0.7) - s("c15"), "Check the blockchain"), (s("c16") - s("c15") + 0.3, "A match = the key")])
 
     # ---------------- 01:10 ----------------
     h = nxt_after(hits, e("c16"))
