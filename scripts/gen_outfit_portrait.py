@@ -1,4 +1,4 @@
-"""Thomas in a new outfit for ep. 002: the ep. 001 portrait recipe (Z-Image-Turbo, seed 596067, 896x1152,
+"""Thomas in a new outfit for ep. 003: the ep. 001 portrait recipe (Z-Image-Turbo, seed 596067, 896x1152,
 8 steps, time shift 3), same prompt word for word except the clothing sentence. One image per outfit.
 Usage: python scripts/gen_outfit_portrait.py <out_dir>"""
 import json, os, shutil, sys, time
@@ -15,10 +15,10 @@ BASE = ("Photorealistic studio portrait photograph of a man in his late thirties
 ORIGINAL = "He wears a plain dark charcoal crew-neck sweater, no pattern, no logo."
 # Proprietarul (01:01): no accessories, no labels on the clothes. Described positively (Z-Image: negations
 # activate the negated concept): bare plain fabric, nothing worn but the garment.
-OUTFITS = {
-    "black_turtleneck": "He wears only a plain black fine-knit merino turtleneck, completely unadorned smooth fabric.",
-    "navy_shirt": "He wears only a plain dark navy cotton shirt with a soft open collar and matching fabric-covered buttons, completely unadorned smooth fabric.",
-    "slate_henley": "He wears only a plain dark slate blue long-sleeved cotton crew-neck top, completely unadorned smooth fabric.",
+OUTFITS = {  # ep. 003 (Coldcard): warm camel against the cold steel look; collared shirts kept the face in ep. 002
+    "camel_overshirt": "He wears only a plain camel-brown wool overshirt with a soft pointed collar and matching fabric-covered buttons, buttoned up, completely unadorned smooth fabric.",
+    "olive_shirt": "He wears only a plain dark olive green cotton shirt with a soft open collar and matching fabric-covered buttons, completely unadorned smooth fabric.",
+    "rust_corduroy": "He wears only a plain rust-brown fine-wale corduroy shirt with a soft pointed collar and matching fabric-covered buttons, buttoned up, completely unadorned fabric.",
 }
 assert ORIGINAL in BASE.replace("{OUTFIT}", ORIGINAL)
 z = Client("Tongyi-MAI/Z-Image-Turbo", token=os.environ["HF_TOKEN"])
