@@ -1,0 +1,374 @@
+[
+ {
+  "id": "t1",
+  "text": "A bank vault. A safe-deposit box. Inside it, three small devices that have never been connected to the internet."
+ },
+ {
+  "id": "t2",
+  "text": "On the night of July the twenty-ninth, nobody opened that box. Nobody touched those devices."
+ },
+ {
+  "id": "t3",
+  "text": "In seven minutes, the bitcoin they protected was gone."
+ },
+ {
+  "id": "t4",
+  "text": "Within five days, about a hundred and sixteen million dollars had been taken the same way."
+ },
+ {
+  "id": "t5",
+  "text": "The flaw behind it had been sitting in public code for more than five years."
+ },
+ {
+  "id": "t6",
+  "text": "And the first thief may have made one mistake of their own."
+ },
+ {
+  "id": "i1",
+  "text": "I'm Thomas Archer, the AI narrator of Siphon Files."
+ },
+ {
+  "id": "i2",
+  "text": "Every claim you'll hear is sourced. The list is in the description."
+ },
+ {
+  "id": "i3",
+  "text": "This is the story of a lock that nobody picked."
+ },
+ {
+  "id": "i4",
+  "text": "Somebody simply worked out the combination."
+ },
+ {
+  "id": "a1",
+  "text": "Jonathan Goodman is an entrepreneur in Toronto. By his own account, he has put more than a million dollars into bitcoin."
+ },
+ {
+  "id": "a2",
+  "text": "So he does what the security guides tell you to do. He buys a hardware wallet: a Coldcard, made by a Canadian company called Coinkite."
+ },
+ {
+  "id": "a3",
+  "text": "When you set one up, it gives you a list of twelve or twenty-four words. Those words are the money. Anyone who has them can spend your bitcoin, from anywhere."
+ },
+ {
+  "id": "a4",
+  "text": "He buys three of them. He never shares his words with anyone, and he stamps them into metal as a backup. The devices never touch the internet. They go into a safe-deposit box at his bank."
+ },
+ {
+  "id": "a5",
+  "text": "But there's one thing he can't check for himself: how those words were chosen."
+ },
+ {
+  "id": "b1",
+  "text": "The words have to be impossible to guess. So the device picks them by pure chance, using hardware built for one job: producing random numbers."
+ },
+ {
+  "id": "b2",
+  "text": "Done properly, there are so many possible word lists that nobody could ever search through them all."
+ },
+ {
+  "id": "b3",
+  "text": "But in March twenty twenty-one, Coinkite ships a firmware update. It switches to the same cryptography that Bitcoin Core uses, through a new library."
+ },
+ {
+  "id": "b4",
+  "text": "The new library needs random numbers. And the code that answers its request can work in two ways: read the hardware, or run a simple software substitute. One setting decides which."
+ },
+ {
+  "id": "b5",
+  "text": "Coinkite sets it to zero, believing that turns the whole thing off. It doesn't. Zero means: use the substitute."
+ },
+ {
+  "id": "b6",
+  "text": "And there's a safety check in the code, built for exactly this. If the setting is missing, the build stops, with a message."
+ },
+ {
+  "id": "b7",
+  "text": "But the check only asks whether the setting exists. It does. It says zero. The check passes."
+ },
+ {
+  "id": "b8",
+  "text": "Think of a smoke alarm inspector."
+ },
+ {
+  "id": "b9",
+  "text": "He checks that there's an alarm on the ceiling."
+ },
+ {
+  "id": "b10",
+  "text": "He never checks that it's switched on."
+ },
+ {
+  "id": "c1",
+  "text": "So from then on, the older Mark Two and Mark Three models make their words from the substitute. It runs on a fixed factory ID and a few timers. Nothing in it is truly secret."
+ },
+ {
+  "id": "c2",
+  "text": "Coinkite later puts it at about forty bits of real randomness. A proper seed has at least a hundred and twenty-eight."
+ },
+ {
+  "id": "c3",
+  "text": "Forty bits is about a trillion possibilities. That sounds like a lot."
+ },
+ {
+  "id": "c4",
+  "text": "For a computer guessing offline, it's a search that ends."
+ },
+ {
+  "id": "c5",
+  "text": "Newer models fare better, at about seventy-two bits. Still far short of a proper seed, though so far there's no public evidence that any of them were drained in these attacks."
+ },
+ {
+  "id": "c6",
+  "text": "The hardware generator is still there, inside every device. Coinkite's own technical write-up later admits it was being used."
+ },
+ {
+  "id": "c7",
+  "text": "So now you know something Goodman doesn't. His words were never truly random. And the code is public. Anyone can read it."
+ },
+ {
+  "id": "c8",
+  "text": "For five years, owners like him buy the device, write their words down, and lock them away."
+ },
+ {
+  "id": "c9",
+  "text": "Coinkite's CEO says the company paid for outside security reviews in twenty twenty-two and twenty twenty-four. Yet Coinkite says it was unaware of the bug until the day of the theft."
+ },
+ {
+  "id": "c10",
+  "text": "Then, a few weeks before the theft, Coinkite runs an AI review of its critical code."
+ },
+ {
+  "id": "c11",
+  "text": "But someone else finds it first."
+ },
+ {
+  "id": "c12",
+  "text": "Coinkite says it must assume that someone used AI to find it."
+ },
+ {
+  "id": "c13",
+  "text": "That's Coinkite's assumption. It hasn't been proven."
+ },
+ {
+  "id": "c14",
+  "text": "Either way, the method didn't need a single device."
+ },
+ {
+  "id": "c15",
+  "text": "Guess a seed. Work out its addresses. Check the blockchain."
+ },
+ {
+  "id": "c16",
+  "text": "A match means the key, and the money with it."
+ },
+ {
+  "id": "d1",
+  "text": "In Toronto, it's ten past nine on a Wednesday evening. Goodman is away at his cottage."
+ },
+ {
+  "id": "d2",
+  "text": "The first transaction leaves an address made on a Coldcard. Then another. Then hundreds."
+ },
+ {
+  "id": "d3",
+  "text": "According to Chainalysis, the thief goes for the biggest wallets first. About thirty million dollars in the first ten minutes."
+ },
+ {
+  "id": "d4",
+  "text": "And there's something odd about these transactions. They're all built the same way: the same fee rate, and every last coin swept out, with nothing left behind."
+ },
+ {
+  "id": "d5",
+  "text": "Hold on to that detail."
+ },
+ {
+  "id": "d6",
+  "text": "Then it reaches Goodman."
+ },
+ {
+  "id": "d7",
+  "text": "Nine thirty-six p.m. The first of his three wallets empties. Then the second. By nine forty-three, the third is gone too. About one point six million Canadian dollars."
+ },
+ {
+  "id": "d8",
+  "text": "At nine fifty-one, the first wave stops. In forty-one minutes, nearly twelve hundred addresses have been emptied."
+ },
+ {
+  "id": "d9",
+  "text": "And Goodman has no idea."
+ },
+ {
+  "id": "e1",
+  "text": "Over the next few hours, reports start to appear of coins leaving cold wallets. Engineers at Block, the company behind the Bitkey wallet, pull the firmware apart. Before the day is out, they and other researchers find the cause."
+ },
+ {
+  "id": "e2",
+  "text": "Coinkite publishes its first warning: seeds made on affected firmware are at risk. Move your funds. By then, the first wave is long over."
+ },
+ {
+  "id": "e3",
+  "text": "On July the thirty-first, Goodman is at a public library with his family when he sees a friend's post on Facebook: if you use a Coldcard, move your money now."
+ },
+ {
+  "id": "e4",
+  "text": "He checks. His bitcoin has been gone since Wednesday night."
+ },
+ {
+  "id": "e5",
+  "text": "He heads back to Toronto to file a police report, and a report with the Ontario Securities Commission."
+ },
+ {
+  "id": "e6",
+  "text": "People ask him whether someone got into his safe-deposit box."
+ },
+ {
+  "id": "e7",
+  "text": "Nobody did. And for anyone else still holding a seed made the same way, a firmware update won't help. It fixes new seeds. A weak seed that's already written down stays weak."
+ },
+ {
+  "id": "e8",
+  "text": "Here's the cruel part of a public warning."
+ },
+ {
+  "id": "e9",
+  "text": "It reaches the owners and the thieves at the same moment."
+ },
+ {
+  "id": "f1",
+  "text": "Wave two follows. Wave three runs from Friday into Saturday. A fourth starts on Monday."
+ },
+ {
+  "id": "f2",
+  "text": "Galaxy Research later counts at least fifteen separate attackers. Not one thief anymore. A crowd, working the same weakness."
+ },
+ {
+  "id": "f3",
+  "text": "But in the fourth wave, the thieves' transactions sit waiting to be confirmed. Until they are, anyone willing to pay a higher fee can replace them."
+ },
+ {
+  "id": "f4",
+  "text": "So one owner, Will Owens, fights back. He leaves a small amount behind as bait, waits for the bot to take it, and outbids it. He wins his bait back."
+ },
+ {
+  "id": "f5",
+  "text": "Later, volunteer white hats move about fifty-two bitcoin out of exposed wallets, into a trust set up to return it to victims. In September, the trust hands more than twenty bitcoin back to one verified owner."
+ },
+ {
+  "id": "f6",
+  "text": "Some of the stolen coins head for mixers, services built to blur the trail. By the latest public tallies, much of the rest is still sitting."
+ },
+ {
+  "id": "f7",
+  "text": "By the time the waves slow down, about eighteen hundred and sixteen bitcoin have been taken, from more than fifty-two hundred addresses."
+ },
+ {
+  "id": "f8",
+  "text": "But the biggest piece, the first wave, still hasn't moved, according to the latest public tracking."
+ },
+ {
+  "id": "g1",
+  "text": "Remember that detail? Every transaction in wave one looked the same."
+ },
+ {
+  "id": "g2",
+  "text": "Galaxy found no one else using that pattern in the month before."
+ },
+ {
+  "id": "g3",
+  "text": "So wave one could be traced as a single operation."
+ },
+ {
+  "id": "g4",
+  "text": "And investigators noticed something else about it."
+ },
+ {
+  "id": "g5",
+  "text": "Every guess has to be checked. To know which guessed addresses hold money, you have to look them up, again and again."
+ },
+ {
+  "id": "g6",
+  "text": "Block's investigators say the first wave operator appears to have done that through a paid account at a well-known blockchain data provider."
+ },
+ {
+  "id": "g7",
+  "text": "They contacted the provider. Its internal logs, they say, matched the attack with extraordinary specificity: the number, the timing and the order of the requests."
+ },
+ {
+  "id": "g8",
+  "text": "On the blockchain, the thief was just a string of addresses."
+ },
+ {
+  "id": "g9",
+  "text": "But a paid account usually leaves records."
+ },
+ {
+  "id": "g10",
+  "text": "The information went to law enforcement. Galaxy's Alex Thorn says the first wave attacker's identity may be known to law enforcement."
+ },
+ {
+  "id": "g11",
+  "text": "But as we make this video, the FBI has not confirmed a suspect, an arrest, or any recovery."
+ },
+ {
+  "id": "h1",
+  "text": "So, at the time of this video, no one has been publicly named. T R M Labs doesn't attribute the theft to anyone. Coinkite says its lawyers are working with law enforcement to identify those responsible."
+ },
+ {
+  "id": "h2",
+  "text": "Online, some call it an inside job. So far, there's no public evidence for that, and no one has been accused."
+ },
+ {
+  "id": "h3",
+  "text": "In September, a Coldcard owner filed a proposed class action in Ontario against Coinkite and its co-founders. It alleges the company knew its seed generation was weak by May twenty twenty-five. As of the latest reports, a judge hasn't even certified it as a class action yet, and none of its claims have been tested in court."
+ },
+ {
+  "id": "h4",
+  "text": "And, as far as public reports show, Coinkite hasn't announced any compensation fund. Goodman isn't counting on the lawsuit."
+ },
+ {
+  "id": "h5",
+  "text": "Coinkite's CEO says the flaw affected about zero point one seven percent of its users. The newest firmware now makes every owner add randomness of their own when they create a seed."
+ },
+ {
+  "id": "k1",
+  "text": "There's one group Coinkite doesn't consider at risk from this bug: owners who added at least fifty dice rolls of their own when they made their seed."
+ },
+ {
+  "id": "k2",
+  "text": "The ones who didn't leave it all to the device."
+ },
+ {
+  "id": "k3",
+  "text": "That safe-deposit box was never opened."
+ },
+ {
+  "id": "k4",
+  "text": "The devices inside were never hacked."
+ },
+ {
+  "id": "k5",
+  "text": "They just never asked their random-number hardware for the seed."
+ },
+ {
+  "id": "k6",
+  "text": "If you made a seed on an affected Coldcard, read Coinkite's advisory."
+ },
+ {
+  "id": "k7",
+  "text": "Coinkite says: treat it as compromised, and move to a new seed."
+ },
+ {
+  "id": "k8",
+  "text": "And the one thousand and eighty-two bitcoin from the first wave? As of the latest public tracking, they're still sitting where the thief left them."
+ },
+ {
+  "id": "k9",
+  "text": "And somewhere, in a data company's records, there may be a name."
+ },
+ {
+  "id": "k10",
+  "text": "This was Siphon Files."
+ }
+]
