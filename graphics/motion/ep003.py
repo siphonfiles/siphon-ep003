@@ -54,6 +54,11 @@ def thomas_shots(tl):
             out += [(a, k, fr, t0, "M"), (k, b, fr, t0, "C")]
         else:
             out.append((a, b, fr, t0, c.get("camera", "M")))
+    # back-to-back Thomas lines: cut cleanly at the next shot's start instead of overlapping
+    out.sort(key=lambda x: x[0])
+    for i in range(len(out) - 1):
+        if out[i][1] > out[i + 1][0]:
+            out[i] = (out[i][0], out[i + 1][0]) + out[i][2:]
     return out
 
 
@@ -365,10 +370,10 @@ def build(tl):
     IL(s("k3"), s("k4"), "c01_vault_night", "in", statement="Never opened.", warm=False, glows=[DUSTBEAM])
     IL(s("k4"), s("k5"), "c03_devices_tray", "in", statement="Never hacked.", warm=False)
     IL(s("k5"), s("k6"), "c08_idle_chip", "in", statement="They never asked.", warm=False)
-    add(s("k6"), s("k8"), S.explainer, name="IF YOU MADE A SEED ON AN AFFECTED COLDCARD",
+    add(s("k6"), e("k7") + .35, S.explainer, name="IF YOU MADE A SEED ON AN AFFECTED COLDCARD",
         lines=[(0.5, "Read Coinkite's advisory"), (s("k7") - s("k6") + 0.3, "Treat it as compromised"),
                (s("k7") - s("k6") + 1.6, "Move to a new seed")], source="[S1]")
-    IL(s("k8"), s("k9"), "c29_vault_dawn", "in", kicker="1,082.57 BTC · AS OF THE LATEST PUBLIC TRACKING",
+    IL(e("k7") + .35, s("k9"), "c29_vault_dawn", "in", kicker="1,082.57 BTC · AS OF THE LATEST PUBLIC TRACKING",
        line="Still where the first wave left them.", source="[S8][S34]",
        glows=[dict(LAMP, x=1024, y=300, r=380)])
     IL(s("k9"), s("k10"), "c25_card_index", "out", statement="Somewhere, there may be a name.")
