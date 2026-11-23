@@ -1,0 +1,100 @@
+{
+ "clips": [
+  {
+   "name": "thomas_e3_i1_720p",
+   "first": "i1",
+   "last": "i1",
+   "lead": 0.3,
+   "camera": "M",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_i2_720p",
+   "first": "i2",
+   "last": "i2",
+   "lead": 0.3,
+   "camera": "C",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_i3_720p",
+   "first": "i3",
+   "last": "i3",
+   "lead": 0.3,
+   "camera": "M",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_i4_720p",
+   "first": "i4",
+   "last": "i4",
+   "lead": 0.3,
+   "camera": "M",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_b8_720p",
+   "first": "b8",
+   "last": "b9",
+   "lead": 0.3,
+   "camera": "M",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_b10_720p",
+   "first": "b10",
+   "last": "b10",
+   "lead": 0.3,
+   "camera": "C",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_c12_720p",
+   "first": "c12",
+   "last": "c12",
+   "lead": 0.3,
+   "camera": "M",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_e8_720p",
+   "first": "e8",
+   "last": "e8",
+   "lead": 0.3,
+   "camera": "C",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_g8_720p",
+   "first": "g8",
+   "last": "g8",
+   "lead": 0.3,
+   "camera": "M",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_g9_720p",
+   "first": "g9",
+   "last": "g9",
+   "lead": 0.3,
+   "camera": "C",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_k3_720p",
+   "first": "k3",
+   "last": "k3",
+   "lead": 0.3,
+   "camera": "M",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e3_k6_720p",
+   "first": "k6",
+   "last": "k6",
+   "lead": 0.3,
+   "camera": "C",
+   "tail": 0.35
+  }
+ ]
+}
