@@ -5,9 +5,9 @@
 
 **Subject:** the Coldcard hardware-wallet thefts (30 July – early August 2026). A build error in Coinkite's March 2021 firmware made some Coldcard devices create wallet seeds from a predictable software generator instead of the hardware random-number chip. Attackers rebuilt the seeds offline and swept about 1,816 BTC (about $116M) from more than 5,200 addresses in four waves, without touching a single device.
 **Angle:** the device built to be the safest place for bitcoin was, for more than five years, predictable. The safety check that should have stopped the build was there, and it passed. The first thief may have left a trail, not on the blockchain, but in a paid account.
-**Status:** DRAFT v2, written 2026-11-23 (v1 the same evening; v2 = full line-by-line review, see "Changes from v1"). Facts checked against the sources below (see "Notes for proprietarul's check"). Proprietarul must check it before any generation (rule 10).
+**Status:** DRAFT v3, written 2026-11-23 (v1 and v2 the same day; v3 = story rewrite on the same verified facts, see "Changes from v2"). Facts checked against the sources below (see "Notes for proprietarul's check"). Proprietarul must check it before any generation (rule 10).
 **Target length:** about 10:45–11:15 with cards, pauses, music beats and end card (rule 13).
-**Length:** 1,559 spoken words (automatic count, cards and cues excluded), Thomas 263 words in 28 lines (~1:30), each ≤ 12 words so every line fits one 5 s LongCat clip (≤ 4.7 s of speech). Ep. 002 ran 11:11 with 1,577 words, so this lands at about 10:40–11:00.
+**Length:** 1,489 spoken words (automatic count, cards and cues excluded), Thomas 256 words in 28 lines (~1:30), each ≤ 12 words so every line fits one 5 s LongCat clip (≤ 4.7 s of speech). Ep. 002 ran 11:11 with 1,577 words, so this lands at about 10:30–10:50.
 
 Notation (same as ep. 001/002):
 - `[THOMAS]` = Thomas on camera, one line = one clip. `[VO]` = voice over b-roll. `[VIS]` = on screen. `[CARD]` = quote shown as text, never voiced as the real person. `[S#]` = source.
@@ -33,7 +33,8 @@ Notation (same as ep. 001/002):
 - Planted before the peak, paid after: the **fixed fee** on every first-wave transaction ("hold on to that fee") → the tell that leads to a paid account.
 - Every section ends on "but"/"so", never a conclusion. Max 2–3 numbers spoken per section.
 - Designed peak: the 41 minutes, seen from Goodman's addresses (9:36 to 9:43 pm, Ontario time).
-- Proposed chapters: The box · The promise · March 2021 · The check that passed · Five years · 01:10 · Seven minutes · He didn't know · The race · The tell · Who? · The box, again.
+- Proposed chapters: The box · The man who did everything right · The combination · Five years · 01:10 · "I'll just check" · The race · The mistake · Who? · The box, again.
+- v3 spine: Goodman is the protagonist from 0:55; the seed is a combination nobody picked; the teaser promises the thief's mistake and "The mistake" pays it; the sweep is told in Toronto time so the peak lands on his wallets; the close returns to the box.
 
 ---
 
@@ -44,19 +45,22 @@ Notation (same as ep. 001/002):
 `[VIS]` A bank vault at night. One small drawer, closed. Dust in a single beam of light.
 
 `[VO]`
-A bank in Ontario. A safe-deposit box. Inside it, a small device that has never been connected to the internet. [S12]
+A bank vault. A safe-deposit box. Inside it, a small device that has never been connected to the internet. [S12]
 
 `[VO]`
-On the night of July 29th, nobody opened that box. Nobody touched that device. [S12][S14]
+On the night of July 29th, nobody opened that box. Nobody touched that device. [S12]
 
 `[VO]`
 In seven minutes, the bitcoin it protected was gone. [S12]
 
 `[VO]`
-Over the next five days, about 116 million dollars left more than 5,200 addresses made on devices like it. [S7]
+Within five days, about 116 million dollars had been taken the same way. [S7]
 
 `[VO]`
-And the mistake behind it had been sitting in public code. For more than five years. [S2][S4]
+The flaw behind it had been sitting in public code for more than five years. [S2][S4]
+
+`[VO]`
+And the first thief may have made one mistake of their own. [S19]
 
 *(Every line generated with a full stop; the cut is made in the edit, on the bass hit.)*
 
@@ -70,15 +74,18 @@ And the mistake behind it had been sitting in public code. For more than five ye
 
 `[THOMAS]` I'm Thomas Archer, the AI narrator of Siphon Files.
 `[THOMAS]` Every claim you'll hear is sourced. The list is in the description.
-`[THOMAS]` This time: a device built to be the safest place for bitcoin.
-`[THOMAS]` And the one setting that made it guessable.
+`[THOMAS]` This is the story of a lock that nobody picked.
+`[THOMAS]` Somebody simply worked out the combination.
 
 ---
 
-## 0:55 — THE PROMISE
+## 0:55 — THE MAN WHO DID EVERYTHING RIGHT
 
 `[VO]`
-The Coldcard is a hardware wallet, made by a Canadian company called Coinkite. Its job is to create your keys offline, and keep them there. [S7][S11]
+Jonathan Goodman is an entrepreneur in Toronto. By his own account, he has put more than a million dollars into bitcoin. [S13]
+
+`[VO]`
+So he does what every security guide tells you to do. He buys a hardware wallet: a Coldcard, made by a Canadian company called Coinkite. [S13][S11]
 
 `[VO]`
 When you set one up, it gives you a list of 12 or 24 words. Those words are the money. Anyone who has them can spend your bitcoin, from anywhere. [S2]
@@ -86,77 +93,74 @@ When you set one up, it gives you a list of 12 or 24 words. Those words are the 
 `[VIS]` A blank card with 24 numbered lines, the words blurred.
 
 `[VO]`
-So the words have to be impossible to guess. The device picks them by pure chance, using hardware built for one purpose: producing random numbers. [S2][S4]
+Goodman never shares his words with anyone. His Coldcard never touches the internet. It goes into a safe-deposit box at his bank. [S12]
 
 `[VO]`
-Done properly, the number of possible word lists is so large that nobody could ever search through them all. [S2][S7]
-
-`[VO]`
-Owners can also roll real dice and type in the results, adding randomness of their own. It's optional. The device is supposed to take care of it. [S1]
-
-`[VO]`
-But that hardware only helps if the device actually asks it.
+But there's one thing he can't check for himself: how those words were chosen.
 
 ---
 
-## 1:40 — MARCH 2021
+## 1:45 — THE COMBINATION
+
+`[VO]`
+The words have to be impossible to guess. So the device picks them by pure chance, using hardware built for one job: producing random numbers. [S2][S4]
+
+`[VO]`
+Done properly, there are so many possible word lists that nobody could ever search through them all. [S2][S7]
 
 `[CARD]` **T-MINUS 5 YEARS, 4 MONTHS**
 
 `[VO]`
-March 2021. Coinkite ships a firmware update. Under the hood, it switches to the same cryptography that Bitcoin Core itself uses, through a new library. [S2][S4]
+But in March 2021, Coinkite ships a firmware update. It switches to the same cryptography that Bitcoin Core uses, through a new library. [S2][S4]
 
 `[CARD]` **"The cryptographic choice was sound. The integration was not."** — Coinkite [S2]
 
 `[VO]`
-The new library needs random numbers too. So it asks for them, by name. [S4]
-
-`[VO]`
-And the code that answers to that name can work in two ways. It can read the hardware generator. Or it can run a simple software substitute. One setting decides which. [S2][S4]
+The new library needs random numbers. And the code that answers its request can work in two ways: read the hardware, or run a simple software substitute. One setting decides which. [S2][S4]
 
 `[VIS]` Two boxes: **HARDWARE RANDOM GENERATOR** (cyan, idle) and **SOFTWARE SUBSTITUTE** (grey). A switch marked **0** sends the arrow from "seed generation" to the wrong one.
 
 `[VO]`
-Coinkite had its own code for the hardware. So it set that switch to zero, believing that turned the whole thing off. It didn't. Zero meant: use the substitute. [S2]
-
----
-
-## 2:20 — THE CHECK THAT PASSED
+Coinkite sets it to zero, believing that turns the whole thing off. It doesn't. Zero means: use the substitute. [S2]
 
 `[VO]`
-The library's authors had seen a risk like this coming. They left a guard in the code. If the hardware setting was missing, the build would stop, with a message. [S4]
+And there's a safety check in the code, built for exactly this. If the setting is missing, the build stops, with a message. [S4]
 
 `[VIS]` A code line types itself out: `#error "get a HW TRNG plz"` · source: Block Engineering [S4]
 
 `[VO]`
-But the guard only checked whether the setting existed. It did. It was set to zero, but it existed. So the build went through. [S2][S4]
+But the check only asks whether the setting exists. It does. It says zero. The check passes. [S2][S4]
 
 `[THOMAS]` Think of a smoke alarm inspector.
 `[THOMAS]` He checks that there's an alarm on the ceiling.
 `[THOMAS]` He never checks that it's switched on.
-`[THOMAS]` Here, the setting was there. It said zero. The check passed.
+
+---
+
+## 3:05 — FIVE YEARS
 
 `[VO]`
-From then on, the older Mk2 and Mk3 models made new seeds from the substitute. It was fed by a fixed factory ID and a few timers. None of that is truly secret, or truly random. [S4][S6]
+So from then on, the older Mk2 and Mk3 models make their words from the substitute. It runs on a fixed factory ID and a few timers. Nothing in it is truly secret. [S4][S6]
 
 `[VO]`
-Coinkite later estimated the result at about 40 bits of real randomness, instead of the 128 the device was designed for. [S1][S2]
+Coinkite later puts it at about 40 bits of real randomness, where the design called for 128. [S1][S2]
 
 `[THOMAS]` Forty bits is about a trillion possibilities. That sounds like a lot.
 `[THOMAS]` For a computer guessing offline, it's a search that ends.
 
 `[VO]`
-Newer models did better, about 72 bits. Still far below the design, but there's no public evidence that any of them were drained in these attacks. [S1][S2]
-
----
-
-## 3:55 — FIVE YEARS
+Newer models fare better, about 72 bits. Still far below the design, though there's no public evidence that any were drained in these attacks. [S1][S2]
 
 `[VO]`
-So from here on, you know something the owners don't. Their words were never truly random. [S2]
+The hardware generator is still there, inside every device. Coinkite's own technical write-up later admits it was being used… [S2]
+
+`[CARD]` **"…just by chance, and only for less important things."** — Coinkite [S2]
 
 `[VO]`
-And the code is public. Anyone can read it. For more than five years, people buy the device, write their words down, and lock them away. [S2][S12]
+So now you know something Goodman doesn't. His words were never truly random. And the code is public. Anyone can read it. [S2]
+
+`[VO]`
+For five years, owners like him buy the device, write their words down, and lock them away.
 
 `[CARD]` **T-MINUS A FEW WEEKS**
 
@@ -166,7 +170,7 @@ Coinkite's CEO says the company paid for outside security reviews in 2022 and 20
 `[CARD]` **"It did not catch this vulnerability."** — Coinkite, on its own AI-assisted review [S3]
 
 `[VO]`
-Then someone else finds the bug first. [S2]
+But someone else finds the bug first. [S2]
 
 `[THOMAS]` Coinkite says it must assume that someone used AI to find it.
 `[THOMAS]` That's Coinkite's assumption. It hasn't been proven.
@@ -174,19 +178,19 @@ Then someone else finds the bug first. [S2]
 `[THOMAS]` Guess a seed. Work out its addresses. Check the blockchain.
 `[THOMAS]` A match means the key, and the money with it.
 
-`[VO]`
-No phishing. No malware. No break-in. Just arithmetic, done somewhere else. [S1][S7]
-
 ---
 
-## 5:05 — 01:10
+## 4:35 — 01:10
 
 `[CARD]` **T-MINUS 0 · 30 JULY 2026 · 01:10:20 UTC**
 
-`[MUSIC: vault]` Feature level. Fades out ~2.9 s before "Behind every one".
+`[MUSIC: vault]` Feature level. Fades out ~2.9 s before "Then it reaches Goodman".
 
 `[VO]`
-Thursday, July 30th. Ten past one in the morning, UTC. The first transaction leaves an address made on a Coldcard. Then another. Then hundreds. [S5][S8]
+In Toronto, it's ten past nine on a Wednesday evening. Goodman is away at his cottage. [S5][S14]
+
+`[VO]`
+The first transaction leaves an address made on a Coldcard. Then another. Then hundreds. [S5][S8]
 
 `[VIS]` A block-explorer timeline: blocks **960,183 → 960,191**, address dots draining to three collector points.
 
@@ -200,25 +204,15 @@ And there's something odd about these transactions. They're all built the same w
 Hold on to that detail.
 
 `[VO]`
-At 01:51 it stops. In 41 minutes, nearly twelve hundred addresses have been emptied. [S5]
-
-`[VO]`
-Behind every one of them, an owner who believed their keys were offline, and safe.
-
----
-
-## 6:05 — SEVEN MINUTES
-
-`[VO]`
-In Ontario, it's still the evening of July 29th. Jonathan Goodman, an entrepreneur from Toronto, is away at his cottage. [S12][S14]
-
-`[VO]`
-His Coldcard sits in a bank safe-deposit box. It has never touched the internet. He has never shared his words with anyone. [S12]
+Then it reaches Goodman.
 
 `[VIS]` Three wallet balances on a dark screen, each line turning red in sequence: **9:36 PM → 9:43 PM**.
 
 `[VO]`
-Between 9:36 and 9:43 pm, every wallet he has is emptied. About 1.6 million Canadian dollars. Seven minutes. [S12]
+9:36 pm. The first of his wallets empties. Then the next. By 9:43, every one of them is gone. About 1.6 million Canadian dollars. [S12]
+
+`[VO]`
+At 9:51, the sweep stops. In 41 minutes, nearly twelve hundred addresses have been emptied. [S5]
 
 `[CARD]` **"I did everything right."** — Jonathan Goodman, on X [S12]
 
@@ -227,19 +221,18 @@ And he has no idea.
 
 ---
 
-## 6:50 — HE DIDN'T KNOW
+## 5:45 — "I'LL JUST CHECK"
 
 `[VO]`
-Later that day, reports start to appear of coins leaving cold wallets. Engineers at Block, the company behind the Bitkey wallet, start pulling the firmware apart. [S4][S10]
+Later that day, reports start to appear of coins leaving cold wallets. Engineers at Block, the company behind the Bitkey wallet, start pulling the firmware apart. Within hours, they and other researchers find the cause. [S4][S10]
 
 `[VO]`
-Within hours, they and other researchers trace the root cause. Coinkite publishes its first warning: seeds made on affected firmware are at risk. Move your funds. [S1][S4]
+Coinkite publishes its first warning: seeds made on affected firmware are at risk. Move your funds. By then, the first wave is long over. [S1][S5]
 
 `[VO]`
-By then, the first wave is long over.
+On July 31st, Goodman is at a public library with his family when he sees a friend's post on Facebook: if you use a Coldcard, move your money now. [S13][S29]
 
-`[VO]`
-On July 31st, Goodman is at a public library with his family when he sees a friend's post on Facebook: if you use a Coldcard, move your money now. [S13]
+`[CARD]` **"There's no way this affects me, but I'll just check."** — Jonathan Goodman, to Wealthsimple Magazine [S13]
 
 `[VO]`
 He checks. His bitcoin has been gone since Wednesday night. He heads back to Toronto to file a police report. [S12][S13]
@@ -252,16 +245,12 @@ Nobody did. And for anyone still holding a seed like his, a firmware update won'
 
 `[CARD]` **"I'm sorry and I'm devastated."** — Rodolfo Novak, Coinkite CEO, on X, 31 July [S28]
 
-`[VO]`
-So now there's a race.
-
 `[THOMAS]` Here's the cruel part of a public warning.
 `[THOMAS]` It reaches the owners and the thieves at the same moment.
-`[THOMAS]` Some owners move in time. Some don't.
 
 ---
 
-## 7:55 — THE RACE
+## 7:00 — THE RACE
 
 `[VO]`
 Wave two comes the next day. Wave three runs from Friday into Saturday. A fourth starts on Monday. [S11][S16]
@@ -270,10 +259,10 @@ Wave two comes the next day. Wave three runs from Friday into Saturday. A fourth
 Galaxy Research later counts at least 15 separate attackers. Not one thief anymore. A crowd, working the same weakness. [S6]
 
 `[VO]`
-In the fourth wave, the thieves' transactions wait to be confirmed. Until they are, anyone willing to pay a higher fee can replace them. [S16]
+But in the fourth wave, the thieves' transactions sit waiting to be confirmed. Until they are, anyone willing to pay a higher fee can replace them. [S16]
 
 `[VO]`
-One owner, Will Owens, leaves a small amount behind as bait, waits for the bot, and outbids it. He wins his bait back. [S17]
+So one owner, Will Owens, fights back. He leaves a small amount behind as bait, waits for the bot to take it, and outbids it. He wins his bait back. [S17]
 
 `[VO]`
 Later, volunteer white hats move about 52 bitcoin out of exposed wallets, into a trust set up to return it to victims. [S18]
@@ -282,14 +271,14 @@ Later, volunteer white hats move about 52 bitcoin out of exposed wallets, into a
 Some of the stolen coins head for mixers, services built to blur the trail. Most just sit. [S7]
 
 `[VO]`
-By the time it slows down, about 1,816 bitcoin have been taken, from more than 5,200 addresses. [S7]
+By the time the waves slow down, about 1,816 bitcoin have been taken, from more than 5,200 addresses. [S7]
 
 `[VO]`
 But the biggest piece, the first wave, hasn't moved at all.
 
 ---
 
-## 8:55 — THE TELL
+## 8:10 — THE MISTAKE
 
 `[THOMAS]` Remember that detail? Every transaction in wave one looked the same.
 `[THOMAS]` Galaxy found no one else using that pattern in the month before.
@@ -297,7 +286,7 @@ But the biggest piece, the first wave, hasn't moved at all.
 `[THOMAS]` And investigators noticed something else about it.
 
 `[VO]`
-To find out which guessed addresses hold money, you have to look them up, again and again. [S19]
+To know which guessed addresses hold money, you have to look them up, again and again. [S19]
 
 `[VO]`
 Block's investigators say the first-wave operator appears to have done that through a paid account at a well-known blockchain data provider. [S19]
@@ -305,21 +294,21 @@ Block's investigators say the first-wave operator appears to have done that thro
 `[VO]`
 They contacted the provider. Its internal logs, they say, matched the attack "with extraordinary specificity": the number, the timing and the order of the requests. [S19]
 
+`[THOMAS]` On the blockchain, the thief was just a string of addresses.
+`[THOMAS]` But a paid account usually leaves records.
+
 `[VO]`
 The information went to law enforcement. Galaxy's Alex Thorn says the first-wave attacker's identity "may be known to law enforcement". [S19]
 
 `[VO]`
-The FBI has not confirmed a suspect, an arrest, or any recovery. [S20]
+But the FBI has not confirmed a suspect, an arrest, or any recovery. [S20]
 
 ---
 
-## 9:50 — WHO?
+## 9:20 — WHO?
 
 `[VO]`
-So who did it? Publicly, no one knows. TRM Labs doesn't attribute the theft to anyone. [S7]
-
-`[VO]`
-Coinkite says its lawyers are working with law enforcement in various jurisdictions to identify those responsible. [S27]
+So, publicly, no one knows who did it. TRM Labs doesn't attribute the theft to anyone. Coinkite says its lawyers are working with law enforcement to identify those responsible. [S7][S27]
 
 `[VO]`
 Online, some call it an inside job. There's no public evidence for that, and no one has been accused. [S7][S20]
@@ -328,11 +317,11 @@ Online, some call it an inside job. There's no public evidence for that, and no 
 In September, a Coldcard owner filed a proposed class action in Ontario against Coinkite and its co-founders. It alleges the company knew its seed generation was weak by May 2025. Those claims have not been tested in court. [S23]
 
 `[VO]`
-Coinkite's CEO says the flaw affected about 0.17 percent of its users. And the newest firmware requires every owner to add randomness of their own when making a seed. [S24][S25]
+Coinkite's CEO says the flaw affected about 0.17 percent of its users. The newest firmware now requires every owner to add randomness of their own. [S24][S25]
 
 ---
 
-## 10:30 — THE BOX, AGAIN
+## 10:15 — THE BOX, AGAIN
 
 `[VO]`
 There's one group Coinkite doesn't consider at risk from this bug: owners who added at least 50 dice rolls of their own when they made their seed. [S1]
@@ -340,7 +329,7 @@ There's one group Coinkite doesn't consider at risk from this bug: owners who ad
 `[VO]`
 The ones who didn't leave it all to the device.
 
-`[THOMAS]` The safe-deposit box in Ontario was never opened.
+`[THOMAS]` That safe-deposit box was never opened.
 `[THOMAS]` The device inside was never hacked.
 `[THOMAS]` It just never asked its random-number hardware for the seed.
 `[THOMAS]` If you made a seed on an affected Coldcard, read Coinkite's advisory.
@@ -352,7 +341,7 @@ The ones who didn't leave it all to the device.
 And the 1,082 bitcoin from the first wave? As of the last public reports, they're still sitting where the thief left them. [S19]
 
 `[VO]`
-And someone may already know who put them there.
+And somewhere, in a data company's records, there may be a name.
 
 `[THOMAS]` This was Siphon Files.
 
@@ -441,3 +430,20 @@ Story and retention:
 23. Fewer numbers in "01:10": 1,196 / 1,082 → "nearly twelve hundred addresses"; the 1,082 is kept for the ending, where it pays off. "18.25 bitcoin" removed from Goodman's peak (the dollar figure stays).
 24. "Tonight" → "This time" (people watch at any hour); "the safest place to keep bitcoin" → "a device built to be the safest place for bitcoin" (not our verdict).
 25. Every open question now gets an answer on screen: what the mistake was (2:20), whether newer models were hit (3:40), what the fee detail means (8:55), who did it (9:50), where wave one's coins are (end), what owners should do (end, as Coinkite's instruction).
+
+---
+
+## Changes from v2 (23 Nov 2026, story rewrite requested by proprietarul: "a very captivating story")
+
+No new facts were added; every line still maps to the sources above. What changed is the order and the drive:
+1. **Teaser ends on a promise:** "And the first thief may have made one mistake of their own." [S19]. The episode now pays it in a section called "The mistake".
+2. **Thomas intro sets the image of the episode:** "a lock that nobody picked / somebody simply worked out the combination".
+3. **Goodman becomes the protagonist at 0:55** ("The man who did everything right"), before any technology. His precautions come first, then the one thing he can't check: how the words were chosen. This creates the knowledge gap the whole middle runs on.
+4. **"The promise", "March 2021" and "The check that passed" merged into "The combination"** (one continuous scene, shorter).
+5. **Irony card added** from Coinkite's own write-up: the hardware generator was used "just by chance, and only for less important things" [S2].
+6. **Knowledge gap spelled out:** "So now you know something Goodman doesn't."
+7. **The sweep is told in Toronto time** (01:10 UTC = 9:10 pm Wednesday) and cuts to Goodman at 9:36 pm, so the peak is his wallets emptying, followed by "I did everything right" and "And he has no idea."
+8. **"He didn't know" renamed "I'll just check"**, with Goodman's own words as a card [S13].
+9. **"The tell" renamed "The mistake"**, with a Thomas mirror line: on the blockchain the thief was a string of addresses, but a paid account usually leaves records.
+10. **Close:** returns to the box, then a hedged last line: "And somewhere, in a data company's records, there may be a name." It's framed as a possibility, in line with Block's and Thorn's statements and the FBI non-confirmation [S19][S20].
+11. Removed "So now there's a race" and the Thomas line "Some owners move in time. Some don't." (the race section now starts on its own hook). 1,559 → 1,489 words.
