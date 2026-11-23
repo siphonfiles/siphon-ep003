@@ -7,7 +7,10 @@ import ast, json, re, sys
 import language_tool_python
 lines_path, out_path, scene_files = sys.argv[1], sys.argv[2], sys.argv[3:]
 items = [(f"voice {x['id']}", x["text"]) for x in json.load(open(lines_path))]
+import os
 for f in scene_files:
+    if not os.path.exists(f) or f in ('-', 'none'):
+        continue
     tree = ast.parse(open(f).read())
     docs = {id(n.body[0].value) for n in ast.walk(tree)
             if isinstance(n, (ast.FunctionDef, ast.Module, ast.ClassDef)) and n.body
