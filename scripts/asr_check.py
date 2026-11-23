@@ -6,7 +6,11 @@ import difflib, json, os, re, sys
 from faster_whisper import WhisperModel
 
 d, out = sys.argv[1], sys.argv[2]
-texts = json.load(open(os.path.join(d, "texts.json")))
+_tj = os.path.join(d, "texts.json")
+if os.environ.get("ASR_LINES"):
+    texts = {x["id"]: x["text"] for x in json.load(open(os.environ["ASR_LINES"]))}
+else:
+    texts = json.load(open(_tj))
 MODEL = os.environ.get("ASR_MODEL", "small.en")
 ONLY = [x for x in os.environ.get("ASR_IDS", "").split(",") if x]
 m = WhisperModel(MODEL, device="cpu", compute_type="int8")
@@ -26,6 +30,8 @@ for k in sorted(texts, key=key):
         continue
     f = os.path.join(d, k + ".flac")
     if not os.path.exists(f):
+        f = os.path.join(d, k + ".wav")
+    if not os.path.exists(f):
         rows.append(f"| {k} | MISSING FILE | | |"); bad += 1; continue
     segs = list(m.transcribe(f, beam_size=5, language="en", vad_filter=False, word_timestamps=True,
                              condition_on_previous_text=False)[0])
@@ -44,5 +50,5 @@ for k in sorted(texts, key=key):
     rows.append(f"| {k} | {flag} {score:.2f} | {'; '.join(diffs)} | {heard} |")
     print(k, flag, diffs, flush=True)
 lowtxt = "\n".join(f"| {k} | {', '.join(l)} |" for k, l in LOW if l)
-open(out, "w").write(f"# ASR check ep001 ({MODEL})\n\n| line | result | differences (script → heard) | heard |\n|---|---|---|---|\n" + "\n".join(rows)
+open(out, "w").write(f"# ASR check ({MODEL})\n\n| line | result | differences (script → heard) | heard |\n|---|---|---|---|\n" + "\n".join(rows)
                      + f"\n\n{bad} lines to look at\n\n## Words heard with low confidence (p < {LOWP})\n\n| line | words |\n|---|---|\n" + lowtxt + "\n")
