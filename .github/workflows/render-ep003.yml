@@ -55,14 +55,14 @@ jobs:
     if: inputs.stills == ''
     runs-on: ubuntu-22.04
     steps:
-      - run: gh release create "$TAG" --repo "$GITHUB_REPOSITORY" --title "$TAG" --notes "Montaj automat ep. 002 (scale ${{ inputs.scale }}, run ${{ github.run_number }})" --prerelease
+      - run: gh release create "$TAG" --repo "$GITHUB_REPOSITORY" --title "$TAG" --notes "Montaj automat ep. 003 (scale ${{ inputs.scale }}, run ${{ github.run_number }})" --prerelease
         env:
           GH_TOKEN: ${{ github.token }}
 
   parts:
     needs: release
     runs-on: ubuntu-22.04
-    timeout-minutes: 60
+    timeout-minutes: 240
     strategy:
       fail-fast: false
       max-parallel: 18
@@ -96,8 +96,9 @@ jobs:
   assemble:
     needs: parts
     runs-on: ubuntu-22.04
-    timeout-minutes: 40
+    timeout-minutes: 60
     steps:
+      - uses: actions/checkout@v5
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
       - name: Download parts + audio
         run: |
@@ -116,6 +117,10 @@ jobs:
       - name: Publish and clean up the parts
         run: |
           gh release upload "$TAG" siphon_files_*.mp4 --repo "$GITHUB_REPOSITORY" --clobber
+          if [ "${{ inputs.scale }}" = "2" ]; then
+            cp thumbnails/ep003/ep003_thumbnail_FINAL.jpg episodes/publish/003-youtube.md episodes/publish/003-description.txt episodes/publish/003-captions-en.srt .
+            gh release upload "$TAG" ep003_thumbnail_FINAL.jpg 003-youtube.md 003-description.txt 003-captions-en.srt --repo "$GITHUB_REPOSITORY" --clobber
+          fi
           for f in parts/*.mp4; do gh release delete-asset "$TAG" "$(basename $f)" --repo "$GITHUB_REPOSITORY" -y; done
         env:
           GH_TOKEN: ${{ github.token }}
