@@ -107,9 +107,9 @@ def option_b():
     """Empty vault at night + coin in the light beam + text right."""
     im = base("c01_vault_night", dark=0.05)
     im = side_shade(im, "right", 0.85, 0.6)
-    im = glow_under(im, 330, 300, 85, strength=0.7)
+    im = glow_under(im, 360, 500, 85, strength=0.6)
     c = coin(85)
-    im.paste(c, (330 - 85, 300 - 85), c)
+    im.paste(c, (360 - 85, 500 - 85), c)
     return text_block(im, W - 70, 60, [("OFFLINE", 150, WHITE, 0), ("BITCOIN.", 150, WHITE, 150),
                                          ("GUESSED.", 150, GREEN, 320)], anchor="ra")
 
