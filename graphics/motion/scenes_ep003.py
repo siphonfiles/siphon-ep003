@@ -408,7 +408,7 @@ def devices_offline(ctx, t, d, n=3, source=None):
     rrect(ctx, bx + 12, by + 12, bw - 24, bh - 24, 12)
     ctx.fill()
     for i in range(n):
-        q = ease_out(prog(t, 0.1 + i * 0.18, 0.35))
+        q = ease_out(prog(t, 0.15 + i * 0.25, 0.4))
         dx = bx + 110 + i * 290
         dy = by + 130 + (1 - q) * 40
         rgba(ctx, (0.22, 0.25, 0.28), a * q)
@@ -431,13 +431,13 @@ def devices_offline(ctx, t, d, n=3, source=None):
             ctx.new_path()
             ctx.arc(cx, cy + 20, r, math.pi * 1.25, math.pi * 1.75)
             ctx.stroke()
-        rgba(ctx, RED, a * prog(t, 0.7 + i * 0.15, 0.2))
+        rgba(ctx, RED, a * prog(t, 1.2 + i * 0.25, 0.25))
         ctx.set_line_width(4)
         ctx.new_path()
         ctx.move_to(cx - 36, cy - 14)
         ctx.line_to(cx + 36, cy + 26)
         ctx.stroke()
-    _label(ctx, "NEVER CONNECTED TO THE INTERNET", W / 2, by + bh + 90, a * prog(t, 1.0, 0.3), AMBER, 28, "center")
+    _label(ctx, "NEVER CONNECTED TO THE INTERNET", W / 2, by + bh + 90, a * prog(t, 2.0, 0.4), AMBER, 28, "center")
     _label(ctx, "ILLUSTRATIVE", bx + bw, by - 24, a * 0.7, GREY, 18, "right")
     if source:
         source_tag(ctx, source, a)

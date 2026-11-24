@@ -174,9 +174,10 @@ def build(tl):
 
     # ---------------- TEASER ----------------
     c0 = next(C)
-    IL(0.0, c0, "c01_vault_night", "in", fi=0.6, fo=0.0, warm=False, glows=[DUSTBEAM],
+    DEV = s("t1") + 3.55  # "three small devices" (t1 starts with "A bank vault. A safe-deposit box. Inside it,")
+    IL(0.0, DEV, "c01_vault_night", "in", fi=0.6, fo=0.0, warm=False, glows=[DUSTBEAM],
        fog=dict(density=0.18, color=(0.45, 0.52, 0.6), speed=8, floor=0.4), fallback="A bank vault.")
-    add(c0, s("t2"), E.devices_offline)
+    add(DEV, s("t2"), E.devices_offline)
     IL(s("t2"), s("t3"), "c02_drawer_keyhole", "in", fo=0.0, warm=False, kicker="29 JULY · NIGHT",
        line="Nobody opened the box.", glows=[dict(PALEB, x=1020, y=560, r=260)])
     c1 = next(C)
