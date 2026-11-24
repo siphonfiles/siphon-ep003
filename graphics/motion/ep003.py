@@ -207,8 +207,8 @@ def build(tl):
     add(c3, s("a1"), E.chapter_v, v=0, title="The man who did everything right", kicker="TORONTO")
     IL(s("a1"), s("a2"), "c04_city_lake_night", "right", kicker="JONATHAN GOODMAN · TORONTO",
        line="More than $1 million in bitcoin, by his own account.", source="[S13]",
-       motes=False, fog=dict(density=0.8, color=(0.74, 0.8, 0.88), speed=7, floor=0.52, soft=0.1,
-                             rise=2.2, stretch=(1.6, 0.9), haze=0.0))
+       motes=False, fog=dict(density=0.55, color=(0.74, 0.8, 0.88), speed=6, floor=0.53, soft=0.16,
+                             rise=2.0, stretch=(2.4, 0.75), haze=0.12))
     IL(s("a2"), s("a3"), "c03_devices_tray", "in", kicker="COLDCARD · COINKITE · CANADA",
        line="Never connected to the internet.", glows=[dict(PALEB, x=1024, y=420, r=380)])
     add(s("a3"), s("a4"), E.seed_card, n=24)
