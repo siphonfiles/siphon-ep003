@@ -1,6 +1,6 @@
 # Episode 003: Nobody Touched It
 
-**Title (chosen by proprietarul, 24 Nov 2026): Inside the $116M Coldcard Hack** · thumbnail text: **OFFLINE BITCOIN. GUESSED.** (with a bitcoin coin in the image; options in `thumbnails/ep003/`)
+**Title (chosen by proprietarul, 24 Nov 2026): Inside the $116M Coldcard Hack** · thumbnail text: **OFFLINE BITCOIN. GUESSED.** · **final thumbnail: `thumbnails/ep003/ep003_thumbnail_FINAL.jpg`** (option B, the vault at night, coin out of the lamp beam)
 **Test & Compare at publishing (proposed):** (A) this title + "NOBODY TOUCHED IT."; (B) "The Safest Bitcoin Wallet Was Guessable for 5 Years" + "41 MINUTES."; (C) "Inside the Coldcard Hack: $116M Gone Without a Touch" + "5 YEARS. 41 MINUTES."
 
 **Subject:** the Coldcard hardware-wallet thefts (30 July – early August 2026). A build error in Coinkite's March 2021 firmware made some Coldcard devices create wallet seeds from a predictable software generator instead of the hardware random-number chip. Attackers rebuilt the seeds offline and swept about 1,816 BTC (about $116M) from more than 5,200 addresses in four waves, without touching a single device.
