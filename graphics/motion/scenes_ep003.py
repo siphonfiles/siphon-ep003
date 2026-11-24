@@ -812,10 +812,14 @@ def explainer_v(ctx, t, d, name, lines, source=None, v=0):
         for k, part in enumerate(wrap(ctx, name, 700, HEAD, sz, True)):
             text(ctx, part, 200, 470 + k * (sz + 14), INK, a * p, size=sz)
         _bar(ctx, 960, 360, 2, 400, a * 0.5, GREY)
+        y = 470
         for i, (at, ln) in enumerate(lines):
             q = ease_out(prog(t, at, 0.5))
-            _mono(ctx, "✓", 1020, 470 + i * 110, a * q, AMBER, 40, track=0)
-            text(ctx, ln, 1080, 470 + i * 110, INK, a * q, size=44)
+            _mono(ctx, "✓", 1020, y, a * q, AMBER, 40, track=0)
+            for k, part in enumerate(wrap(ctx, ln, W - 1080 - 160, HEAD, 44, True)):
+                text(ctx, part, 1080, y + k * 56, INK, a * q, size=44)
+                last = k
+            y += 56 * (last + 1) + 50
     elif v == 3:    # vertical timeline with nodes
         _mono(ctx, name, 300, 300, a, AMBER, 30)
         _bar(ctx, 320, 360, 3, 100 + len(lines) * 140 * p, a * 0.6, GREY)
@@ -885,11 +889,14 @@ def countdown_v(ctx, t, d, label, sub=None, v=0):
     if v == 1:      # flip-clock tiles
         _mono(ctx, "T-MINUS", W / 2, 360, a, AMBER, 36, "center", 14)
         chars = list(label)
-        tw = 130
-        x0 = W / 2 - len(chars) * (tw + 16) / 2
+        tw = 130 if len(chars) <= 8 else 104
+        widths = [(tw + 16) if ch != " " else 50 for ch in chars]
+        x = W / 2 - sum(widths) / 2 - widths[0]
         for i, ch in enumerate(chars):
+            x += widths[i - 1] if i else widths[0]
+            if ch == " ":
+                continue
             q = prog(t, 0.1 + i * 0.08, 0.25)
-            x = x0 + i * (tw + 16)
             rgba(ctx, (0.15, 0.17, 0.19), a)
             rrect(ctx, x, 420, tw, 200, 10)
             ctx.fill()
