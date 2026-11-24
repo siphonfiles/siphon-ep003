@@ -388,3 +388,272 @@ def dice_finale(ctx, t, d, line="At least 50 dice rolls of their own.", source=N
     text(ctx, line, W / 2, 830, INK, a * q, align="center", size=56)
     if source:
         source_tag(ctx, source, a)
+
+
+# ---------------- one-off designs (24 Nov 2026): no graphic design is used twice ----------------
+
+def devices_offline(ctx, t, d, n=3, source=None):
+    """Teaser: an open safe-deposit box seen from above, three plain devices inside, each with a crossed-out
+    signal icon. Generic shapes, no brand."""
+    a = fade_io(t, d)
+    p = ease_out(prog(t, 0, 0.7))
+    bx, by, bw, bh = 470, 260 + (1 - p) * 30, 980, 520
+    rgba(ctx, STEEL, 0.55 * a)
+    ctx.set_line_width(4)
+    rrect(ctx, bx, by, bw, bh, 18)
+    ctx.stroke()
+    rgba(ctx, (0.09, 0.11, 0.13), 0.9 * a)
+    rrect(ctx, bx + 12, by + 12, bw - 24, bh - 24, 12)
+    ctx.fill()
+    for i in range(n):
+        q = ease_out(prog(t, 0.4 + i * 0.35, 0.5))
+        dx = bx + 110 + i * 290
+        dy = by + 130 + (1 - q) * 40
+        rgba(ctx, (0.22, 0.25, 0.28), a * q)
+        rrect(ctx, dx, dy, 200, 280, 16)
+        ctx.fill()
+        rgba(ctx, (0.05, 0.07, 0.08), a * q)
+        rrect(ctx, dx + 24, dy + 26, 152, 92, 6)
+        ctx.fill()
+        for k in range(3):
+            for j in range(3):
+                rgba(ctx, (0.3, 0.33, 0.36), a * q)
+                ctx.new_path()
+                ctx.arc(dx + 55 + j * 45, dy + 160 + k * 36, 11, 0, 2 * math.pi)
+                ctx.fill()
+        # crossed signal arcs above each device
+        cx, cy = dx + 100, dy - 40
+        rgba(ctx, GREY, 0.8 * a * q)
+        ctx.set_line_width(3)
+        for r in (14, 26, 38):
+            ctx.new_path()
+            ctx.arc(cx, cy + 20, r, math.pi * 1.25, math.pi * 1.75)
+            ctx.stroke()
+        rgba(ctx, RED, a * prog(t, 1.4 + i * 0.25, 0.3))
+        ctx.set_line_width(4)
+        ctx.new_path()
+        ctx.move_to(cx - 36, cy - 14)
+        ctx.line_to(cx + 36, cy + 26)
+        ctx.stroke()
+    _label(ctx, "NEVER CONNECTED TO THE INTERNET", W / 2, by + bh + 90, a * prog(t, 1.8, 0.5), AMBER, 28, "center")
+    _label(ctx, "ILLUSTRATIVE", bx + bw, by - 24, a * 0.7, GREY, 18, "right")
+    if source:
+        source_tag(ctx, source, a)
+
+
+def code_age(ctx, t, d, start="MARCH 2021", end="JULY 2026", source=None):
+    """Teaser: a year ruler; a marker sits on 2021 while the 'today' line slides to 2026."""
+    a = fade_io(t, d)
+    x0, x1, y = 260, W - 260, 600
+    years = list(range(2021, 2027))
+    rgba(ctx, GREY, 0.5 * a)
+    ctx.rectangle(x0, y, x1 - x0, 2)
+    ctx.fill()
+    for i, yr in enumerate(years):
+        x = x0 + (x1 - x0) * i / (len(years) - 1)
+        rgba(ctx, GREY, 0.7 * a)
+        ctx.rectangle(x - 1, y - 18, 2, 36)
+        ctx.fill()
+        _label(ctx, str(yr), x, y + 70, a, GREY, 24, "center")
+    mx = x0 + (x1 - x0) * (2 / 12) / 5
+    rgba(ctx, RED, a)
+    rrect(ctx, mx - 70, y - 190, 140, 110, 10)
+    ctx.fill()
+    text(ctx, "{ }", mx, y - 118, (0.08, 0.05, 0.05), a, align="center", face=MONO, size=44)
+    rgba(ctx, RED, 0.8 * a)
+    ctx.rectangle(mx - 1, y - 80, 2, 80)
+    ctx.fill()
+    _label(ctx, start, mx, y - 220, a, RED, 22, "center")
+    u = ease_in_out(prog(t, 0.4, max(d - 1.2, 0.6)))
+    nx = mx + (x0 + (x1 - x0) * (4 + 7 / 12) / 5 - mx) * u
+    rgba(ctx, AMBER, 0.25 * a)
+    ctx.rectangle(mx, y - 8, nx - mx, 16)
+    ctx.fill()
+    rgba(ctx, AMBER, a)
+    ctx.rectangle(nx - 2, y - 60, 4, 120)
+    ctx.fill()
+    if u > 0.95:
+        _label(ctx, end, nx, y - 90, a * prog(t, d - 1.0, 0.4), AMBER, 22, "center")
+    text(ctx, "In public code. In plain sight.", W / 2, 860, INK, a * prog(t, 0.8, 0.5), align="center",
+         face=SERIF, size=48, italic=True)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def model_cards(ctx, t, d, source=None):
+    """Ring gauges: MK2/MK3 ≈40 bits, newer models ≈72 bits, a proper seed 128+ (arcs to scale of 128)."""
+    a = fade_io(t, d)
+    items = [("MK2 / MK3", 40, RED, "≈ 40 BITS", ""),
+             ("NEWER MODELS", 72, (1.0, 0.7, 0.35), "≈ 72 BITS", "NO PUBLIC EVIDENCE OF DRAINING · SO FAR"),
+             ("A PROPER SEED", 128, AMBER, "128+ BITS", "")]
+    for i, (name, bits, col, val, note) in enumerate(items):
+        cx, cy, r = 400 + i * 560, 520, 170
+        q = ease_out(prog(t, 0.3 + i * 0.5, 1.0))
+        rgba(ctx, DIM, a)
+        ctx.set_line_width(26)
+        ctx.new_path()
+        ctx.arc(cx, cy, r, 0, 2 * math.pi)
+        ctx.stroke()
+        rgba(ctx, col, 0.95 * a)
+        ctx.new_path()
+        ctx.arc(cx, cy, r, -math.pi / 2, -math.pi / 2 + 2 * math.pi * min(bits, 128) / 128 * q)
+        ctx.stroke()
+        text(ctx, val, cx, cy + 16, INK, a * prog(t, 0.3 + i * 0.5, 0.4), align="center", face=MONO, size=40)
+        _label(ctx, name, cx, cy + r + 80, a, GREY, 24, "center")
+        if note:
+            _label(ctx, note, cx, cy + r + 125, a * prog(t, 1.6, 0.5), INK, 17, "center")
+    if source:
+        source_tag(ctx, source, a)
+
+
+def wave_clock(ctx, t, d, start_min=10, end_min=51, n_total=1196, source=None):
+    """A clock face from 9:10 to 9:51 PM Toronto (01:10–01:51 UTC): the arc of the first wave fills,
+    the counter runs to ~1,200 addresses."""
+    a = fade_io(t, d)
+    cx, cy, r = 700, 540, 300
+    rgba(ctx, STEEL, 0.35 * a)
+    ctx.set_line_width(3)
+    ctx.new_path()
+    ctx.arc(cx, cy, r, 0, 2 * math.pi)
+    ctx.stroke()
+    for m in range(60):
+        ang = -math.pi / 2 + 2 * math.pi * m / 60
+        L = 26 if m % 5 == 0 else 10
+        rgba(ctx, GREY, 0.7 * a)
+        ctx.set_line_width(3 if m % 5 == 0 else 1.5)
+        ctx.new_path()
+        ctx.move_to(cx + (r - L) * math.cos(ang), cy + (r - L) * math.sin(ang))
+        ctx.line_to(cx + r * math.cos(ang), cy + r * math.sin(ang))
+        ctx.stroke()
+    u = ease_in_out(prog(t, 0.2, max(d * 0.8, 0.5)))
+    a0 = -math.pi / 2 + 2 * math.pi * start_min / 60
+    a1 = a0 + 2 * math.pi * (end_min - start_min) / 60 * u
+    rgba(ctx, RED, 0.35 * a)
+    ctx.new_path()
+    ctx.move_to(cx, cy)
+    ctx.arc(cx, cy, r - 40, a0, a1)
+    ctx.close_path()
+    ctx.fill()
+    rgba(ctx, RED, a)
+    ctx.set_line_width(5)
+    ctx.new_path()
+    ctx.move_to(cx, cy)
+    ctx.line_to(cx + (r - 50) * math.cos(a1), cy + (r - 50) * math.sin(a1))
+    ctx.stroke()
+    mins = int(start_min + (end_min - start_min) * u)
+    text(ctx, f"9:{mins:02d} PM", 1180, 420, INK, a, face=MONO, size=72)
+    _label(ctx, "TORONTO · 01:10 → 01:51 UTC", 1180, 480, a, GREY, 22)
+    text(ctx, f"{int(n_total * u):,}", 1180, 660, RED, a, face=MONO, size=96)
+    _label(ctx, "ADDRESSES EMPTIED · WAVE 1", 1180, 720, a, GREY, 22)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def fee_scatter(ctx, t, d, title="NO ONE ELSE USED IT · THE MONTH BEFORE", source=None):
+    """Fee rates of ordinary transactions over the month before scatter freely; wave 1 sits alone on one line."""
+    a = fade_io(t, d)
+    x0, x1, y0, y1 = 220, W - 220, 260, 860
+    rgba(ctx, GREY, 0.5 * a)
+    ctx.rectangle(x0, y1, x1 - x0, 2)
+    ctx.fill()
+    ctx.rectangle(x0, y0, 2, y1 - y0)
+    ctx.fill()
+    _label(ctx, "FEE RATE", x0 - 20, y0 - 20, a, GREY, 20)
+    _label(ctx, "JULY 2026 →", x1, y1 + 50, a, GREY, 20, "right")
+    rnd = random.Random(21)
+    line_y = y0 + (y1 - y0) * 0.37
+    for i in range(420):
+        x = x0 + 20 + rnd.random() * (x1 - x0 - 200)
+        y = y0 + 20 + rnd.random() * (y1 - y0 - 40)
+        if abs(y - line_y) < 14:
+            continue
+        q = prog(t, 0.1 + i * 0.0025, 0.3)
+        rgba(ctx, GREY, 0.45 * a * q)
+        ctx.new_path()
+        ctx.arc(x, y, 4, 0, 2 * math.pi)
+        ctx.fill()
+    q = prog(t, 1.0, 0.6)
+    rgba(ctx, AMBER, 0.35 * a * q)
+    ctx.rectangle(x0, line_y - 1, x1 - x0, 2)
+    ctx.fill()
+    for i in range(36):
+        x = x1 - 170 + (i % 6) * 22
+        rgba(ctx, RED, a * prog(t, 1.2 + i * 0.02, 0.2))
+        ctx.new_path()
+        ctx.arc(x, line_y + ((i // 6) - 2.5) * 3, 6, 0, 2 * math.pi)
+        ctx.fill()
+    _label(ctx, "WAVE 1", x1 - 110, line_y - 40, a * q, RED, 22, "center")
+    _label(ctx, title, W / 2, 200, a, AMBER, 26, "center")
+    _label(ctx, "POSITIONS ILLUSTRATIVE", W - 220, 980, a * 0.7, GREY, 18, "right")
+    if source:
+        source_tag(ctx, source, a)
+
+
+def wallet_check(ctx, t, d, total="Gone since Wednesday night.", source=None):
+    """A phone in portrait: the wallet app refreshes and shows three empty wallets."""
+    a = fade_io(t, d)
+    p = ease_out(prog(t, 0, 0.6))
+    px, py, pw, ph = W / 2 - 230, 120 + (1 - p) * 40, 460, 840
+    rgba(ctx, (0.06, 0.07, 0.08), a)
+    rrect(ctx, px, py, pw, ph, 54)
+    ctx.fill()
+    rgba(ctx, STEEL, 0.4 * a)
+    ctx.set_line_width(3)
+    rrect(ctx, px, py, pw, ph, 54)
+    ctx.stroke()
+    sx, sy, sw = px + 30, py + 80, pw - 60
+    spin = prog(t, 0.4, 0.9)
+    if spin < 1:
+        rgba(ctx, AMBER, a)
+        ctx.set_line_width(5)
+        ctx.new_path()
+        ang = t * 6
+        ctx.arc(W / 2, sy + 300, 40, ang, ang + 4.2)
+        ctx.stroke()
+        _label(ctx, "REFRESHING…", W / 2, sy + 400, a, GREY, 18, "center")
+    else:
+        for i in range(3):
+            q = prog(t, 1.3 + i * 0.25, 0.3)
+            y = sy + 60 + i * 170
+            rgba(ctx, (0.12, 0.14, 0.16), a * q)
+            rrect(ctx, sx, y, sw, 140, 18)
+            ctx.fill()
+            _label(ctx, f"WALLET {i + 1}", sx + 24, y + 44, a * q, GREY, 18)
+            text(ctx, "0.00000000", sx + 24, y + 104, RED, a * q, face=MONO, size=40)
+            _label(ctx, "BTC", sx + sw - 24, y + 104, a * q, GREY, 18, "right")
+    _label(ctx, "ILLUSTRATIVE", px + pw + 30, py + 60, a * 0.7, GREY, 18)
+    text(ctx, total, W / 2, py + ph + 70, INK, a * prog(t, 2.3, 0.5), align="center", face=SERIF, size=46,
+         italic=True)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def coin_stack(ctx, t, d, total=1816, addrs="from 5,200+ addresses", source=None):
+    """A single stack of coins rises while the counter climbs to the total; the addresses line follows."""
+    a = fade_io(t, d)
+    u = ease_out(prog(t, 0.2, max(d * 0.6, 0.6)))
+    cx, base = 640, 900
+    n = int(46 * u)
+    for i in range(n):
+        y = base - i * 14
+        rgba(ctx, (0.55, 0.42, 0.18), a)
+        ctx.save()
+        ctx.translate(cx, y)
+        ctx.scale(1, 0.28)
+        ctx.new_path()
+        ctx.arc(0, 0, 150, 0, 2 * math.pi)
+        ctx.restore()
+        ctx.fill()
+        rgba(ctx, (0.85, 0.68, 0.3), a)
+        ctx.save()
+        ctx.translate(cx, y - 6)
+        ctx.scale(1, 0.28)
+        ctx.new_path()
+        ctx.arc(0, 0, 150, 0, 2 * math.pi)
+        ctx.restore()
+        ctx.fill()
+    text(ctx, f"≈ {int(total * u):,} BTC", 1000, 520, INK, a, face=MONO, size=96)
+    _label(ctx, "TAKEN IN ALL WAVES", 1000, 580, a, GREY, 22)
+    text(ctx, addrs, 1000, 700, RED, a * prog(t, 0.2 + d * 0.6, 0.5), face=MONO, size=40)
+    if source:
+        source_tag(ctx, source, a)

@@ -176,7 +176,7 @@ def build(tl):
     c0 = next(C)
     IL(0.0, c0, "c01_vault_night", "in", fi=0.6, fo=0.0, warm=False, glows=[DUSTBEAM],
        fog=dict(density=0.18, color=(0.45, 0.52, 0.6), speed=8, floor=0.4), fallback="A bank vault.")
-    add(c0, s("t2"), E.seed_card, n=24)
+    add(c0, s("t2"), E.devices_offline)
     IL(s("t2"), s("t3"), "c02_drawer_keyhole", "in", fo=0.0, warm=False, kicker="29 JULY · NIGHT",
        line="Nobody opened the box.", glows=[dict(PALEB, x=1020, y=560, r=260)])
     c1 = next(C)
@@ -185,7 +185,7 @@ def build(tl):
     add(c1, s("t4"), S.black)
     add(s("t4"), s("t5"), S.big_number, value=116_000_000, suffix="", caption="taken the same way · within five days",
         count_for=1.4, source="[S7][S8]")
-    add(s("t5"), s("t6"), E.code_guard, pass_at=99, source="[S4]")
+    add(s("t5"), s("t6"), E.code_age, source="[S4]")
     IL(s("t6"), nxt_after(hits, e("t6")), "c26_footprint_snow", "in", fo=0.0, warm=False,
        statement="One mistake of their own.")
     h = nxt_after(hits, e("t6"))
@@ -233,8 +233,7 @@ def build(tl):
     add(s("b4"), s("b6"), E.rng_switch, flip_at=s("b5") - s("b4") + 0.8, zero_at=frac("b5", 0.6) - s("b4"),
         source="[S2][S4]")
     c8 = next(C)
-    add(s("b6"), s("b7"), E.code_guard, pass_at=99, source="[S4]")
-    add(s("b7"), s("b8"), E.code_guard, pass_at=0.4, source="[S4]")
+    add(s("b6"), s("b8"), E.code_guard, pass_at=s("b7") - s("b6") + 0.4, source="[S4]")
     IL(s("b8"), nxt_after(cards, e("b10")), "c10_smoke_alarm", "up", kicker="THE INSPECTOR",
        line="The alarm is there. Nobody checks it's on.", warm=False,
        glows=[dict(kind="pulse", x=1024, y=560, r=120, color=(1.0, 0.2, 0.15), min=0.0, max=0.05, hz=0.2)])
@@ -248,7 +247,7 @@ def build(tl):
     add(s("c2"), s("c3"), E.bits_compare, source="[S1]")
     IL(s("c3"), s("c5"), "c13_guessing_room", "in", kicker="40 BITS", line="About a trillion. A search that ends.",
        warm=False, glows=[dict(PALEB, x=1024, y=500, r=360)])
-    add(s("c5"), s("c6"), E.bits_compare, source="[S1]")
+    add(s("c5"), s("c6"), E.model_cards, source="[S1]")
     IL(s("c6"), nxt_after(cards, e("c6")), "c09_toggle_switch", "out", kicker="STILL INSIDE EVERY DEVICE",
        line="The hardware generator.", warm=False, source="[S2]")
     c10 = next(C)
@@ -287,7 +286,7 @@ def build(tl):
     IL(s("d6"), s("d7"), "c16_open_boxes_vault", "in", statement="Then it reaches Goodman.", warm=False)
     add(s("d7"), s("d8"), E.balance_lines, starts=(0.3, (s("d7") + e("d7")) / 2 - s("d7"), e("d7") - s("d7") - 1.2),
         source="[S13]")
-    add(s("d8"), s("d9"), E.sweep, clock=("01:10", "01:51"), source="[S7][S8]")
+    add(s("d8"), s("d9"), E.wave_clock, source="[S7][S8]")
     IL(s("d9"), nxt_after(cards, e("d9")), "c40_phone_nightstand", "out", statement="He has no idea.",
        glows=[dict(LAMP, x=1000, y=640, r=260)])
 
@@ -302,7 +301,7 @@ def build(tl):
     c15 = max(x for x in cards if x <= s("e4"))
     add(c15, s("e4"), S.quote_card, quote="There's no way this affects me, but I'll just check.",
         who="JONATHAN GOODMAN · TO WEALTHSIMPLE MAGAZINE", source="[S13]")
-    add(s("e4"), nxt_after(cards, e("e4")), E.balance_lines, starts=(0.2, 0.5, 0.8), total="Gone since Wednesday night.",
+    add(s("e4"), nxt_after(cards, e("e4")), E.wallet_check, total="Gone since Wednesday night.",
         source="[S13]")
     c16 = max(x for x in cards if x <= s("e5"))
     add(c16, s("e5"), S.quote_card, quote="I did everything right.", who="JONATHAN GOODMAN · ON X", source="[S12]")
@@ -330,16 +329,15 @@ def build(tl):
        source="[S18][S31]", glows=[dict(LAMP, x=1024, y=420, r=320)])
     IL(s("f6"), s("f7"), "c23_coins_tunnel", "in", kicker="MIXERS", line="Built to blur the trail.",
        source="[S8]", warm=False, fog=dict(density=0.3, color=(0.45, 0.52, 0.6), speed=16, far=0.5))
-    add(s("f7"), s("f8"), E.waves, total_at=0.6, source="[S7][S8]")
+    add(s("f7"), s("f8"), E.coin_stack, source="[S7][S8]")
     add(s("f8"), s("g1"), S.big_number, value=1082.57, prefix="", suffix=" BTC", decimals=2, count_for=1.2,
         caption="wave 1 · not moved · as of the latest public tracking", source="[S8][S34]")
 
     # ---------------- THE MISTAKE ----------------
     IL(s("g1"), s("g4"), "c42_identical_seals", "in", kicker="REMEMBER",
        line="Every wave-one transaction looked the same.", warm=False, source="[S8]")
-    add(s("g4"), s("g5"), E.tx_pattern, highlight_at=0.3, title="NO ONE ELSE USED IT · THE MONTH BEFORE", source="[S8]")
-    add(s("g5"), s("g7"), E.lookup_log, match_at=99, source="[S4]")
-    add(s("g7"), s("g8"), E.lookup_log, match_at=0.8, source="[S4]")
+    add(s("g4"), s("g5"), E.fee_scatter, source="[S8]")
+    add(s("g5"), s("g8"), E.lookup_log, match_at=s("g7") - s("g5") + 0.8, source="[S4]")
     IL(s("g8"), s("g10"), "c24_receipt_printer", "in", kicker="A PAID ACCOUNT",
        line="Usually leaves records.", glows=[dict(LAMP, x=1024, y=360, r=280)])
     IL(s("g10"), s("g11"), "c25_card_index", "in", kicker="GALAXY · ALEX THORN",
