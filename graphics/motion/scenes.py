@@ -915,7 +915,68 @@ MOVES = {   # (zoom start, zoom end, pan x px, pan y px, depth zoom, depth pan) 
 }
 
 
-def _ill_frame(name, u, move, t=0.0, fog=None):
+def flick_level(t, mode="flicker", seed=0):
+    """How far a light is dimmed at time t, 0..1. 'slow' = a calm breathing, 'flicker' = a lamp that
+    mostly holds and now and then stutters (short irregular dips)."""
+    ph = seed * 1.7
+    if mode == "slow":
+        return 0.5 + 0.5 * math.sin(2 * math.pi * 0.35 * t + ph) * math.sin(2 * math.pi * 0.13 * t + 1.1 + ph)
+    base = 0.12 * (0.5 + 0.5 * math.sin(2 * math.pi * 0.5 * t + ph))
+    n = (math.sin(t * 7.1 + ph) + math.sin(t * 11.3 + 2.0 + ph) + math.sin(t * 17.9 + 4.1 + ph)) / 3.0
+    burst = clamp((math.sin(t * 0.9 + ph) - 0.35) / 0.4)            # stutters come in short spells
+    return clamp(base + burst * clamp((n + 0.15) / 0.5))
+
+
+def _light_mask(name, lights):
+    """Where the lights of a still are: bright pixels near each light, plus the soft light they throw around."""
+    import numpy as np
+    key = (name, repr(lights))
+    if key in _light_mask.cache:
+        return _light_mask.cache[key]
+    c = _ill_load(name)
+    w, h = c["w"], c["h"]
+    img = c["img"].reshape(h, w, 3)
+    mx = img.max(axis=2) / 255.0
+    yy, xx = c["yy"], c["xx"]
+    m = np.zeros((h, w), dtype=np.float32)
+    for L in lights:
+        g = np.exp(-((xx - L["x"]) ** 2 + (yy - L["y"]) ** 2) / (2.0 * L["r"] ** 2))
+        thr = L.get("thr", 0.55)
+        hot = np.clip((mx - (thr - 0.12)) / 0.2, 0, 1)
+        m = np.maximum(m, g * (hot + L.get("amb", 0.35) * (1 - hot)))
+    _light_mask.cache.clear()
+    _light_mask.cache[key] = m.reshape(-1)
+    return _light_mask.cache[key]
+
+
+_light_mask.cache = {}
+
+
+def _ripple_mask(name, rp):
+    """Bright screen areas only, pulled in from dark edges (silhouettes) so their pixels are never moved."""
+    import numpy as np
+    from PIL import Image, ImageFilter
+    key = (name, repr(rp))
+    if key in _ripple_mask.cache:
+        return _ripple_mask.cache[key]
+    c = _ill_load(name)
+    w, h = c["w"], c["h"]
+    lum = c["img"].reshape(h, w, 3).mean(axis=2)
+    m = (lum > rp.get("thr", 70)).astype(np.uint8) * 255
+    im = Image.fromarray(m).filter(ImageFilter.MinFilter(2 * rp.get("guard", 14) + 1)).filter(
+        ImageFilter.GaussianBlur(rp.get("guard", 14) / 2))
+    m = np.asarray(im, dtype=np.float32) / 255.0
+    if "y1" in rp:
+        m[int(rp["y1"]):] = 0
+    _ripple_mask.cache.clear()
+    _ripple_mask.cache[key] = m
+    return m
+
+
+_ripple_mask.cache = {}
+
+
+def _ill_frame(name, u, move, t=0.0, fog=None, flick=None, ripple=None):
     """Backward warp with bilinear sampling: near pixels (depth ~1) zoom and slide more than far ones."""
     import numpy as np
     c = _ill_load(name)
@@ -930,6 +991,9 @@ def _ill_frame(name, u, move, t=0.0, fog=None):
     fogA = _fog_alpha(name, t, fog, d, w, h) if fog else None
     if fog:
         fc = np.array(fog.get("color", (0.6, 0.65, 0.72)), dtype=np.float32) * 255.0
+    lm = _light_mask(name, flick["lights"]) if flick else None
+    dip = flick.get("depth", 0.3) * flick_level(t, flick.get("mode", "flicker"), flick.get("seed", 0)) if flick else 0.0
+    rm = _ripple_mask(name, ripple) if ripple else None
     band = 144   # rows per band: keeps temporaries small (the render box has 3 GB for 2 workers + 2 encoders)
     for r0 in range(0, h, band):
         r1 = min(h, r0 + band)
@@ -937,6 +1001,13 @@ def _ill_frame(name, u, move, t=0.0, fog=None):
         zz = z * (1.0 + kz * e * (db - dm)) if kz >= 0 else z * (1.0 + (-kz) * (1 - e) * (db - dm))
         sx = w / 2 + (c["xx"][r0:r1] - w / 2) / zz - px * off * (1.0 + kp * (db - dm))
         sy = h / 2 + (c["yy"][r0:r1] - h / 2) / zz - py * off * (1.0 + kp * (db - dm))
+        if rm is not None:   # bands on the screens drift as a slow wave; dark shapes stay put
+            ix = np.clip(sx, 0, w - 1).astype(np.int32)
+            iy = np.clip(sy, 0, h - 1).astype(np.int32)
+            k = rm[iy, ix]
+            amp, wl, sp = ripple.get("amp", 6.0), ripple.get("wl", 520.0), ripple.get("speed", 0.6)
+            sy = sy + amp * k * np.sin(2 * math.pi * (sx / wl - sp * t / 6.0))
+            sx = sx - ripple.get("drift", 18.0) * k * math.sin(2 * math.pi * 0.05 * t)
         np.clip(sx, 0, w - 1.001, out=sx)
         np.clip(sy, 0, h - 1.001, out=sy)
         x0 = sx.astype(np.int32)
@@ -947,6 +1018,8 @@ def _ill_frame(name, u, move, t=0.0, fog=None):
         top = im[i] * (1 - fx) + im[i + 1] * fx
         bot = im[i + w] * (1 - fx) + im[i + w + 1] * fx
         out = top * (1 - fy) + bot * fy
+        if lm is not None and dip > 0:
+            out = out * (1.0 - dip * lm[i])[..., None]
         if fogA is not None:
             a = fogA[r0:r1, :, None]
             out = out * (1 - a) + fc * a
@@ -987,24 +1060,27 @@ def _fog_alpha(name, t, fog, d, w, h):
     acc = np.zeros((gh, gw), dtype=np.float32)
     yy, xx = np.mgrid[0:gh, 0:gw].astype(np.float32)
     sp = fog.get("speed", 14.0)
-    for k, (sc, vx, vy, wgt) in enumerate(((1.0, sp, sp * 0.15, 0.6), (0.55, -sp * 0.6, sp * 0.1, 0.4))):
+    rise = fog.get("rise", 0.0)                   # steam: wisps that climb instead of lying flat
+    st = fog.get("stretch", (0.4, 1.3))
+    for k, (sc, vx, vy, wgt) in enumerate(((1.0, sp, sp * (0.15 + rise), 0.6), (0.55, -sp * 0.6, sp * (0.1 + rise * 0.8), 0.4))):
         n = _fog_noise(1000 + k + sum(map(ord, name)))
-        sx = (xx * sc * 0.4 + vx * t) % gw          # stretched sideways: fog lies in horizontal banks
-        sy = (yy * sc * 1.3 + vy * t) % gh
+        sx = (xx * sc * st[0] + vx * t) % gw          # stretched sideways: fog lies in horizontal banks
+        sy = (yy * sc * st[1] + vy * t) % gh
         x0 = sx.astype(np.int32); y0 = sy.astype(np.int32)
         fx = sx - x0; fy = sy - y0
         x0 %= gw; y0 %= gh   # float modulo can land exactly on gw
         x1 = (x0 + 1) % gw; y1 = (y0 + 1) % gh
         v = (n[y0, x0] * (1 - fx) + n[y0, x1] * fx) * (1 - fy) + (n[y1, x0] * (1 - fx) + n[y1, x1] * fx) * fy
         acc += wgt * v
-    acc = 0.35 + 0.65 * np.clip((acc - 0.3) / 0.5, 0, 1)    # a light even haze plus soft drifting banks
+    hz = fog.get("haze", 0.35)
+    acc = hz + (1 - hz) * np.clip((acc - 0.3) / 0.5, 0, 1)    # a light even haze plus soft drifting banks
     A = np.asarray(Image.fromarray(acc).resize((w, h), Image.BILINEAR), dtype=np.float32)
     mask = np.ones((h, w), dtype=np.float32)
     if "far" in fog:                                           # only behind the subject
         mask *= np.clip((fog["far"] - d) / 0.15, 0, 1)
     if "floor" in fog:                                         # low-lying fog
         ys = np.linspace(0, 1, h, dtype=np.float32)[:, None]
-        mask *= np.clip((ys - fog["floor"]) / 0.2, 0, 1)
+        mask *= np.clip((ys - fog["floor"]) / fog.get("soft", 0.2), 0, 1)
     return np.clip(fog.get("density", 0.3) * A * mask, 0, 0.85)
 
 
@@ -1021,7 +1097,7 @@ def _cam_point(name, u, move, x, y):
     return ox * W / w, oy * W / w, z * W / w
 
 
-def _glows(ctx, t, u, name, move, glows, a):
+def _glows(ctx, t, u, name, move, glows, a, gain=1.0):
     """Light effects in image coordinates: 'pulse' (alarm), 'flicker' (lamp), 'beam' (light shaft)."""
     ctx.save()
     ctx.set_operator(cairo.OPERATOR_ADD)
@@ -1036,7 +1112,7 @@ def _glows(ctx, t, u, name, move, glows, a):
                                            + 0.08 * math.sin(t * 29.0))
         else:
             inten = g.get("base", 0.10) * (0.8 + 0.2 * math.sin(t * 1.3) * math.sin(t * 0.7 + 2.0))
-        inten *= a
+        inten *= a * gain
         if kind == "beam":
             pts = [_cam_point(name, u, move, x, y)[:2] for x, y in g["poly"]]
             (ax, ay), (bx, by) = pts[0], pts[-1]
@@ -1114,12 +1190,39 @@ def _motes(ctx, t, a, seed, warm=True):
             ctx.fill()
 
 
+def _snow(ctx, t, a, seed):
+    """Fine snow: many small flakes far away, fewer bigger soft ones close to the lens, all falling
+    slowly on a slight slant and swaying a little."""
+    rnd = random.Random(seed)
+    #        count, radius,     fall px/s, slant px/s, sway px, alpha
+    layers = ((140, (0.8, 1.6), (35, 60), (8, 18), (4, 10), (0.35, 0.6)),
+              (60, (1.6, 2.8), (70, 110), (14, 28), (8, 18), (0.45, 0.75)),
+              (14, (4.0, 7.0), (140, 200), (25, 45), (14, 30), (0.12, 0.25)))
+    for n, (r0, r1), (v0, v1), (s0, s1), (w0, w1), (a0, a1) in layers:
+        for i in range(n):
+            x0, y0 = rnd.uniform(0, W + 200), rnd.uniform(0, H)
+            vy, vx = rnd.uniform(v0, v1), rnd.uniform(s0, s1)
+            r, amp = rnd.uniform(r0, r1), rnd.uniform(w0, w1)
+            f, ph = rnd.uniform(0.3, 0.9), rnd.uniform(0, 6.28)
+            x = (x0 - vx * t + amp * math.sin(f * t + ph)) % (W + 200) - 100
+            y = (y0 + vy * t) % (H + 40) - 20
+            al = a * rnd.uniform(a0, a1)
+            g = cairo.RadialGradient(x, y, 0, x, y, r * 1.8)
+            g.add_color_stop_rgba(0, 0.95, 0.97, 1.0, al)
+            g.add_color_stop_rgba(0.5, 0.95, 0.97, 1.0, al * 0.6)
+            g.add_color_stop_rgba(1, 0.95, 0.97, 1.0, 0)
+            ctx.set_source(g)
+            ctx.arc(x, y, r * 1.8, 0, 2 * math.pi)
+            ctx.fill()
+
+
 def illus(ctx, t, d, name, move="in", kicker=None, line=None, statement=None, source=None,
-          dim=0.0, motes=True, warm=True, fi=0.35, fo=0.35, fog=None, glows=None):
+          dim=0.0, motes=True, warm=True, fi=0.35, fo=0.35, fog=None, glows=None,
+          flick=None, ripple=None, snow=False):
     """An illustration with a slow 2.5D camera move, drifting dust in the light and optional text."""
     a = fade_io(t, d, fi, fo)
     u = clamp(t / max(d, 0.01))
-    surf, _keep = _ill_frame(name, u, move, t, fog)
+    surf, _keep = _ill_frame(name, u, move, t, fog, flick, ripple)
     ctx.save()
     sc = W / surf.get_width()
     ctx.scale(sc, sc)
@@ -1128,9 +1231,12 @@ def illus(ctx, t, d, name, move="in", kicker=None, line=None, statement=None, so
     ctx.paint_with_alpha(a)
     ctx.restore()
     if glows:
-        _glows(ctx, t, u, name, move, glows, a)
+        gain = 1.0 - flick.get("depth", 0.3) * flick_level(t, flick.get("mode", "flicker"), flick.get("seed", 0)) if flick else 1.0
+        _glows(ctx, t, u, name, move, glows, a, gain)
     if motes:
         _motes(ctx, t, a, sum(map(ord, name)), warm)
+    if snow:
+        _snow(ctx, t, a, sum(map(ord, name)))
     if dim > 0:
         rgba(ctx, (0, 0, 0), dim * a)
         ctx.paint()

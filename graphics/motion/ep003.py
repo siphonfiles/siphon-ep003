@@ -176,6 +176,7 @@ def build(tl):
     c0 = next(C)
     DEV = s("t1") + 3.55  # "three small devices" (t1 starts with "A bank vault. A safe-deposit box. Inside it,")
     IL(0.0, DEV, "c01_vault_night", "in", fi=0.6, fo=0.0, warm=False, glows=[DUSTBEAM],
+       flick=dict(lights=[dict(x=320, y=416, r=520, thr=0.6, amb=0.45)], depth=0.3, seed=1),
        fog=dict(density=0.18, color=(0.45, 0.52, 0.6), speed=8, floor=0.4), fallback="A bank vault.")
     add(DEV, s("t2"), E.devices_offline)
     IL(s("t2"), s("t3"), "c02_drawer_keyhole", "in", fo=0.0, warm=False, kicker="29 JULY · NIGHT",
@@ -187,7 +188,7 @@ def build(tl):
     add(s("t4"), s("t5"), E.big_number_v, v=0, value=116_000_000, suffix="", caption="taken the same way · within five days",
         count_for=1.4, source="[S7][S8]")
     add(s("t5"), s("t6"), E.code_age, source="[S4]")
-    IL(s("t6"), nxt_after(hits, e("t6")), "c26_footprint_snow", "in", fo=0.0, warm=False,
+    IL(s("t6"), nxt_after(hits, e("t6")), "c26_footprint_snow", "in", fo=0.0, warm=False, motes=False, snow=True,
        statement="One mistake of their own.")
     h = nxt_after(hits, e("t6"))
     c2 = next(C)                                  # title, on the sub drop
@@ -206,7 +207,8 @@ def build(tl):
     add(c3, s("a1"), E.chapter_v, v=0, title="The man who did everything right", kicker="TORONTO")
     IL(s("a1"), s("a2"), "c04_city_lake_night", "right", kicker="JONATHAN GOODMAN · TORONTO",
        line="More than $1 million in bitcoin, by his own account.", source="[S13]",
-       fog=dict(density=0.22, color=(0.5, 0.56, 0.66), speed=12, floor=0.35))
+       motes=False, fog=dict(density=0.5, color=(0.62, 0.68, 0.76), speed=6, floor=0.5, soft=0.12,
+                             rise=1.6, stretch=(0.9, 0.6), haze=0.1))
     IL(s("a2"), s("a3"), "c03_devices_tray", "in", kicker="COLDCARD · COINKITE · CANADA",
        line="Never connected to the internet.", glows=[dict(PALEB, x=1024, y=420, r=380)])
     add(s("a3"), s("a4"), E.seed_card, n=24)
@@ -222,6 +224,7 @@ def build(tl):
     IL(s("b1"), s("b2"), "c11_dice_midair", "in", kicker="PURE CHANCE",
        line="Hardware built for one job: randomness.", warm=False)
     IL(s("b2"), nxt_after(cards, e("b2")), "c12_endless_boxes", "out", kicker="DONE PROPERLY",
+       flick=dict(lights=[dict(x=788, y=570, r=150, thr=0.45, amb=0.6)], mode="slow", depth=0.55, seed=6),
        line="Too many possibilities to ever search.", warm=False,
        fog=dict(density=0.25, color=(0.45, 0.52, 0.6), speed=10, far=0.5))
     c6 = next(C)
@@ -250,6 +253,7 @@ def build(tl):
        warm=False, glows=[dict(PALEB, x=1024, y=500, r=360)])
     add(s("c5"), s("c6"), E.model_cards, source="[S1]")
     IL(s("c6"), nxt_after(cards, e("c6")), "c09_toggle_switch", "out", kicker="STILL INSIDE EVERY DEVICE",
+       flick=dict(lights=[dict(x=555, y=602, r=230, thr=0.6, amb=0.5)], mode="slow", depth=0.45, seed=5),
        line="The hardware generator.", warm=False, source="[S2]")
     c10 = next(C)
     add(c10, s("c7"), E.quote_v, v=1, quote="…just by chance, and only for less important things.",
@@ -280,7 +284,7 @@ def build(tl):
     c13 = max(x for x in cards if x <= s("d1"))
     add(c13, s("d1"), E.countdown_v, v=2, label="0", sub="30 JULY 2026 · 01:10:20 UTC")
     IL(s("d1"), s("d2"), "c15_cottage_night", "in", kicker="TORONTO · 9:10 PM · WEDNESDAY",
-       line="Goodman is at his cottage.", glows=[dict(LAMP, x=1000, y=640, r=260)],
+       line="Goodman is at his cottage.", glows=[dict(LAMP, x=1000, y=640, r=260)], motes=False,
        fog=dict(density=0.25, color=(0.45, 0.52, 0.6), speed=10, floor=0.4))
     add(s("d2"), s("d4"), E.sweep, source="[S7][S8]")
     add(s("d4"), s("d6"), E.tx_pattern, highlight_at=1.4, source="[S8]")
@@ -294,9 +298,12 @@ def build(tl):
     # ---------------- I'LL JUST CHECK ----------------
     c14 = max(x for x in cards if x <= s("e1"))
     add(c14, s("e1"), E.chapter_v, v=3, title="“I'll just check”", kicker="THE MORNING AFTER")
-    IL(s("e1"), s("e2"), "c38_monitoring_room", "in", kicker="BLOCK ENGINEERING", line="Coins leaving cold wallets.")
+    IL(s("e1"), s("e2"), "c38_monitoring_room", "in", kicker="BLOCK ENGINEERING", line="Coins leaving cold wallets.",
+       ripple=dict(thr=70, guard=16, amp=7.0, wl=560.0, speed=1.0, drift=0.0))
     IL(s("e2"), s("e3"), "c19_loudspeaker", "in", kicker="COINKITE · FIRST WARNING",
-       line="Seeds from affected firmware are at risk.", source="[S1]", warm=False)
+       line="Seeds from affected firmware are at risk.", source="[S1]", warm=False, motes=False,
+       flick=dict(lights=[dict(x=1300, y=470, r=380, thr=0.5, amb=0.6)], depth=0.3, seed=3),
+       fog=dict(density=0.42, color=(0.55, 0.6, 0.68), speed=26, haze=0.15))
     IL(s("e3"), nxt_after(cards, e("e3")), "c17_library_phone", "in", kicker="31 JULY · A PUBLIC LIBRARY",
        line="A friend's post on Facebook.", source="[S13]", glows=[dict(PALEB, x=1024, y=640, r=240)])
     c15 = max(x for x in cards if x <= s("e4"))
@@ -309,7 +316,8 @@ def build(tl):
     IL(s("e5"), s("e6"), "c18_police_desk", "in", kicker="TORONTO",
        line="A police report. And the Ontario Securities Commission.", source="[S13]",
        glows=[dict(LAMP, x=900, y=380, r=280)])
-    IL(s("e6"), s("e7"), "c32_viewing_room", "in", statement="Did someone open the box?", warm=False)
+    IL(s("e6"), s("e7"), "c32_viewing_room", "in", statement="Did someone open the box?", warm=False,
+       flick=dict(lights=[dict(x=935, y=330, r=420, thr=0.55, amb=0.55)], depth=0.32, seed=2))
     add(s("e7"), nxt_after(cards, e("e7")), E.explainer_v, v=4, name="THE FIX",
         lines=[(0.5, "Nobody opened the box"), (2.0, "A firmware update fixes new seeds"),
                (3.6, "Not the old ones: move to a new seed")], source="[S1]")
@@ -317,14 +325,14 @@ def build(tl):
     add(c17, s("e8"), E.quote_v, v=5, quote="I'm sorry and I'm devastated.",
         who="RODOLFO NOVAK · COINKITE CEO · ON X · 31 JULY", source="[S28]")
     IL(s("e8"), nxt_after(cards, e("e9")), "c41_two_windows", "out", statement="Owners and thieves hear it at once.",
-       warm=False)
+       warm=False, motes=False)
 
     # ---------------- THE RACE ----------------
     c18 = max(x for x in cards if x <= s("f1"))
     add(c18, s("f1"), E.chapter_v, v=4, title="The race", kicker="31 JULY → 3 AUGUST")
     add(s("f1"), s("f2"), E.waves, source="[S7][S8]")
     IL(s("f2"), s("f3"), "c20_crowd_fog", "in", kicker="GALAXY RESEARCH", line="At least 15 separate attackers.",
-       source="[S8]", warm=False, fog=dict(density=0.32, color=(0.5, 0.56, 0.64), speed=14, far=0.4))
+       source="[S8]", warm=False, motes=False, fog=dict(density=0.32, color=(0.5, 0.56, 0.64), speed=14, far=0.4))
     add(s("f3"), s("f5"), E.rbf_race, replace_at=s("f4") - s("f3") + 2.0, source="[S17]")
     IL(s("f5"), s("f6"), "c22_trust_safe", "in", kicker="WHITE HATS", line="About 52 BTC moved into a trust.",
        source="[S18][S31]", glows=[dict(LAMP, x=1024, y=420, r=320)])
@@ -375,7 +383,9 @@ def build(tl):
     IL(e("k7") + .35, s("k9"), "c29_vault_dawn", "in", kicker="1,082.57 BTC · AS OF THE LATEST PUBLIC TRACKING",
        line="Still where the first wave left them.", source="[S8][S34]",
        glows=[dict(LAMP, x=1024, y=300, r=380)])
-    IL(s("k9"), s("k10"), "c43_archive_drawer_light", "out", statement="Somewhere, there may be a name.")
+    IL(s("k9"), s("k10"), "c43_archive_drawer_light", "out", statement="Somewhere, there may be a name.",
+       flick=dict(lights=[dict(x=530, y=600, r=240, thr=0.5, amb=0.5), dict(x=476, y=515, r=100, thr=0.4, amb=0.6)],
+                  depth=0.32, seed=4))
     add(s("k10"), e("k10") + .6, E.statement_v, v=3, line="This was Siphon Files.", color=S.GREY)
     add(e("k10") + .6, total, S.end_card)
     T = [x for x in T if x is not None]
