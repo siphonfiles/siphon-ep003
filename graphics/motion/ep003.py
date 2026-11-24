@@ -249,7 +249,7 @@ def build(tl):
     IL(s("c3"), s("c5"), "c13_guessing_room", "in", kicker="40 BITS", line="About a trillion. A search that ends.",
        warm=False, glows=[dict(PALEB, x=1024, y=500, r=360)])
     add(s("c5"), s("c6"), E.bits_compare, source="[S1]")
-    IL(s("c6"), nxt_after(cards, e("c6")), "c35_circuit_macro", "out", kicker="STILL INSIDE EVERY DEVICE",
+    IL(s("c6"), nxt_after(cards, e("c6")), "c09_toggle_switch", "out", kicker="STILL INSIDE EVERY DEVICE",
        line="The hardware generator.", warm=False, source="[S2]")
     c10 = next(C)
     add(c10, s("c7"), S.quote_card, quote="…just by chance, and only for less important things.",
