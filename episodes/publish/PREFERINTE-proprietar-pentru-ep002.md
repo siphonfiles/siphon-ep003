@@ -17,7 +17,7 @@ Regulile complete sunt și în `siphonfiles/siphon-core` › `CLAUDE.md` › sec
 2. **Fără praf în imaginile de afară** (oraș, stradă, câmp, zăpadă, fațadă, cabană, apă): `motes=False`. În locul prafului, ce se potrivește locului:
    - pe zăpadă sau iarnă: **ninsoare măruntă** (`snow=True`);
    - pe peisaje deschise: **ceață care se vede că trece**, adică bancuri care curg, nu un voal uniform (`fog` cu `speed` ~25, `haze` ~0,15);
-   - **fără abur sau ceață pe apă**: lacurile și râurile rămân curate. Proprietarul a respins aburul pe lac.
+   - pe apă (lacuri, râuri), abur sau ceață doar dacă se potrivesc scenei. La ep. 003 proprietarul a respins aburul pe lac, dar asta a fost doar pentru acel video, nu o regulă generală.
 3. **Mișcare pe ecrane și pe benzile de lumină:** `ripple=`, o ondulare doar pe zonele luminoase. Masca ocolește siluetele întunecate, ca să nu se strice altceva.
 4. **Niciun ecran gol.** Telefoanele, monitoarele și orice alt ecran din ilustrații arată ceva legat de scenă: un ceas, aplicații, cod sau o notificare. Niciodată alb sau o singură culoare uniformă.
    - Se desenează pe CPU cu `scripts/screen_content.py` din `siphon-ep003`. Conținutul se randează plat, se pune în perspectivă pe ecran, se mască după forma ecranului (păstrează notch-ul și colțurile rotunjite) și primește lumina lui.
