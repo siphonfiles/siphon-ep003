@@ -396,7 +396,7 @@ def devices_offline(ctx, t, d, n=3, source=None):
     """Teaser: an open safe-deposit box seen from above, three plain devices inside, each with a crossed-out
     signal icon. Generic shapes, no brand."""
     a = fade_io(t, d)
-    p = ease_out(prog(t, 0, 0.7))
+    p = ease_out(prog(t, 0, 0.3))
     bx, by, bw, bh = 470, 260 + (1 - p) * 30, 980, 520
     rgba(ctx, STEEL, 0.55 * a)
     ctx.set_line_width(4)
@@ -406,7 +406,7 @@ def devices_offline(ctx, t, d, n=3, source=None):
     rrect(ctx, bx + 12, by + 12, bw - 24, bh - 24, 12)
     ctx.fill()
     for i in range(n):
-        q = ease_out(prog(t, 0.4 + i * 0.35, 0.5))
+        q = ease_out(prog(t, 0.1 + i * 0.18, 0.35))
         dx = bx + 110 + i * 290
         dy = by + 130 + (1 - q) * 40
         rgba(ctx, (0.22, 0.25, 0.28), a * q)
@@ -429,13 +429,13 @@ def devices_offline(ctx, t, d, n=3, source=None):
             ctx.new_path()
             ctx.arc(cx, cy + 20, r, math.pi * 1.25, math.pi * 1.75)
             ctx.stroke()
-        rgba(ctx, RED, a * prog(t, 1.4 + i * 0.25, 0.3))
+        rgba(ctx, RED, a * prog(t, 0.7 + i * 0.15, 0.2))
         ctx.set_line_width(4)
         ctx.new_path()
         ctx.move_to(cx - 36, cy - 14)
         ctx.line_to(cx + 36, cy + 26)
         ctx.stroke()
-    _label(ctx, "NEVER CONNECTED TO THE INTERNET", W / 2, by + bh + 90, a * prog(t, 1.8, 0.5), AMBER, 28, "center")
+    _label(ctx, "NEVER CONNECTED TO THE INTERNET", W / 2, by + bh + 90, a * prog(t, 1.0, 0.3), AMBER, 28, "center")
     _label(ctx, "ILLUSTRATIVE", bx + bw, by - 24, a * 0.7, GREY, 18, "right")
     if source:
         source_tag(ctx, source, a)
