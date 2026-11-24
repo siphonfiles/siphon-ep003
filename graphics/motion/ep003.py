@@ -183,7 +183,7 @@ def build(tl):
     add(s("t3"), c1, S.kinetic, line="In seven minutes, the bitcoin they protected was gone.",
         highlight=("seven", "gone."), source="[S12][S13]")
     add(c1, s("t4"), S.black)
-    add(s("t4"), s("t5"), S.big_number, value=116_000_000, suffix="", caption="taken the same way · within five days",
+    add(s("t4"), s("t5"), E.big_number_v, v=0, value=116_000_000, suffix="", caption="taken the same way · within five days",
         count_for=1.4, source="[S7][S8]")
     add(s("t5"), s("t6"), E.code_age, source="[S4]")
     IL(s("t6"), nxt_after(hits, e("t6")), "c26_footprint_snow", "in", fo=0.0, warm=False,
@@ -194,15 +194,15 @@ def build(tl):
     add(c2, s("i1"), S.title_card, title="NOBODY TOUCHED IT")
 
     # ---------------- THOMAS (intro) — picture underneath, clips laid over ----------------
-    add(s("i1"), s("i2"), S.statement, line="Thomas Archer · the AI narrator of Siphon Files", color=S.GREY)
-    add(s("i2"), s("i3"), S.statement, line="Every claim has a source. They're all in the description.", color=S.GREY)
+    add(s("i1"), s("i2"), E.statement_v, v=1, line="Thomas Archer · the AI narrator of Siphon Files", color=S.GREY)
+    add(s("i2"), s("i3"), E.statement_v, v=2, line="Every claim has a source. They're all in the description.", color=S.GREY)
     IL(s("i3"), s("i4"), "c06_vault_corridor_walk", "in", statement="A lock that nobody picked.")
     c3 = next(C)                                  # chapter card after the intro
     IL(s("i4"), c3, "c07_combination_dial", "in", statement="Somebody worked out the combination.",
        glows=[dict(LAMP, x=1024, y=300, r=300)])
 
     # ---------------- THE MAN WHO DID EVERYTHING RIGHT ----------------
-    add(c3, s("a1"), E.chapter, title="The man who did everything right", kicker="TORONTO")
+    add(c3, s("a1"), E.chapter_v, v=0, title="The man who did everything right", kicker="TORONTO")
     IL(s("a1"), s("a2"), "c04_city_lake_night", "right", kicker="JONATHAN GOODMAN · TORONTO",
        line="More than $1 million in bitcoin, by his own account.", source="[S13]",
        fog=dict(density=0.22, color=(0.5, 0.56, 0.66), speed=12, floor=0.35))
@@ -217,18 +217,18 @@ def build(tl):
 
     # ---------------- THE COMBINATION ----------------
     c5 = next(C)
-    add(c5, s("b1"), E.chapter, title="The combination", kicker="HOW A SEED IS MADE")
+    add(c5, s("b1"), E.chapter_v, v=1, title="The combination", kicker="HOW A SEED IS MADE")
     IL(s("b1"), s("b2"), "c11_dice_midair", "in", kicker="PURE CHANCE",
        line="Hardware built for one job: randomness.", warm=False)
     IL(s("b2"), nxt_after(cards, e("b2")), "c12_endless_boxes", "out", kicker="DONE PROPERLY",
        line="Too many possibilities to ever search.", warm=False,
        fog=dict(density=0.25, color=(0.45, 0.52, 0.6), speed=10, far=0.5))
     c6 = next(C)
-    add(c6, s("b3"), S.countdown, label="5Y 4M", sub="MARCH 2021 · FIRMWARE UPDATE")
-    add(s("b3"), nxt_after(cards, e("b3")), S.explainer, name="MARCH 2021",
+    add(c6, s("b3"), E.countdown_v, v=0, label="5Y 4M", sub="MARCH 2021 · FIRMWARE UPDATE")
+    add(s("b3"), nxt_after(cards, e("b3")), E.explainer_v, v=0, name="MARCH 2021",
         lines=[(0.5, "New firmware"), (1.6, "The cryptography Bitcoin Core uses")], source="[S1][S2]")
     c7 = next(C)
-    add(c7, s("b4"), S.quote_card, quote="The cryptographic choice was sound. The integration was not.",
+    add(c7, s("b4"), E.quote_v, v=0, quote="The cryptographic choice was sound. The integration was not.",
         who="COINKITE · TECHNICAL WRITE-UP", source="[S2]")
     add(s("b4"), s("b6"), E.rng_switch, flip_at=s("b5") - s("b4") + 0.8, zero_at=frac("b5", 0.6) - s("b4"),
         source="[S2][S4]")
@@ -240,7 +240,7 @@ def build(tl):
 
     # ---------------- FIVE YEARS ----------------
     c9 = next(C)
-    add(c9, s("c1"), E.chapter, title="Five years", kicker="MARCH 2021 → JULY 2026")
+    add(c9, s("c1"), E.chapter_v, v=2, title="Five years", kicker="MARCH 2021 → JULY 2026")
     IL(s("c1"), s("c2"), "c08_idle_chip", "in", kicker="MK2 · MK3", line="Words from the substitute.",
        warm=False, glows=[dict(kind="pulse", x=1024, y=576, r=200, color=EMERALD, min=0.02, max=0.08, hz=0.25)],
        source="[S1][S4]")
@@ -251,23 +251,23 @@ def build(tl):
     IL(s("c6"), nxt_after(cards, e("c6")), "c09_toggle_switch", "out", kicker="STILL INSIDE EVERY DEVICE",
        line="The hardware generator.", warm=False, source="[S2]")
     c10 = next(C)
-    add(c10, s("c7"), S.quote_card, quote="…just by chance, and only for less important things.",
+    add(c10, s("c7"), E.quote_v, v=1, quote="…just by chance, and only for less important things.",
         who="COINKITE · TECHNICAL WRITE-UP", source="[S2]")
     IL(s("c7"), s("c8"), "c14_reading_code", "in", kicker="WE KNOW · HE DOESN'T",
        line="The code is public.", glows=[dict(PALEB, x=1100, y=420, r=300)])
     IL(s("c8"), s("c9"), "c30_plate_into_box", "out", kicker="2021 → 2026", line="Written down. Locked away.",
        warm=False, glows=[DUSTBEAM])
-    add(s("c9"), nxt_after(cards, e("c9")), S.explainer, name="OUTSIDE REVIEWS",
+    add(s("c9"), nxt_after(cards, e("c9")), E.explainer_v, v=1, name="OUTSIDE REVIEWS",
         lines=[(0.5, "2022"), (1.4, "2024"), (2.6, "Paid for by Coinkite, says its CEO")], source="[S3]")
     c11 = next(C)
-    add(c11, s("c10"), S.countdown, label="A FEW WEEKS", sub="AN AI REVIEW OF THE CRITICAL CODE")
-    add(s("c10"), nxt_after(cards, e("c10")), S.explainer, name="COINKITE · AI-ASSISTED REVIEW",
+    add(c11, s("c10"), E.countdown_v, v=1, label="A FEW WEEKS", sub="AN AI REVIEW OF THE CRITICAL CODE")
+    add(s("c10"), nxt_after(cards, e("c10")), E.explainer_v, v=2, name="COINKITE · AI-ASSISTED REVIEW",
         lines=[(0.5, "Critical code, a few weeks before the theft")], source="[S3]")
     c12 = next(C)
-    add(c12, s("c11"), S.quote_card, quote="It did not catch this vulnerability.",
+    add(c12, s("c11"), E.quote_v, v=2, quote="It did not catch this vulnerability.",
         who="COINKITE · ON ITS OWN AI-ASSISTED REVIEW", source="[S3]")
     IL(s("c11"), s("c12"), "c37_empty_desk_glow", "left", statement="Someone else found it first.")
-    add(s("c12"), s("c14"), S.explainer, name="COINKITE'S ASSUMPTION",
+    add(s("c12"), s("c14"), E.explainer_v, v=3, name="COINKITE'S ASSUMPTION",
         lines=[(0.5, "Someone used AI to find it"), (s("c13") - s("c12") + 0.2, "Not proven")], source="[S3]")
     IL(s("c14"), s("c15"), "c39_server_racks", "out", statement="No device needed.", warm=False)
     add(s("c15"), nxt_after(hits, e("c16")), S.checklist, title="THE METHOD",
@@ -277,7 +277,7 @@ def build(tl):
     # ---------------- 01:10 ----------------
     h = nxt_after(hits, e("c16"))
     c13 = max(x for x in cards if x <= s("d1"))
-    add(c13, s("d1"), S.countdown, label="0", sub="30 JULY 2026 · 01:10:20 UTC")
+    add(c13, s("d1"), E.countdown_v, v=2, label="0", sub="30 JULY 2026 · 01:10:20 UTC")
     IL(s("d1"), s("d2"), "c15_cottage_night", "in", kicker="TORONTO · 9:10 PM · WEDNESDAY",
        line="Goodman is at his cottage.", glows=[dict(LAMP, x=1000, y=640, r=260)],
        fog=dict(density=0.25, color=(0.45, 0.52, 0.6), speed=10, floor=0.4))
@@ -292,35 +292,35 @@ def build(tl):
 
     # ---------------- I'LL JUST CHECK ----------------
     c14 = max(x for x in cards if x <= s("e1"))
-    add(c14, s("e1"), E.chapter, title="“I'll just check”", kicker="THE MORNING AFTER")
+    add(c14, s("e1"), E.chapter_v, v=3, title="“I'll just check”", kicker="THE MORNING AFTER")
     IL(s("e1"), s("e2"), "c38_monitoring_room", "in", kicker="BLOCK ENGINEERING", line="Coins leaving cold wallets.")
     IL(s("e2"), s("e3"), "c19_loudspeaker", "in", kicker="COINKITE · FIRST WARNING",
        line="Seeds from affected firmware are at risk.", source="[S1]", warm=False)
     IL(s("e3"), nxt_after(cards, e("e3")), "c17_library_phone", "in", kicker="31 JULY · A PUBLIC LIBRARY",
        line="A friend's post on Facebook.", source="[S13]", glows=[dict(PALEB, x=1024, y=640, r=240)])
     c15 = max(x for x in cards if x <= s("e4"))
-    add(c15, s("e4"), S.quote_card, quote="There's no way this affects me, but I'll just check.",
+    add(c15, s("e4"), E.quote_v, v=3, quote="There's no way this affects me, but I'll just check.",
         who="JONATHAN GOODMAN · TO WEALTHSIMPLE MAGAZINE", source="[S13]")
     add(s("e4"), nxt_after(cards, e("e4")), E.wallet_check, total="Gone since Wednesday night.",
         source="[S13]")
     c16 = max(x for x in cards if x <= s("e5"))
-    add(c16, s("e5"), S.quote_card, quote="I did everything right.", who="JONATHAN GOODMAN · ON X", source="[S12]")
+    add(c16, s("e5"), E.quote_v, v=4, quote="I did everything right.", who="JONATHAN GOODMAN · ON X", source="[S12]")
     IL(s("e5"), s("e6"), "c18_police_desk", "in", kicker="TORONTO",
        line="A police report. And the Ontario Securities Commission.", source="[S13]",
        glows=[dict(LAMP, x=900, y=380, r=280)])
     IL(s("e6"), s("e7"), "c32_viewing_room", "in", statement="Did someone open the box?", warm=False)
-    add(s("e7"), nxt_after(cards, e("e7")), S.explainer, name="THE FIX",
+    add(s("e7"), nxt_after(cards, e("e7")), E.explainer_v, v=4, name="THE FIX",
         lines=[(0.5, "Nobody opened the box"), (2.0, "A firmware update fixes new seeds"),
                (3.6, "Not the old ones: move to a new seed")], source="[S1]")
     c17 = max(x for x in cards if x <= s("e8"))
-    add(c17, s("e8"), S.quote_card, quote="I'm sorry and I'm devastated.",
+    add(c17, s("e8"), E.quote_v, v=5, quote="I'm sorry and I'm devastated.",
         who="RODOLFO NOVAK · COINKITE CEO · ON X · 31 JULY", source="[S28]")
     IL(s("e8"), nxt_after(cards, e("e9")), "c41_two_windows", "out", statement="Owners and thieves hear it at once.",
        warm=False)
 
     # ---------------- THE RACE ----------------
     c18 = max(x for x in cards if x <= s("f1"))
-    add(c18, s("f1"), E.chapter, title="The race", kicker="31 JULY → 3 AUGUST")
+    add(c18, s("f1"), E.chapter_v, v=4, title="The race", kicker="31 JULY → 3 AUGUST")
     add(s("f1"), s("f2"), E.waves, source="[S7][S8]")
     IL(s("f2"), s("f3"), "c20_crowd_fog", "in", kicker="GALAXY RESEARCH", line="At least 15 separate attackers.",
        source="[S8]", warm=False, fog=dict(density=0.32, color=(0.5, 0.56, 0.64), speed=14, far=0.4))
@@ -330,7 +330,7 @@ def build(tl):
     IL(s("f6"), s("f7"), "c23_coins_tunnel", "in", kicker="MIXERS", line="Built to blur the trail.",
        source="[S8]", warm=False, fog=dict(density=0.3, color=(0.45, 0.52, 0.6), speed=16, far=0.5))
     add(s("f7"), s("f8"), E.coin_stack, source="[S7][S8]")
-    add(s("f8"), s("g1"), S.big_number, value=1082.57, prefix="", suffix=" BTC", decimals=2, count_for=1.2,
+    add(s("f8"), s("g1"), E.big_number_v, v=1, value=1082.57, prefix="", suffix=" BTC", decimals=2, count_for=1.2,
         caption="wave 1 · not moved · as of the latest public tracking", source="[S8][S34]")
 
     # ---------------- THE MISTAKE ----------------
@@ -342,7 +342,7 @@ def build(tl):
        line="Usually leaves records.", glows=[dict(LAMP, x=1024, y=360, r=280)])
     IL(s("g10"), s("g11"), "c25_card_index", "in", kicker="GALAXY · ALEX THORN",
        line="The identity may be known to investigators.", source="[S8][S17]")
-    add(s("g11"), nxt_after(cards, e("g11")), S.explainer, name="AS WE MAKE THIS VIDEO",
+    add(s("g11"), nxt_after(cards, e("g11")), E.explainer_v, v=5, name="AS WE MAKE THIS VIDEO",
         lines=[(0.5, "FBI: no confirmed suspect"), (1.6, "No arrest"), (2.6, "No recovery")], source="[S34]")
 
     # ---------------- WHO? ----------------
@@ -355,27 +355,27 @@ def build(tl):
        line="A proposed class action. Allegations, not findings.", source="[S32]", warm=False,
        glows=[dict(PALEB, x=1024, y=300, r=380)])
     c20 = max(x for x in cards if x <= s("h5"))
-    add(c20, s("h5"), S.quote_card, quote="The math on a class action is brutal.",
+    add(c20, s("h5"), E.quote_v, v=6, quote="The math on a class action is brutal.",
         who="JONATHAN GOODMAN · TO THE NEWS BLOCK", source="[S30]")
-    add(s("h5"), nxt_after(cards, e("h5")), S.big_number, value=0.17, prefix="~", suffix="%", decimals=2,
+    add(s("h5"), nxt_after(cards, e("h5")), E.big_number_v, v=2, value=0.17, prefix="~", suffix="%", decimals=2,
         count_for=1.0, caption="of its users affected · Coinkite's CEO", source="[S3]")
 
     # ---------------- THE BOX, AGAIN ----------------
     c21 = max(x for x in cards if x <= s("k1"))
-    add(c21, s("k1"), E.chapter, title="The box, again", kicker="THE ONES WHO ROLLED DICE")
+    add(c21, s("k1"), E.chapter_v, v=5, title="The box, again", kicker="THE ONES WHO ROLLED DICE")
     add(s("k1"), s("k2"), E.dice_finale, source="[S1]")
     IL(s("k2"), s("k3"), "c28_hand_dice", "in", statement="They didn't leave it all to the device.")
     IL(s("k3"), s("k4"), "c31_sealed_box_dust", "in", statement="Never opened.", warm=False, glows=[DUSTBEAM])
     IL(s("k4"), s("k5"), "c33_device_under_glass", "in", statement="Never hacked.", warm=False)
     IL(s("k5"), s("k6"), "c36_unplugged_cable", "in", statement="They never asked.", warm=False)
-    add(s("k6"), e("k7") + .35, S.explainer, name="IF YOU MADE A SEED ON AN AFFECTED COLDCARD",
+    add(s("k6"), e("k7") + .35, E.explainer_v, v=6, name="IF YOU MADE A SEED ON AN AFFECTED COLDCARD",
         lines=[(0.5, "Read Coinkite's advisory"), (s("k7") - s("k6") + 0.3, "Treat it as compromised"),
                (s("k7") - s("k6") + 1.6, "Move to a new seed")], source="[S1]")
     IL(e("k7") + .35, s("k9"), "c29_vault_dawn", "in", kicker="1,082.57 BTC · AS OF THE LATEST PUBLIC TRACKING",
        line="Still where the first wave left them.", source="[S8][S34]",
        glows=[dict(LAMP, x=1024, y=300, r=380)])
     IL(s("k9"), s("k10"), "c43_archive_drawer_light", "out", statement="Somewhere, there may be a name.")
-    add(s("k10"), e("k10") + .6, S.statement, line="This was Siphon Files.", color=S.GREY)
+    add(s("k10"), e("k10") + .6, E.statement_v, v=3, line="This was Siphon Files.", color=S.GREY)
     add(e("k10") + .6, total, S.end_card)
     T = [x for x in T if x is not None]
     out = overlay_thomas(T, thomas_shots(tl))

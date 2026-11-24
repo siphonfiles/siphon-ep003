@@ -9,6 +9,8 @@ from engine import (W, H, AMBER, INK, GREY, DIM, RED, HEAD, MONO, SERIF,
                     clamp, ease_out, ease_in_out, prog, fade_io, rgba, text, text_width,
                     wrap, rrect, source_tag)
 from scenes import _panel
+from scenes import (quote_card as S_quote_card, explainer as S_explainer, statement as S_statement,
+                    countdown as S_countdown, big_number as S_big_number)
 
 STEEL = (0.62, 0.68, 0.74)
 
@@ -655,5 +657,289 @@ def coin_stack(ctx, t, d, total=1816, addrs="from 5,200+ addresses", source=None
     text(ctx, f"≈ {int(total * u):,} BTC", 1000, 520, INK, a, face=MONO, size=96)
     _label(ctx, "TAKEN IN ALL WAVES", 1000, 580, a, GREY, 22)
     text(ctx, addrs, 1000, 700, RED, a * prog(t, 0.2 + d * 0.6, 0.5), face=MONO, size=40)
+    if source:
+        source_tag(ctx, source, a)
+
+
+# ---------------- format cards: every instance gets its own layout (24 Nov 2026) ----------------
+
+def _mono(ctx, s, x, y, a, col=GREY, size=28, align="left", track=6):
+    text(ctx, s, x, y, col, a, align=align, face=MONO, size=size, bold=False, tracking=track)
+
+
+def _bar(ctx, x, y, w, h, a, col=AMBER):
+    rgba(ctx, col, a)
+    ctx.rectangle(x, y, w, h)
+    ctx.fill()
+
+
+def _fit(ctx, s, face, size, max_w, bold=True, lo=40):
+    while size > lo and text_width(ctx, s, face, size) > max_w:
+        size -= 2
+    return size
+
+
+def chapter_v(ctx, t, d, title, kicker, v=0):
+    """Six different chapter breaks."""
+    if v == 0:
+        return chapter(ctx, t, d, title, kicker)
+    a = fade_io(t, d, 0.25, 0.3)
+    p = ease_out(prog(t, 0.05, 0.7))
+    if v == 1:      # left aligned, tall emerald bar, title rises
+        _bar(ctx, 220, 380, 8, 300 * p, a)
+        _mono(ctx, kicker, 270, 450, a, AMBER, 28)
+        sz = _fit(ctx, title, HEAD, 110, 1400)
+        text(ctx, title, 270, 600 + (1 - p) * 30, INK, a * p, size=sz)
+    elif v == 2:    # typewriter title in mono, caret, kicker under a ruled line
+        n = int(len(title) * clamp(prog(t, 0.1, 0.9)))
+        sz = _fit(ctx, title, MONO, 88, 1500)
+        text(ctx, title[:n] + ("▌" if int(t * 3) % 2 == 0 else ""), W / 2, 560, INK, a, align="center",
+             face=MONO, size=sz)
+        _bar(ctx, W / 2 - 400 * p, 620, 800 * p, 2, a * 0.6, GREY)
+        _mono(ctx, kicker, W / 2, 680, a * prog(t, 0.6, 0.4), AMBER, 26, "center")
+    elif v == 3:    # dial ring on the left, text on the right
+        cx, cy, r = 470, H / 2, 170
+        rgba(ctx, STEEL, 0.5 * a)
+        ctx.set_line_width(4)
+        ctx.new_path()
+        ctx.arc(cx, cy, r, 0, 2 * math.pi)
+        ctx.stroke()
+        rgba(ctx, AMBER, a)
+        ctx.set_line_width(10)
+        ctx.new_path()
+        ctx.arc(cx, cy, r, -math.pi / 2, -math.pi / 2 + 2 * math.pi * p)
+        ctx.stroke()
+        _mono(ctx, kicker, 760, 470, a, AMBER, 26)
+        sz = _fit(ctx, title, HEAD, 104, 1050)
+        text(ctx, title, 760, 600, INK, a * p, size=sz)
+    elif v == 4:    # a row of box doors slides apart to reveal the title
+        gap = 520 * p
+        for side in (-1, 1):
+            for k in range(4):
+                x = W / 2 + side * (gap / 2 + k * 150) - (140 if side < 0 else 0)
+                rgba(ctx, (0.17, 0.19, 0.21), a)
+                rrect(ctx, x, 360, 140, 360, 6)
+                ctx.fill()
+                rgba(ctx, STEEL, 0.4 * a)
+                ctx.new_path()
+                ctx.arc(x + 70, 540, 10, 0, 2 * math.pi)
+                ctx.fill()
+        sz = _fit(ctx, title, HEAD, 80, max(gap - 40, 200))
+        text(ctx, title, W / 2, 560, INK, a * p, align="center", size=sz)
+        _mono(ctx, kicker, W / 2, 800, a * p, AMBER, 24, "center")
+    else:           # bracketed kicker top-left, large serif italic title, a scan line
+        _mono(ctx, f"[ {kicker} ]", 180, 300, a, AMBER, 26)
+        sz = _fit(ctx, title, SERIF, 120, 1560)
+        text(ctx, title, 180, 600, INK, a * p, face=SERIF, size=sz, italic=True)
+        y = 280 + (H - 400) * clamp(t / max(d, 0.1))
+        _bar(ctx, 0, y, W, 2, 0.25 * a)
+
+
+def quote_v(ctx, t, d, quote, who, source, v=0):
+    """Seven different quote cards."""
+    if v == 0:
+        return S_quote_card(ctx, t, d, quote, who, source)
+    a = fade_io(t, d, 0.25, 0.25)
+    p = ease_out(prog(t, 0, 0.8))
+    if v == 1:      # centred, thin frame
+        lines = wrap(ctx, quote, 1300, SERIF, 80, True)
+        h = len(lines) * 104 + 200
+        y0 = H / 2 - h / 2
+        rgba(ctx, STEEL, 0.5 * a)
+        ctx.set_line_width(2)
+        rrect(ctx, W / 2 - 760, y0, 1520, h, 4)
+        ctx.stroke()
+        for i, ln in enumerate(lines):
+            text(ctx, ln, W / 2, y0 + 130 + i * 104, INK, a * p, align="center", face=SERIF, size=80, italic=True)
+        _mono(ctx, who, W / 2, y0 + h + 60, a * prog(t, 0.4, 0.5), GREY, 24, "center")
+    elif v == 2:    # right aligned, vertical bar on the right
+        lines = wrap(ctx, quote, 1200, SERIF, 86, True)
+        for i, ln in enumerate(lines):
+            text(ctx, ln, W - 300, 430 + i * 112, INK, a * p, align="right", face=SERIF, size=86, italic=True)
+        _bar(ctx, W - 250, 360, 6, (len(lines) * 112 + 40) * p, a)
+        _mono(ctx, who, W - 300, 430 + len(lines) * 112 + 40, a, GREY, 24, "right")
+    elif v == 3:    # transcript panel, typed in mono
+        _panel(ctx, 260, 300, W - 520, 480, a, 10)
+        _mono(ctx, "TRANSCRIPT · " + who, 300, 280, a, GREY, 20)
+        n = int(len(quote) * clamp(prog(t, 0.2, max(d * 0.5, 0.6))))
+        lines = wrap(ctx, quote[:n], W - 640, MONO, 56, False)
+        for i, ln in enumerate(lines):
+            text(ctx, ln, 320, 420 + i * 80, AMBER, a, face=MONO, size=56, bold=False)
+    elif v == 4:    # who as kicker on top, words appear one by one
+        _mono(ctx, who, 220, 330, a, AMBER, 24)
+        words = quote.split()
+        k = int(len(words) * clamp(prog(t, 0.2, max(d * 0.5, 0.6)))) + 1
+        lines = wrap(ctx, " ".join(words[:k]), 1480, HEAD, 96, True)
+        for i, ln in enumerate(lines):
+            text(ctx, ln, 220, 480 + i * 120, INK, a, size=96)
+    elif v == 5:    # light paper card with dark serif text
+        lines = wrap(ctx, quote, 1100, SERIF, 76, True)
+        h = len(lines) * 100 + 220
+        x0, y0 = W / 2 - 680, H / 2 - h / 2 + (1 - p) * 30
+        rgba(ctx, (0.88, 0.89, 0.86), 0.95 * a)
+        rrect(ctx, x0, y0, 1360, h, 6)
+        ctx.fill()
+        for i, ln in enumerate(lines):
+            text(ctx, ln, x0 + 100, y0 + 130 + i * 100, (0.1, 0.12, 0.14), a, face=SERIF, size=76, italic=True)
+        text(ctx, "— " + who, x0 + 100, y0 + h - 50, (0.35, 0.38, 0.42), a, face=MONO, size=22, bold=False)
+    else:           # huge single line, centred low, with a sweeping underline
+        sz = _fit(ctx, quote, SERIF, 120, W - 300)
+        text(ctx, quote, W / 2, 600, INK, a * p, align="center", face=SERIF, size=sz, italic=True)
+        _bar(ctx, W / 2 - 300, 650, 600 * ease_out(prog(t, 0.4, 0.8)), 4, a)
+        _mono(ctx, who, W / 2, 730, a * prog(t, 0.6, 0.4), GREY, 24, "center")
+    if source:
+        source_tag(ctx, source, a)
+
+
+def explainer_v(ctx, t, d, name, lines, source=None, v=0):
+    """Seven different explainer cards. lines = [(at, text), ...]."""
+    if v == 0:
+        return S_explainer(ctx, t, d, name, lines, source)
+    a = fade_io(t, d)
+    p = ease_out(prog(t, 0.1, 0.7))
+    if v == 1:      # folder tab
+        x0, y0, w, h = 300, 340, W - 600, 120 + len(lines) * 90 + 60
+        rgba(ctx, AMBER, a)
+        tw = text_width(ctx, name, MONO, 28) + 60
+        rrect(ctx, x0, y0 - 56, tw, 70, 8)
+        ctx.fill()
+        text(ctx, name, x0 + 30, y0 - 10, (0.05, 0.08, 0.08), a, face=MONO, size=28)
+        _panel(ctx, x0, y0, w, h, a, 8)
+        for i, (at, ln) in enumerate(lines):
+            text(ctx, ln, x0 + 60, y0 + 110 + i * 90, INK, a * ease_out(prog(t, at, 0.5)), size=52)
+    elif v == 2:    # two columns: name left, facts right with ticks
+        sz = _fit(ctx, name, HEAD, 84, 700)
+        for k, part in enumerate(wrap(ctx, name, 700, HEAD, sz, True)):
+            text(ctx, part, 200, 470 + k * (sz + 14), INK, a * p, size=sz)
+        _bar(ctx, 960, 360, 2, 400, a * 0.5, GREY)
+        for i, (at, ln) in enumerate(lines):
+            q = ease_out(prog(t, at, 0.5))
+            _mono(ctx, "✓", 1020, 470 + i * 110, a * q, AMBER, 40, track=0)
+            text(ctx, ln, 1080, 470 + i * 110, INK, a * q, size=44)
+    elif v == 3:    # vertical timeline with nodes
+        _mono(ctx, name, 300, 300, a, AMBER, 30)
+        _bar(ctx, 320, 360, 3, 100 + len(lines) * 140 * p, a * 0.6, GREY)
+        for i, (at, ln) in enumerate(lines):
+            q = ease_out(prog(t, at, 0.5))
+            y = 420 + i * 140
+            rgba(ctx, AMBER, a * q)
+            ctx.new_path()
+            ctx.arc(321, y, 14, 0, 2 * math.pi)
+            ctx.fill()
+            text(ctx, ln, 380, y + 18, INK, a * q, size=56)
+    elif v == 4:    # centred name, facts as pills
+        sz = _fit(ctx, name, HEAD, 100, 1600)
+        text(ctx, name, W / 2, 420, INK, a * p, align="center", size=sz)
+        for i, (at, ln) in enumerate(lines):
+            q = ease_out(prog(t, at, 0.5))
+            tw = text_width(ctx, ln, MONO, 34) + 80
+            y = 540 + i * 110
+            rgba(ctx, (0.13, 0.17, 0.17), a * q)
+            rrect(ctx, W / 2 - tw / 2, y, tw, 76, 38)
+            ctx.fill()
+            text(ctx, ln, W / 2, y + 50, AMBER, a * q, align="center", face=MONO, size=34, bold=False)
+    elif v == 5:    # numbered steps, big numerals
+        sz = _fit(ctx, name, HEAD, 56, 1500)
+        text(ctx, name, 220, 300, INK, a * p, size=sz)
+        for i, (at, ln) in enumerate(lines):
+            q = ease_out(prog(t, at, 0.5))
+            y = 470 + i * 160
+            text(ctx, f"{i + 1:02d}", 220, y + 20, AMBER, a * q, face=MONO, size=96)
+            text(ctx, ln, 420, y, INK, a * q, size=54)
+    else:           # terminal: name as a comment, facts printed as output
+        _panel(ctx, 220, 260, W - 440, 560, a, 10)
+        text(ctx, "# " + name, 270, 340, GREY, a, face=MONO, size=30, bold=False)
+        for i, (at, ln) in enumerate(lines):
+            q = prog(t, at, 0.4)
+            n = int(len(ln) * q)
+            text(ctx, "> " + ln[:n], 270, 440 + i * 80, AMBER, a, face=MONO, size=46, bold=False)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def statement_v(ctx, t, d, line, color=INK, v=0):
+    """Four different single-line statements."""
+    if v == 0:
+        return S_statement(ctx, t, d, line, color)
+    rgba(ctx, (0, 0, 0))
+    ctx.paint()
+    a = fade_io(t, d, 0.5, 0.05)
+    if v == 1:
+        sz = _fit(ctx, line, HEAD, 64, W - 400)
+        text(ctx, line, 200, H / 2 + 20, color, a, size=sz)
+        _bar(ctx, 200, H / 2 + 60, 120, 4, a)
+    elif v == 2:
+        sz = _fit(ctx, line.upper(), MONO, 40, W - 300)
+        _mono(ctx, line.upper(), W / 2, H / 2, a, color, sz, "center", 10)
+    else:
+        sz = _fit(ctx, line, SERIF, 60, W - 400)
+        text(ctx, line, W / 2, H - 260, color, a, align="center", face=SERIF, size=sz, italic=True)
+        _bar(ctx, W / 2 - 60, H - 220, 120, 2, a * 0.7, GREY)
+
+
+def countdown_v(ctx, t, d, label, sub=None, v=0):
+    """Three different T-minus cards."""
+    if v == 0:
+        return S_countdown(ctx, t, d, label, sub)
+    a = fade_io(t, d, 0.15, 0.25)
+    if v == 1:      # flip-clock tiles
+        _mono(ctx, "T-MINUS", W / 2, 360, a, AMBER, 36, "center", 14)
+        chars = list(label)
+        tw = 130
+        x0 = W / 2 - len(chars) * (tw + 16) / 2
+        for i, ch in enumerate(chars):
+            q = prog(t, 0.1 + i * 0.08, 0.25)
+            x = x0 + i * (tw + 16)
+            rgba(ctx, (0.15, 0.17, 0.19), a)
+            rrect(ctx, x, 420, tw, 200, 10)
+            ctx.fill()
+            _bar(ctx, x, 519, tw, 2, a, (0.06, 0.07, 0.08))
+            text(ctx, ch, x + tw / 2, 580, INK, a * q, align="center", face=MONO, size=130)
+        if sub:
+            _mono(ctx, sub, W / 2, 720, a * prog(t, 0.5, 0.4), GREY, 26, "center")
+    else:           # dial: a hand sweeps to zero, label inside
+        cx, cy, r = W / 2, H / 2 - 20, 260
+        rgba(ctx, STEEL, 0.4 * a)
+        ctx.set_line_width(3)
+        ctx.new_path()
+        ctx.arc(cx, cy, r, 0, 2 * math.pi)
+        ctx.stroke()
+        u = ease_in_out(prog(t, 0.1, max(d - 0.6, 0.5)))
+        rgba(ctx, AMBER, a)
+        ctx.set_line_width(8)
+        ctx.new_path()
+        ctx.arc(cx, cy, r, -math.pi / 2, -math.pi / 2 + 2 * math.pi * (1 - u) + 0.001)
+        ctx.stroke()
+        _mono(ctx, "T-MINUS", cx, cy - 70, a, AMBER, 30, "center", 12)
+        sz = _fit(ctx, label, MONO, 140, 420)
+        text(ctx, label, cx, cy + 50, INK, a, align="center", face=MONO, size=sz)
+        if sub:
+            _mono(ctx, sub, cx, cy + r + 80, a * prog(t, 0.4, 0.4), GREY, 24, "center")
+
+
+def big_number_v(ctx, t, d, value, prefix="$", suffix="+", caption="", count_for=1.2, source=None,
+                 decimals=0, v=0):
+    """Three different big-number cards."""
+    if v == 0:
+        return S_big_number(ctx, t, d, value, prefix, suffix, caption, count_for, source, decimals)
+    a = fade_io(t, d, 0.2, 0.4)
+    val = value * ease_out(prog(t, 0, count_for))
+    s = f"{prefix}{val:,.{decimals}f}{suffix if t >= count_for else ''}"
+    if v == 1:      # left number, caption block under an amber bar
+        sz = _fit(ctx, s, MONO, 170, 1500)
+        text(ctx, s, 200, 540, INK, a, face=MONO, size=sz)
+        _bar(ctx, 200, 600, 260 * ease_out(prog(t, count_for, 0.5)), 6, a)
+        _mono(ctx, caption.upper(), 200, 680, a * prog(t, count_for, 0.5), GREY, 26)
+    else:           # number stamped inside a ring
+        cx, cy = W / 2, H / 2 - 20
+        q = ease_out(prog(t, 0, 0.5))
+        rgba(ctx, RED, 0.85 * a)
+        ctx.set_line_width(8)
+        ctx.new_path()
+        ctx.arc(cx, cy, 300 * (1.3 - 0.3 * q), 0, 2 * math.pi)
+        ctx.stroke()
+        sz = _fit(ctx, s, MONO, 140, 520)
+        text(ctx, s, cx, cy + 45, INK, a, align="center", face=MONO, size=sz)
+        _mono(ctx, caption, cx, cy + 380, a * prog(t, count_for, 0.5), GREY, 24, "center")
     if source:
         source_tag(ctx, source, a)
