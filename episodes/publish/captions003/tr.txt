@@ -1,0 +1,167 @@
+Bir banka kasası. Bir kiralık kasa.
+İçinde, internete hiç bağlanmamış üç küçük cihaz.
+29 Temmuz gecesi o kasayı kimse açmadı. O cihazlara kimse dokunmadı.
+Yedi dakika içinde, korudukları bitcoinler gitmişti.
+Beş gün içinde, aynı yöntemle yaklaşık 116 milyon dolar alınmıştı.
+Bunun ardındaki açık, beş yılı aşkın süredir herkese açık kodun içinde duruyordu.
+Ve ilk hırsız, kendisi de bir hata yapmış olabilir.
+Ben Thomas Archer, Siphon Files'ın yapay zekâ anlatıcısıyım.
+Duyacağınız her iddianın bir kaynağı var.
+Liste açıklamada.
+Bu, kimsenin zorlamadığı bir kilidin hikâyesi.
+Biri sadece şifreyi çözdü.
+Jonathan Goodman, Torontolu bir girişimci.
+Kendi anlattığına göre, bitcoine bir milyon dolardan fazla yatırmış.
+Bu yüzden güvenlik rehberlerinin söylediğini yapıyor.
+Bir donanım cüzdanı alıyor: Coinkite adlı Kanadalı bir şirketin ürettiği bir Coldcard.
+Kurulumda cihaz size 12 ya da 24 kelimelik bir liste veriyor.
+O kelimeler, paranın ta kendisi.
+Onlara sahip olan herkes, bitcoinlerinizi her yerden harcayabilir.
+Üç tane alıyor.
+Kelimelerini kimseyle paylaşmıyor ve yedek olarak metale damgalıyor.
+Cihazlar internete hiç dokunmuyor.
+Bankasındaki bir kiralık kasaya giriyorlar.
+Ama kendi başına kontrol edemeyeceği bir şey var: o kelimelerin nasıl seçildiği.
+Kelimelerin tahmin edilmesi imkânsız olmalı.
+Bu yüzden cihaz onları tamamen rastgele seçiyor; tek bir iş için yapılmış bir donanımla:
+rastgele sayı üretmek.
+Doğru yapıldığında, o kadar çok olası kelime listesi var ki kimse
+hepsini tarayamaz.
+Ama Mart 2021'de Coinkite bir firmware güncellemesi yayınlıyor.
+Yeni bir kütüphane aracılığıyla, Bitcoin Core'un kullandığı kriptografiye geçiyor.
+Yeni kütüphanenin rastgele sayılara ihtiyacı var.
+Ve bu isteğe yanıt veren kod iki şekilde çalışabiliyor: donanımı okumak
+ya da basit bir yazılım ikamesi çalıştırmak. Hangisi olacağına tek bir ayar karar veriyor.
+Coinkite bu ayarı sıfıra çekiyor; böylece her şeyi kapattığını sanıyor. Kapatmıyor.
+Sıfır şu demek: ikameyi kullan.
+Ve kodda, tam da bunun için yapılmış bir güvenlik kontrolü var.
+Ayar eksikse, derleme bir mesajla duruyor.
+Ama kontrol yalnızca ayarın var olup olmadığını soruyor. Var. Değeri sıfır.
+Kontrol geçiliyor.
+Bir duman dedektörü müfettişi düşünün.
+Tavanda bir dedektör olup olmadığına bakıyor.
+Açık olup olmadığına hiç bakmıyor.
+Böylece o andan itibaren eski Mk2 ve Mk3 modelleri kelimelerini ikameyle üretiyor.
+İkame, sabit bir fabrika kimliği ve birkaç zamanlayıcıyla çalışıyor.
+İçindeki hiçbir şey gerçekten gizli değil.
+Coinkite daha sonra bunu yaklaşık 40 bit gerçek rastgelelik olarak hesaplıyor.
+Düzgün bir seed'de en az 128 bit olur.
+Kırk bit, yaklaşık bir trilyon olasılık demek. Çok gibi duruyor.
+Çevrimdışı tahmin yürüten bir bilgisayar için, sonu gelen bir arama.
+Yeni modeller daha iyi durumda, yaklaşık 72 bit.
+Yine de düzgün bir seed'in çok altında;
+ancak şu ana kadar bunlardan herhangi birinin bu saldırılarda boşaltıldığına dair kamuya açık
+bir kanıt yok.
+Donanım üreteci hâlâ orada, her cihazın içinde.
+Coinkite'ın kendi teknik açıklaması daha sonra onun kullanıldığını kabul ediyor…
+Yani artık Goodman'ın bilmediği bir şeyi biliyorsunuz.
+Kelimeleri hiçbir zaman gerçekten rastgele değildi. Üstelik kod herkese açık. Herkes okuyabilir.
+Beş yıl boyunca onun gibi sahipler cihazı alıyor, kelimelerini yazıyor
+ve kilit altına koyuyor.
+Coinkite'ın CEO'su, şirketin 2022 ve 2024'te dış güvenlik denetimleri için ödeme yaptığını söylüyor.
+Yine de Coinkite, hırsızlık gününe kadar hatadan haberi olmadığını söylüyor.
+Sonra, hırsızlıktan birkaç hafta önce, Coinkite kritik kodunu yapay zekâyla inceletiyor.
+Ama başka biri onu önce buluyor.
+Coinkite, birinin onu bulmak için yapay zekâ kullandığını varsaymak zorunda olduğunu söylüyor.
+Bu, Coinkite'ın varsayımı. Kanıtlanmış değil.
+Her durumda, yöntem tek bir cihaza bile ihtiyaç duymuyordu.
+Bir seed tahmin et. Adreslerini hesapla. Blockchain'i kontrol et.
+Eşleşme, anahtar demek; onunla birlikte de para.
+Toronto'da bir çarşamba akşamı, saat dokuzu on geçiyor.
+Goodman sayfiye evinde.
+İlk işlem, bir Coldcard'da oluşturulmuş bir adresten çıkıyor. Sonra bir başkası.
+Sonra yüzlercesi.
+Chainalysis'e göre hırsız önce en büyük cüzdanlara gidiyor.
+İlk on dakikada yaklaşık 30 milyon dolar.
+Ve bu işlemlerde tuhaf bir şey var.
+Hepsi aynı şekilde kurulmuş: aynı ücret oranı ve son kuruşuna kadar süpürülen her coin,
+geride hiçbir şey kalmıyor.
+Bu ayrıntıyı aklınızda tutun.
+Sonra sıra Goodman'a geliyor.
+21.36. Üç cüzdanından ilki boşalıyor. Sonra ikincisi.
+21.43'te üçüncüsü de gitmiş.
+Yaklaşık 1,6 milyon Kanada doları.
+21.51'de ilk dalga duruyor.
+41 dakikada neredeyse bin iki yüz adres boşaltılmış.
+Ve Goodman'ın hiçbir şeyden haberi yok.
+Sonraki saatlerde soğuk cüzdanlardan coin çıktığına dair haberler gelmeye başlıyor.
+Bitkey cüzdanının arkasındaki şirket Block'un mühendisleri firmware'i didik didik ediyor.
+Gün bitmeden, onlar ve başka araştırmacılar nedeni buluyor.
+Coinkite ilk uyarısını yayınlıyor: etkilenen firmware ile oluşturulan seed'ler risk altında.
+Fonlarınızı taşıyın. O sırada ilk dalga çoktan bitmiş.
+31 Temmuz'da Goodman ailesiyle bir halk kütüphanesindeyken
+Facebook'ta bir arkadaşının paylaşımını görüyor: Coldcard kullanıyorsanız paranızı hemen taşıyın.
+Kontrol ediyor. Bitcoinleri çarşamba gecesinden beri yok.
+Toronto'ya dönüp polise şikâyette bulunuyor
+ve Ontario Menkul Kıymetler Komisyonu'na başvuruyor.
+İnsanlar ona kiralık kasasına birinin girip girmediğini soruyor.
+Kimse girmedi. Ve aynı şekilde oluşturulmuş bir seed'i hâlâ elinde tutan herkes için
+bir firmware güncellemesi işe yaramaz. Güncelleme yeni seed'leri düzeltir.
+Zaten yazılmış zayıf bir seed, zayıf kalır.
+İşte kamuya açık bir uyarının acımasız yanı.
+Sahiplere ve hırsızlara aynı anda ulaşıyor.
+İkinci dalga geliyor. Üçüncüsü cumadan cumartesiye sürüyor.
+Dördüncüsü pazartesi başlıyor.
+Galaxy Research daha sonra en az 15 ayrı saldırgan sayıyor. Artık tek bir hırsız yok.
+Aynı zayıflığı kullanan bir kalabalık.
+Ama dördüncü dalgada, hırsızların işlemleri onaylanmayı bekliyor.
+Onaylanana kadar, daha yüksek ücret ödemeye razı olan herkes onları değiştirebilir.
+Bu yüzden bir sahip, Will Owens, karşılık veriyor.
+Yem olarak küçük bir miktar bırakıyor, botun onu almasını bekliyor
+ve daha yüksek teklif veriyor. Yemini geri kazanıyor.
+Daha sonra gönüllü beyaz şapkalı hackerlar, açıktaki cüzdanlardan yaklaşık 52 bitcoini
+kurbanlara iade etmek için kurulan bir vakfa taşıyor.
+Eylülde vakıf, doğrulanmış bir sahibe 20'den fazla bitcoin iade ediyor.
+Çalınan coinlerin bir kısmı, izi bulanıklaştırmak için yapılmış mikser hizmetlerine gidiyor.
+Kamuya açık son verilere göre, geri kalanın büyük kısmı hâlâ yerinde duruyor.
+Dalgalar yavaşladığında, 5.200'den fazla adresten
+yaklaşık 1.816 bitcoin alınmış.
+Ama en büyük parça, yani ilk dalga, hâlâ hareket etmedi;
+kamuya açık son takip verilerine göre.
+O ayrıntıyı hatırlıyor musunuz? İlk dalgadaki her işlem aynı görünüyordu.
+Galaxy, önceki ay bu kalıbı kullanan başka kimseyi bulamadı.
+Yani ilk dalga, tek bir operasyon olarak izlenebildi.
+Ve soruşturmacılar başka bir şey daha fark etti.
+Her tahminin kontrol edilmesi gerekir.
+Tahmin edilen hangi adreslerde para olduğunu bilmek için onları tekrar tekrar sorgulamanız
+gerekir.
+Block'un soruşturmacılarına göre ilk dalganın operatörü bunu,
+tanınmış bir blockchain veri sağlayıcısındaki ücretli bir hesapla yapmış görünüyor.
+Sağlayıcıyla iletişime geçtiler.
+Söylediklerine göre, şirketin iç kayıtları saldırıyla “olağanüstü bir kesinlikle” eşleşti:
+sorguların sayısı, zamanlaması ve sırası.
+Blockchain'de hırsız, yalnızca bir dizi adresti.
+Ama ücretli bir hesap genellikle kayıt bırakır.
+Bilgiler kolluk kuvvetlerine iletildi.
+Galaxy'den Alex Thorn, ilk dalga saldırganının kimliğinin “kolluk kuvvetlerince biliniyor
+olabileceğini” söylüyor.
+Ama bu videoyu hazırladığımız sırada FBI ne bir şüpheliyi, ne bir tutuklamayı ne de
+bir geri alımı doğruladı.
+Yani bu videonun tarihi itibarıyla, kimsenin adı kamuya açıklanmadı.
+TRM Labs hırsızlığı kimseye atfetmiyor.
+Coinkite, avukatlarının sorumluları belirlemek için kolluk kuvvetleriyle çalıştığını
+söylüyor.
+İnternette bazıları bunu içeriden bir iş sayıyor.
+Şu ana kadar buna dair kamuya açık bir kanıt yok ve kimse suçlanmadı.
+Eylülde bir Coldcard sahibi, Ontario'da Coinkite ve kurucu ortaklarına karşı
+toplu dava açılması için başvurdu.
+Dava, şirketin seed üretiminin zayıf olduğunu Mayıs 2025'te zaten bildiğini iddia ediyor.
+Son haberlere göre bir yargıç henüz davayı toplu dava olarak onaylamadı bile
+ve iddiaların hiçbiri mahkemede sınanmadı.
+Kamuya açık bilgilere göre Coinkite herhangi bir tazminat fonu da duyurmadı.
+Goodman davaya bel bağlamıyor.
+Coinkite'ın CEO'su açığın kullanıcıların yaklaşık yüzde 0,17'sini etkilediğini söylüyor.
+En yeni firmware artık her sahibin seed oluştururken kendi rastgeleliğini
+eklemesini zorunlu kılıyor.
+Coinkite'ın bu hata nedeniyle risk altında görmediği bir grup var:
+seed'lerini oluştururken kendileri en az 50 kez zar atıp ekleyen sahipler.
+Her şeyi cihaza bırakmayanlar.
+O kiralık kasa hiç açılmadı.
+İçindeki cihazlar hiç hacklenmedi.
+Sadece seed'i hiçbir zaman kendi rastgele sayı donanımlarından istemediler.
+Etkilenen bir Coldcard'da seed oluşturduysanız, Coinkite'ın uyarısını okuyun.
+Coinkite diyor ki: Onu ele geçirilmiş sayın ve yeni bir seed'e geçin.
+Peki ilk dalgadaki 1.082 bitcoin?
+Kamuya açık son takip verilerine göre, hâlâ hırsızın bıraktığı yerde duruyorlar.
+Ve bir yerde, bir veri şirketinin kayıtlarında, bir isim olabilir.
+Siphon Files'ı izlediniz.

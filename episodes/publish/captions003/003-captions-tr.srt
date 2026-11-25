@@ -1,0 +1,667 @@
+1
+00:00:01,200 --> 00:00:03,136
+Bir banka kasası. Bir kiralık kasa.
+
+2
+00:00:03,176 --> 00:00:07,845
+İçinde, internete hiç bağlanmamış üç küçük cihaz.
+
+3
+00:00:10,945 --> 00:00:16,603
+29 Temmuz gecesi o kasayı kimse açmadı. O cihazlara kimse dokunmadı.
+
+4
+00:00:17,503 --> 00:00:20,470
+Yedi dakika içinde, korudukları bitcoinler gitmişti.
+
+5
+00:00:23,370 --> 00:00:28,033
+Beş gün içinde, aynı yöntemle yaklaşık 116 milyon dolar alınmıştı.
+
+6
+00:00:28,933 --> 00:00:32,681
+Bunun ardındaki açık, beş yılı aşkın süredir herkese açık kodun içinde duruyordu.
+
+7
+00:00:33,581 --> 00:00:36,350
+Ve ilk hırsız, kendisi de bir hata yapmış olabilir.
+
+8
+00:00:42,001 --> 00:00:45,371
+Ben Thomas Archer, Siphon Files'ın yapay zekâ anlatıcısıyım.
+
+9
+00:00:45,871 --> 00:00:47,592
+Duyacağınız her iddianın bir kaynağı var.
+
+10
+00:00:47,632 --> 00:00:49,192
+Liste açıklamada.
+
+11
+00:00:49,792 --> 00:00:52,439
+Bu, kimsenin zorlamadığı bir kilidin hikâyesi.
+
+12
+00:00:52,938 --> 00:00:55,166
+Biri sadece şifreyi çözdü.
+
+13
+00:00:58,266 --> 00:01:00,866
+Jonathan Goodman, Torontolu bir girişimci.
+
+14
+00:01:00,906 --> 00:01:04,950
+Kendi anlattığına göre, bitcoine bir milyon dolardan fazla yatırmış.
+
+15
+00:01:05,650 --> 00:01:08,359
+Bu yüzden güvenlik rehberlerinin söylediğini yapıyor.
+
+16
+00:01:08,399 --> 00:01:12,820
+Bir donanım cüzdanı alıyor: Coinkite adlı Kanadalı bir şirketin ürettiği bir Coldcard.
+
+17
+00:01:13,421 --> 00:01:16,814
+Kurulumda cihaz size 12 ya da 24 kelimelik bir liste veriyor.
+
+18
+00:01:16,854 --> 00:01:18,327
+O kelimeler, paranın ta kendisi.
+
+19
+00:01:18,367 --> 00:01:21,742
+Onlara sahip olan herkes, bitcoinlerinizi her yerden harcayabilir.
+
+20
+00:01:22,542 --> 00:01:23,711
+Üç tane alıyor.
+
+21
+00:01:23,751 --> 00:01:28,163
+Kelimelerini kimseyle paylaşmıyor ve yedek olarak metale damgalıyor.
+
+22
+00:01:28,203 --> 00:01:30,196
+Cihazlar internete hiç dokunmuyor.
+
+23
+00:01:30,236 --> 00:01:32,654
+Bankasındaki bir kiralık kasaya giriyorlar.
+
+24
+00:01:33,555 --> 00:01:37,655
+Ama kendi başına kontrol edemeyeceği bir şey var: o kelimelerin nasıl seçildiği.
+
+25
+00:01:40,354 --> 00:01:42,672
+Kelimelerin tahmin edilmesi imkânsız olmalı.
+
+26
+00:01:42,712 --> 00:01:46,929
+Bu yüzden cihaz onları tamamen rastgele seçiyor; tek bir iş için yapılmış bir donanımla:
+
+27
+00:01:46,969 --> 00:01:48,407
+rastgele sayı üretmek.
+
+28
+00:01:49,007 --> 00:01:52,900
+Doğru yapıldığında, o kadar çok olası kelime listesi var ki kimse
+
+29
+00:01:52,940 --> 00:01:53,755
+hepsini tarayamaz.
+
+30
+00:01:56,355 --> 00:01:59,657
+Ama Mart 2021'de Coinkite bir firmware güncellemesi yayınlıyor.
+
+31
+00:01:59,697 --> 00:02:05,031
+Yeni bir kütüphane aracılığıyla, Bitcoin Core'un kullandığı kriptografiye geçiyor.
+
+32
+00:02:08,531 --> 00:02:10,670
+Yeni kütüphanenin rastgele sayılara ihtiyacı var.
+
+33
+00:02:10,710 --> 00:02:15,264
+Ve bu isteğe yanıt veren kod iki şekilde çalışabiliyor: donanımı okumak
+
+34
+00:02:15,304 --> 00:02:19,014
+ya da basit bir yazılım ikamesi çalıştırmak. Hangisi olacağına tek bir ayar karar veriyor.
+
+35
+00:02:19,714 --> 00:02:24,193
+Coinkite bu ayarı sıfıra çekiyor; böylece her şeyi kapattığını sanıyor. Kapatmıyor.
+
+36
+00:02:24,233 --> 00:02:26,006
+Sıfır şu demek: ikameyi kullan.
+
+37
+00:02:26,705 --> 00:02:29,968
+Ve kodda, tam da bunun için yapılmış bir güvenlik kontrolü var.
+
+38
+00:02:30,008 --> 00:02:33,101
+Ayar eksikse, derleme bir mesajla duruyor.
+
+39
+00:02:35,801 --> 00:02:40,453
+Ama kontrol yalnızca ayarın var olup olmadığını soruyor. Var. Değeri sıfır.
+
+40
+00:02:40,493 --> 00:02:41,571
+Kontrol geçiliyor.
+
+41
+00:02:42,572 --> 00:02:44,091
+Bir duman dedektörü müfettişi düşünün.
+
+42
+00:02:44,590 --> 00:02:46,652
+Tavanda bir dedektör olup olmadığına bakıyor.
+
+43
+00:02:47,152 --> 00:02:48,792
+Açık olup olmadığına hiç bakmıyor.
+
+44
+00:02:51,492 --> 00:02:56,548
+Böylece o andan itibaren eski Mk2 ve Mk3 modelleri kelimelerini ikameyle üretiyor.
+
+45
+00:02:56,588 --> 00:02:59,433
+İkame, sabit bir fabrika kimliği ve birkaç zamanlayıcıyla çalışıyor.
+
+46
+00:02:59,473 --> 00:03:01,315
+İçindeki hiçbir şey gerçekten gizli değil.
+
+47
+00:03:01,915 --> 00:03:05,934
+Coinkite daha sonra bunu yaklaşık 40 bit gerçek rastgelelik olarak hesaplıyor.
+
+48
+00:03:05,974 --> 00:03:08,107
+Düzgün bir seed'de en az 128 bit olur.
+
+49
+00:03:08,907 --> 00:03:13,060
+Kırk bit, yaklaşık bir trilyon olasılık demek. Çok gibi duruyor.
+
+50
+00:03:13,560 --> 00:03:16,763
+Çevrimdışı tahmin yürüten bir bilgisayar için, sonu gelen bir arama.
+
+51
+00:03:17,563 --> 00:03:19,871
+Yeni modeller daha iyi durumda, yaklaşık 72 bit.
+
+52
+00:03:19,911 --> 00:03:21,673
+Yine de düzgün bir seed'in çok altında;
+
+53
+00:03:21,713 --> 00:03:25,986
+ancak şu ana kadar bunlardan herhangi birinin bu saldırılarda boşaltıldığına dair kamuya açık
+
+54
+00:03:26,026 --> 00:03:26,626
+bir kanıt yok.
+
+55
+00:03:27,063 --> 00:03:30,507
+Donanım üreteci hâlâ orada, her cihazın içinde.
+
+56
+00:03:30,547 --> 00:03:34,385
+Coinkite'ın kendi teknik açıklaması daha sonra onun kullanıldığını kabul ediyor…
+
+57
+00:03:37,286 --> 00:03:39,663
+Yani artık Goodman'ın bilmediği bir şeyi biliyorsunuz.
+
+58
+00:03:39,703 --> 00:03:44,193
+Kelimeleri hiçbir zaman gerçekten rastgele değildi. Üstelik kod herkese açık. Herkes okuyabilir.
+
+59
+00:03:44,793 --> 00:03:48,746
+Beş yıl boyunca onun gibi sahipler cihazı alıyor, kelimelerini yazıyor
+
+60
+00:03:48,786 --> 00:03:49,854
+ve kilit altına koyuyor.
+
+61
+00:03:50,554 --> 00:03:56,260
+Coinkite'ın CEO'su, şirketin 2022 ve 2024'te dış güvenlik denetimleri için ödeme yaptığını söylüyor.
+
+62
+00:03:56,300 --> 00:04:01,216
+Yine de Coinkite, hırsızlık gününe kadar hatadan haberi olmadığını söylüyor.
+
+63
+00:04:03,816 --> 00:04:08,756
+Sonra, hırsızlıktan birkaç hafta önce, Coinkite kritik kodunu yapay zekâyla inceletiyor.
+
+64
+00:04:11,556 --> 00:04:13,062
+Ama başka biri onu önce buluyor.
+
+65
+00:04:13,862 --> 00:04:17,672
+Coinkite, birinin onu bulmak için yapay zekâ kullandığını varsaymak zorunda olduğunu söylüyor.
+
+66
+00:04:18,172 --> 00:04:20,774
+Bu, Coinkite'ın varsayımı. Kanıtlanmış değil.
+
+67
+00:04:21,373 --> 00:04:24,096
+Her durumda, yöntem tek bir cihaza bile ihtiyaç duymuyordu.
+
+68
+00:04:24,596 --> 00:04:28,043
+Bir seed tahmin et. Adreslerini hesapla. Blockchain'i kontrol et.
+
+69
+00:04:28,643 --> 00:04:30,901
+Eşleşme, anahtar demek; onunla birlikte de para.
+
+70
+00:04:34,301 --> 00:04:37,450
+Toronto'da bir çarşamba akşamı, saat dokuzu on geçiyor.
+
+71
+00:04:37,490 --> 00:04:39,321
+Goodman sayfiye evinde.
+
+72
+00:04:39,920 --> 00:04:43,793
+İlk işlem, bir Coldcard'da oluşturulmuş bir adresten çıkıyor. Sonra bir başkası.
+
+73
+00:04:43,833 --> 00:04:44,584
+Sonra yüzlercesi.
+
+74
+00:04:45,184 --> 00:04:48,880
+Chainalysis'e göre hırsız önce en büyük cüzdanlara gidiyor.
+
+75
+00:04:48,920 --> 00:04:51,551
+İlk on dakikada yaklaşık 30 milyon dolar.
+
+76
+00:04:52,151 --> 00:04:54,777
+Ve bu işlemlerde tuhaf bir şey var.
+
+77
+00:04:54,817 --> 00:04:59,010
+Hepsi aynı şekilde kurulmuş: aynı ücret oranı ve son kuruşuna kadar süpürülen her coin,
+
+78
+00:04:59,050 --> 00:05:00,357
+geride hiçbir şey kalmıyor.
+
+79
+00:05:00,958 --> 00:05:02,183
+Bu ayrıntıyı aklınızda tutun.
+
+80
+00:05:03,182 --> 00:05:04,406
+Sonra sıra Goodman'a geliyor.
+
+81
+00:05:05,006 --> 00:05:09,997
+21.36. Üç cüzdanından ilki boşalıyor. Sonra ikincisi.
+
+82
+00:05:10,037 --> 00:05:12,396
+21.43'te üçüncüsü de gitmiş.
+
+83
+00:05:12,436 --> 00:05:15,145
+Yaklaşık 1,6 milyon Kanada doları.
+
+84
+00:05:16,046 --> 00:05:17,942
+21.51'de ilk dalga duruyor.
+
+85
+00:05:17,982 --> 00:05:22,177
+41 dakikada neredeyse bin iki yüz adres boşaltılmış.
+
+86
+00:05:22,977 --> 00:05:24,407
+Ve Goodman'ın hiçbir şeyden haberi yok.
+
+87
+00:05:27,507 --> 00:05:31,645
+Sonraki saatlerde soğuk cüzdanlardan coin çıktığına dair haberler gelmeye başlıyor.
+
+88
+00:05:31,685 --> 00:05:35,982
+Bitkey cüzdanının arkasındaki şirket Block'un mühendisleri firmware'i didik didik ediyor.
+
+89
+00:05:36,022 --> 00:05:39,460
+Gün bitmeden, onlar ve başka araştırmacılar nedeni buluyor.
+
+90
+00:05:40,060 --> 00:05:44,951
+Coinkite ilk uyarısını yayınlıyor: etkilenen firmware ile oluşturulan seed'ler risk altında.
+
+91
+00:05:44,991 --> 00:05:48,239
+Fonlarınızı taşıyın. O sırada ilk dalga çoktan bitmiş.
+
+92
+00:05:48,939 --> 00:05:53,587
+31 Temmuz'da Goodman ailesiyle bir halk kütüphanesindeyken
+
+93
+00:05:53,627 --> 00:05:58,002
+Facebook'ta bir arkadaşının paylaşımını görüyor: Coldcard kullanıyorsanız paranızı hemen taşıyın.
+
+94
+00:06:00,902 --> 00:06:03,970
+Kontrol ediyor. Bitcoinleri çarşamba gecesinden beri yok.
+
+95
+00:06:06,670 --> 00:06:09,314
+Toronto'ya dönüp polise şikâyette bulunuyor
+
+96
+00:06:09,354 --> 00:06:12,202
+ve Ontario Menkul Kıymetler Komisyonu'na başvuruyor.
+
+97
+00:06:12,802 --> 00:06:15,903
+İnsanlar ona kiralık kasasına birinin girip girmediğini soruyor.
+
+98
+00:06:16,603 --> 00:06:20,716
+Kimse girmedi. Ve aynı şekilde oluşturulmuş bir seed'i hâlâ elinde tutan herkes için
+
+99
+00:06:20,756 --> 00:06:23,582
+bir firmware güncellemesi işe yaramaz. Güncelleme yeni seed'leri düzeltir.
+
+100
+00:06:23,622 --> 00:06:26,605
+Zaten yazılmış zayıf bir seed, zayıf kalır.
+
+101
+00:06:29,505 --> 00:06:31,489
+İşte kamuya açık bir uyarının acımasız yanı.
+
+102
+00:06:31,989 --> 00:06:34,828
+Sahiplere ve hırsızlara aynı anda ulaşıyor.
+
+103
+00:06:37,528 --> 00:06:41,109
+İkinci dalga geliyor. Üçüncüsü cumadan cumartesiye sürüyor.
+
+104
+00:06:41,149 --> 00:06:42,718
+Dördüncüsü pazartesi başlıyor.
+
+105
+00:06:43,318 --> 00:06:48,334
+Galaxy Research daha sonra en az 15 ayrı saldırgan sayıyor. Artık tek bir hırsız yok.
+
+106
+00:06:48,374 --> 00:06:50,481
+Aynı zayıflığı kullanan bir kalabalık.
+
+107
+00:06:51,081 --> 00:06:55,209
+Ama dördüncü dalgada, hırsızların işlemleri onaylanmayı bekliyor.
+
+108
+00:06:55,249 --> 00:06:58,883
+Onaylanana kadar, daha yüksek ücret ödemeye razı olan herkes onları değiştirebilir.
+
+109
+00:06:59,483 --> 00:07:01,664
+Bu yüzden bir sahip, Will Owens, karşılık veriyor.
+
+110
+00:07:01,704 --> 00:07:05,757
+Yem olarak küçük bir miktar bırakıyor, botun onu almasını bekliyor
+
+111
+00:07:05,797 --> 00:07:08,018
+ve daha yüksek teklif veriyor. Yemini geri kazanıyor.
+
+112
+00:07:08,718 --> 00:07:13,091
+Daha sonra gönüllü beyaz şapkalı hackerlar, açıktaki cüzdanlardan yaklaşık 52 bitcoini
+
+113
+00:07:13,131 --> 00:07:15,751
+kurbanlara iade etmek için kurulan bir vakfa taşıyor.
+
+114
+00:07:15,791 --> 00:07:20,506
+Eylülde vakıf, doğrulanmış bir sahibe 20'den fazla bitcoin iade ediyor.
+
+115
+00:07:21,106 --> 00:07:24,770
+Çalınan coinlerin bir kısmı, izi bulanıklaştırmak için yapılmış mikser hizmetlerine gidiyor.
+
+116
+00:07:24,810 --> 00:07:27,971
+Kamuya açık son verilere göre, geri kalanın büyük kısmı hâlâ yerinde duruyor.
+
+117
+00:07:28,571 --> 00:07:33,322
+Dalgalar yavaşladığında, 5.200'den fazla adresten
+
+118
+00:07:33,362 --> 00:07:35,514
+yaklaşık 1.816 bitcoin alınmış.
+
+119
+00:07:36,315 --> 00:07:39,396
+Ama en büyük parça, yani ilk dalga, hâlâ hareket etmedi;
+
+120
+00:07:39,436 --> 00:07:41,588
+kamuya açık son takip verilerine göre.
+
+121
+00:07:42,788 --> 00:07:46,431
+O ayrıntıyı hatırlıyor musunuz? İlk dalgadaki her işlem aynı görünüyordu.
+
+122
+00:07:46,931 --> 00:07:50,257
+Galaxy, önceki ay bu kalıbı kullanan başka kimseyi bulamadı.
+
+123
+00:07:50,757 --> 00:07:53,637
+Yani ilk dalga, tek bir operasyon olarak izlenebildi.
+
+124
+00:07:54,137 --> 00:07:56,843
+Ve soruşturmacılar başka bir şey daha fark etti.
+
+125
+00:07:57,543 --> 00:07:59,073
+Her tahminin kontrol edilmesi gerekir.
+
+126
+00:07:59,113 --> 00:08:02,685
+Tahmin edilen hangi adreslerde para olduğunu bilmek için onları tekrar tekrar sorgulamanız
+
+127
+00:08:02,725 --> 00:08:03,563
+gerekir.
+
+128
+00:08:04,162 --> 00:08:07,899
+Block'un soruşturmacılarına göre ilk dalganın operatörü bunu,
+
+129
+00:08:07,939 --> 00:08:10,488
+tanınmış bir blockchain veri sağlayıcısındaki ücretli bir hesapla yapmış görünüyor.
+
+130
+00:08:11,088 --> 00:08:12,638
+Sağlayıcıyla iletişime geçtiler.
+
+131
+00:08:12,678 --> 00:08:17,238
+Söylediklerine göre, şirketin iç kayıtları saldırıyla “olağanüstü bir kesinlikle” eşleşti:
+
+132
+00:08:17,278 --> 00:08:20,288
+sorguların sayısı, zamanlaması ve sırası.
+
+133
+00:08:20,888 --> 00:08:23,675
+Blockchain'de hırsız, yalnızca bir dizi adresti.
+
+134
+00:08:24,175 --> 00:08:26,290
+Ama ücretli bir hesap genellikle kayıt bırakır.
+
+135
+00:08:27,090 --> 00:08:29,215
+Bilgiler kolluk kuvvetlerine iletildi.
+
+136
+00:08:29,255 --> 00:08:33,546
+Galaxy'den Alex Thorn, ilk dalga saldırganının kimliğinin “kolluk kuvvetlerince biliniyor
+
+137
+00:08:33,586 --> 00:08:34,290
+olabileceğini” söylüyor.
+
+138
+00:08:34,890 --> 00:08:39,464
+Ama bu videoyu hazırladığımız sırada FBI ne bir şüpheliyi, ne bir tutuklamayı ne de
+
+139
+00:08:39,504 --> 00:08:40,502
+bir geri alımı doğruladı.
+
+140
+00:08:44,102 --> 00:08:47,552
+Yani bu videonun tarihi itibarıyla, kimsenin adı kamuya açıklanmadı.
+
+141
+00:08:47,592 --> 00:08:50,198
+TRM Labs hırsızlığı kimseye atfetmiyor.
+
+142
+00:08:50,238 --> 00:08:54,476
+Coinkite, avukatlarının sorumluları belirlemek için kolluk kuvvetleriyle çalıştığını
+
+143
+00:08:54,516 --> 00:08:55,191
+söylüyor.
+
+144
+00:08:55,891 --> 00:08:57,997
+İnternette bazıları bunu içeriden bir iş sayıyor.
+
+145
+00:08:58,037 --> 00:09:02,512
+Şu ana kadar buna dair kamuya açık bir kanıt yok ve kimse suçlanmadı.
+
+146
+00:09:03,212 --> 00:09:07,957
+Eylülde bir Coldcard sahibi, Ontario'da Coinkite ve kurucu ortaklarına karşı
+
+147
+00:09:07,997 --> 00:09:09,713
+toplu dava açılması için başvurdu.
+
+148
+00:09:09,753 --> 00:09:13,892
+Dava, şirketin seed üretiminin zayıf olduğunu Mayıs 2025'te zaten bildiğini iddia ediyor.
+
+149
+00:09:13,932 --> 00:09:18,798
+Son haberlere göre bir yargıç henüz davayı toplu dava olarak onaylamadı bile
+
+150
+00:09:18,838 --> 00:09:21,806
+ve iddiaların hiçbiri mahkemede sınanmadı.
+
+151
+00:09:22,506 --> 00:09:27,729
+Kamuya açık bilgilere göre Coinkite herhangi bir tazminat fonu da duyurmadı.
+
+152
+00:09:27,769 --> 00:09:30,150
+Goodman davaya bel bağlamıyor.
+
+153
+00:09:32,850 --> 00:09:37,132
+Coinkite'ın CEO'su açığın kullanıcıların yaklaşık yüzde 0,17'sini etkilediğini söylüyor.
+
+154
+00:09:37,172 --> 00:09:42,011
+En yeni firmware artık her sahibin seed oluştururken kendi rastgeleliğini
+
+155
+00:09:42,051 --> 00:09:42,915
+eklemesini zorunlu kılıyor.
+
+156
+00:09:45,615 --> 00:09:48,820
+Coinkite'ın bu hata nedeniyle risk altında görmediği bir grup var:
+
+157
+00:09:48,860 --> 00:09:52,745
+seed'lerini oluştururken kendileri en az 50 kez zar atıp ekleyen sahipler.
+
+158
+00:09:53,245 --> 00:09:55,216
+Her şeyi cihaza bırakmayanlar.
+
+159
+00:09:56,115 --> 00:09:58,737
+O kiralık kasa hiç açılmadı.
+
+160
+00:09:59,237 --> 00:10:01,545
+İçindeki cihazlar hiç hacklenmedi.
+
+161
+00:10:02,046 --> 00:10:05,026
+Sadece seed'i hiçbir zaman kendi rastgele sayı donanımlarından istemediler.
+
+162
+00:10:05,626 --> 00:10:09,385
+Etkilenen bir Coldcard'da seed oluşturduysanız, Coinkite'ın uyarısını okuyun.
+
+163
+00:10:09,885 --> 00:10:13,666
+Coinkite diyor ki: Onu ele geçirilmiş sayın ve yeni bir seed'e geçin.
+
+164
+00:10:14,766 --> 00:10:17,127
+Peki ilk dalgadaki 1.082 bitcoin?
+
+165
+00:10:17,167 --> 00:10:21,855
+Kamuya açık son takip verilerine göre, hâlâ hırsızın bıraktığı yerde duruyorlar.
+
+166
+00:10:22,655 --> 00:10:26,655
+Ve bir yerde, bir veri şirketinin kayıtlarında, bir isim olabilir.
+
+167
+00:10:27,855 --> 00:10:29,370
+Siphon Files'ı izlediniz.

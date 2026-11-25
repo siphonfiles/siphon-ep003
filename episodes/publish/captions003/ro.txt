@@ -1,0 +1,167 @@
+Un seif de bancă. O casetă de valori.
+Înăuntru, trei dispozitive mici care nu au fost conectate niciodată la internet.
+În noaptea de 29 iulie, nimeni n-a deschis caseta. Nimeni n-a atins dispozitivele.
+În șapte minute, bitcoinii pe care îi protejau dispăruseră.
+În cinci zile, aproximativ 116 milioane de dolari fuseseră luați în același fel.
+Defectul din spatele furtului stătea în cod public de mai bine de cinci ani.
+Iar primul hoț s-ar putea să fi făcut și el o greșeală.
+Sunt Thomas Archer, naratorul AI al Siphon Files.
+Fiecare afirmație din video are o sursă.
+Lista e în descriere.
+Aceasta e povestea unui lacăt pe care nu l-a forțat nimeni.
+Cineva doar a aflat combinația.
+Jonathan Goodman este antreprenor în Toronto.
+După spusele lui, a investit peste un milion de dolari în bitcoin.
+Așa că face ce recomandă ghidurile de securitate.
+Își cumpără un hardware wallet: un Coldcard, făcut de o companie canadiană numită Coinkite.
+Când îl configurezi, îți dă o listă de 12 sau 24 de cuvinte.
+Cuvintele acelea sunt banii.
+Oricine le are îți poate cheltui bitcoinii, de oriunde.
+El cumpără trei.
+Nu-și arată nimănui cuvintele și le ștanțează în metal, ca rezervă.
+Dispozitivele nu ating niciodată internetul.
+Ajung într-o casetă de valori la banca lui.
+Dar e un lucru pe care nu-l poate verifica singur: cum au fost alese cuvintele.
+Cuvintele trebuie să fie imposibil de ghicit.
+Așa că dispozitivul le alege pur întâmplător, cu un hardware construit pentru un singur lucru:
+să producă numere aleatorii.
+Făcut corect, există atât de multe liste de cuvinte posibile, încât nimeni n-ar putea
+să le încerce pe toate.
+Dar în martie 2021, Coinkite lansează o actualizare de firmware.
+Trece la aceeași criptografie pe care o folosește Bitcoin Core, printr-o bibliotecă nouă.
+Biblioteca nouă are nevoie de numere aleatorii.
+Iar codul care îi răspunde poate funcționa în două feluri: citește hardware-ul
+sau rulează un simplu înlocuitor software. O singură setare decide care.
+Coinkite o pune pe zero, crezând că asta oprește totul. Nu oprește.
+Zero înseamnă: folosește înlocuitorul.
+Și în cod există o verificare de siguranță, făcută exact pentru asta.
+Dacă setarea lipsește, compilarea se oprește, cu un mesaj.
+Dar verificarea întreabă doar dacă setarea există. Există. Scrie zero.
+Verificarea trece.
+Gândiți-vă la un inspector de alarme de fum.
+Verifică dacă pe tavan există un detector.
+Nu verifică niciodată dacă e pornit.
+Așa că, de atunci, modelele mai vechi Mk2 și Mk3 își fac cuvintele cu înlocuitorul.
+Acesta pornește de la un ID fix din fabrică și câteva cronometre.
+Nimic din el nu e cu adevărat secret.
+Mai târziu, Coinkite îl estimează la circa 40 de biți de hazard real.
+Un seed corect are cel puțin 128.
+Patruzeci de biți înseamnă cam o mie de miliarde de posibilități. Sună mult.
+Pentru un calculator care ghicește offline, e o căutare care se termină.
+Modelele noi stau mai bine, la circa 72 de biți.
+Tot mult sub un seed corect,
+deși, până acum, nu există dovezi publice că vreunul a fost golit în aceste
+atacuri.
+Generatorul hardware e încă acolo, în fiecare dispozitiv.
+Chiar documentația tehnică a Coinkite recunoaște mai târziu că era folosit…
+Așa că acum știți ceva ce Goodman nu știe.
+Cuvintele lui n-au fost niciodată cu adevărat aleatorii. Iar codul e public. Oricine îl poate citi.
+Timp de cinci ani, proprietari ca el cumpără dispozitivul, își notează cuvintele
+și le pun sub cheie.
+CEO-ul Coinkite spune că firma a plătit audituri de securitate externe în 2022 și 2024.
+Și totuși, Coinkite spune că nu știa de bug până în ziua furtului.
+Apoi, cu câteva săptămâni înainte de furt, Coinkite trece codul critic printr-o analiză făcută cu AI.
+Dar altcineva îl găsește primul.
+Coinkite spune că trebuie să presupună că cineva a folosit AI ca să-l găsească.
+Asta e presupunerea Coinkite. Nu a fost dovedită.
+Oricum ar fi, metoda nu avea nevoie de niciun dispozitiv.
+Ghicești un seed. Calculezi adresele lui. Verifici blockchain-ul.
+O potrivire înseamnă cheia și, odată cu ea, banii.
+În Toronto e nouă și zece, miercuri seara.
+Goodman e plecat la cabana lui.
+Prima tranzacție pleacă de pe o adresă creată pe un Coldcard. Apoi încă una.
+Apoi sute.
+Potrivit Chainalysis, hoțul atacă întâi portofelele cele mai mari.
+Circa 30 de milioane de dolari în primele zece minute.
+Și tranzacțiile astea au ceva ciudat.
+Sunt construite toate la fel: același comision și fiecare monedă luată până la ultima,
+fără să rămână nimic.
+Țineți minte detaliul ăsta.
+Apoi ajunge la Goodman.
+21:36. Primul dintre cele trei portofele ale lui se golește. Apoi al doilea.
+La 21:43, și al treilea s-a dus.
+Aproximativ 1,6 milioane de dolari canadieni.
+La 21:51, primul val se oprește.
+În 41 de minute, aproape o mie două sute de adrese au fost golite.
+Iar Goodman habar n-are.
+În orele următoare încep să apară semnalări despre monede care pleacă din portofele offline.
+Inginerii de la Block, compania din spatele portofelului Bitkey, desfac firmware-ul bucată cu bucată.
+Până la sfârșitul zilei, ei și alți cercetători găsesc cauza.
+Coinkite publică primul avertisment: seed-urile create pe firmware-ul afectat sunt în pericol.
+Mutați-vă fondurile. Până atunci, primul val se terminase de mult.
+Pe 31 iulie, Goodman e cu familia la o bibliotecă publică, când vede pe
+Facebook postarea unui prieten: dacă folosești un Coldcard, mută-ți banii acum.
+Verifică. Bitcoinii lui dispăruseră încă de miercuri noaptea.
+Se întoarce în Toronto ca să depună o plângere la poliție
+și o sesizare la Comisia pentru Valori Mobiliare din Ontario.
+Oamenii îl întreabă dacă a intrat cineva în caseta lui de valori.
+Nu a intrat nimeni. Iar pentru oricine încă mai are un seed creat la fel,
+o actualizare de firmware nu ajută. Ea repară seed-urile noi.
+Un seed slab, deja notat, rămâne slab.
+Iată partea crudă a unui avertisment public.
+Ajunge la proprietari și la hoți în același moment.
+Urmează valul doi. Valul trei ține de vineri până sâmbătă.
+Un al patrulea începe luni.
+Galaxy Research numără mai târziu cel puțin 15 atacatori diferiți. Nu mai e un singur hoț.
+E o mulțime care exploatează aceeași slăbiciune.
+Dar în al patrulea val, tranzacțiile hoților așteaptă să fie confirmate.
+Până atunci, oricine e dispus să plătească un comision mai mare le poate înlocui.
+Așa că un proprietar, Will Owens, ripostează.
+Lasă o sumă mică drept momeală, așteaptă ca botul s-o ia
+și licitează peste el. Își recuperează momeala.
+Mai târziu, hackeri etici voluntari mută circa 52 de bitcoini din portofelele expuse
+într-un fond creat ca să-i înapoieze victimelor.
+În septembrie, fondul îi dă înapoi peste 20 de bitcoini unui proprietar verificat.
+O parte din monedele furate merg spre mixere, servicii făcute ca să încurce urmele.
+Potrivit celor mai recente evidențe publice, mare parte din rest stă neatinsă.
+Când valurile încetinesc, fuseseră luați circa 1.816 bitcoini,
+de pe peste 5.200 de adrese.
+Dar cea mai mare parte, primul val, încă nu s-a mișcat,
+potrivit celor mai recente urmăriri publice.
+Vă amintiți detaliul? Fiecare tranzacție din primul val arăta la fel.
+Galaxy n-a găsit pe nimeni altcineva cu acest tipar în luna dinainte.
+Așa că primul val putea fi urmărit ca o singură operațiune.
+Iar anchetatorii au mai observat ceva.
+Fiecare încercare trebuie verificată.
+Ca să știi care dintre adresele ghicite au bani, trebuie să le cauți,
+iar și iar.
+Anchetatorii de la Block spun că operatorul primului val pare să fi făcut asta printr-un
+cont plătit la un furnizor cunoscut de date blockchain.
+Au contactat furnizorul.
+Jurnalele lui interne, spun ei, s-au potrivit cu atacul „cu o precizie extraordinară”:
+numărul, momentul și ordinea cererilor.
+Pe blockchain, hoțul era doar un șir de adrese.
+Dar un cont plătit lasă de obicei urme.
+Informațiile au ajuns la autorități.
+Alex Thorn, de la Galaxy, spune că identitatea atacatorului din primul val „ar putea fi cunoscută
+autorităților”.
+Dar, în momentul în care facem acest video, FBI nu a confirmat niciun suspect, nicio arestare
+și nicio recuperare.
+Așa că, la data acestui video, nimeni nu a fost numit public.
+TRM Labs nu atribuie furtul nimănui.
+Coinkite spune că avocații săi lucrează cu autoritățile ca să-i identifice pe cei
+responsabili.
+Online, unii spun că a fost o lucrătură din interior.
+Până acum, nu există dovezi publice pentru asta și nimeni nu a fost acuzat.
+În septembrie, un proprietar de Coldcard a depus în Ontario o propunere de acțiune colectivă împotriva
+Coinkite și a cofondatorilor ei.
+Aceasta susține că firma știa deja în mai 2025 că generarea seed-urilor era slabă.
+Potrivit celor mai recente informații, un judecător nici măcar n-a certificat-o încă drept acțiune colectivă,
+iar niciuna dintre acuzațiile ei nu a fost probată în instanță.
+Și, din ce arată informațiile publice, Coinkite nu a anunțat niciun fond de despăgubire.
+Goodman nu se bazează pe proces.
+CEO-ul Coinkite spune că defectul a afectat circa 0,17% dintre utilizatori.
+Cel mai nou firmware îl obligă acum pe fiecare proprietar să adauge propriul hazard când
+își creează un seed.
+Există un grup pe care Coinkite nu îl consideră în pericol din cauza acestui bug:
+proprietarii care au adăugat cel puțin 50 de aruncări proprii cu zarul când și-au creat seed-ul.
+Cei care n-au lăsat totul pe seama dispozitivului.
+Caseta de valori n-a fost deschisă niciodată.
+Dispozitivele dinăuntru n-au fost niciodată sparte.
+Doar că nu și-au cerut niciodată seed-ul de la generatorul hardware.
+Dacă ai creat un seed pe un Coldcard afectat, citește avertismentul Coinkite.
+Coinkite spune: consideră-l compromis și mută-te pe un seed nou.
+Și cei 1.082 de bitcoini din primul val?
+Potrivit celor mai recente urmăriri publice, stau încă acolo unde i-a lăsat hoțul.
+Iar undeva, în evidențele unei companii de date, s-ar putea să existe un nume.
+Acesta a fost Siphon Files.

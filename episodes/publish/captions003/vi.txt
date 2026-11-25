@@ -1,0 +1,167 @@
+Một hầm ngân hàng. Một két sắt cho thuê.
+Bên trong là ba thiết bị nhỏ chưa từng được kết nối internet.
+Đêm 29 tháng 7, không ai mở két đó. Không ai chạm vào những thiết bị đó.
+Chỉ trong bảy phút, số bitcoin chúng bảo vệ đã biến mất.
+Trong vòng năm ngày, khoảng 116 triệu đô la đã bị lấy đi theo cùng một cách.
+Lỗ hổng đằng sau vụ này đã nằm trong mã nguồn công khai hơn năm năm.
+Và tên trộm đầu tiên có thể cũng đã mắc một sai lầm.
+Tôi là Thomas Archer, người dẫn chuyện AI của Siphon Files.
+Mọi thông tin bạn nghe đều có nguồn.
+Danh sách nguồn nằm trong phần mô tả.
+Đây là câu chuyện về một ổ khóa không ai phá.
+Chỉ là có người đã tìm ra mật mã.
+Jonathan Goodman là một doanh nhân ở Toronto.
+Theo lời anh kể, anh đã đầu tư hơn một triệu đô la vào bitcoin.
+Vì vậy anh làm đúng như các hướng dẫn bảo mật khuyên.
+Anh mua một ví phần cứng: một chiếc Coldcard do công ty Canada tên Coinkite sản xuất.
+Khi thiết lập, máy sẽ đưa cho bạn một danh sách 12 hoặc 24 từ.
+Những từ đó chính là tiền.
+Ai có chúng đều có thể tiêu bitcoin của bạn, từ bất cứ đâu.
+Anh mua ba chiếc.
+Anh không bao giờ chia sẻ các từ với ai và dập chúng lên kim loại để dự phòng.
+Các thiết bị không bao giờ chạm tới internet.
+Chúng được cất vào một két sắt ở ngân hàng của anh.
+Nhưng có một điều anh không thể tự kiểm tra: những từ đó được chọn ra như thế nào.
+Các từ phải không thể đoán được.
+Vì vậy thiết bị chọn chúng hoàn toàn ngẫu nhiên, bằng phần cứng chỉ làm một việc:
+tạo ra số ngẫu nhiên.
+Nếu làm đúng, số danh sách từ có thể có nhiều đến mức không ai có thể
+dò hết được.
+Nhưng vào tháng 3 năm 2021, Coinkite phát hành một bản cập nhật firmware.
+Bản này chuyển sang cùng loại mật mã học mà Bitcoin Core dùng, thông qua một thư viện mới.
+Thư viện mới cần số ngẫu nhiên.
+Và đoạn mã trả lời yêu cầu đó có thể chạy theo hai cách: đọc phần cứng
+hoặc chạy một bản thay thế đơn giản bằng phần mềm. Một thiết lập duy nhất quyết định cách nào.
+Coinkite đặt nó về 0, tin rằng làm vậy là tắt hết. Không phải.
+Số 0 nghĩa là: dùng bản thay thế.
+Và trong mã có một bước kiểm tra an toàn được làm đúng cho việc này.
+Nếu thiếu thiết lập, quá trình build sẽ dừng lại kèm một thông báo.
+Nhưng bước kiểm tra chỉ hỏi thiết lập có tồn tại không. Có. Giá trị là 0.
+Bước kiểm tra cho qua.
+Hãy hình dung một thanh tra báo khói.
+Anh ta kiểm tra trên trần có thiết bị báo khói.
+Nhưng không bao giờ xem nó có bật không.
+Vậy là từ đó, các mẫu cũ Mk2 và Mk3 tạo các từ bằng bản thay thế.
+Nó chạy dựa trên một ID nhà máy cố định và vài bộ đếm thời gian.
+Không có gì trong đó thực sự bí mật.
+Sau này Coinkite ước tính nó chỉ có khoảng 40 bit ngẫu nhiên thật.
+Một seed chuẩn có ít nhất 128 bit.
+Bốn mươi bit là khoảng một nghìn tỷ khả năng. Nghe thì nhiều.
+Với một máy tính đoán offline, đó là cuộc tìm kiếm có hồi kết.
+Các mẫu mới hơn khá hơn, khoảng 72 bit.
+Vẫn kém xa một seed chuẩn,
+dù đến nay chưa có bằng chứng công khai nào cho thấy chiếc nào trong số đó bị rút sạch trong các
+vụ tấn công này.
+Bộ tạo số phần cứng vẫn ở đó, bên trong mỗi thiết bị.
+Chính tài liệu kỹ thuật của Coinkite sau này thừa nhận nó có được dùng…
+Vậy là giờ bạn biết một điều mà Goodman không biết.
+Các từ của anh chưa bao giờ thực sự ngẫu nhiên. Và mã nguồn thì công khai. Ai cũng đọc được.
+Suốt năm năm, những người sở hữu như anh mua thiết bị, chép lại các từ
+và cất kỹ dưới khóa.
+CEO của Coinkite nói công ty đã trả tiền cho các đợt kiểm định bảo mật bên ngoài năm 2022 và 2024.
+Thế nhưng Coinkite nói họ không biết về lỗi này cho đến ngày xảy ra vụ trộm.
+Rồi, vài tuần trước vụ trộm, Coinkite cho AI rà soát mã quan trọng của mình.
+Nhưng có người khác tìm ra lỗi trước.
+Coinkite nói họ buộc phải giả định rằng ai đó đã dùng AI để tìm ra nó.
+Đó là giả định của Coinkite. Chưa được chứng minh.
+Dù thế nào, phương pháp này không cần đến một thiết bị nào.
+Đoán một seed. Tính ra các địa chỉ của nó. Tra blockchain.
+Khớp nghĩa là có chìa khóa, và có luôn số tiền.
+Ở Toronto, lúc đó là chín giờ mười tối thứ Tư.
+Goodman đang đi nghỉ ở căn nhà gỗ của mình.
+Giao dịch đầu tiên rời khỏi một địa chỉ được tạo trên Coldcard. Rồi thêm một giao dịch nữa.
+Rồi hàng trăm.
+Theo Chainalysis, tên trộm nhắm vào những ví lớn nhất trước.
+Khoảng 30 triệu đô la trong mười phút đầu.
+Và có điều gì đó lạ ở các giao dịch này.
+Tất cả đều được tạo giống hệt nhau: cùng mức phí, và từng đồng bị quét sạch,
+không chừa lại gì.
+Hãy nhớ chi tiết đó.
+Rồi đến lượt Goodman.
+21 giờ 36. Ví đầu tiên trong ba ví của anh bị rút sạch. Rồi đến ví thứ hai.
+Đến 21 giờ 43, ví thứ ba cũng mất.
+Khoảng 1,6 triệu đô la Canada.
+Lúc 21 giờ 51, đợt đầu tiên dừng lại.
+Trong 41 phút, gần một nghìn hai trăm địa chỉ đã bị rút sạch.
+Và Goodman không hề hay biết.
+Trong vài giờ sau đó, bắt đầu có báo cáo về tiền bị chuyển khỏi các ví lạnh.
+Các kỹ sư ở Block, công ty đứng sau ví Bitkey, mổ xẻ firmware.
+Trước khi hết ngày, họ và các nhà nghiên cứu khác tìm ra nguyên nhân.
+Coinkite đăng cảnh báo đầu tiên: các seed tạo trên firmware bị ảnh hưởng đang gặp rủi ro.
+Hãy chuyển tiền đi. Đến lúc đó, đợt đầu tiên đã kết thúc từ lâu.
+Ngày 31 tháng 7, Goodman đang ở thư viện công cộng cùng gia đình thì thấy
+bài đăng của một người bạn trên Facebook: nếu bạn dùng Coldcard, hãy chuyển tiền ngay.
+Anh kiểm tra. Bitcoin của anh đã mất từ tối thứ Tư.
+Anh quay về Toronto để trình báo cảnh sát
+và gửi báo cáo lên Ủy ban Chứng khoán Ontario.
+Mọi người hỏi anh liệu có ai vào được két sắt của anh không.
+Không ai cả. Và với bất kỳ ai vẫn giữ một seed được tạo theo cách đó,
+bản cập nhật firmware không giúp được gì. Nó chỉ sửa các seed mới.
+Một seed yếu đã được ghi lại thì vẫn yếu.
+Đây là phần nghiệt ngã của một cảnh báo công khai.
+Nó đến tay chủ ví và kẻ trộm cùng một lúc.
+Đợt hai tiếp theo. Đợt ba kéo dài từ thứ Sáu sang thứ Bảy.
+Đợt bốn bắt đầu vào thứ Hai.
+Sau này Galaxy Research đếm được ít nhất 15 kẻ tấn công khác nhau. Không còn là một tên trộm.
+Mà là cả một đám đông, khai thác cùng một điểm yếu.
+Nhưng ở đợt thứ tư, các giao dịch của kẻ trộm vẫn đang chờ xác nhận.
+Cho đến khi được xác nhận, ai sẵn sàng trả phí cao hơn đều có thể thay thế chúng.
+Vậy là một chủ ví, Will Owens, phản công.
+Anh để lại một khoản nhỏ làm mồi, chờ con bot lấy nó,
+rồi trả giá cao hơn. Anh lấy lại được mồi của mình.
+Sau đó, các hacker mũ trắng tình nguyện chuyển khoảng 52 bitcoin khỏi những ví bị lộ
+vào một quỹ ủy thác lập ra để trả lại cho nạn nhân.
+Tháng 9, quỹ trả lại hơn 20 bitcoin cho một chủ ví đã được xác minh.
+Một phần số tiền bị đánh cắp được chuyển vào mixer, dịch vụ làm mờ dấu vết.
+Theo số liệu công khai mới nhất, phần lớn số còn lại vẫn nằm yên.
+Khi các đợt chậm lại, khoảng 1.816 bitcoin đã bị lấy
+từ hơn 5.200 địa chỉ.
+Nhưng phần lớn nhất, đợt đầu tiên, vẫn chưa hề dịch chuyển,
+theo dữ liệu theo dõi công khai mới nhất.
+Nhớ chi tiết đó chứ? Mọi giao dịch trong đợt đầu tiên đều giống nhau.
+Galaxy không tìm thấy ai khác dùng mẫu đó trong tháng trước đó.
+Vì thế đợt đầu tiên có thể được lần theo như một chiến dịch duy nhất.
+Và các nhà điều tra còn nhận ra một điều nữa.
+Mỗi lần đoán đều phải được kiểm tra.
+Muốn biết địa chỉ đoán được nào có tiền, bạn phải tra từng địa chỉ,
+lặp đi lặp lại.
+Các nhà điều tra của Block nói người vận hành đợt đầu tiên dường như đã làm việc đó qua
+một tài khoản trả phí tại một nhà cung cấp dữ liệu blockchain nổi tiếng.
+Họ đã liên hệ với nhà cung cấp.
+Theo họ, nhật ký nội bộ của công ty khớp với vụ tấn công “với độ chính xác phi thường”:
+số lượng, thời điểm và thứ tự các yêu cầu.
+Trên blockchain, tên trộm chỉ là một chuỗi địa chỉ.
+Nhưng một tài khoản trả phí thường để lại hồ sơ.
+Thông tin đã được chuyển cho cơ quan thực thi pháp luật.
+Alex Thorn của Galaxy nói danh tính kẻ tấn công đợt đầu “có thể đã được cơ quan thực thi pháp luật
+biết đến”.
+Nhưng tại thời điểm làm video này, FBI chưa xác nhận nghi phạm, vụ bắt giữ
+hay khoản thu hồi nào.
+Vì vậy, tính đến thời điểm của video này, chưa ai bị nêu tên công khai.
+TRM Labs không quy vụ trộm cho bất kỳ ai.
+Coinkite nói luật sư của họ đang làm việc với cơ quan thực thi pháp luật để xác định những người
+chịu trách nhiệm.
+Trên mạng, có người gọi đây là một vụ nội gián.
+Đến nay, chưa có bằng chứng công khai cho điều đó, và chưa ai bị buộc tội.
+Tháng 9, một chủ Coldcard đã nộp đơn đề xuất vụ kiện tập thể ở Ontario nhắm vào
+Coinkite và các nhà đồng sáng lập.
+Đơn kiện cáo buộc công ty đã biết muộn nhất vào tháng 5 năm 2025 rằng cách tạo seed của họ yếu.
+Theo các báo cáo mới nhất, thẩm phán thậm chí còn chưa công nhận đây là vụ kiện tập thể,
+và chưa cáo buộc nào được xem xét tại tòa.
+Và theo những gì báo cáo công khai cho thấy, Coinkite chưa công bố quỹ bồi thường nào.
+Goodman không trông chờ vào vụ kiện.
+CEO của Coinkite nói lỗi này ảnh hưởng đến khoảng 0,17% người dùng.
+Firmware mới nhất giờ buộc mọi chủ sở hữu tự thêm độ ngẫu nhiên của mình khi
+tạo seed.
+Có một nhóm mà Coinkite không coi là gặp rủi ro từ lỗi này:
+những người đã tự thêm ít nhất 50 lần tung xúc xắc khi tạo seed.
+Những người không phó mặc mọi thứ cho thiết bị.
+Chiếc két sắt đó chưa bao giờ bị mở.
+Các thiết bị bên trong chưa bao giờ bị hack.
+Chỉ là chúng chưa bao giờ lấy seed từ phần cứng tạo số ngẫu nhiên của mình.
+Nếu bạn đã tạo seed trên một chiếc Coldcard bị ảnh hưởng, hãy đọc cảnh báo của Coinkite.
+Coinkite nói: hãy coi seed đó đã bị lộ, và chuyển sang một seed mới.
+Còn 1.082 bitcoin của đợt đầu tiên?
+Theo dữ liệu theo dõi công khai mới nhất, chúng vẫn nằm nguyên nơi tên trộm để lại.
+Và ở đâu đó, trong hồ sơ của một công ty dữ liệu, có thể có một cái tên.
+Đây là Siphon Files.

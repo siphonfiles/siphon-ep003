@@ -1,0 +1,167 @@
+Sebuah brankas bank. Sebuah kotak penyimpanan.
+Di dalamnya, tiga perangkat kecil yang tidak pernah terhubung ke internet.
+Pada malam 29 Juli, tidak ada yang membuka kotak itu. Tidak ada yang menyentuh perangkat itu.
+Dalam tujuh menit, bitcoin yang mereka lindungi lenyap.
+Dalam lima hari, sekitar 116 juta dolar telah diambil dengan cara yang sama.
+Celah di baliknya sudah ada di kode publik selama lebih dari lima tahun.
+Dan pencuri pertama mungkin telah membuat satu kesalahan sendiri.
+Saya Thomas Archer, narator AI Siphon Files.
+Setiap klaim yang Anda dengar ada sumbernya.
+Daftarnya ada di deskripsi.
+Ini kisah tentang gembok yang tidak pernah dibobol siapa pun.
+Seseorang hanya berhasil menebak kombinasinya.
+Jonathan Goodman adalah pengusaha di Toronto.
+Menurut ceritanya sendiri, ia sudah menanamkan lebih dari satu juta dolar di bitcoin.
+Jadi ia melakukan apa yang disarankan panduan keamanan.
+Ia membeli dompet perangkat keras: sebuah Coldcard, buatan perusahaan Kanada bernama Coinkite.
+Saat diatur, perangkat ini memberi Anda daftar 12 atau 24 kata.
+Kata-kata itu adalah uangnya.
+Siapa pun yang memilikinya bisa membelanjakan bitcoin Anda, dari mana saja.
+Ia membeli tiga.
+Ia tidak pernah membagikan kata-katanya kepada siapa pun dan mengukirnya di logam sebagai cadangan.
+Perangkatnya tidak pernah menyentuh internet.
+Semuanya disimpan di kotak penyimpanan di banknya.
+Tapi ada satu hal yang tidak bisa ia periksa sendiri: bagaimana kata-kata itu dipilih.
+Kata-kata itu harus mustahil ditebak.
+Jadi perangkat memilihnya secara acak murni, dengan perangkat keras yang dibuat untuk satu tugas:
+menghasilkan angka acak.
+Jika dilakukan dengan benar, ada begitu banyak kemungkinan daftar kata sehingga tidak ada yang bisa
+memeriksa semuanya.
+Tapi pada Maret 2021, Coinkite merilis pembaruan firmware.
+Firmware itu beralih ke kriptografi yang sama dengan Bitcoin Core, lewat sebuah pustaka baru.
+Pustaka baru itu butuh angka acak.
+Dan kode yang menjawab permintaannya bisa bekerja dengan dua cara: membaca perangkat keras
+atau menjalankan pengganti perangkat lunak sederhana. Satu pengaturan menentukan yang mana.
+Coinkite mengaturnya ke nol, mengira itu mematikan semuanya. Ternyata tidak.
+Nol berarti: gunakan penggantinya.
+Dan ada pemeriksaan keamanan di dalam kode, dibuat khusus untuk ini.
+Jika pengaturannya tidak ada, proses build berhenti dengan sebuah pesan.
+Tapi pemeriksaan itu hanya menanyakan apakah pengaturannya ada. Ada. Nilainya nol.
+Pemeriksaan pun lolos.
+Bayangkan seorang pemeriksa alarm asap.
+Ia memeriksa ada alarm di langit-langit.
+Tapi tak pernah memeriksa apakah alarmnya menyala.
+Jadi sejak saat itu, model lama Mk2 dan Mk3 membuat kata-katanya dari pengganti tersebut.
+Pengganti itu memakai ID pabrik tetap dan beberapa pengatur waktu.
+Tak ada yang benar-benar rahasia di dalamnya.
+Belakangan Coinkite memperkirakannya sekitar 40 bit keacakan sungguhan.
+Seed yang layak punya setidaknya 128.
+Empat puluh bit itu sekitar satu triliun kemungkinan. Terdengar banyak.
+Bagi komputer yang menebak secara offline, ini pencarian yang bisa selesai.
+Model yang lebih baru lebih baik, sekitar 72 bit.
+Masih jauh di bawah seed yang layak,
+meski sejauh ini tidak ada bukti publik bahwa salah satunya dikuras dalam serangan-serangan
+ini.
+Generator perangkat kerasnya masih ada, di dalam setiap perangkat.
+Tulisan teknis Coinkite sendiri belakangan mengakui bahwa generator itu dipakai…
+Jadi sekarang Anda tahu sesuatu yang tidak diketahui Goodman.
+Kata-katanya tidak pernah benar-benar acak. Dan kodenya publik. Siapa pun bisa membacanya.
+Selama lima tahun, pemilik seperti dia membeli perangkat itu, mencatat kata-katanya,
+lalu menguncinya.
+CEO Coinkite mengatakan perusahaan membayar audit keamanan eksternal pada 2022 dan 2024.
+Namun Coinkite mengatakan tidak tahu soal bug itu sampai hari pencurian.
+Lalu, beberapa minggu sebelum pencurian, Coinkite meninjau kode pentingnya dengan AI.
+Tapi orang lain menemukannya lebih dulu.
+Coinkite mengatakan harus berasumsi bahwa seseorang memakai AI untuk menemukannya.
+Itu asumsi Coinkite. Belum terbukti.
+Bagaimanapun, metode itu tidak membutuhkan satu perangkat pun.
+Tebak sebuah seed. Hitung alamat-alamatnya. Periksa blockchain.
+Jika cocok, itu berarti kuncinya, dan uangnya juga.
+Di Toronto, saat itu pukul sembilan lewat sepuluh, Rabu malam.
+Goodman sedang berada di pondoknya.
+Transaksi pertama keluar dari alamat yang dibuat di sebuah Coldcard. Lalu satu lagi.
+Lalu ratusan.
+Menurut Chainalysis, pencuri menyasar dompet terbesar lebih dulu.
+Sekitar 30 juta dolar dalam sepuluh menit pertama.
+Dan ada yang aneh dari transaksi-transaksi ini.
+Semuanya dibuat dengan cara yang sama: tarif biaya yang sama, dan setiap koin disapu habis,
+tanpa sisa sedikit pun.
+Ingat detail itu.
+Lalu giliran Goodman.
+Pukul 21.36. Dompet pertama dari tiga dompetnya terkuras. Lalu yang kedua.
+Pukul 21.43, yang ketiga juga lenyap.
+Sekitar 1,6 juta dolar Kanada.
+Pukul 21.51, gelombang pertama berhenti.
+Dalam 41 menit, hampir seribu dua ratus alamat telah dikosongkan.
+Dan Goodman sama sekali tidak tahu.
+Dalam beberapa jam berikutnya, mulai muncul laporan koin keluar dari dompet dingin.
+Para insinyur di Block, perusahaan di balik dompet Bitkey, membongkar firmware itu.
+Sebelum hari berakhir, mereka dan peneliti lain menemukan penyebabnya.
+Coinkite menerbitkan peringatan pertamanya: seed yang dibuat di firmware terdampak berisiko.
+Pindahkan dana Anda. Saat itu, gelombang pertama sudah lama berakhir.
+Pada 31 Juli, Goodman sedang di perpustakaan umum bersama keluarganya ketika ia melihat
+unggahan seorang teman di Facebook: jika Anda memakai Coldcard, pindahkan uang Anda sekarang.
+Ia memeriksa. Bitcoinnya sudah hilang sejak Rabu malam.
+Ia kembali ke Toronto untuk membuat laporan polisi
+dan laporan ke Komisi Sekuritas Ontario.
+Orang-orang bertanya apakah ada yang masuk ke kotak penyimpanannya.
+Tidak ada. Dan bagi siapa pun yang masih menyimpan seed yang dibuat dengan cara yang sama,
+pembaruan firmware tidak akan membantu. Pembaruan itu memperbaiki seed baru.
+Seed lemah yang sudah dicatat tetap lemah.
+Inilah bagian kejam dari peringatan publik.
+Peringatan itu sampai ke pemilik dan ke pencuri pada saat yang sama.
+Gelombang kedua menyusul. Gelombang ketiga berlangsung dari Jumat hingga Sabtu.
+Gelombang keempat dimulai pada Senin.
+Belakangan Galaxy Research menghitung setidaknya 15 penyerang berbeda. Bukan lagi satu pencuri.
+Sekumpulan orang, memanfaatkan kelemahan yang sama.
+Tapi di gelombang keempat, transaksi para pencuri masih menunggu konfirmasi.
+Sampai terkonfirmasi, siapa pun yang mau membayar biaya lebih tinggi bisa menggantinya.
+Jadi seorang pemilik, Will Owens, melawan.
+Ia meninggalkan sedikit dana sebagai umpan, menunggu bot mengambilnya,
+lalu menawar lebih tinggi. Ia mendapatkan umpannya kembali.
+Kemudian, para peretas topi putih sukarelawan memindahkan sekitar 52 bitcoin dari dompet yang rentan
+ke dana perwalian yang dibuat untuk mengembalikannya ke korban.
+Pada September, dana perwalian itu mengembalikan lebih dari 20 bitcoin kepada satu pemilik terverifikasi.
+Sebagian koin curian dikirim ke mixer, layanan yang dibuat untuk mengaburkan jejak.
+Menurut hitungan publik terbaru, sebagian besar sisanya masih diam di tempat.
+Saat gelombang melambat, sekitar 1.816 bitcoin telah diambil,
+dari lebih dari 5.200 alamat.
+Tapi bagian terbesarnya, gelombang pertama, masih belum bergerak,
+menurut pelacakan publik terbaru.
+Ingat detail itu? Setiap transaksi di gelombang pertama terlihat sama.
+Galaxy tidak menemukan orang lain yang memakai pola itu sebulan sebelumnya.
+Jadi gelombang pertama bisa dilacak sebagai satu operasi.
+Dan para penyelidik melihat hal lain.
+Setiap tebakan harus diperiksa.
+Untuk tahu alamat tebakan mana yang berisi uang, Anda harus mencarinya,
+lagi dan lagi.
+Penyelidik Block mengatakan operator gelombang pertama tampaknya melakukannya lewat
+akun berbayar di penyedia data blockchain ternama.
+Mereka menghubungi penyedia itu.
+Menurut mereka, log internalnya cocok dengan serangan itu “dengan ketepatan luar biasa”:
+jumlah, waktu, dan urutan permintaannya.
+Di blockchain, pencuri itu hanyalah deretan alamat.
+Tapi akun berbayar biasanya meninggalkan catatan.
+Informasinya diserahkan ke penegak hukum.
+Alex Thorn dari Galaxy mengatakan identitas penyerang gelombang pertama “mungkin diketahui penegak
+hukum”.
+Tapi saat video ini dibuat, FBI belum mengonfirmasi tersangka, penangkapan,
+atau pemulihan dana apa pun.
+Jadi, per tanggal video ini, belum ada yang disebut namanya secara publik.
+TRM Labs tidak mengaitkan pencurian ini dengan siapa pun.
+Coinkite mengatakan pengacaranya bekerja sama dengan penegak hukum untuk mengidentifikasi para
+pelaku.
+Di internet, ada yang menyebutnya ulah orang dalam.
+Sejauh ini, tidak ada bukti publik untuk itu, dan tidak ada yang dituduh.
+Pada September, seorang pemilik Coldcard mengajukan usulan gugatan class action di Ontario terhadap
+Coinkite dan para pendirinya.
+Gugatan itu menuduh perusahaan sudah tahu paling lambat Mei 2025 bahwa pembuatan seed-nya lemah.
+Menurut laporan terbaru, hakim bahkan belum mengesahkannya sebagai class action,
+dan belum ada satu pun tuduhannya yang diuji di pengadilan.
+Dan, sejauh laporan publik menunjukkan, Coinkite belum mengumumkan dana kompensasi apa pun.
+Goodman tidak berharap pada gugatan itu.
+CEO Coinkite mengatakan celah itu memengaruhi sekitar 0,17% penggunanya.
+Firmware terbaru kini mewajibkan setiap pemilik menambahkan keacakan sendiri saat
+membuat seed.
+Ada satu kelompok yang menurut Coinkite tidak berisiko akibat bug ini:
+pemilik yang menambahkan setidaknya 50 lemparan dadu sendiri saat membuat seed mereka.
+Mereka yang tidak menyerahkan semuanya kepada perangkat.
+Kotak penyimpanan itu tidak pernah dibuka.
+Perangkat di dalamnya tidak pernah diretas.
+Perangkat itu hanya tidak pernah meminta seed dari generator angka acaknya.
+Jika Anda membuat seed di Coldcard yang terdampak, baca peringatan Coinkite.
+Coinkite mengatakan: anggap seed itu sudah bocor, dan pindah ke seed baru.
+Dan 1.082 bitcoin dari gelombang pertama?
+Menurut pelacakan publik terbaru, semuanya masih ada di tempat pencuri meninggalkannya.
+Dan di suatu tempat, dalam catatan sebuah perusahaan data, mungkin ada sebuah nama.
+Ini tadi Siphon Files.

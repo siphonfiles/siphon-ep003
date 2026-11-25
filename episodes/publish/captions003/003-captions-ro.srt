@@ -1,0 +1,667 @@
+1
+00:00:01,200 --> 00:00:03,136
+Un seif de bancă. O casetă de valori.
+
+2
+00:00:03,176 --> 00:00:07,845
+Înăuntru, trei dispozitive mici care nu au fost conectate niciodată la internet.
+
+3
+00:00:10,945 --> 00:00:16,603
+În noaptea de 29 iulie, nimeni n-a deschis caseta. Nimeni n-a atins dispozitivele.
+
+4
+00:00:17,503 --> 00:00:20,470
+În șapte minute, bitcoinii pe care îi protejau dispăruseră.
+
+5
+00:00:23,370 --> 00:00:28,033
+În cinci zile, aproximativ 116 milioane de dolari fuseseră luați în același fel.
+
+6
+00:00:28,933 --> 00:00:32,681
+Defectul din spatele furtului stătea în cod public de mai bine de cinci ani.
+
+7
+00:00:33,581 --> 00:00:36,350
+Iar primul hoț s-ar putea să fi făcut și el o greșeală.
+
+8
+00:00:42,001 --> 00:00:45,371
+Sunt Thomas Archer, naratorul AI al Siphon Files.
+
+9
+00:00:45,871 --> 00:00:47,592
+Fiecare afirmație din video are o sursă.
+
+10
+00:00:47,632 --> 00:00:49,192
+Lista e în descriere.
+
+11
+00:00:49,792 --> 00:00:52,439
+Aceasta e povestea unui lacăt pe care nu l-a forțat nimeni.
+
+12
+00:00:52,938 --> 00:00:55,166
+Cineva doar a aflat combinația.
+
+13
+00:00:58,266 --> 00:01:00,866
+Jonathan Goodman este antreprenor în Toronto.
+
+14
+00:01:00,906 --> 00:01:04,950
+După spusele lui, a investit peste un milion de dolari în bitcoin.
+
+15
+00:01:05,650 --> 00:01:08,359
+Așa că face ce recomandă ghidurile de securitate.
+
+16
+00:01:08,399 --> 00:01:12,820
+Își cumpără un hardware wallet: un Coldcard, făcut de o companie canadiană numită Coinkite.
+
+17
+00:01:13,421 --> 00:01:16,814
+Când îl configurezi, îți dă o listă de 12 sau 24 de cuvinte.
+
+18
+00:01:16,854 --> 00:01:18,327
+Cuvintele acelea sunt banii.
+
+19
+00:01:18,367 --> 00:01:21,742
+Oricine le are îți poate cheltui bitcoinii, de oriunde.
+
+20
+00:01:22,542 --> 00:01:23,711
+El cumpără trei.
+
+21
+00:01:23,751 --> 00:01:28,163
+Nu-și arată nimănui cuvintele și le ștanțează în metal, ca rezervă.
+
+22
+00:01:28,203 --> 00:01:30,196
+Dispozitivele nu ating niciodată internetul.
+
+23
+00:01:30,236 --> 00:01:32,654
+Ajung într-o casetă de valori la banca lui.
+
+24
+00:01:33,555 --> 00:01:37,655
+Dar e un lucru pe care nu-l poate verifica singur: cum au fost alese cuvintele.
+
+25
+00:01:40,354 --> 00:01:42,672
+Cuvintele trebuie să fie imposibil de ghicit.
+
+26
+00:01:42,712 --> 00:01:46,929
+Așa că dispozitivul le alege pur întâmplător, cu un hardware construit pentru un singur lucru:
+
+27
+00:01:46,969 --> 00:01:48,407
+să producă numere aleatorii.
+
+28
+00:01:49,007 --> 00:01:52,900
+Făcut corect, există atât de multe liste de cuvinte posibile, încât nimeni n-ar putea
+
+29
+00:01:52,940 --> 00:01:53,755
+să le încerce pe toate.
+
+30
+00:01:56,355 --> 00:01:59,657
+Dar în martie 2021, Coinkite lansează o actualizare de firmware.
+
+31
+00:01:59,697 --> 00:02:05,031
+Trece la aceeași criptografie pe care o folosește Bitcoin Core, printr-o bibliotecă nouă.
+
+32
+00:02:08,531 --> 00:02:10,670
+Biblioteca nouă are nevoie de numere aleatorii.
+
+33
+00:02:10,710 --> 00:02:15,264
+Iar codul care îi răspunde poate funcționa în două feluri: citește hardware-ul
+
+34
+00:02:15,304 --> 00:02:19,014
+sau rulează un simplu înlocuitor software. O singură setare decide care.
+
+35
+00:02:19,714 --> 00:02:24,193
+Coinkite o pune pe zero, crezând că asta oprește totul. Nu oprește.
+
+36
+00:02:24,233 --> 00:02:26,006
+Zero înseamnă: folosește înlocuitorul.
+
+37
+00:02:26,705 --> 00:02:29,968
+Și în cod există o verificare de siguranță, făcută exact pentru asta.
+
+38
+00:02:30,008 --> 00:02:33,101
+Dacă setarea lipsește, compilarea se oprește, cu un mesaj.
+
+39
+00:02:35,801 --> 00:02:40,453
+Dar verificarea întreabă doar dacă setarea există. Există. Scrie zero.
+
+40
+00:02:40,493 --> 00:02:41,571
+Verificarea trece.
+
+41
+00:02:42,572 --> 00:02:44,091
+Gândiți-vă la un inspector de alarme de fum.
+
+42
+00:02:44,590 --> 00:02:46,652
+Verifică dacă pe tavan există un detector.
+
+43
+00:02:47,152 --> 00:02:48,792
+Nu verifică niciodată dacă e pornit.
+
+44
+00:02:51,492 --> 00:02:56,548
+Așa că, de atunci, modelele mai vechi Mk2 și Mk3 își fac cuvintele cu înlocuitorul.
+
+45
+00:02:56,588 --> 00:02:59,433
+Acesta pornește de la un ID fix din fabrică și câteva cronometre.
+
+46
+00:02:59,473 --> 00:03:01,315
+Nimic din el nu e cu adevărat secret.
+
+47
+00:03:01,915 --> 00:03:05,934
+Mai târziu, Coinkite îl estimează la circa 40 de biți de hazard real.
+
+48
+00:03:05,974 --> 00:03:08,107
+Un seed corect are cel puțin 128.
+
+49
+00:03:08,907 --> 00:03:13,060
+Patruzeci de biți înseamnă cam o mie de miliarde de posibilități. Sună mult.
+
+50
+00:03:13,560 --> 00:03:16,763
+Pentru un calculator care ghicește offline, e o căutare care se termină.
+
+51
+00:03:17,563 --> 00:03:19,871
+Modelele noi stau mai bine, la circa 72 de biți.
+
+52
+00:03:19,911 --> 00:03:21,673
+Tot mult sub un seed corect,
+
+53
+00:03:21,713 --> 00:03:25,986
+deși, până acum, nu există dovezi publice că vreunul a fost golit în aceste
+
+54
+00:03:26,026 --> 00:03:26,626
+atacuri.
+
+55
+00:03:27,063 --> 00:03:30,507
+Generatorul hardware e încă acolo, în fiecare dispozitiv.
+
+56
+00:03:30,547 --> 00:03:34,385
+Chiar documentația tehnică a Coinkite recunoaște mai târziu că era folosit…
+
+57
+00:03:37,286 --> 00:03:39,663
+Așa că acum știți ceva ce Goodman nu știe.
+
+58
+00:03:39,703 --> 00:03:44,193
+Cuvintele lui n-au fost niciodată cu adevărat aleatorii. Iar codul e public. Oricine îl poate citi.
+
+59
+00:03:44,793 --> 00:03:48,746
+Timp de cinci ani, proprietari ca el cumpără dispozitivul, își notează cuvintele
+
+60
+00:03:48,786 --> 00:03:49,854
+și le pun sub cheie.
+
+61
+00:03:50,554 --> 00:03:56,260
+CEO-ul Coinkite spune că firma a plătit audituri de securitate externe în 2022 și 2024.
+
+62
+00:03:56,300 --> 00:04:01,216
+Și totuși, Coinkite spune că nu știa de bug până în ziua furtului.
+
+63
+00:04:03,816 --> 00:04:08,756
+Apoi, cu câteva săptămâni înainte de furt, Coinkite trece codul critic printr-o analiză făcută cu AI.
+
+64
+00:04:11,556 --> 00:04:13,062
+Dar altcineva îl găsește primul.
+
+65
+00:04:13,862 --> 00:04:17,672
+Coinkite spune că trebuie să presupună că cineva a folosit AI ca să-l găsească.
+
+66
+00:04:18,172 --> 00:04:20,774
+Asta e presupunerea Coinkite. Nu a fost dovedită.
+
+67
+00:04:21,373 --> 00:04:24,096
+Oricum ar fi, metoda nu avea nevoie de niciun dispozitiv.
+
+68
+00:04:24,596 --> 00:04:28,043
+Ghicești un seed. Calculezi adresele lui. Verifici blockchain-ul.
+
+69
+00:04:28,643 --> 00:04:30,901
+O potrivire înseamnă cheia și, odată cu ea, banii.
+
+70
+00:04:34,301 --> 00:04:37,450
+În Toronto e nouă și zece, miercuri seara.
+
+71
+00:04:37,490 --> 00:04:39,321
+Goodman e plecat la cabana lui.
+
+72
+00:04:39,920 --> 00:04:43,793
+Prima tranzacție pleacă de pe o adresă creată pe un Coldcard. Apoi încă una.
+
+73
+00:04:43,833 --> 00:04:44,584
+Apoi sute.
+
+74
+00:04:45,184 --> 00:04:48,880
+Potrivit Chainalysis, hoțul atacă întâi portofelele cele mai mari.
+
+75
+00:04:48,920 --> 00:04:51,551
+Circa 30 de milioane de dolari în primele zece minute.
+
+76
+00:04:52,151 --> 00:04:54,777
+Și tranzacțiile astea au ceva ciudat.
+
+77
+00:04:54,817 --> 00:04:59,010
+Sunt construite toate la fel: același comision și fiecare monedă luată până la ultima,
+
+78
+00:04:59,050 --> 00:05:00,357
+fără să rămână nimic.
+
+79
+00:05:00,958 --> 00:05:02,183
+Țineți minte detaliul ăsta.
+
+80
+00:05:03,182 --> 00:05:04,406
+Apoi ajunge la Goodman.
+
+81
+00:05:05,006 --> 00:05:09,997
+21:36. Primul dintre cele trei portofele ale lui se golește. Apoi al doilea.
+
+82
+00:05:10,037 --> 00:05:12,396
+La 21:43, și al treilea s-a dus.
+
+83
+00:05:12,436 --> 00:05:15,145
+Aproximativ 1,6 milioane de dolari canadieni.
+
+84
+00:05:16,046 --> 00:05:17,942
+La 21:51, primul val se oprește.
+
+85
+00:05:17,982 --> 00:05:22,177
+În 41 de minute, aproape o mie două sute de adrese au fost golite.
+
+86
+00:05:22,977 --> 00:05:24,407
+Iar Goodman habar n-are.
+
+87
+00:05:27,507 --> 00:05:31,645
+În orele următoare încep să apară semnalări despre monede care pleacă din portofele offline.
+
+88
+00:05:31,685 --> 00:05:35,982
+Inginerii de la Block, compania din spatele portofelului Bitkey, desfac firmware-ul bucată cu bucată.
+
+89
+00:05:36,022 --> 00:05:39,460
+Până la sfârșitul zilei, ei și alți cercetători găsesc cauza.
+
+90
+00:05:40,060 --> 00:05:44,951
+Coinkite publică primul avertisment: seed-urile create pe firmware-ul afectat sunt în pericol.
+
+91
+00:05:44,991 --> 00:05:48,239
+Mutați-vă fondurile. Până atunci, primul val se terminase de mult.
+
+92
+00:05:48,939 --> 00:05:53,587
+Pe 31 iulie, Goodman e cu familia la o bibliotecă publică, când vede pe
+
+93
+00:05:53,627 --> 00:05:58,002
+Facebook postarea unui prieten: dacă folosești un Coldcard, mută-ți banii acum.
+
+94
+00:06:00,902 --> 00:06:03,970
+Verifică. Bitcoinii lui dispăruseră încă de miercuri noaptea.
+
+95
+00:06:06,670 --> 00:06:09,314
+Se întoarce în Toronto ca să depună o plângere la poliție
+
+96
+00:06:09,354 --> 00:06:12,202
+și o sesizare la Comisia pentru Valori Mobiliare din Ontario.
+
+97
+00:06:12,802 --> 00:06:15,903
+Oamenii îl întreabă dacă a intrat cineva în caseta lui de valori.
+
+98
+00:06:16,603 --> 00:06:20,716
+Nu a intrat nimeni. Iar pentru oricine încă mai are un seed creat la fel,
+
+99
+00:06:20,756 --> 00:06:23,582
+o actualizare de firmware nu ajută. Ea repară seed-urile noi.
+
+100
+00:06:23,622 --> 00:06:26,605
+Un seed slab, deja notat, rămâne slab.
+
+101
+00:06:29,505 --> 00:06:31,489
+Iată partea crudă a unui avertisment public.
+
+102
+00:06:31,989 --> 00:06:34,828
+Ajunge la proprietari și la hoți în același moment.
+
+103
+00:06:37,528 --> 00:06:41,109
+Urmează valul doi. Valul trei ține de vineri până sâmbătă.
+
+104
+00:06:41,149 --> 00:06:42,718
+Un al patrulea începe luni.
+
+105
+00:06:43,318 --> 00:06:48,334
+Galaxy Research numără mai târziu cel puțin 15 atacatori diferiți. Nu mai e un singur hoț.
+
+106
+00:06:48,374 --> 00:06:50,481
+E o mulțime care exploatează aceeași slăbiciune.
+
+107
+00:06:51,081 --> 00:06:55,209
+Dar în al patrulea val, tranzacțiile hoților așteaptă să fie confirmate.
+
+108
+00:06:55,249 --> 00:06:58,883
+Până atunci, oricine e dispus să plătească un comision mai mare le poate înlocui.
+
+109
+00:06:59,483 --> 00:07:01,664
+Așa că un proprietar, Will Owens, ripostează.
+
+110
+00:07:01,704 --> 00:07:05,757
+Lasă o sumă mică drept momeală, așteaptă ca botul s-o ia
+
+111
+00:07:05,797 --> 00:07:08,018
+și licitează peste el. Își recuperează momeala.
+
+112
+00:07:08,718 --> 00:07:13,091
+Mai târziu, hackeri etici voluntari mută circa 52 de bitcoini din portofelele expuse
+
+113
+00:07:13,131 --> 00:07:15,751
+într-un fond creat ca să-i înapoieze victimelor.
+
+114
+00:07:15,791 --> 00:07:20,506
+În septembrie, fondul îi dă înapoi peste 20 de bitcoini unui proprietar verificat.
+
+115
+00:07:21,106 --> 00:07:24,770
+O parte din monedele furate merg spre mixere, servicii făcute ca să încurce urmele.
+
+116
+00:07:24,810 --> 00:07:27,971
+Potrivit celor mai recente evidențe publice, mare parte din rest stă neatinsă.
+
+117
+00:07:28,571 --> 00:07:33,322
+Când valurile încetinesc, fuseseră luați circa 1.816 bitcoini,
+
+118
+00:07:33,362 --> 00:07:35,514
+de pe peste 5.200 de adrese.
+
+119
+00:07:36,315 --> 00:07:39,396
+Dar cea mai mare parte, primul val, încă nu s-a mișcat,
+
+120
+00:07:39,436 --> 00:07:41,588
+potrivit celor mai recente urmăriri publice.
+
+121
+00:07:42,788 --> 00:07:46,431
+Vă amintiți detaliul? Fiecare tranzacție din primul val arăta la fel.
+
+122
+00:07:46,931 --> 00:07:50,257
+Galaxy n-a găsit pe nimeni altcineva cu acest tipar în luna dinainte.
+
+123
+00:07:50,757 --> 00:07:53,637
+Așa că primul val putea fi urmărit ca o singură operațiune.
+
+124
+00:07:54,137 --> 00:07:56,843
+Iar anchetatorii au mai observat ceva.
+
+125
+00:07:57,543 --> 00:07:59,073
+Fiecare încercare trebuie verificată.
+
+126
+00:07:59,113 --> 00:08:02,685
+Ca să știi care dintre adresele ghicite au bani, trebuie să le cauți,
+
+127
+00:08:02,725 --> 00:08:03,563
+iar și iar.
+
+128
+00:08:04,162 --> 00:08:07,899
+Anchetatorii de la Block spun că operatorul primului val pare să fi făcut asta printr-un
+
+129
+00:08:07,939 --> 00:08:10,488
+cont plătit la un furnizor cunoscut de date blockchain.
+
+130
+00:08:11,088 --> 00:08:12,638
+Au contactat furnizorul.
+
+131
+00:08:12,678 --> 00:08:17,238
+Jurnalele lui interne, spun ei, s-au potrivit cu atacul „cu o precizie extraordinară”:
+
+132
+00:08:17,278 --> 00:08:20,288
+numărul, momentul și ordinea cererilor.
+
+133
+00:08:20,888 --> 00:08:23,675
+Pe blockchain, hoțul era doar un șir de adrese.
+
+134
+00:08:24,175 --> 00:08:26,290
+Dar un cont plătit lasă de obicei urme.
+
+135
+00:08:27,090 --> 00:08:29,215
+Informațiile au ajuns la autorități.
+
+136
+00:08:29,255 --> 00:08:33,546
+Alex Thorn, de la Galaxy, spune că identitatea atacatorului din primul val „ar putea fi cunoscută
+
+137
+00:08:33,586 --> 00:08:34,290
+autorităților”.
+
+138
+00:08:34,890 --> 00:08:39,464
+Dar, în momentul în care facem acest video, FBI nu a confirmat niciun suspect, nicio arestare
+
+139
+00:08:39,504 --> 00:08:40,502
+și nicio recuperare.
+
+140
+00:08:44,102 --> 00:08:47,552
+Așa că, la data acestui video, nimeni nu a fost numit public.
+
+141
+00:08:47,592 --> 00:08:50,198
+TRM Labs nu atribuie furtul nimănui.
+
+142
+00:08:50,238 --> 00:08:54,476
+Coinkite spune că avocații săi lucrează cu autoritățile ca să-i identifice pe cei
+
+143
+00:08:54,516 --> 00:08:55,191
+responsabili.
+
+144
+00:08:55,891 --> 00:08:57,997
+Online, unii spun că a fost o lucrătură din interior.
+
+145
+00:08:58,037 --> 00:09:02,512
+Până acum, nu există dovezi publice pentru asta și nimeni nu a fost acuzat.
+
+146
+00:09:03,212 --> 00:09:07,957
+În septembrie, un proprietar de Coldcard a depus în Ontario o propunere de acțiune colectivă împotriva
+
+147
+00:09:07,997 --> 00:09:09,713
+Coinkite și a cofondatorilor ei.
+
+148
+00:09:09,753 --> 00:09:13,892
+Aceasta susține că firma știa deja în mai 2025 că generarea seed-urilor era slabă.
+
+149
+00:09:13,932 --> 00:09:18,798
+Potrivit celor mai recente informații, un judecător nici măcar n-a certificat-o încă drept acțiune colectivă,
+
+150
+00:09:18,838 --> 00:09:21,806
+iar niciuna dintre acuzațiile ei nu a fost probată în instanță.
+
+151
+00:09:22,506 --> 00:09:27,729
+Și, din ce arată informațiile publice, Coinkite nu a anunțat niciun fond de despăgubire.
+
+152
+00:09:27,769 --> 00:09:30,150
+Goodman nu se bazează pe proces.
+
+153
+00:09:32,850 --> 00:09:37,132
+CEO-ul Coinkite spune că defectul a afectat circa 0,17% dintre utilizatori.
+
+154
+00:09:37,172 --> 00:09:42,011
+Cel mai nou firmware îl obligă acum pe fiecare proprietar să adauge propriul hazard când
+
+155
+00:09:42,051 --> 00:09:42,915
+își creează un seed.
+
+156
+00:09:45,615 --> 00:09:48,820
+Există un grup pe care Coinkite nu îl consideră în pericol din cauza acestui bug:
+
+157
+00:09:48,860 --> 00:09:52,745
+proprietarii care au adăugat cel puțin 50 de aruncări proprii cu zarul când și-au creat seed-ul.
+
+158
+00:09:53,245 --> 00:09:55,216
+Cei care n-au lăsat totul pe seama dispozitivului.
+
+159
+00:09:56,115 --> 00:09:58,737
+Caseta de valori n-a fost deschisă niciodată.
+
+160
+00:09:59,237 --> 00:10:01,545
+Dispozitivele dinăuntru n-au fost niciodată sparte.
+
+161
+00:10:02,046 --> 00:10:05,026
+Doar că nu și-au cerut niciodată seed-ul de la generatorul hardware.
+
+162
+00:10:05,626 --> 00:10:09,385
+Dacă ai creat un seed pe un Coldcard afectat, citește avertismentul Coinkite.
+
+163
+00:10:09,885 --> 00:10:13,666
+Coinkite spune: consideră-l compromis și mută-te pe un seed nou.
+
+164
+00:10:14,766 --> 00:10:17,127
+Și cei 1.082 de bitcoini din primul val?
+
+165
+00:10:17,167 --> 00:10:21,855
+Potrivit celor mai recente urmăriri publice, stau încă acolo unde i-a lăsat hoțul.
+
+166
+00:10:22,655 --> 00:10:26,655
+Iar undeva, în evidențele unei companii de date, s-ar putea să existe un nume.
+
+167
+00:10:27,855 --> 00:10:29,370
+Acesta a fost Siphon Files.

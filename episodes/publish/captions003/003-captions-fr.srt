@@ -1,0 +1,667 @@
+1
+00:00:01,200 --> 00:00:03,136
+Une chambre forte. Un coffre bancaire.
+
+2
+00:00:03,176 --> 00:00:07,845
+À l'intérieur, trois petits appareils qui n'ont jamais été connectés à Internet.
+
+3
+00:00:10,945 --> 00:00:16,603
+Dans la nuit du 29 juillet, personne n'a ouvert ce coffre. Personne n'a touché ces appareils.
+
+4
+00:00:17,503 --> 00:00:20,470
+En sept minutes, les bitcoins qu'ils protégeaient avaient disparu.
+
+5
+00:00:23,370 --> 00:00:28,033
+En cinq jours, environ 116 millions de dollars avaient été volés de la même façon.
+
+6
+00:00:28,933 --> 00:00:32,681
+La faille derrière tout ça dormait dans du code public depuis plus de cinq ans.
+
+7
+00:00:33,581 --> 00:00:36,350
+Et le premier voleur a peut-être commis sa propre erreur.
+
+8
+00:00:42,001 --> 00:00:45,371
+Je suis Thomas Archer, le narrateur IA de Siphon Files.
+
+9
+00:00:45,871 --> 00:00:47,592
+Tout ce que vous entendrez est sourcé.
+
+10
+00:00:47,632 --> 00:00:49,192
+La liste est dans la description.
+
+11
+00:00:49,792 --> 00:00:52,439
+Voici l'histoire d'une serrure que personne n'a crochetée.
+
+12
+00:00:52,938 --> 00:00:55,166
+Quelqu'un a simplement trouvé la combinaison.
+
+13
+00:00:58,266 --> 00:01:00,866
+Jonathan Goodman est un entrepreneur de Toronto.
+
+14
+00:01:00,906 --> 00:01:04,950
+D'après lui, il a investi plus d'un million de dollars en bitcoin.
+
+15
+00:01:05,650 --> 00:01:08,359
+Alors il fait ce que recommandent les guides de sécurité.
+
+16
+00:01:08,399 --> 00:01:12,820
+Il achète un portefeuille matériel : une Coldcard, fabriquée par une société canadienne, Coinkite.
+
+17
+00:01:13,421 --> 00:01:16,814
+À la configuration, elle vous donne une liste de 12 ou 24 mots.
+
+18
+00:01:16,854 --> 00:01:18,327
+Ces mots, c'est l'argent.
+
+19
+00:01:18,367 --> 00:01:21,742
+Quiconque les possède peut dépenser vos bitcoins, depuis n'importe où.
+
+20
+00:01:22,542 --> 00:01:23,711
+Il en achète trois.
+
+21
+00:01:23,751 --> 00:01:28,163
+Il ne montre ses mots à personne et les grave dans du métal, en sauvegarde.
+
+22
+00:01:28,203 --> 00:01:30,196
+Les appareils ne touchent jamais Internet.
+
+23
+00:01:30,236 --> 00:01:32,654
+Ils vont dans un coffre, à sa banque.
+
+24
+00:01:33,555 --> 00:01:37,655
+Mais il y a une chose qu'il ne peut pas vérifier lui-même : comment ces mots ont été choisis.
+
+25
+00:01:40,354 --> 00:01:42,672
+Les mots doivent être impossibles à deviner.
+
+26
+00:01:42,712 --> 00:01:46,929
+L'appareil les choisit donc au pur hasard, avec un composant conçu pour une seule tâche :
+
+27
+00:01:46,969 --> 00:01:48,407
+produire des nombres aléatoires.
+
+28
+00:01:49,007 --> 00:01:52,900
+Bien fait, il existe tellement de listes de mots possibles que personne ne pourrait
+
+29
+00:01:52,940 --> 00:01:53,755
+toutes les parcourir.
+
+30
+00:01:56,355 --> 00:01:59,657
+Mais en mars 2021, Coinkite publie une mise à jour du firmware.
+
+31
+00:01:59,697 --> 00:02:05,031
+Elle passe à la même cryptographie que Bitcoin Core, via une nouvelle bibliothèque.
+
+32
+00:02:08,531 --> 00:02:10,670
+La nouvelle bibliothèque a besoin de nombres aléatoires.
+
+33
+00:02:10,710 --> 00:02:15,264
+Et le code qui répond à sa demande peut fonctionner de deux façons : lire le composant
+
+34
+00:02:15,304 --> 00:02:19,014
+ou lancer un simple substitut logiciel. Un seul réglage décide lequel.
+
+35
+00:02:19,714 --> 00:02:24,193
+Coinkite le met à zéro, croyant ainsi tout désactiver. Ce n'est pas le cas.
+
+36
+00:02:24,233 --> 00:02:26,006
+Zéro veut dire : utiliser le substitut.
+
+37
+00:02:26,705 --> 00:02:29,968
+Et il y a un contrôle de sécurité dans le code, conçu exactement pour ça.
+
+38
+00:02:30,008 --> 00:02:33,101
+Si le réglage manque, la compilation s'arrête, avec un message.
+
+39
+00:02:35,801 --> 00:02:40,453
+Mais le contrôle vérifie seulement que le réglage existe. Il existe. Il vaut zéro.
+
+40
+00:02:40,493 --> 00:02:41,571
+Le contrôle passe.
+
+41
+00:02:42,572 --> 00:02:44,091
+Imaginez un inspecteur de détecteurs de fumée.
+
+42
+00:02:44,590 --> 00:02:46,652
+Il vérifie qu'il y a un détecteur au plafond.
+
+43
+00:02:47,152 --> 00:02:48,792
+Il ne vérifie jamais qu'il est allumé.
+
+44
+00:02:51,492 --> 00:02:56,548
+Dès lors, les anciens modèles Mk2 et Mk3 génèrent leurs mots avec le substitut.
+
+45
+00:02:56,588 --> 00:02:59,433
+Il repose sur un identifiant d'usine fixe et quelques minuteurs.
+
+46
+00:02:59,473 --> 00:03:01,315
+Rien là-dedans n'est vraiment secret.
+
+47
+00:03:01,915 --> 00:03:05,934
+Coinkite l'estime plus tard à environ 40 bits de hasard réel.
+
+48
+00:03:05,974 --> 00:03:08,107
+Une vraie seed en a au moins 128.
+
+49
+00:03:08,907 --> 00:03:13,060
+Quarante bits, c'est environ mille milliards de possibilités. Ça paraît beaucoup.
+
+50
+00:03:13,560 --> 00:03:16,763
+Pour un ordinateur qui devine hors ligne, c'est une recherche qui aboutit.
+
+51
+00:03:17,563 --> 00:03:19,871
+Les modèles récents s'en sortent mieux, avec environ 72 bits.
+
+52
+00:03:19,911 --> 00:03:21,673
+Toujours loin d'une vraie seed,
+
+53
+00:03:21,713 --> 00:03:25,986
+même si, à ce jour, rien de public ne montre que l'un d'eux ait été vidé lors de ces
+
+54
+00:03:26,026 --> 00:03:26,626
+attaques.
+
+55
+00:03:27,063 --> 00:03:30,507
+Le générateur matériel est toujours là, dans chaque appareil.
+
+56
+00:03:30,547 --> 00:03:34,385
+Le rapport technique de Coinkite admet plus tard qu'il était utilisé…
+
+57
+00:03:37,286 --> 00:03:39,663
+Vous savez donc maintenant quelque chose que Goodman ignore.
+
+58
+00:03:39,703 --> 00:03:44,193
+Ses mots n'ont jamais été vraiment aléatoires. Et le code est public. Tout le monde peut le lire.
+
+59
+00:03:44,793 --> 00:03:48,746
+Pendant cinq ans, des propriétaires comme lui achètent l'appareil, notent leurs mots
+
+60
+00:03:48,786 --> 00:03:49,854
+et les mettent sous clé.
+
+61
+00:03:50,554 --> 00:03:56,260
+Le PDG de Coinkite affirme que l'entreprise a payé des audits de sécurité externes en 2022 et 2024.
+
+62
+00:03:56,300 --> 00:04:01,216
+Pourtant, Coinkite dit avoir ignoré le bug jusqu'au jour du vol.
+
+63
+00:04:03,816 --> 00:04:08,756
+Puis, quelques semaines avant le vol, Coinkite fait passer son code critique à une revue par IA.
+
+64
+00:04:11,556 --> 00:04:13,062
+Mais quelqu'un d'autre le trouve avant.
+
+65
+00:04:13,862 --> 00:04:17,672
+Coinkite dit devoir supposer que quelqu'un a utilisé l'IA pour le trouver.
+
+66
+00:04:18,172 --> 00:04:20,774
+C'est l'hypothèse de Coinkite. Elle n'a pas été prouvée.
+
+67
+00:04:21,373 --> 00:04:24,096
+Quoi qu'il en soit, la méthode n'avait besoin d'aucun appareil.
+
+68
+00:04:24,596 --> 00:04:28,043
+Deviner une seed. Calculer ses adresses. Vérifier la blockchain.
+
+69
+00:04:28,643 --> 00:04:30,901
+Une correspondance, c'est la clé, et l'argent avec.
+
+70
+00:04:34,301 --> 00:04:37,450
+À Toronto, il est neuf heures dix, un mercredi soir.
+
+71
+00:04:37,490 --> 00:04:39,321
+Goodman est parti dans son chalet.
+
+72
+00:04:39,920 --> 00:04:43,793
+La première transaction quitte une adresse créée sur une Coldcard. Puis une autre.
+
+73
+00:04:43,833 --> 00:04:44,584
+Puis des centaines.
+
+74
+00:04:45,184 --> 00:04:48,880
+Selon Chainalysis, le voleur s'attaque d'abord aux plus gros portefeuilles.
+
+75
+00:04:48,920 --> 00:04:51,551
+Environ 30 millions de dollars dans les dix premières minutes.
+
+76
+00:04:52,151 --> 00:04:54,777
+Et ces transactions ont quelque chose d'étrange.
+
+77
+00:04:54,817 --> 00:04:59,010
+Elles sont toutes construites pareil : les mêmes frais, et chaque pièce raflée jusqu'à la dernière,
+
+78
+00:04:59,050 --> 00:05:00,357
+sans rien laisser.
+
+79
+00:05:00,958 --> 00:05:02,183
+Retenez ce détail.
+
+80
+00:05:03,182 --> 00:05:04,406
+Puis vient le tour de Goodman.
+
+81
+00:05:05,006 --> 00:05:09,997
+21 h 36. Le premier de ses trois portefeuilles se vide. Puis le deuxième.
+
+82
+00:05:10,037 --> 00:05:12,396
+À 21 h 43, le troisième a disparu aussi.
+
+83
+00:05:12,436 --> 00:05:15,145
+Environ 1,6 million de dollars canadiens.
+
+84
+00:05:16,046 --> 00:05:17,942
+À 21 h 51, la première vague s'arrête.
+
+85
+00:05:17,982 --> 00:05:22,177
+En 41 minutes, près de mille deux cents adresses ont été vidées.
+
+86
+00:05:22,977 --> 00:05:24,407
+Et Goodman ne se doute de rien.
+
+87
+00:05:27,507 --> 00:05:31,645
+Dans les heures qui suivent, on signale des fonds qui quittent des portefeuilles hors ligne.
+
+88
+00:05:31,685 --> 00:05:35,982
+Des ingénieurs de Block, l'entreprise derrière le portefeuille Bitkey, décortiquent le firmware.
+
+89
+00:05:36,022 --> 00:05:39,460
+Avant la fin de la journée, eux et d'autres chercheurs trouvent la cause.
+
+90
+00:05:40,060 --> 00:05:44,951
+Coinkite publie sa première alerte : les seeds créées avec le firmware concerné sont en danger.
+
+91
+00:05:44,991 --> 00:05:48,239
+Déplacez vos fonds. À ce moment-là, la première vague est terminée depuis longtemps.
+
+92
+00:05:48,939 --> 00:05:53,587
+Le 31 juillet, Goodman est avec sa famille dans une bibliothèque publique quand il voit
+
+93
+00:05:53,627 --> 00:05:58,002
+sur Facebook le post d'un ami : si vous utilisez une Coldcard, déplacez votre argent maintenant.
+
+94
+00:06:00,902 --> 00:06:03,970
+Il vérifie. Ses bitcoins ont disparu depuis mercredi soir.
+
+95
+00:06:06,670 --> 00:06:09,314
+Il rentre à Toronto pour porter plainte à la police
+
+96
+00:06:09,354 --> 00:06:12,202
+et alerter la Commission des valeurs mobilières de l'Ontario.
+
+97
+00:06:12,802 --> 00:06:15,903
+On lui demande si quelqu'un est entré dans son coffre.
+
+98
+00:06:16,603 --> 00:06:20,716
+Personne. Et pour tous ceux qui ont encore une seed créée de la même façon,
+
+99
+00:06:20,756 --> 00:06:23,582
+une mise à jour du firmware ne sert à rien. Elle corrige les nouvelles seeds.
+
+100
+00:06:23,622 --> 00:06:26,605
+Une seed faible déjà notée reste faible.
+
+101
+00:06:29,505 --> 00:06:31,489
+Voici le côté cruel d'une alerte publique.
+
+102
+00:06:31,989 --> 00:06:34,828
+Elle atteint les propriétaires et les voleurs au même moment.
+
+103
+00:06:37,528 --> 00:06:41,109
+La deuxième vague suit. La troisième court du vendredi au samedi.
+
+104
+00:06:41,149 --> 00:06:42,718
+Une quatrième commence le lundi.
+
+105
+00:06:43,318 --> 00:06:48,334
+Galaxy Research compte plus tard au moins 15 attaquants distincts. Il n'y a plus un seul voleur.
+
+106
+00:06:48,374 --> 00:06:50,481
+C'est une foule qui exploite la même faiblesse.
+
+107
+00:06:51,081 --> 00:06:55,209
+Mais lors de la quatrième vague, les transactions des voleurs attendent d'être confirmées.
+
+108
+00:06:55,249 --> 00:06:58,883
+D'ici là, quiconque accepte de payer des frais plus élevés peut les remplacer.
+
+109
+00:06:59,483 --> 00:07:01,664
+Alors un propriétaire, Will Owens, contre-attaque.
+
+110
+00:07:01,704 --> 00:07:05,757
+Il laisse une petite somme en appât, attend que le bot la prenne,
+
+111
+00:07:05,797 --> 00:07:08,018
+et surenchérit. Il récupère son appât.
+
+112
+00:07:08,718 --> 00:07:13,091
+Plus tard, des white hats bénévoles retirent environ 52 bitcoins de portefeuilles exposés
+
+113
+00:07:13,131 --> 00:07:15,751
+pour les placer dans une fiducie créée pour les rendre aux victimes.
+
+114
+00:07:15,791 --> 00:07:20,506
+En septembre, la fiducie rend plus de 20 bitcoins à un propriétaire vérifié.
+
+115
+00:07:21,106 --> 00:07:24,770
+Une partie des fonds volés part vers des mixeurs, conçus pour brouiller la piste.
+
+116
+00:07:24,810 --> 00:07:27,971
+D'après les derniers décomptes publics, l'essentiel du reste n'a pas bougé.
+
+117
+00:07:28,571 --> 00:07:33,322
+Quand les vagues ralentissent, environ 1 816 bitcoins ont été volés,
+
+118
+00:07:33,362 --> 00:07:35,514
+sur plus de 5 200 adresses.
+
+119
+00:07:36,315 --> 00:07:39,396
+Mais la plus grosse part, la première vague, n'a toujours pas bougé,
+
+120
+00:07:39,436 --> 00:07:41,588
+selon le dernier suivi public.
+
+121
+00:07:42,788 --> 00:07:46,431
+Vous vous souvenez du détail ? Chaque transaction de la première vague se ressemblait.
+
+122
+00:07:46,931 --> 00:07:50,257
+Galaxy n'a trouvé personne d'autre utilisant ce schéma le mois précédent.
+
+123
+00:07:50,757 --> 00:07:53,637
+La première vague pouvait donc être suivie comme une seule opération.
+
+124
+00:07:54,137 --> 00:07:56,843
+Et les enquêteurs ont remarqué autre chose.
+
+125
+00:07:57,543 --> 00:07:59,073
+Chaque essai doit être vérifié.
+
+126
+00:07:59,113 --> 00:08:02,685
+Pour savoir quelles adresses devinées contiennent de l'argent, il faut les consulter,
+
+127
+00:08:02,725 --> 00:08:03,563
+encore et encore.
+
+128
+00:08:04,162 --> 00:08:07,899
+Selon les enquêteurs de Block, l'opérateur de la première vague semble l'avoir fait via
+
+129
+00:08:07,939 --> 00:08:10,488
+un compte payant chez un fournisseur connu de données blockchain.
+
+130
+00:08:11,088 --> 00:08:12,638
+Ils ont contacté le fournisseur.
+
+131
+00:08:12,678 --> 00:08:17,238
+Ses journaux internes, disent-ils, correspondaient à l'attaque « avec une précision extraordinaire » :
+
+132
+00:08:17,278 --> 00:08:20,288
+le nombre, le moment et l'ordre des requêtes.
+
+133
+00:08:20,888 --> 00:08:23,675
+Sur la blockchain, le voleur n'était qu'une suite d'adresses.
+
+134
+00:08:24,175 --> 00:08:26,290
+Mais un compte payant laisse généralement des traces.
+
+135
+00:08:27,090 --> 00:08:29,215
+Les informations ont été transmises aux autorités.
+
+136
+00:08:29,255 --> 00:08:33,546
+Alex Thorn, de Galaxy, affirme que l'identité de l'attaquant de la première vague « est peut-être connue
+
+137
+00:08:33,586 --> 00:08:34,290
+des autorités ».
+
+138
+00:08:34,890 --> 00:08:39,464
+Mais, au moment où nous faisons cette vidéo, le FBI n'a confirmé ni suspect, ni arrestation,
+
+139
+00:08:39,504 --> 00:08:40,502
+ni récupération.
+
+140
+00:08:44,102 --> 00:08:47,552
+À la date de cette vidéo, personne n'a donc été nommé publiquement.
+
+141
+00:08:47,592 --> 00:08:50,198
+TRM Labs n'attribue le vol à personne.
+
+142
+00:08:50,238 --> 00:08:54,476
+Coinkite dit que ses avocats travaillent avec les autorités pour identifier les
+
+143
+00:08:54,516 --> 00:08:55,191
+responsables.
+
+144
+00:08:55,891 --> 00:08:57,997
+En ligne, certains parlent de complicité interne.
+
+145
+00:08:58,037 --> 00:09:02,512
+À ce jour, rien de public ne le prouve, et personne n'a été accusé.
+
+146
+00:09:03,212 --> 00:09:07,957
+En septembre, un propriétaire de Coldcard a déposé en Ontario une demande d'action collective contre
+
+147
+00:09:07,997 --> 00:09:09,713
+Coinkite et ses cofondateurs.
+
+148
+00:09:09,753 --> 00:09:13,892
+Elle allègue que l'entreprise savait dès mai 2025 que sa génération de seeds était faible.
+
+149
+00:09:13,932 --> 00:09:18,798
+Selon les dernières informations, aucun juge ne l'a encore autorisée comme action collective,
+
+150
+00:09:18,838 --> 00:09:21,806
+et aucune de ses allégations n'a été examinée par un tribunal.
+
+151
+00:09:22,506 --> 00:09:27,729
+Et, d'après les informations publiques, Coinkite n'a annoncé aucun fonds d'indemnisation.
+
+152
+00:09:27,769 --> 00:09:30,150
+Goodman ne compte pas sur le procès.
+
+153
+00:09:32,850 --> 00:09:37,132
+Le PDG de Coinkite affirme que la faille a touché environ 0,17 % de ses utilisateurs.
+
+154
+00:09:37,172 --> 00:09:42,011
+Le firmware le plus récent oblige désormais chaque propriétaire à ajouter son propre hasard
+
+155
+00:09:42,051 --> 00:09:42,915
+quand il crée une seed.
+
+156
+00:09:45,615 --> 00:09:48,820
+Il y a un groupe que Coinkite ne considère pas exposé à ce bug :
+
+157
+00:09:48,860 --> 00:09:52,745
+les propriétaires qui ont ajouté au moins 50 lancers de dés en créant leur seed.
+
+158
+00:09:53,245 --> 00:09:55,216
+Ceux qui n'ont pas tout laissé à l'appareil.
+
+159
+00:09:56,115 --> 00:09:58,737
+Ce coffre n'a jamais été ouvert.
+
+160
+00:09:59,237 --> 00:10:01,545
+Les appareils à l'intérieur n'ont jamais été piratés.
+
+161
+00:10:02,046 --> 00:10:05,026
+Ils n'ont juste jamais demandé la seed à leur générateur aléatoire.
+
+162
+00:10:05,626 --> 00:10:09,385
+Si vous avez créé une seed sur une Coldcard concernée, lisez l'alerte de Coinkite.
+
+163
+00:10:09,885 --> 00:10:13,666
+Coinkite dit : considérez-la comme compromise et passez à une nouvelle seed.
+
+164
+00:10:14,766 --> 00:10:17,127
+Et les 1 082 bitcoins de la première vague ?
+
+165
+00:10:17,167 --> 00:10:21,855
+D'après le dernier suivi public, ils sont toujours là où le voleur les a laissés.
+
+166
+00:10:22,655 --> 00:10:26,655
+Et quelque part, dans les registres d'une société de données, il y a peut-être un nom.
+
+167
+00:10:27,855 --> 00:10:29,370
+C'était Siphon Files.

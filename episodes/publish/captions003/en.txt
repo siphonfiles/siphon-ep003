@@ -1,0 +1,167 @@
+A bank vault. A safe-deposit box.
+Inside it, three small devices that have never been connected to the internet.
+On the night of July 29th, nobody opened that box. Nobody touched those devices.
+In seven minutes, the bitcoin they protected was gone.
+Within five days, about 116 million dollars had been taken the same way.
+The flaw behind it had been sitting in public code for more than five years.
+And the first thief may have made one mistake of their own.
+I'm Thomas Archer, the AI narrator of Siphon Files.
+Every claim you'll hear is sourced.
+The list is in the description.
+This is the story of a lock that nobody picked.
+Somebody simply worked out the combination.
+Jonathan Goodman is an entrepreneur in Toronto.
+By his own account, he has put more than a million dollars into bitcoin.
+So he does what the security guides tell you to do.
+He buys a hardware wallet: a Coldcard, made by a Canadian company called Coinkite.
+When you set one up, it gives you a list of 12 or 24 words.
+Those words are the money.
+Anyone who has them can spend your bitcoin, from anywhere.
+He buys three of them.
+He never shares his words with anyone, and he stamps them into metal as a backup.
+The devices never touch the internet.
+They go into a safe-deposit box at his bank.
+But there's one thing he can't check for himself: how those words were chosen.
+The words have to be impossible to guess.
+So the device picks them by pure chance, using hardware built for one job:
+producing random numbers.
+Done properly, there are so many possible word lists that nobody could ever search
+through them all.
+But in March 2021, Coinkite ships a firmware update.
+It switches to the same cryptography that Bitcoin Core uses, through a new library.
+The new library needs random numbers.
+And the code that answers its request can work in two ways: read the hardware,
+or run a simple software substitute. One setting decides which.
+Coinkite sets it to zero, believing that turns the whole thing off. It doesn't.
+Zero means: use the substitute.
+And there's a safety check in the code, built for exactly this.
+If the setting is missing, the build stops, with a message.
+But the check only asks whether the setting exists. It does. It says zero.
+The check passes.
+Think of a smoke alarm inspector.
+He checks that there's an alarm on the ceiling.
+He never checks that it's switched on.
+So from then on, the older Mk2 and Mk3 models make their words from the substitute.
+It runs on a fixed factory ID and a few timers.
+Nothing in it is truly secret.
+Coinkite later puts it at about 40 bits of real randomness.
+A proper seed has at least 128.
+Forty bits is about a trillion possibilities. That sounds like a lot.
+For a computer guessing offline, it's a search that ends.
+Newer models fare better, at about 72 bits.
+Still far short of a proper seed,
+though so far there's no public evidence that any of them were drained in these
+attacks.
+The hardware generator is still there, inside every device.
+Coinkite's own technical write-up later admits it was being used…
+So now you know something Goodman doesn't.
+His words were never truly random. And the code is public. Anyone can read it.
+For five years, owners like him buy the device, write their words down,
+and lock them away.
+Coinkite's CEO says the company paid for outside security reviews in 2022 and 2024.
+Yet Coinkite says it was unaware of the bug until the day of the theft.
+Then, a few weeks before the theft, Coinkite runs an AI review of its critical code.
+But someone else finds it first.
+Coinkite says it must assume that someone used AI to find it.
+That's Coinkite's assumption. It hasn't been proven.
+Either way, the method didn't need a single device.
+Guess a seed. Work out its addresses. Check the blockchain.
+A match means the key, and the money with it.
+In Toronto, it's ten past nine on a Wednesday evening.
+Goodman is away at his cottage.
+The first transaction leaves an address made on a Coldcard. Then another.
+Then hundreds.
+According to Chainalysis, the thief goes for the biggest wallets first.
+About 30 million dollars in the first ten minutes.
+And there's something odd about these transactions.
+They're all built the same way: the same fee rate, and every last coin swept out,
+with nothing left behind.
+Hold on to that detail.
+Then it reaches Goodman.
+9:36 pm. The first of his three wallets empties. Then the second.
+By 9:43, the third is gone too.
+About 1.6 million Canadian dollars.
+At 9:51, the first wave stops.
+In 41 minutes, nearly twelve hundred addresses have been emptied.
+And Goodman has no idea.
+Over the next few hours, reports start to appear of coins leaving cold wallets.
+Engineers at Block, the company behind the Bitkey wallet, pull the firmware apart.
+Before the day is out, they and other researchers find the cause.
+Coinkite publishes its first warning: seeds made on affected firmware are at risk.
+Move your funds. By then, the first wave is long over.
+On July 31st, Goodman is at a public library with his family when he sees a
+friend's post on Facebook: if you use a Coldcard, move your money now.
+He checks. His bitcoin has been gone since Wednesday night.
+He heads back to Toronto to file a police report,
+and a report with the Ontario Securities Commission.
+People ask him whether someone got into his safe-deposit box.
+Nobody did. And for anyone else still holding a seed made the same way,
+a firmware update won't help. It fixes new seeds.
+A weak seed that's already written down stays weak.
+Here's the cruel part of a public warning.
+It reaches the owners and the thieves at the same moment.
+Wave two follows. Wave three runs from Friday into Saturday.
+A fourth starts on Monday.
+Galaxy Research later counts at least 15 separate attackers. Not one thief any more.
+A crowd, working the same weakness.
+But in the fourth wave, the thieves' transactions sit waiting to be confirmed.
+Until they are, anyone willing to pay a higher fee can replace them.
+So one owner, Will Owens, fights back.
+He leaves a small amount behind as bait, waits for the bot to take it,
+and outbids it. He wins his bait back.
+Later, volunteer white hats move about 52 bitcoin out of exposed wallets,
+into a trust set up to return it to victims.
+In September, the trust hands more than 20 bitcoin back to one verified owner.
+Some of the stolen coins head for mixers, services built to blur the trail.
+By the latest public tallies, much of the rest is still sitting.
+By the time the waves slow down, about 1,816 bitcoin have been taken,
+from more than 5,200 addresses.
+But the biggest piece, the first wave, still hasn't moved,
+according to the latest public tracking.
+Remember that detail? Every transaction in wave one looked the same.
+Galaxy found no one else using that pattern in the month before.
+So wave one could be traced as a single operation.
+And investigators noticed something else about it.
+Every guess has to be checked.
+To know which guessed addresses hold money, you have to look them up,
+again and again.
+Block's investigators say the first-wave operator appears to have done that through
+a paid account at a well-known blockchain data provider.
+They contacted the provider.
+Its internal logs, they say, matched the attack "with extraordinary specificity":
+the number, the timing and the order of the requests.
+On the blockchain, the thief was just a string of addresses.
+But a paid account usually leaves records.
+The information went to law enforcement.
+Galaxy's Alex Thorn says the first-wave attacker's identity "may be known to law
+enforcement".
+But as we make this video, the FBI has not confirmed a suspect, an arrest,
+or any recovery.
+So, at the time of this video, no one has been publicly named.
+TRM Labs doesn't attribute the theft to anyone.
+Coinkite says its lawyers are working with law enforcement to identify those
+responsible.
+Online, some call it an inside job.
+So far, there's no public evidence for that, and no one has been accused.
+In September, a Coldcard owner filed a proposed class action in Ontario against
+Coinkite and its co-founders.
+It alleges the company knew its seed generation was weak by May 2025.
+As of the latest reports, a judge hasn't even certified it as a class action yet,
+and none of its claims have been tested in court.
+And, as far as public reports show, Coinkite hasn't announced any compensation fund.
+Goodman isn't counting on the lawsuit.
+Coinkite's CEO says the flaw affected about 0.17 percent of its users.
+The newest firmware now makes every owner add randomness of their own when they
+create a seed.
+There's one group Coinkite doesn't consider at risk from this bug:
+owners who added at least 50 dice rolls of their own when they made their seed.
+The ones who didn't leave it all to the device.
+That safe-deposit box was never opened.
+The devices inside were never hacked.
+They just never asked their random-number hardware for the seed.
+If you made a seed on an affected Coldcard, read Coinkite's advisory.
+Coinkite says: treat it as compromised, and move to a new seed.
+And the 1,082 bitcoin from the first wave?
+As of the latest public tracking, they're still sitting where the thief left them.
+And somewhere, in a data company's records, there may be a name.
+This was Siphon Files.

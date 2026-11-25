@@ -1,0 +1,167 @@
+Ein Banktresor. Ein Schließfach.
+Darin drei kleine Geräte, die nie mit dem Internet verbunden waren.
+In der Nacht des 29. Juli hat niemand das Fach geöffnet. Niemand hat die Geräte berührt.
+In sieben Minuten waren die Bitcoin, die sie schützten, weg.
+Innerhalb von fünf Tagen wurden auf gleiche Weise rund 116 Millionen Dollar gestohlen.
+Die Schwachstelle dahinter lag seit über fünf Jahren in öffentlichem Code.
+Und der erste Dieb hat vielleicht selbst einen Fehler gemacht.
+Ich bin Thomas Archer, der KI-Erzähler von Siphon Files.
+Jede Aussage hier ist belegt.
+Die Liste steht in der Beschreibung.
+Das ist die Geschichte eines Schlosses, das niemand geknackt hat.
+Jemand hat einfach die Kombination herausgefunden.
+Jonathan Goodman ist Unternehmer in Toronto.
+Nach eigenen Angaben hat er über eine Million Dollar in Bitcoin gesteckt.
+Also tut er, was Sicherheitsratgeber empfehlen.
+Er kauft eine Hardware-Wallet: eine Coldcard vom kanadischen Hersteller Coinkite.
+Bei der Einrichtung erhält man eine Liste mit 12 oder 24 Wörtern.
+Diese Wörter sind das Geld.
+Wer sie hat, kann deine Bitcoin ausgeben, von überall.
+Er kauft drei Stück.
+Er zeigt seine Wörter niemandem und stanzt sie als Backup in Metall.
+Die Geräte kommen nie mit dem Internet in Berührung.
+Sie landen in einem Schließfach bei seiner Bank.
+Aber eines kann er nicht selbst prüfen: wie diese Wörter ausgewählt wurden.
+Die Wörter müssen unmöglich zu erraten sein.
+Also wählt das Gerät sie rein zufällig aus, mit Hardware, die nur eine Aufgabe hat:
+Zufallszahlen zu erzeugen.
+Richtig gemacht, gibt es so viele mögliche Wortlisten, dass niemand sie je alle
+durchsuchen könnte.
+Doch im März 2021 veröffentlicht Coinkite ein Firmware-Update.
+Es wechselt über eine neue Bibliothek zur selben Kryptografie, die Bitcoin Core nutzt.
+Die neue Bibliothek braucht Zufallszahlen.
+Und der Code, der diese Anfrage beantwortet, kann auf zwei Arten arbeiten: die Hardware auslesen
+oder einen einfachen Software-Ersatz laufen lassen. Eine einzige Einstellung entscheidet.
+Coinkite setzt sie auf null, im Glauben, das schalte alles ab. Tut es nicht.
+Null bedeutet: Nimm den Ersatz.
+Und im Code gibt es eine Sicherheitsprüfung, genau dafür gebaut.
+Fehlt die Einstellung, bricht der Build mit einer Meldung ab.
+Aber die Prüfung fragt nur, ob die Einstellung existiert. Sie existiert. Sie steht auf null.
+Die Prüfung ist bestanden.
+Stell dir einen Prüfer für Rauchmelder vor.
+Er prüft, ob ein Melder an der Decke hängt.
+Ob er eingeschaltet ist, prüft er nie.
+Ab da erzeugen die älteren Modelle Mk2 und Mk3 ihre Wörter mit dem Ersatz.
+Der beruht auf einer festen Werks-ID und ein paar Timern.
+Nichts daran ist wirklich geheim.
+Coinkite beziffert das später auf rund 40 Bit echten Zufall.
+Ein richtiger Seed hat mindestens 128.
+Vierzig Bit sind etwa eine Billion Möglichkeiten. Das klingt nach viel.
+Für einen Computer, der offline rät, ist es eine Suche mit Ende.
+Neuere Modelle schneiden besser ab, mit etwa 72 Bit.
+Immer noch weit unter einem richtigen Seed,
+auch wenn es bisher keine öffentlichen Belege gibt, dass eines davon bei diesen Angriffen
+geleert wurde.
+Der Hardware-Generator ist noch da, in jedem Gerät.
+Coinkites eigener technischer Bericht räumt später ein, er sei benutzt worden …
+Jetzt weißt du also etwas, das Goodman nicht weiß.
+Seine Wörter waren nie wirklich zufällig. Und der Code ist öffentlich. Jeder kann ihn lesen.
+Fünf Jahre lang kaufen Besitzer wie er das Gerät, schreiben ihre Wörter auf
+und schließen sie weg.
+Laut Coinkites CEO hat die Firma 2022 und 2024 externe Sicherheitsprüfungen bezahlt.
+Trotzdem sagt Coinkite, man habe bis zum Tag des Diebstahls nichts von dem Fehler gewusst.
+Dann, wenige Wochen vor dem Diebstahl, lässt Coinkite seinen kritischen Code von einer KI prüfen.
+Aber jemand anderes findet ihn zuerst.
+Coinkite sagt, man müsse davon ausgehen, dass jemand ihn mit KI gefunden hat.
+Das ist Coinkites Annahme. Bewiesen ist sie nicht.
+So oder so: Die Methode brauchte kein einziges Gerät.
+Einen Seed raten. Seine Adressen berechnen. Die Blockchain prüfen.
+Ein Treffer bedeutet den Schlüssel und damit das Geld.
+In Toronto ist es zehn nach neun an einem Mittwochabend.
+Goodman ist in seinem Ferienhaus.
+Die erste Transaktion verlässt eine auf einer Coldcard erzeugte Adresse. Dann noch eine.
+Dann Hunderte.
+Laut Chainalysis nimmt sich der Dieb zuerst die größten Wallets vor.
+Rund 30 Millionen Dollar in den ersten zehn Minuten.
+Und an diesen Transaktionen ist etwas seltsam.
+Alle sind gleich gebaut: dieselbe Gebühr, und jede Münze wird bis zur letzten abgezogen,
+nichts bleibt zurück.
+Merk dir dieses Detail.
+Dann trifft es Goodman.
+21:36 Uhr. Die erste seiner drei Wallets wird geleert. Dann die zweite.
+Um 21:43 Uhr ist auch die dritte weg.
+Rund 1,6 Millionen kanadische Dollar.
+Um 21:51 Uhr endet die erste Welle.
+In 41 Minuten wurden fast zwölfhundert Adressen geleert.
+Und Goodman ahnt nichts.
+In den folgenden Stunden tauchen Berichte über Coins auf, die Cold Wallets verlassen.
+Ingenieure von Block, dem Unternehmen hinter der Bitkey-Wallet, nehmen die Firmware auseinander.
+Noch am selben Tag finden sie und andere Forscher die Ursache.
+Coinkite veröffentlicht die erste Warnung: Seeds von der betroffenen Firmware sind gefährdet.
+Bringt eure Guthaben in Sicherheit. Da ist die erste Welle längst vorbei.
+Am 31. Juli ist Goodman mit seiner Familie in einer öffentlichen Bibliothek, als er auf
+Facebook den Post eines Freundes sieht: Wer eine Coldcard nutzt, sollte sein Geld sofort bewegen.
+Er sieht nach. Seine Bitcoin sind seit Mittwochnacht weg.
+Er fährt zurück nach Toronto, um Anzeige bei der Polizei zu erstatten
+und eine Meldung bei der Ontario Securities Commission zu machen.
+Man fragt ihn, ob jemand an sein Schließfach gekommen ist.
+Niemand. Und wer noch einen Seed hat, der auf dieselbe Weise entstanden ist,
+dem hilft ein Firmware-Update nicht. Es repariert nur neue Seeds.
+Ein schwacher Seed, der schon aufgeschrieben ist, bleibt schwach.
+Das ist das Grausame an einer öffentlichen Warnung.
+Sie erreicht Besitzer und Diebe im selben Moment.
+Es folgt die zweite Welle. Die dritte läuft von Freitag bis Samstag.
+Eine vierte beginnt am Montag.
+Galaxy Research zählt später mindestens 15 verschiedene Angreifer. Kein einzelner Dieb mehr.
+Eine ganze Menge, die dieselbe Schwäche ausnutzt.
+Doch in der vierten Welle warten die Transaktionen der Diebe noch auf Bestätigung.
+Bis dahin kann jeder sie ersetzen, der eine höhere Gebühr zahlt.
+Also wehrt sich ein Besitzer, Will Owens.
+Er lässt einen kleinen Betrag als Köder liegen, wartet, bis der Bot zugreift,
+und überbietet ihn. Er holt sich seinen Köder zurück.
+Später bringen freiwillige White Hats rund 52 Bitcoin aus gefährdeten Wallets
+in einen Treuhandfonds, der sie an die Opfer zurückgeben soll.
+Im September gibt der Fonds über 20 Bitcoin an einen verifizierten Besitzer zurück.
+Ein Teil der gestohlenen Coins geht an Mixer, Dienste, die Spuren verwischen sollen.
+Nach den jüngsten öffentlichen Zählungen liegt ein Großteil des Rests noch still.
+Als die Wellen abflauen, sind rund 1.816 Bitcoin gestohlen,
+von über 5.200 Adressen.
+Aber der größte Teil, die erste Welle, hat sich noch nicht bewegt,
+laut der jüngsten öffentlichen Nachverfolgung.
+Erinnerst du dich an das Detail? Jede Transaktion der ersten Welle sah gleich aus.
+Galaxy fand im Monat davor niemanden sonst, der dieses Muster nutzte.
+Also ließ sich die erste Welle als eine einzige Operation verfolgen.
+Und den Ermittlern fiel noch etwas auf.
+Jeder Rateversuch muss geprüft werden.
+Um zu wissen, welche geratenen Adressen Geld enthalten, muss man sie abfragen,
+immer wieder.
+Laut den Ermittlern von Block hat der Betreiber der ersten Welle das offenbar über
+ein bezahltes Konto bei einem bekannten Blockchain-Datenanbieter getan.
+Sie kontaktierten den Anbieter.
+Dessen interne Logs passten demnach „mit außergewöhnlicher Genauigkeit“ zum Angriff:
+Anzahl, Zeitpunkt und Reihenfolge der Abfragen.
+Auf der Blockchain war der Dieb nur eine Reihe von Adressen.
+Aber ein bezahltes Konto hinterlässt meist Spuren.
+Die Informationen gingen an die Behörden.
+Laut Alex Thorn von Galaxy ist die Identität des Angreifers der ersten Welle „möglicherweise den
+Behörden bekannt“.
+Doch während wir dieses Video machen, hat das FBI keinen Verdächtigen, keine Festnahme und keine
+Rückholung bestätigt.
+Zum Zeitpunkt dieses Videos wurde also niemand öffentlich genannt.
+TRM Labs schreibt den Diebstahl niemandem zu.
+Coinkite sagt, seine Anwälte arbeiten mit den Behörden daran, die Verantwortlichen
+zu identifizieren.
+Im Netz sprechen manche von einem Insider-Job.
+Bisher gibt es dafür keine öffentlichen Belege, und niemand wurde beschuldigt.
+Im September reichte ein Coldcard-Besitzer in Ontario eine geplante Sammelklage gegen
+Coinkite und seine Mitgründer ein.
+Sie behauptet, die Firma habe spätestens im Mai 2025 gewusst, dass ihre Seed-Erzeugung schwach war.
+Nach jüngsten Berichten hat ein Gericht sie noch nicht einmal als Sammelklage zugelassen,
+und keiner ihrer Vorwürfe wurde vor Gericht geprüft.
+Und soweit öffentliche Berichte zeigen, hat Coinkite keinen Entschädigungsfonds angekündigt.
+Goodman setzt nicht auf die Klage.
+Laut Coinkites CEO betraf der Fehler etwa 0,17 % der Nutzer.
+Die neueste Firmware verlangt jetzt von jedem Besitzer eigenen Zufall, wenn er
+einen Seed erstellt.
+Eine Gruppe hält Coinkite durch diesen Fehler nicht für gefährdet:
+Besitzer, die beim Erstellen ihres Seeds mindestens 50 eigene Würfelwürfe hinzugefügt haben.
+Die, die nicht alles dem Gerät überlassen haben.
+Das Schließfach wurde nie geöffnet.
+Die Geräte darin wurden nie gehackt.
+Sie haben ihre Zufallszahlen-Hardware nur nie nach dem Seed gefragt.
+Wer einen Seed auf einer betroffenen Coldcard erstellt hat, sollte Coinkites Warnung lesen.
+Coinkite sagt: Betrachte ihn als kompromittiert und wechsle zu einem neuen Seed.
+Und die 1.082 Bitcoin aus der ersten Welle?
+Laut der jüngsten öffentlichen Nachverfolgung liegen sie noch dort, wo der Dieb sie gelassen hat.
+Und irgendwo, in den Unterlagen einer Datenfirma, steht vielleicht ein Name.
+Das war Siphon Files.

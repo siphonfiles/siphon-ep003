@@ -1,0 +1,167 @@
+Il caveau di una banca. Una cassetta di sicurezza.
+Dentro, tre piccoli dispositivi che non sono mai stati collegati a internet.
+La notte del 29 luglio, nessuno ha aperto quella cassetta. Nessuno ha toccato quei dispositivi.
+In sette minuti, i bitcoin che proteggevano erano spariti.
+In cinque giorni, circa 116 milioni di dollari erano stati sottratti allo stesso modo.
+La falla dietro tutto questo era in codice pubblico da più di cinque anni.
+E il primo ladro potrebbe aver commesso a sua volta un errore.
+Sono Thomas Archer, il narratore IA di Siphon Files.
+Ogni affermazione che sentirete ha una fonte.
+L'elenco è nella descrizione.
+Questa è la storia di una serratura che nessuno ha forzato.
+Qualcuno ha semplicemente scoperto la combinazione.
+Jonathan Goodman è un imprenditore di Toronto.
+Secondo quanto racconta lui stesso, ha investito più di un milione di dollari in bitcoin.
+Così fa quello che consigliano le guide sulla sicurezza.
+Compra un hardware wallet: una Coldcard, prodotta da un'azienda canadese chiamata Coinkite.
+Quando la configuri, ti dà un elenco di 12 o 24 parole.
+Quelle parole sono i soldi.
+Chiunque le abbia può spendere i tuoi bitcoin, da qualsiasi luogo.
+Ne compra tre.
+Non condivide mai le sue parole con nessuno e le incide nel metallo come backup.
+I dispositivi non toccano mai internet.
+Finiscono in una cassetta di sicurezza nella sua banca.
+Ma c'è una cosa che non può controllare da solo: come sono state scelte quelle parole.
+Le parole devono essere impossibili da indovinare.
+Così il dispositivo le sceglie completamente a caso, con un hardware fatto per un solo compito:
+produrre numeri casuali.
+Se fatto bene, gli elenchi di parole possibili sono così tanti che nessuno potrebbe mai
+esaminarli tutti.
+Ma nel marzo 2021, Coinkite rilascia un aggiornamento del firmware.
+Passa alla stessa crittografia usata da Bitcoin Core, tramite una nuova libreria.
+La nuova libreria ha bisogno di numeri casuali.
+E il codice che risponde alla richiesta può funzionare in due modi: leggere l'hardware
+o eseguire un semplice sostituto software. Una sola impostazione decide quale.
+Coinkite la imposta a zero, convinta che così si spenga tutto. Non è così.
+Zero significa: usa il sostituto.
+E nel codice c'è un controllo di sicurezza, pensato proprio per questo.
+Se l'impostazione manca, la compilazione si ferma con un messaggio.
+Ma il controllo verifica solo che l'impostazione esista. Esiste. Dice zero.
+Il controllo è superato.
+Pensate a un ispettore dei rilevatori di fumo.
+Controlla che sul soffitto ci sia un rilevatore.
+Non controlla mai che sia acceso.
+Così, da quel momento, i modelli più vecchi Mk2 e Mk3 generano le parole con il sostituto.
+Si basa su un ID di fabbrica fisso e su qualche timer.
+Niente lì dentro è davvero segreto.
+In seguito Coinkite lo stima in circa 40 bit di vera casualità.
+Un seed corretto ne ha almeno 128.
+Quaranta bit sono circa mille miliardi di possibilità. Sembrano tante.
+Per un computer che tira a indovinare offline, è una ricerca che finisce.
+I modelli più nuovi vanno meglio, con circa 72 bit.
+Comunque molto lontano da un seed corretto,
+anche se, finora, non ci sono prove pubbliche che qualcuno di essi sia stato svuotato in questi
+attacchi.
+Il generatore hardware è ancora lì, in ogni dispositivo.
+Lo stesso documento tecnico di Coinkite ammette poi che veniva usato…
+Quindi ora sapete qualcosa che Goodman non sa.
+Le sue parole non sono mai state davvero casuali. E il codice è pubblico. Chiunque può leggerlo.
+Per cinque anni, proprietari come lui comprano il dispositivo, si annotano le parole
+e le mettono sotto chiave.
+Il CEO di Coinkite dice che l'azienda ha pagato revisioni di sicurezza esterne nel 2022 e nel 2024.
+Eppure Coinkite dice di non aver saputo del bug fino al giorno del furto.
+Poi, qualche settimana prima del furto, Coinkite fa analizzare con l'IA il suo codice critico.
+Ma qualcun altro lo trova per primo.
+Coinkite dice di dover presumere che qualcuno abbia usato l'IA per trovarlo.
+È un'ipotesi di Coinkite. Non è stata dimostrata.
+In ogni caso, il metodo non richiedeva nemmeno un dispositivo.
+Indovina un seed. Calcola i suoi indirizzi. Controlla la blockchain.
+Una corrispondenza significa la chiave, e con essa i soldi.
+A Toronto sono le nove e dieci di un mercoledì sera.
+Goodman è via, nel suo cottage.
+La prima transazione lascia un indirizzo creato su una Coldcard. Poi un'altra.
+Poi centinaia.
+Secondo Chainalysis, il ladro punta prima ai wallet più grandi.
+Circa 30 milioni di dollari nei primi dieci minuti.
+E c'è qualcosa di strano in queste transazioni.
+Sono tutte costruite allo stesso modo: la stessa commissione e ogni moneta portata via fino all'ultima,
+senza lasciare niente.
+Tenete a mente questo dettaglio.
+Poi tocca a Goodman.
+Ore 21:36. Il primo dei suoi tre wallet si svuota. Poi il secondo.
+Alle 21:43 è sparito anche il terzo.
+Circa 1,6 milioni di dollari canadesi.
+Alle 21:51 la prima ondata si ferma.
+In 41 minuti sono stati svuotati quasi milleduecento indirizzi.
+E Goodman non ne ha idea.
+Nelle ore successive iniziano a comparire segnalazioni di monete che escono da cold wallet.
+Gli ingegneri di Block, l'azienda dietro il wallet Bitkey, smontano il firmware.
+Prima della fine della giornata, loro e altri ricercatori trovano la causa.
+Coinkite pubblica il primo avviso: i seed creati con il firmware interessato sono a rischio.
+Spostate i vostri fondi. A quel punto, la prima ondata era finita da tempo.
+Il 31 luglio, Goodman è con la famiglia in una biblioteca pubblica quando vede
+su Facebook il post di un amico: se usi una Coldcard, sposta subito i tuoi soldi.
+Controlla. I suoi bitcoin erano spariti già da mercoledì notte.
+Torna a Toronto per sporgere denuncia alla polizia
+e presentare una segnalazione alla Ontario Securities Commission.
+La gente gli chiede se qualcuno sia entrato nella sua cassetta di sicurezza.
+Nessuno. E per chi ha ancora un seed creato allo stesso modo,
+un aggiornamento del firmware non serve. Corregge i seed nuovi.
+Un seed debole già annotato resta debole.
+Ecco la parte crudele di un avviso pubblico.
+Raggiunge i proprietari e i ladri nello stesso momento.
+Segue la seconda ondata. La terza va da venerdì a sabato.
+Una quarta inizia lunedì.
+In seguito Galaxy Research conta almeno 15 attaccanti diversi. Non più un solo ladro.
+Una folla, che sfrutta la stessa debolezza.
+Ma nella quarta ondata, le transazioni dei ladri restano in attesa di conferma.
+Finché non lo sono, chi paga una commissione più alta può sostituirle.
+Così un proprietario, Will Owens, reagisce.
+Lascia una piccola somma come esca, aspetta che il bot la prenda
+e rilancia. Si riprende la sua esca.
+Più tardi, white hat volontari spostano circa 52 bitcoin da wallet esposti
+in un fondo fiduciario creato per restituirli alle vittime.
+A settembre, il fondo restituisce più di 20 bitcoin a un proprietario verificato.
+Parte delle monete rubate finisce nei mixer, servizi creati per confondere le tracce.
+Secondo gli ultimi conteggi pubblici, gran parte del resto è ancora ferma.
+Quando le ondate rallentano, sono stati sottratti circa 1.816 bitcoin
+da oltre 5.200 indirizzi.
+Ma la parte più grande, la prima ondata, non si è ancora mossa,
+secondo l'ultimo tracciamento pubblico.
+Ricordate quel dettaglio? Ogni transazione della prima ondata era uguale.
+Galaxy non ha trovato nessun altro che usasse quello schema nel mese precedente.
+Così la prima ondata si poteva tracciare come un'unica operazione.
+E gli investigatori hanno notato anche un'altra cosa.
+Ogni tentativo va verificato.
+Per sapere quali indirizzi indovinati contengono soldi, bisogna consultarli
+ancora e ancora.
+Gli investigatori di Block dicono che l'operatore della prima ondata sembra averlo fatto tramite
+un account a pagamento presso un noto fornitore di dati blockchain.
+Hanno contattato il fornitore.
+I suoi log interni, dicono, corrispondevano all'attacco «con straordinaria precisione»:
+il numero, i tempi e l'ordine delle richieste.
+Sulla blockchain, il ladro era solo una serie di indirizzi.
+Ma un account a pagamento di solito lascia tracce.
+Le informazioni sono state passate alle autorità.
+Alex Thorn di Galaxy dice che l'identità dell'attaccante della prima ondata «potrebbe essere nota alle
+autorità».
+Ma, mentre realizziamo questo video, l'FBI non ha confermato alcun sospettato, alcun arresto
+né alcun recupero.
+Quindi, alla data di questo video, nessuno è stato nominato pubblicamente.
+TRM Labs non attribuisce il furto a nessuno.
+Coinkite dice che i suoi avvocati collaborano con le autorità per identificare i
+responsabili.
+Online, alcuni parlano di un lavoro interno.
+Finora non ci sono prove pubbliche di questo, e nessuno è stato accusato.
+A settembre, un proprietario di Coldcard ha depositato in Ontario una proposta di class action contro
+Coinkite e i suoi cofondatori.
+Sostiene che l'azienda sapesse già a maggio 2025 che la generazione dei seed era debole.
+Secondo le ultime notizie, un giudice non l'ha ancora nemmeno certificata come class action,
+e nessuna delle sue accuse è stata verificata in tribunale.
+E, da quanto risulta pubblicamente, Coinkite non ha annunciato alcun fondo di risarcimento.
+Goodman non conta sulla causa.
+Il CEO di Coinkite dice che la falla ha riguardato circa lo 0,17% dei suoi utenti.
+Il firmware più recente obbliga ora ogni proprietario ad aggiungere casualità propria quando
+crea un seed.
+C'è un gruppo che Coinkite non considera a rischio per questo bug:
+i proprietari che hanno aggiunto almeno 50 lanci di dadi propri quando hanno creato il seed.
+Quelli che non hanno lasciato tutto al dispositivo.
+Quella cassetta di sicurezza non è mai stata aperta.
+I dispositivi all'interno non sono mai stati violati.
+Solo che non hanno mai chiesto il seed al loro generatore hardware.
+Se hai creato un seed su una Coldcard interessata, leggi l'avviso di Coinkite.
+Coinkite dice: consideralo compromesso e passa a un seed nuovo.
+E i 1.082 bitcoin della prima ondata?
+Secondo l'ultimo tracciamento pubblico, sono ancora dove li ha lasciati il ladro.
+E da qualche parte, negli archivi di una società di dati, potrebbe esserci un nome.
+Questo era Siphon Files.

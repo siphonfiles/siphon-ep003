@@ -1,0 +1,667 @@
+1
+00:00:01,200 --> 00:00:03,136
+Một hầm ngân hàng. Một két sắt cho thuê.
+
+2
+00:00:03,176 --> 00:00:07,845
+Bên trong là ba thiết bị nhỏ chưa từng được kết nối internet.
+
+3
+00:00:10,945 --> 00:00:16,603
+Đêm 29 tháng 7, không ai mở két đó. Không ai chạm vào những thiết bị đó.
+
+4
+00:00:17,503 --> 00:00:20,470
+Chỉ trong bảy phút, số bitcoin chúng bảo vệ đã biến mất.
+
+5
+00:00:23,370 --> 00:00:28,033
+Trong vòng năm ngày, khoảng 116 triệu đô la đã bị lấy đi theo cùng một cách.
+
+6
+00:00:28,933 --> 00:00:32,681
+Lỗ hổng đằng sau vụ này đã nằm trong mã nguồn công khai hơn năm năm.
+
+7
+00:00:33,581 --> 00:00:36,350
+Và tên trộm đầu tiên có thể cũng đã mắc một sai lầm.
+
+8
+00:00:42,001 --> 00:00:45,371
+Tôi là Thomas Archer, người dẫn chuyện AI của Siphon Files.
+
+9
+00:00:45,871 --> 00:00:47,592
+Mọi thông tin bạn nghe đều có nguồn.
+
+10
+00:00:47,632 --> 00:00:49,192
+Danh sách nguồn nằm trong phần mô tả.
+
+11
+00:00:49,792 --> 00:00:52,439
+Đây là câu chuyện về một ổ khóa không ai phá.
+
+12
+00:00:52,938 --> 00:00:55,166
+Chỉ là có người đã tìm ra mật mã.
+
+13
+00:00:58,266 --> 00:01:00,866
+Jonathan Goodman là một doanh nhân ở Toronto.
+
+14
+00:01:00,906 --> 00:01:04,950
+Theo lời anh kể, anh đã đầu tư hơn một triệu đô la vào bitcoin.
+
+15
+00:01:05,650 --> 00:01:08,359
+Vì vậy anh làm đúng như các hướng dẫn bảo mật khuyên.
+
+16
+00:01:08,399 --> 00:01:12,820
+Anh mua một ví phần cứng: một chiếc Coldcard do công ty Canada tên Coinkite sản xuất.
+
+17
+00:01:13,421 --> 00:01:16,814
+Khi thiết lập, máy sẽ đưa cho bạn một danh sách 12 hoặc 24 từ.
+
+18
+00:01:16,854 --> 00:01:18,327
+Những từ đó chính là tiền.
+
+19
+00:01:18,367 --> 00:01:21,742
+Ai có chúng đều có thể tiêu bitcoin của bạn, từ bất cứ đâu.
+
+20
+00:01:22,542 --> 00:01:23,711
+Anh mua ba chiếc.
+
+21
+00:01:23,751 --> 00:01:28,163
+Anh không bao giờ chia sẻ các từ với ai và dập chúng lên kim loại để dự phòng.
+
+22
+00:01:28,203 --> 00:01:30,196
+Các thiết bị không bao giờ chạm tới internet.
+
+23
+00:01:30,236 --> 00:01:32,654
+Chúng được cất vào một két sắt ở ngân hàng của anh.
+
+24
+00:01:33,555 --> 00:01:37,655
+Nhưng có một điều anh không thể tự kiểm tra: những từ đó được chọn ra như thế nào.
+
+25
+00:01:40,354 --> 00:01:42,672
+Các từ phải không thể đoán được.
+
+26
+00:01:42,712 --> 00:01:46,929
+Vì vậy thiết bị chọn chúng hoàn toàn ngẫu nhiên, bằng phần cứng chỉ làm một việc:
+
+27
+00:01:46,969 --> 00:01:48,407
+tạo ra số ngẫu nhiên.
+
+28
+00:01:49,007 --> 00:01:52,900
+Nếu làm đúng, số danh sách từ có thể có nhiều đến mức không ai có thể
+
+29
+00:01:52,940 --> 00:01:53,755
+dò hết được.
+
+30
+00:01:56,355 --> 00:01:59,657
+Nhưng vào tháng 3 năm 2021, Coinkite phát hành một bản cập nhật firmware.
+
+31
+00:01:59,697 --> 00:02:05,031
+Bản này chuyển sang cùng loại mật mã học mà Bitcoin Core dùng, thông qua một thư viện mới.
+
+32
+00:02:08,531 --> 00:02:10,670
+Thư viện mới cần số ngẫu nhiên.
+
+33
+00:02:10,710 --> 00:02:15,264
+Và đoạn mã trả lời yêu cầu đó có thể chạy theo hai cách: đọc phần cứng
+
+34
+00:02:15,304 --> 00:02:19,014
+hoặc chạy một bản thay thế đơn giản bằng phần mềm. Một thiết lập duy nhất quyết định cách nào.
+
+35
+00:02:19,714 --> 00:02:24,193
+Coinkite đặt nó về 0, tin rằng làm vậy là tắt hết. Không phải.
+
+36
+00:02:24,233 --> 00:02:26,006
+Số 0 nghĩa là: dùng bản thay thế.
+
+37
+00:02:26,705 --> 00:02:29,968
+Và trong mã có một bước kiểm tra an toàn được làm đúng cho việc này.
+
+38
+00:02:30,008 --> 00:02:33,101
+Nếu thiếu thiết lập, quá trình build sẽ dừng lại kèm một thông báo.
+
+39
+00:02:35,801 --> 00:02:40,453
+Nhưng bước kiểm tra chỉ hỏi thiết lập có tồn tại không. Có. Giá trị là 0.
+
+40
+00:02:40,493 --> 00:02:41,571
+Bước kiểm tra cho qua.
+
+41
+00:02:42,572 --> 00:02:44,091
+Hãy hình dung một thanh tra báo khói.
+
+42
+00:02:44,590 --> 00:02:46,652
+Anh ta kiểm tra trên trần có thiết bị báo khói.
+
+43
+00:02:47,152 --> 00:02:48,792
+Nhưng không bao giờ xem nó có bật không.
+
+44
+00:02:51,492 --> 00:02:56,548
+Vậy là từ đó, các mẫu cũ Mk2 và Mk3 tạo các từ bằng bản thay thế.
+
+45
+00:02:56,588 --> 00:02:59,433
+Nó chạy dựa trên một ID nhà máy cố định và vài bộ đếm thời gian.
+
+46
+00:02:59,473 --> 00:03:01,315
+Không có gì trong đó thực sự bí mật.
+
+47
+00:03:01,915 --> 00:03:05,934
+Sau này Coinkite ước tính nó chỉ có khoảng 40 bit ngẫu nhiên thật.
+
+48
+00:03:05,974 --> 00:03:08,107
+Một seed chuẩn có ít nhất 128 bit.
+
+49
+00:03:08,907 --> 00:03:13,060
+Bốn mươi bit là khoảng một nghìn tỷ khả năng. Nghe thì nhiều.
+
+50
+00:03:13,560 --> 00:03:16,763
+Với một máy tính đoán offline, đó là cuộc tìm kiếm có hồi kết.
+
+51
+00:03:17,563 --> 00:03:19,871
+Các mẫu mới hơn khá hơn, khoảng 72 bit.
+
+52
+00:03:19,911 --> 00:03:21,673
+Vẫn kém xa một seed chuẩn,
+
+53
+00:03:21,713 --> 00:03:25,986
+dù đến nay chưa có bằng chứng công khai nào cho thấy chiếc nào trong số đó bị rút sạch trong các
+
+54
+00:03:26,026 --> 00:03:26,626
+vụ tấn công này.
+
+55
+00:03:27,063 --> 00:03:30,507
+Bộ tạo số phần cứng vẫn ở đó, bên trong mỗi thiết bị.
+
+56
+00:03:30,547 --> 00:03:34,385
+Chính tài liệu kỹ thuật của Coinkite sau này thừa nhận nó có được dùng…
+
+57
+00:03:37,286 --> 00:03:39,663
+Vậy là giờ bạn biết một điều mà Goodman không biết.
+
+58
+00:03:39,703 --> 00:03:44,193
+Các từ của anh chưa bao giờ thực sự ngẫu nhiên. Và mã nguồn thì công khai. Ai cũng đọc được.
+
+59
+00:03:44,793 --> 00:03:48,746
+Suốt năm năm, những người sở hữu như anh mua thiết bị, chép lại các từ
+
+60
+00:03:48,786 --> 00:03:49,854
+và cất kỹ dưới khóa.
+
+61
+00:03:50,554 --> 00:03:56,260
+CEO của Coinkite nói công ty đã trả tiền cho các đợt kiểm định bảo mật bên ngoài năm 2022 và 2024.
+
+62
+00:03:56,300 --> 00:04:01,216
+Thế nhưng Coinkite nói họ không biết về lỗi này cho đến ngày xảy ra vụ trộm.
+
+63
+00:04:03,816 --> 00:04:08,756
+Rồi, vài tuần trước vụ trộm, Coinkite cho AI rà soát mã quan trọng của mình.
+
+64
+00:04:11,556 --> 00:04:13,062
+Nhưng có người khác tìm ra lỗi trước.
+
+65
+00:04:13,862 --> 00:04:17,672
+Coinkite nói họ buộc phải giả định rằng ai đó đã dùng AI để tìm ra nó.
+
+66
+00:04:18,172 --> 00:04:20,774
+Đó là giả định của Coinkite. Chưa được chứng minh.
+
+67
+00:04:21,373 --> 00:04:24,096
+Dù thế nào, phương pháp này không cần đến một thiết bị nào.
+
+68
+00:04:24,596 --> 00:04:28,043
+Đoán một seed. Tính ra các địa chỉ của nó. Tra blockchain.
+
+69
+00:04:28,643 --> 00:04:30,901
+Khớp nghĩa là có chìa khóa, và có luôn số tiền.
+
+70
+00:04:34,301 --> 00:04:37,450
+Ở Toronto, lúc đó là chín giờ mười tối thứ Tư.
+
+71
+00:04:37,490 --> 00:04:39,321
+Goodman đang đi nghỉ ở căn nhà gỗ của mình.
+
+72
+00:04:39,920 --> 00:04:43,793
+Giao dịch đầu tiên rời khỏi một địa chỉ được tạo trên Coldcard. Rồi thêm một giao dịch nữa.
+
+73
+00:04:43,833 --> 00:04:44,584
+Rồi hàng trăm.
+
+74
+00:04:45,184 --> 00:04:48,880
+Theo Chainalysis, tên trộm nhắm vào những ví lớn nhất trước.
+
+75
+00:04:48,920 --> 00:04:51,551
+Khoảng 30 triệu đô la trong mười phút đầu.
+
+76
+00:04:52,151 --> 00:04:54,777
+Và có điều gì đó lạ ở các giao dịch này.
+
+77
+00:04:54,817 --> 00:04:59,010
+Tất cả đều được tạo giống hệt nhau: cùng mức phí, và từng đồng bị quét sạch,
+
+78
+00:04:59,050 --> 00:05:00,357
+không chừa lại gì.
+
+79
+00:05:00,958 --> 00:05:02,183
+Hãy nhớ chi tiết đó.
+
+80
+00:05:03,182 --> 00:05:04,406
+Rồi đến lượt Goodman.
+
+81
+00:05:05,006 --> 00:05:09,997
+21 giờ 36. Ví đầu tiên trong ba ví của anh bị rút sạch. Rồi đến ví thứ hai.
+
+82
+00:05:10,037 --> 00:05:12,396
+Đến 21 giờ 43, ví thứ ba cũng mất.
+
+83
+00:05:12,436 --> 00:05:15,145
+Khoảng 1,6 triệu đô la Canada.
+
+84
+00:05:16,046 --> 00:05:17,942
+Lúc 21 giờ 51, đợt đầu tiên dừng lại.
+
+85
+00:05:17,982 --> 00:05:22,177
+Trong 41 phút, gần một nghìn hai trăm địa chỉ đã bị rút sạch.
+
+86
+00:05:22,977 --> 00:05:24,407
+Và Goodman không hề hay biết.
+
+87
+00:05:27,507 --> 00:05:31,645
+Trong vài giờ sau đó, bắt đầu có báo cáo về tiền bị chuyển khỏi các ví lạnh.
+
+88
+00:05:31,685 --> 00:05:35,982
+Các kỹ sư ở Block, công ty đứng sau ví Bitkey, mổ xẻ firmware.
+
+89
+00:05:36,022 --> 00:05:39,460
+Trước khi hết ngày, họ và các nhà nghiên cứu khác tìm ra nguyên nhân.
+
+90
+00:05:40,060 --> 00:05:44,951
+Coinkite đăng cảnh báo đầu tiên: các seed tạo trên firmware bị ảnh hưởng đang gặp rủi ro.
+
+91
+00:05:44,991 --> 00:05:48,239
+Hãy chuyển tiền đi. Đến lúc đó, đợt đầu tiên đã kết thúc từ lâu.
+
+92
+00:05:48,939 --> 00:05:53,587
+Ngày 31 tháng 7, Goodman đang ở thư viện công cộng cùng gia đình thì thấy
+
+93
+00:05:53,627 --> 00:05:58,002
+bài đăng của một người bạn trên Facebook: nếu bạn dùng Coldcard, hãy chuyển tiền ngay.
+
+94
+00:06:00,902 --> 00:06:03,970
+Anh kiểm tra. Bitcoin của anh đã mất từ tối thứ Tư.
+
+95
+00:06:06,670 --> 00:06:09,314
+Anh quay về Toronto để trình báo cảnh sát
+
+96
+00:06:09,354 --> 00:06:12,202
+và gửi báo cáo lên Ủy ban Chứng khoán Ontario.
+
+97
+00:06:12,802 --> 00:06:15,903
+Mọi người hỏi anh liệu có ai vào được két sắt của anh không.
+
+98
+00:06:16,603 --> 00:06:20,716
+Không ai cả. Và với bất kỳ ai vẫn giữ một seed được tạo theo cách đó,
+
+99
+00:06:20,756 --> 00:06:23,582
+bản cập nhật firmware không giúp được gì. Nó chỉ sửa các seed mới.
+
+100
+00:06:23,622 --> 00:06:26,605
+Một seed yếu đã được ghi lại thì vẫn yếu.
+
+101
+00:06:29,505 --> 00:06:31,489
+Đây là phần nghiệt ngã của một cảnh báo công khai.
+
+102
+00:06:31,989 --> 00:06:34,828
+Nó đến tay chủ ví và kẻ trộm cùng một lúc.
+
+103
+00:06:37,528 --> 00:06:41,109
+Đợt hai tiếp theo. Đợt ba kéo dài từ thứ Sáu sang thứ Bảy.
+
+104
+00:06:41,149 --> 00:06:42,718
+Đợt bốn bắt đầu vào thứ Hai.
+
+105
+00:06:43,318 --> 00:06:48,334
+Sau này Galaxy Research đếm được ít nhất 15 kẻ tấn công khác nhau. Không còn là một tên trộm.
+
+106
+00:06:48,374 --> 00:06:50,481
+Mà là cả một đám đông, khai thác cùng một điểm yếu.
+
+107
+00:06:51,081 --> 00:06:55,209
+Nhưng ở đợt thứ tư, các giao dịch của kẻ trộm vẫn đang chờ xác nhận.
+
+108
+00:06:55,249 --> 00:06:58,883
+Cho đến khi được xác nhận, ai sẵn sàng trả phí cao hơn đều có thể thay thế chúng.
+
+109
+00:06:59,483 --> 00:07:01,664
+Vậy là một chủ ví, Will Owens, phản công.
+
+110
+00:07:01,704 --> 00:07:05,757
+Anh để lại một khoản nhỏ làm mồi, chờ con bot lấy nó,
+
+111
+00:07:05,797 --> 00:07:08,018
+rồi trả giá cao hơn. Anh lấy lại được mồi của mình.
+
+112
+00:07:08,718 --> 00:07:13,091
+Sau đó, các hacker mũ trắng tình nguyện chuyển khoảng 52 bitcoin khỏi những ví bị lộ
+
+113
+00:07:13,131 --> 00:07:15,751
+vào một quỹ ủy thác lập ra để trả lại cho nạn nhân.
+
+114
+00:07:15,791 --> 00:07:20,506
+Tháng 9, quỹ trả lại hơn 20 bitcoin cho một chủ ví đã được xác minh.
+
+115
+00:07:21,106 --> 00:07:24,770
+Một phần số tiền bị đánh cắp được chuyển vào mixer, dịch vụ làm mờ dấu vết.
+
+116
+00:07:24,810 --> 00:07:27,971
+Theo số liệu công khai mới nhất, phần lớn số còn lại vẫn nằm yên.
+
+117
+00:07:28,571 --> 00:07:33,322
+Khi các đợt chậm lại, khoảng 1.816 bitcoin đã bị lấy
+
+118
+00:07:33,362 --> 00:07:35,514
+từ hơn 5.200 địa chỉ.
+
+119
+00:07:36,315 --> 00:07:39,396
+Nhưng phần lớn nhất, đợt đầu tiên, vẫn chưa hề dịch chuyển,
+
+120
+00:07:39,436 --> 00:07:41,588
+theo dữ liệu theo dõi công khai mới nhất.
+
+121
+00:07:42,788 --> 00:07:46,431
+Nhớ chi tiết đó chứ? Mọi giao dịch trong đợt đầu tiên đều giống nhau.
+
+122
+00:07:46,931 --> 00:07:50,257
+Galaxy không tìm thấy ai khác dùng mẫu đó trong tháng trước đó.
+
+123
+00:07:50,757 --> 00:07:53,637
+Vì thế đợt đầu tiên có thể được lần theo như một chiến dịch duy nhất.
+
+124
+00:07:54,137 --> 00:07:56,843
+Và các nhà điều tra còn nhận ra một điều nữa.
+
+125
+00:07:57,543 --> 00:07:59,073
+Mỗi lần đoán đều phải được kiểm tra.
+
+126
+00:07:59,113 --> 00:08:02,685
+Muốn biết địa chỉ đoán được nào có tiền, bạn phải tra từng địa chỉ,
+
+127
+00:08:02,725 --> 00:08:03,563
+lặp đi lặp lại.
+
+128
+00:08:04,162 --> 00:08:07,899
+Các nhà điều tra của Block nói người vận hành đợt đầu tiên dường như đã làm việc đó qua
+
+129
+00:08:07,939 --> 00:08:10,488
+một tài khoản trả phí tại một nhà cung cấp dữ liệu blockchain nổi tiếng.
+
+130
+00:08:11,088 --> 00:08:12,638
+Họ đã liên hệ với nhà cung cấp.
+
+131
+00:08:12,678 --> 00:08:17,238
+Theo họ, nhật ký nội bộ của công ty khớp với vụ tấn công “với độ chính xác phi thường”:
+
+132
+00:08:17,278 --> 00:08:20,288
+số lượng, thời điểm và thứ tự các yêu cầu.
+
+133
+00:08:20,888 --> 00:08:23,675
+Trên blockchain, tên trộm chỉ là một chuỗi địa chỉ.
+
+134
+00:08:24,175 --> 00:08:26,290
+Nhưng một tài khoản trả phí thường để lại hồ sơ.
+
+135
+00:08:27,090 --> 00:08:29,215
+Thông tin đã được chuyển cho cơ quan thực thi pháp luật.
+
+136
+00:08:29,255 --> 00:08:33,546
+Alex Thorn của Galaxy nói danh tính kẻ tấn công đợt đầu “có thể đã được cơ quan thực thi pháp luật
+
+137
+00:08:33,586 --> 00:08:34,290
+biết đến”.
+
+138
+00:08:34,890 --> 00:08:39,464
+Nhưng tại thời điểm làm video này, FBI chưa xác nhận nghi phạm, vụ bắt giữ
+
+139
+00:08:39,504 --> 00:08:40,502
+hay khoản thu hồi nào.
+
+140
+00:08:44,102 --> 00:08:47,552
+Vì vậy, tính đến thời điểm của video này, chưa ai bị nêu tên công khai.
+
+141
+00:08:47,592 --> 00:08:50,198
+TRM Labs không quy vụ trộm cho bất kỳ ai.
+
+142
+00:08:50,238 --> 00:08:54,476
+Coinkite nói luật sư của họ đang làm việc với cơ quan thực thi pháp luật để xác định những người
+
+143
+00:08:54,516 --> 00:08:55,191
+chịu trách nhiệm.
+
+144
+00:08:55,891 --> 00:08:57,997
+Trên mạng, có người gọi đây là một vụ nội gián.
+
+145
+00:08:58,037 --> 00:09:02,512
+Đến nay, chưa có bằng chứng công khai cho điều đó, và chưa ai bị buộc tội.
+
+146
+00:09:03,212 --> 00:09:07,957
+Tháng 9, một chủ Coldcard đã nộp đơn đề xuất vụ kiện tập thể ở Ontario nhắm vào
+
+147
+00:09:07,997 --> 00:09:09,713
+Coinkite và các nhà đồng sáng lập.
+
+148
+00:09:09,753 --> 00:09:13,892
+Đơn kiện cáo buộc công ty đã biết muộn nhất vào tháng 5 năm 2025 rằng cách tạo seed của họ yếu.
+
+149
+00:09:13,932 --> 00:09:18,798
+Theo các báo cáo mới nhất, thẩm phán thậm chí còn chưa công nhận đây là vụ kiện tập thể,
+
+150
+00:09:18,838 --> 00:09:21,806
+và chưa cáo buộc nào được xem xét tại tòa.
+
+151
+00:09:22,506 --> 00:09:27,729
+Và theo những gì báo cáo công khai cho thấy, Coinkite chưa công bố quỹ bồi thường nào.
+
+152
+00:09:27,769 --> 00:09:30,150
+Goodman không trông chờ vào vụ kiện.
+
+153
+00:09:32,850 --> 00:09:37,132
+CEO của Coinkite nói lỗi này ảnh hưởng đến khoảng 0,17% người dùng.
+
+154
+00:09:37,172 --> 00:09:42,011
+Firmware mới nhất giờ buộc mọi chủ sở hữu tự thêm độ ngẫu nhiên của mình khi
+
+155
+00:09:42,051 --> 00:09:42,915
+tạo seed.
+
+156
+00:09:45,615 --> 00:09:48,820
+Có một nhóm mà Coinkite không coi là gặp rủi ro từ lỗi này:
+
+157
+00:09:48,860 --> 00:09:52,745
+những người đã tự thêm ít nhất 50 lần tung xúc xắc khi tạo seed.
+
+158
+00:09:53,245 --> 00:09:55,216
+Những người không phó mặc mọi thứ cho thiết bị.
+
+159
+00:09:56,115 --> 00:09:58,737
+Chiếc két sắt đó chưa bao giờ bị mở.
+
+160
+00:09:59,237 --> 00:10:01,545
+Các thiết bị bên trong chưa bao giờ bị hack.
+
+161
+00:10:02,046 --> 00:10:05,026
+Chỉ là chúng chưa bao giờ lấy seed từ phần cứng tạo số ngẫu nhiên của mình.
+
+162
+00:10:05,626 --> 00:10:09,385
+Nếu bạn đã tạo seed trên một chiếc Coldcard bị ảnh hưởng, hãy đọc cảnh báo của Coinkite.
+
+163
+00:10:09,885 --> 00:10:13,666
+Coinkite nói: hãy coi seed đó đã bị lộ, và chuyển sang một seed mới.
+
+164
+00:10:14,766 --> 00:10:17,127
+Còn 1.082 bitcoin của đợt đầu tiên?
+
+165
+00:10:17,167 --> 00:10:21,855
+Theo dữ liệu theo dõi công khai mới nhất, chúng vẫn nằm nguyên nơi tên trộm để lại.
+
+166
+00:10:22,655 --> 00:10:26,655
+Và ở đâu đó, trong hồ sơ của một công ty dữ liệu, có thể có một cái tên.
+
+167
+00:10:27,855 --> 00:10:29,370
+Đây là Siphon Files.

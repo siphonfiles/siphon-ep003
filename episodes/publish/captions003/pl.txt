@@ -1,0 +1,167 @@
+Bankowy skarbiec. Skrytka depozytowa.
+W środku trzy małe urządzenia, które nigdy nie były podłączone do internetu.
+W nocy 29 lipca nikt nie otworzył tej skrytki. Nikt nie dotknął tych urządzeń.
+W siedem minut bitcoiny, które chroniły, zniknęły.
+W ciągu pięciu dni w ten sam sposób skradziono około 116 milionów dolarów.
+Luka, która za tym stała, tkwiła w publicznym kodzie od ponad pięciu lat.
+A pierwszy złodziej mógł sam popełnić jeden błąd.
+Jestem Thomas Archer, narrator AI kanału Siphon Files.
+Każde stwierdzenie ma źródło.
+Lista jest w opisie.
+To historia zamka, którego nikt nie wyłamał.
+Ktoś po prostu odgadł szyfr.
+Jonathan Goodman jest przedsiębiorcą z Toronto.
+Jak sam mówi, zainwestował w bitcoina ponad milion dolarów.
+Robi więc to, co zalecają poradniki bezpieczeństwa.
+Kupuje portfel sprzętowy: Coldcard, produkowany przez kanadyjską firmę Coinkite.
+Przy konfiguracji urządzenie podaje listę 12 albo 24 słów.
+Te słowa to pieniądze.
+Każdy, kto je zna, może wydać twoje bitcoiny, z dowolnego miejsca.
+Kupuje trzy.
+Nikomu nie pokazuje swoich słów i wybija je w metalu jako kopię zapasową.
+Urządzenia nigdy nie mają styczności z internetem.
+Trafiają do skrytki depozytowej w jego banku.
+Ale jednej rzeczy nie może sprawdzić sam: jak te słowa zostały wybrane.
+Słowa muszą być niemożliwe do odgadnięcia.
+Dlatego urządzenie wybiera je całkowicie losowo, za pomocą sprzętu stworzonego do jednego zadania:
+generowania liczb losowych.
+Jeśli zrobić to dobrze, możliwych list słów jest tak wiele, że nikt nie zdołałby przeszukać
+ich wszystkich.
+Ale w marcu 2021 roku Coinkite wydaje aktualizację firmware'u.
+Przechodzi na tę samą kryptografię, której używa Bitcoin Core, przez nową bibliotekę.
+Nowa biblioteka potrzebuje liczb losowych.
+A kod, który odpowiada na to żądanie, może działać na dwa sposoby: odczytać sprzęt
+albo uruchomić prosty programowy zamiennik. Decyduje jedno ustawienie.
+Coinkite ustawia je na zero, sądząc, że to wszystko wyłącza. Nie wyłącza.
+Zero oznacza: użyj zamiennika.
+A w kodzie jest kontrola bezpieczeństwa stworzona właśnie na taką sytuację.
+Jeśli ustawienia brakuje, kompilacja się zatrzymuje z komunikatem.
+Ale kontrola sprawdza tylko, czy ustawienie istnieje. Istnieje. Ma wartość zero.
+Kontrola przechodzi.
+Wyobraź sobie inspektora czujników dymu.
+Sprawdza, czy na suficie wisi czujnik.
+Nigdy nie sprawdza, czy jest włączony.
+Od tej pory starsze modele Mk2 i Mk3 tworzą swoje słowa za pomocą zamiennika.
+Działa on na stałym identyfikatorze fabrycznym i kilku licznikach czasu.
+Nic w nim nie jest naprawdę tajne.
+Coinkite szacuje później, że daje to około 40 bitów prawdziwej losowości.
+Porządny seed ma co najmniej 128.
+Czterdzieści bitów to około biliona możliwości. Brzmi jak dużo.
+Dla komputera, który zgaduje offline, to poszukiwanie, które ma koniec.
+Nowsze modele wypadają lepiej, około 72 bitów.
+To wciąż dużo mniej niż porządny seed,
+choć jak dotąd nie ma publicznych dowodów, że którykolwiek z nich został opróżniony w tych
+atakach.
+Sprzętowy generator wciąż tam jest, w każdym urządzeniu.
+Techniczny opis samego Coinkite przyznaje później, że był używany…
+Więc teraz wiesz coś, czego Goodman nie wie.
+Jego słowa nigdy nie były naprawdę losowe. A kod jest publiczny. Każdy może go przeczytać.
+Przez pięć lat właściciele tacy jak on kupują urządzenie, zapisują słowa
+i zamykają je pod kluczem.
+Prezes Coinkite mówi, że firma zapłaciła za zewnętrzne audyty bezpieczeństwa w 2022 i 2024 roku.
+A jednak Coinkite twierdzi, że nie wiedziało o błędzie aż do dnia kradzieży.
+Potem, kilka tygodni przed kradzieżą, Coinkite zleca przegląd swojego krytycznego kodu z pomocą AI.
+Ale ktoś inny znajduje błąd pierwszy.
+Coinkite mówi, że musi zakładać, że ktoś znalazł go za pomocą AI.
+To założenie Coinkite. Nie zostało udowodnione.
+Tak czy inaczej, metoda nie wymagała ani jednego urządzenia.
+Zgadnij seed. Wylicz jego adresy. Sprawdź blockchain.
+Trafienie oznacza klucz, a razem z nim pieniądze.
+W Toronto jest dziesięć po dziewiątej, środowy wieczór.
+Goodman jest w swoim domku letniskowym.
+Pierwsza transakcja opuszcza adres utworzony na Coldcardzie. Potem kolejna.
+Potem setki.
+Według Chainalysis złodziej najpierw bierze się za największe portfele.
+Około 30 milionów dolarów w pierwszych dziesięciu minutach.
+I w tych transakcjach jest coś dziwnego.
+Wszystkie są zbudowane tak samo: ta sama stawka opłaty i wyczyszczona każda moneta,
+bez żadnej reszty.
+Zapamiętaj ten szczegół.
+Potem kolej na Goodmana.
+21:36. Pierwszy z jego trzech portfeli zostaje opróżniony. Potem drugi.
+O 21:43 znika też trzeci.
+Około 1,6 miliona dolarów kanadyjskich.
+O 21:51 pierwsza fala się zatrzymuje.
+W 41 minut opróżniono prawie tysiąc dwieście adresów.
+A Goodman nie ma o niczym pojęcia.
+W kolejnych godzinach pojawiają się doniesienia o monetach znikających z zimnych portfeli.
+Inżynierowie z Block, firmy stojącej za portfelem Bitkey, rozkładają firmware na części.
+Przed końcem dnia oni i inni badacze znajdują przyczynę.
+Coinkite publikuje pierwsze ostrzeżenie: seedy utworzone na wadliwym firmware są zagrożone.
+Przenieście środki. Do tego czasu pierwsza fala dawno się skończyła.
+31 lipca Goodman jest z rodziną w bibliotece publicznej, gdy widzi
+na Facebooku wpis znajomego: jeśli używasz Coldcarda, natychmiast przenieś pieniądze.
+Sprawdza. Jego bitcoinów nie ma już od środowej nocy.
+Wraca do Toronto, żeby zgłosić sprawę na policję
+i złożyć zawiadomienie w Komisji Papierów Wartościowych Ontario.
+Ludzie pytają go, czy ktoś dostał się do jego skrytki.
+Nikt. A dla każdego, kto wciąż ma seed utworzony w ten sam sposób,
+aktualizacja firmware'u nic nie da. Naprawia tylko nowe seedy.
+Słaby seed, który już został zapisany, pozostaje słaby.
+Oto okrutna strona publicznego ostrzeżenia.
+Dociera do właścicieli i do złodziei w tej samej chwili.
+Nadchodzi druga fala. Trzecia trwa od piątku do soboty.
+Czwarta zaczyna się w poniedziałek.
+Galaxy Research liczy później co najmniej 15 różnych atakujących. To już nie jeden złodziej.
+To tłum wykorzystujący tę samą słabość.
+Ale w czwartej fali transakcje złodziei czekają na potwierdzenie.
+Dopóki go nie ma, każdy, kto zapłaci wyższą opłatę, może je zastąpić.
+Więc jeden z właścicieli, Will Owens, kontratakuje.
+Zostawia małą kwotę jako przynętę, czeka, aż bot ją zabierze,
+i go przebija. Odzyskuje swoją przynętę.
+Później wolontariusze, white hats, przenoszą około 52 bitcoinów z narażonych portfeli
+do funduszu powierniczego stworzonego, by zwrócić je ofiarom.
+We wrześniu fundusz oddaje ponad 20 bitcoinów jednemu zweryfikowanemu właścicielowi.
+Część skradzionych monet trafia do mikserów, usług, które zacierają ślady.
+Według najnowszych publicznych danych spora część reszty wciąż leży nieruszona.
+Kiedy fale słabną, skradziono już około 1816 bitcoinów
+z ponad 5200 adresów.
+Ale największa część, pierwsza fala, wciąż się nie ruszyła,
+według najnowszych publicznych danych.
+Pamiętasz ten szczegół? Każda transakcja z pierwszej fali wyglądała tak samo.
+Galaxy nie znalazło nikogo innego, kto używałby tego wzorca w poprzednim miesiącu.
+Pierwszą falę można więc było śledzić jako jedną operację.
+A śledczy zauważyli coś jeszcze.
+Każdy strzał trzeba sprawdzić.
+Żeby wiedzieć, na których odgadniętych adresach są pieniądze, trzeba je sprawdzać
+raz po raz.
+Śledczy z Block mówią, że operator pierwszej fali najwyraźniej robił to przez
+płatne konto u znanego dostawcy danych blockchain.
+Skontaktowali się z dostawcą.
+Jego wewnętrzne logi, jak mówią, pasowały do ataku „z niezwykłą dokładnością”:
+liczba, czas i kolejność zapytań.
+Na blockchainie złodziej był tylko ciągiem adresów.
+Ale płatne konto zwykle zostawia ślady.
+Informacje trafiły do organów ścigania.
+Alex Thorn z Galaxy mówi, że tożsamość atakującego z pierwszej fali „może być znana organom
+ścigania”.
+Ale w chwili, gdy robimy ten film, FBI nie potwierdziło żadnego podejrzanego, aresztowania
+ani odzyskania środków.
+Na dzień powstania tego filmu nikt nie został więc publicznie wskazany.
+TRM Labs nie przypisuje kradzieży nikomu.
+Coinkite mówi, że jego prawnicy współpracują z organami ścigania, by zidentyfikować
+sprawców.
+W sieci niektórzy mówią, że to robota kogoś z wewnątrz.
+Jak dotąd nie ma na to publicznych dowodów i nikogo nie oskarżono.
+We wrześniu właściciel Coldcarda złożył w Ontario wniosek o pozew zbiorowy przeciwko
+Coinkite i jego współzałożycielom.
+Pozew twierdzi, że firma wiedziała o słabym generowaniu seedów już w maju 2025 roku.
+Według najnowszych doniesień sąd nie dopuścił go jeszcze nawet jako pozwu zbiorowego,
+a żaden z jego zarzutów nie został sprawdzony w sądzie.
+I, jak wynika z publicznych informacji, Coinkite nie ogłosiło żadnego funduszu odszkodowań.
+Goodman nie liczy na pozew.
+Prezes Coinkite mówi, że luka dotknęła około 0,17% użytkowników.
+Najnowszy firmware wymaga teraz od każdego właściciela dodania własnej losowości, gdy
+tworzy seed.
+Jest jedna grupa, której Coinkite nie uważa za zagrożoną przez ten błąd:
+właściciele, którzy przy tworzeniu seeda dodali co najmniej 50 własnych rzutów kostką.
+Ci, którzy nie zostawili wszystkiego urządzeniu.
+Ta skrytka nigdy nie została otwarta.
+Urządzenia w środku nigdy nie zostały zhakowane.
+Po prostu nigdy nie poprosiły swojego sprzętowego generatora o seed.
+Jeśli utworzyłeś seed na wadliwym Coldcardzie, przeczytaj ostrzeżenie Coinkite.
+Coinkite mówi: uznaj go za skompromitowany i przejdź na nowy seed.
+A 1082 bitcoiny z pierwszej fali?
+Według najnowszych publicznych danych wciąż leżą tam, gdzie zostawił je złodziej.
+A gdzieś, w rejestrach firmy z danymi, może być nazwisko.
+To było Siphon Files.

@@ -1,0 +1,167 @@
+Une chambre forte. Un coffre bancaire.
+À l'intérieur, trois petits appareils qui n'ont jamais été connectés à Internet.
+Dans la nuit du 29 juillet, personne n'a ouvert ce coffre. Personne n'a touché ces appareils.
+En sept minutes, les bitcoins qu'ils protégeaient avaient disparu.
+En cinq jours, environ 116 millions de dollars avaient été volés de la même façon.
+La faille derrière tout ça dormait dans du code public depuis plus de cinq ans.
+Et le premier voleur a peut-être commis sa propre erreur.
+Je suis Thomas Archer, le narrateur IA de Siphon Files.
+Tout ce que vous entendrez est sourcé.
+La liste est dans la description.
+Voici l'histoire d'une serrure que personne n'a crochetée.
+Quelqu'un a simplement trouvé la combinaison.
+Jonathan Goodman est un entrepreneur de Toronto.
+D'après lui, il a investi plus d'un million de dollars en bitcoin.
+Alors il fait ce que recommandent les guides de sécurité.
+Il achète un portefeuille matériel : une Coldcard, fabriquée par une société canadienne, Coinkite.
+À la configuration, elle vous donne une liste de 12 ou 24 mots.
+Ces mots, c'est l'argent.
+Quiconque les possède peut dépenser vos bitcoins, depuis n'importe où.
+Il en achète trois.
+Il ne montre ses mots à personne et les grave dans du métal, en sauvegarde.
+Les appareils ne touchent jamais Internet.
+Ils vont dans un coffre, à sa banque.
+Mais il y a une chose qu'il ne peut pas vérifier lui-même : comment ces mots ont été choisis.
+Les mots doivent être impossibles à deviner.
+L'appareil les choisit donc au pur hasard, avec un composant conçu pour une seule tâche :
+produire des nombres aléatoires.
+Bien fait, il existe tellement de listes de mots possibles que personne ne pourrait
+toutes les parcourir.
+Mais en mars 2021, Coinkite publie une mise à jour du firmware.
+Elle passe à la même cryptographie que Bitcoin Core, via une nouvelle bibliothèque.
+La nouvelle bibliothèque a besoin de nombres aléatoires.
+Et le code qui répond à sa demande peut fonctionner de deux façons : lire le composant
+ou lancer un simple substitut logiciel. Un seul réglage décide lequel.
+Coinkite le met à zéro, croyant ainsi tout désactiver. Ce n'est pas le cas.
+Zéro veut dire : utiliser le substitut.
+Et il y a un contrôle de sécurité dans le code, conçu exactement pour ça.
+Si le réglage manque, la compilation s'arrête, avec un message.
+Mais le contrôle vérifie seulement que le réglage existe. Il existe. Il vaut zéro.
+Le contrôle passe.
+Imaginez un inspecteur de détecteurs de fumée.
+Il vérifie qu'il y a un détecteur au plafond.
+Il ne vérifie jamais qu'il est allumé.
+Dès lors, les anciens modèles Mk2 et Mk3 génèrent leurs mots avec le substitut.
+Il repose sur un identifiant d'usine fixe et quelques minuteurs.
+Rien là-dedans n'est vraiment secret.
+Coinkite l'estime plus tard à environ 40 bits de hasard réel.
+Une vraie seed en a au moins 128.
+Quarante bits, c'est environ mille milliards de possibilités. Ça paraît beaucoup.
+Pour un ordinateur qui devine hors ligne, c'est une recherche qui aboutit.
+Les modèles récents s'en sortent mieux, avec environ 72 bits.
+Toujours loin d'une vraie seed,
+même si, à ce jour, rien de public ne montre que l'un d'eux ait été vidé lors de ces
+attaques.
+Le générateur matériel est toujours là, dans chaque appareil.
+Le rapport technique de Coinkite admet plus tard qu'il était utilisé…
+Vous savez donc maintenant quelque chose que Goodman ignore.
+Ses mots n'ont jamais été vraiment aléatoires. Et le code est public. Tout le monde peut le lire.
+Pendant cinq ans, des propriétaires comme lui achètent l'appareil, notent leurs mots
+et les mettent sous clé.
+Le PDG de Coinkite affirme que l'entreprise a payé des audits de sécurité externes en 2022 et 2024.
+Pourtant, Coinkite dit avoir ignoré le bug jusqu'au jour du vol.
+Puis, quelques semaines avant le vol, Coinkite fait passer son code critique à une revue par IA.
+Mais quelqu'un d'autre le trouve avant.
+Coinkite dit devoir supposer que quelqu'un a utilisé l'IA pour le trouver.
+C'est l'hypothèse de Coinkite. Elle n'a pas été prouvée.
+Quoi qu'il en soit, la méthode n'avait besoin d'aucun appareil.
+Deviner une seed. Calculer ses adresses. Vérifier la blockchain.
+Une correspondance, c'est la clé, et l'argent avec.
+À Toronto, il est neuf heures dix, un mercredi soir.
+Goodman est parti dans son chalet.
+La première transaction quitte une adresse créée sur une Coldcard. Puis une autre.
+Puis des centaines.
+Selon Chainalysis, le voleur s'attaque d'abord aux plus gros portefeuilles.
+Environ 30 millions de dollars dans les dix premières minutes.
+Et ces transactions ont quelque chose d'étrange.
+Elles sont toutes construites pareil : les mêmes frais, et chaque pièce raflée jusqu'à la dernière,
+sans rien laisser.
+Retenez ce détail.
+Puis vient le tour de Goodman.
+21 h 36. Le premier de ses trois portefeuilles se vide. Puis le deuxième.
+À 21 h 43, le troisième a disparu aussi.
+Environ 1,6 million de dollars canadiens.
+À 21 h 51, la première vague s'arrête.
+En 41 minutes, près de mille deux cents adresses ont été vidées.
+Et Goodman ne se doute de rien.
+Dans les heures qui suivent, on signale des fonds qui quittent des portefeuilles hors ligne.
+Des ingénieurs de Block, l'entreprise derrière le portefeuille Bitkey, décortiquent le firmware.
+Avant la fin de la journée, eux et d'autres chercheurs trouvent la cause.
+Coinkite publie sa première alerte : les seeds créées avec le firmware concerné sont en danger.
+Déplacez vos fonds. À ce moment-là, la première vague est terminée depuis longtemps.
+Le 31 juillet, Goodman est avec sa famille dans une bibliothèque publique quand il voit
+sur Facebook le post d'un ami : si vous utilisez une Coldcard, déplacez votre argent maintenant.
+Il vérifie. Ses bitcoins ont disparu depuis mercredi soir.
+Il rentre à Toronto pour porter plainte à la police
+et alerter la Commission des valeurs mobilières de l'Ontario.
+On lui demande si quelqu'un est entré dans son coffre.
+Personne. Et pour tous ceux qui ont encore une seed créée de la même façon,
+une mise à jour du firmware ne sert à rien. Elle corrige les nouvelles seeds.
+Une seed faible déjà notée reste faible.
+Voici le côté cruel d'une alerte publique.
+Elle atteint les propriétaires et les voleurs au même moment.
+La deuxième vague suit. La troisième court du vendredi au samedi.
+Une quatrième commence le lundi.
+Galaxy Research compte plus tard au moins 15 attaquants distincts. Il n'y a plus un seul voleur.
+C'est une foule qui exploite la même faiblesse.
+Mais lors de la quatrième vague, les transactions des voleurs attendent d'être confirmées.
+D'ici là, quiconque accepte de payer des frais plus élevés peut les remplacer.
+Alors un propriétaire, Will Owens, contre-attaque.
+Il laisse une petite somme en appât, attend que le bot la prenne,
+et surenchérit. Il récupère son appât.
+Plus tard, des white hats bénévoles retirent environ 52 bitcoins de portefeuilles exposés
+pour les placer dans une fiducie créée pour les rendre aux victimes.
+En septembre, la fiducie rend plus de 20 bitcoins à un propriétaire vérifié.
+Une partie des fonds volés part vers des mixeurs, conçus pour brouiller la piste.
+D'après les derniers décomptes publics, l'essentiel du reste n'a pas bougé.
+Quand les vagues ralentissent, environ 1 816 bitcoins ont été volés,
+sur plus de 5 200 adresses.
+Mais la plus grosse part, la première vague, n'a toujours pas bougé,
+selon le dernier suivi public.
+Vous vous souvenez du détail ? Chaque transaction de la première vague se ressemblait.
+Galaxy n'a trouvé personne d'autre utilisant ce schéma le mois précédent.
+La première vague pouvait donc être suivie comme une seule opération.
+Et les enquêteurs ont remarqué autre chose.
+Chaque essai doit être vérifié.
+Pour savoir quelles adresses devinées contiennent de l'argent, il faut les consulter,
+encore et encore.
+Selon les enquêteurs de Block, l'opérateur de la première vague semble l'avoir fait via
+un compte payant chez un fournisseur connu de données blockchain.
+Ils ont contacté le fournisseur.
+Ses journaux internes, disent-ils, correspondaient à l'attaque « avec une précision extraordinaire » :
+le nombre, le moment et l'ordre des requêtes.
+Sur la blockchain, le voleur n'était qu'une suite d'adresses.
+Mais un compte payant laisse généralement des traces.
+Les informations ont été transmises aux autorités.
+Alex Thorn, de Galaxy, affirme que l'identité de l'attaquant de la première vague « est peut-être connue
+des autorités ».
+Mais, au moment où nous faisons cette vidéo, le FBI n'a confirmé ni suspect, ni arrestation,
+ni récupération.
+À la date de cette vidéo, personne n'a donc été nommé publiquement.
+TRM Labs n'attribue le vol à personne.
+Coinkite dit que ses avocats travaillent avec les autorités pour identifier les
+responsables.
+En ligne, certains parlent de complicité interne.
+À ce jour, rien de public ne le prouve, et personne n'a été accusé.
+En septembre, un propriétaire de Coldcard a déposé en Ontario une demande d'action collective contre
+Coinkite et ses cofondateurs.
+Elle allègue que l'entreprise savait dès mai 2025 que sa génération de seeds était faible.
+Selon les dernières informations, aucun juge ne l'a encore autorisée comme action collective,
+et aucune de ses allégations n'a été examinée par un tribunal.
+Et, d'après les informations publiques, Coinkite n'a annoncé aucun fonds d'indemnisation.
+Goodman ne compte pas sur le procès.
+Le PDG de Coinkite affirme que la faille a touché environ 0,17 % de ses utilisateurs.
+Le firmware le plus récent oblige désormais chaque propriétaire à ajouter son propre hasard
+quand il crée une seed.
+Il y a un groupe que Coinkite ne considère pas exposé à ce bug :
+les propriétaires qui ont ajouté au moins 50 lancers de dés en créant leur seed.
+Ceux qui n'ont pas tout laissé à l'appareil.
+Ce coffre n'a jamais été ouvert.
+Les appareils à l'intérieur n'ont jamais été piratés.
+Ils n'ont juste jamais demandé la seed à leur générateur aléatoire.
+Si vous avez créé une seed sur une Coldcard concernée, lisez l'alerte de Coinkite.
+Coinkite dit : considérez-la comme compromise et passez à une nouvelle seed.
+Et les 1 082 bitcoins de la première vague ?
+D'après le dernier suivi public, ils sont toujours là où le voleur les a laissés.
+Et quelque part, dans les registres d'une société de données, il y a peut-être un nom.
+C'était Siphon Files.

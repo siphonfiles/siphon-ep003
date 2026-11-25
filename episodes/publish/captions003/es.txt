@@ -1,0 +1,167 @@
+Una bóveda bancaria. Una caja de seguridad.
+Dentro, tres pequeños dispositivos que nunca se han conectado a internet.
+La noche del 29 de julio, nadie abrió esa caja. Nadie tocó esos dispositivos.
+En siete minutos, los bitcoins que protegían habían desaparecido.
+En cinco días, se habían llevado unos 116 millones de dólares de la misma forma.
+El fallo detrás de todo llevaba más de cinco años en código público.
+Y puede que el primer ladrón también cometiera un error.
+Soy Thomas Archer, el narrador IA de Siphon Files.
+Todo lo que oirás tiene fuente.
+La lista está en la descripción.
+Esta es la historia de un candado que nadie forzó.
+Alguien simplemente descubrió la combinación.
+Jonathan Goodman es un emprendedor de Toronto.
+Según él mismo, ha invertido más de un millón de dólares en bitcoin.
+Así que hace lo que recomiendan las guías de seguridad.
+Compra una billetera de hardware: una Coldcard, fabricada por una empresa canadiense llamada Coinkite.
+Al configurarla, te da una lista de 12 o 24 palabras.
+Esas palabras son el dinero.
+Cualquiera que las tenga puede gastar tus bitcoins, desde cualquier lugar.
+Compra tres.
+Nunca comparte sus palabras con nadie y las graba en metal como respaldo.
+Los dispositivos nunca tocan internet.
+Van a una caja de seguridad de su banco.
+Pero hay algo que no puede comprobar por sí mismo: cómo se eligieron esas palabras.
+Las palabras tienen que ser imposibles de adivinar.
+Así que el dispositivo las elige completamente al azar, con hardware hecho para una sola tarea:
+generar números aleatorios.
+Si se hace bien, hay tantas listas de palabras posibles que nadie podría
+recorrerlas todas.
+Pero en marzo de 2021, Coinkite publica una actualización de firmware.
+Pasa a la misma criptografía que usa Bitcoin Core, a través de una biblioteca nueva.
+La biblioteca nueva necesita números aleatorios.
+Y el código que responde a esa petición puede funcionar de dos formas: leer el hardware
+o ejecutar un simple sustituto por software. Un solo ajuste decide cuál.
+Coinkite lo pone en cero, creyendo que así lo desactiva todo. No es así.
+Cero significa: usa el sustituto.
+Y en el código hay un control de seguridad pensado justo para esto.
+Si falta el ajuste, la compilación se detiene con un mensaje.
+Pero el control solo pregunta si el ajuste existe. Existe. Dice cero.
+El control se supera.
+Piensa en un inspector de alarmas de humo.
+Comprueba que hay una alarma en el techo.
+Nunca comprueba que esté encendida.
+Así que, desde entonces, los modelos antiguos Mk2 y Mk3 generan sus palabras con el sustituto.
+Funciona con un ID de fábrica fijo y unos cuantos temporizadores.
+Nada en él es realmente secreto.
+Más tarde, Coinkite lo cifra en unos 40 bits de aleatoriedad real.
+Una semilla correcta tiene al menos 128.
+Cuarenta bits son alrededor de un billón de posibilidades. Parece mucho.
+Para un ordenador que adivina sin conexión, es una búsqueda que termina.
+A los modelos nuevos les va mejor, con unos 72 bits.
+Aún muy lejos de una semilla correcta,
+aunque, hasta ahora, no hay pruebas públicas de que alguno fuera vaciado en estos
+ataques.
+El generador de hardware sigue ahí, dentro de cada dispositivo.
+El propio informe técnico de Coinkite admite más tarde que se usaba…
+Así que ahora sabes algo que Goodman no sabe.
+Sus palabras nunca fueron realmente aleatorias. Y el código es público. Cualquiera puede leerlo.
+Durante cinco años, dueños como él compran el dispositivo, anotan sus palabras
+y las guardan bajo llave.
+El CEO de Coinkite dice que la empresa pagó auditorías de seguridad externas en 2022 y 2024.
+Aun así, Coinkite dice que no conocía el error hasta el día del robo.
+Entonces, unas semanas antes del robo, Coinkite revisa su código crítico con IA.
+Pero alguien más lo encuentra primero.
+Coinkite dice que debe suponer que alguien usó IA para encontrarlo.
+Esa es la suposición de Coinkite. No se ha demostrado.
+En cualquier caso, el método no necesitaba ni un solo dispositivo.
+Adivinar una semilla. Calcular sus direcciones. Consultar la blockchain.
+Si coincide, tienes la clave y, con ella, el dinero.
+En Toronto son las nueve y diez de un miércoles por la noche.
+Goodman está fuera, en su cabaña.
+La primera transacción sale de una dirección creada en una Coldcard. Luego otra.
+Luego cientos.
+Según Chainalysis, el ladrón va primero a por las billeteras más grandes.
+Unos 30 millones de dólares en los primeros diez minutos.
+Y hay algo raro en estas transacciones.
+Todas están hechas igual: la misma comisión y cada moneda barrida hasta la última,
+sin dejar nada.
+Recuerda ese detalle.
+Entonces llega a Goodman.
+21:36. La primera de sus tres billeteras se vacía. Luego la segunda.
+A las 21:43, la tercera también ha desaparecido.
+Unos 1,6 millones de dólares canadienses.
+A las 21:51, la primera ola se detiene.
+En 41 minutos, se han vaciado casi mil doscientas direcciones.
+Y Goodman no tiene ni idea.
+En las horas siguientes empiezan a aparecer avisos de monedas saliendo de billeteras frías.
+Ingenieros de Block, la empresa detrás de la billetera Bitkey, desmontan el firmware.
+Antes de que acabe el día, ellos y otros investigadores encuentran la causa.
+Coinkite publica su primer aviso: las semillas creadas con el firmware afectado están en riesgo.
+Muevan sus fondos. Para entonces, la primera ola ya había terminado hacía mucho.
+El 31 de julio, Goodman está con su familia en una biblioteca pública cuando ve
+en Facebook la publicación de un amigo: si usas una Coldcard, mueve tu dinero ya.
+Lo comprueba. Sus bitcoins se habían ido el miércoles por la noche.
+Vuelve a Toronto para presentar una denuncia a la policía
+y otra ante la Comisión de Valores de Ontario.
+La gente le pregunta si alguien entró en su caja de seguridad.
+Nadie lo hizo. Y para cualquiera que aún tenga una semilla creada así,
+una actualización de firmware no sirve. Corrige las semillas nuevas.
+Una semilla débil que ya está anotada sigue siendo débil.
+Esta es la parte cruel de un aviso público.
+Llega a los dueños y a los ladrones al mismo tiempo.
+Sigue la segunda ola. La tercera va del viernes al sábado.
+Una cuarta empieza el lunes.
+Galaxy Research cuenta después al menos 15 atacantes distintos. Ya no es un solo ladrón.
+Es una multitud explotando la misma debilidad.
+Pero en la cuarta ola, las transacciones de los ladrones quedan esperando confirmación.
+Hasta que se confirman, quien pague una comisión mayor puede reemplazarlas.
+Así que un dueño, Will Owens, contraataca.
+Deja una pequeña cantidad como cebo, espera a que el bot la tome
+y puja más alto. Recupera su cebo.
+Más tarde, hackers éticos voluntarios sacan unos 52 bitcoins de billeteras expuestas
+y los pasan a un fideicomiso creado para devolverlos a las víctimas.
+En septiembre, el fideicomiso devuelve más de 20 bitcoins a un dueño verificado.
+Parte de las monedas robadas va a mezcladores, servicios hechos para borrar el rastro.
+Según los últimos recuentos públicos, gran parte del resto sigue quieta.
+Cuando las olas se frenan, se han llevado unos 1816 bitcoins
+de más de 5200 direcciones.
+Pero la pieza más grande, la primera ola, aún no se ha movido,
+según el último seguimiento público.
+¿Recuerdas ese detalle? Cada transacción de la primera ola era igual.
+Galaxy no encontró a nadie más usando ese patrón en el mes anterior.
+Así que la primera ola se pudo rastrear como una sola operación.
+Y los investigadores notaron algo más.
+Cada intento hay que comprobarlo.
+Para saber qué direcciones adivinadas tienen dinero, hay que consultarlas
+una y otra vez.
+Según Block, el operador de la primera ola parece haberlo hecho mediante
+una cuenta de pago en un conocido proveedor de datos de blockchain.
+Contactaron con el proveedor.
+Sus registros internos, dicen, coincidían con el ataque «con una precisión extraordinaria»:
+el número, el momento y el orden de las consultas.
+En la blockchain, el ladrón era solo una serie de direcciones.
+Pero una cuenta de pago suele dejar registros.
+La información llegó a las autoridades.
+Alex Thorn, de Galaxy, dice que la identidad del atacante de la primera ola «podría ser conocida por las
+autoridades».
+Pero, mientras hacemos este video, el FBI no ha confirmado ningún sospechoso, ninguna detención
+ni ninguna recuperación.
+Así que, a la fecha de este video, nadie ha sido nombrado públicamente.
+TRM Labs no atribuye el robo a nadie.
+Coinkite dice que sus abogados trabajan con las autoridades para identificar a los
+responsables.
+En internet, algunos hablan de un trabajo desde dentro.
+Hasta ahora, no hay pruebas públicas de ello y nadie ha sido acusado.
+En septiembre, un dueño de Coldcard presentó en Ontario una propuesta de demanda colectiva contra
+Coinkite y sus cofundadores.
+Alega que la empresa ya sabía en mayo de 2025 que su generación de semillas era débil.
+Según los últimos informes, un juez ni siquiera la ha certificado aún como demanda colectiva,
+y ninguna de sus acusaciones se ha probado en un tribunal.
+Y, por lo que muestran los informes públicos, Coinkite no ha anunciado ningún fondo de compensación.
+Goodman no cuenta con la demanda.
+El CEO de Coinkite dice que el fallo afectó a alrededor del 0,17 % de sus usuarios.
+El firmware más reciente obliga ahora a cada dueño a añadir su propia aleatoriedad al
+crear una semilla.
+Hay un grupo que Coinkite no considera en riesgo por este error:
+los dueños que añadieron al menos 50 tiradas de dados propias al crear su semilla.
+Los que no lo dejaron todo en manos del dispositivo.
+Esa caja de seguridad nunca se abrió.
+Los dispositivos de dentro nunca fueron hackeados.
+Simplemente nunca le pidieron la semilla a su hardware de números aleatorios.
+Si creaste una semilla en una Coldcard afectada, lee el aviso de Coinkite.
+Coinkite dice: dala por comprometida y pasa a una semilla nueva.
+¿Y los 1082 bitcoins de la primera ola?
+Según el último seguimiento público, siguen donde los dejó el ladrón.
+Y en algún lugar, en los registros de una empresa de datos, puede que haya un nombre.
+Esto fue Siphon Files.
